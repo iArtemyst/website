@@ -6,6 +6,7 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import * as fonts from "@/app/globals/fonts";
+import * as pages from "@/app/globals/pages-main";
 
 import vidProcMat01 from "@/app/assets/videos/_game/_procmats/procmats_loop_00.mp4";
 import vidProcMat02 from "@/app/assets/videos/_game/_procmats/procmats_loop_01.mp4";
@@ -36,9 +37,9 @@ function ProjectDetailText({TitleText="", MoreText=""}:{TitleText:String, MoreTe
 function BentoBoxA() {
     function VideoCell({link, vidTitle=""}:{link:string, vidTitle:String}){
         return (
-            <CardHoverFX bufferZone={0} rotateAmount={10}>
+            <CardHoverFX bufferZone={0} rotateAmount={12}>
                 <div className="relative group">
-                    <bentos.Cell1ColVideo cellVidLink={link} />
+                    <bentos.CellVideo cellVidLink={link} cellSpan="col-span-1"/>
                     <p className={`absolute left-[4%] bottom-[2%] text-textSml opacity-0 group-hover:opacity-100 group-hover:translate-y-[0px] -translate-y-[12px] text-white transition-all duration-400 drop-shadow-[0px_0px_8px_#000000] ${fonts.dotoBlack.className}`}>{vidTitle}</p>
                 </div>
             </CardHoverFX>
@@ -63,11 +64,11 @@ function BentoBoxA() {
 
 export default function ProjectProcMatPage() {
     return (
-        <div className="absolute left-0 right-0 top-0 bottom-0 overflow-scroll py-[48px] no-scrollbar bg-bgColor">
-            <ProjectDetailText 
-                TitleText="PROCEDUAL MATERIALS" 
-                MoreText="Creating a library of reusable materials and shaders, with detailed parameters for adjusting the materials to future scenes. For a deeper look at the nodes behind these materials, please visit my Artstation Page."/>
-            <BentoBoxA />
-        </div>
+        <pages.GroupProjectPage>
+                <ProjectDetailText 
+                    TitleText="PROCEDUAL MATERIALS" 
+                    MoreText="Creating a library of reusable materials and shaders, with detailed parameters for adjusting the materials to future scenes. For a deeper look at the nodes behind these materials, please visit my Artstation Page."/>
+                <BentoBoxA />
+        </pages.GroupProjectPage>
     )
 }

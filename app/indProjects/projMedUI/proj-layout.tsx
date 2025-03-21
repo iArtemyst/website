@@ -4,6 +4,7 @@ import React from "react";
 import "@/app/globals/globals.css";
 
 import * as bentos from "@/app/globals/bento-boxes";
+import * as pages from "@/app/globals/pages-main";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import Link from "next/link";
 
@@ -52,54 +53,47 @@ function ImportVideoMute({vidLink}:{vidLink:string}) {
 
 function BentoBox() {
     return (
-        <div className={`${bentoGap} relative z-0 grid grid-cols-1 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] text-textVariant hover:cursor-pointer`}>
-            <div className="w-full h-full rounded-3xl content-center p-[8px] col-span-full row-span-full shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
+        <div className={`${bentoGap} relative z-0 grid grid-cols-1 w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-textVariant hover:cursor-pointer`}>
+            <bentos.CellText cellSpan="col-span-full">
                 <bentos.HeaderText text="MEDICAL INTERFACE AND MOTION DESIGN" textSize={titleTextSize}/>
-            </div>
+            </bentos.CellText>
 
-            <div className={`${bentoGap} grid grid-cols-2 gap-[12px]`}>
-                <bentos.Cell1ColImage cellImgAlt="Electric Flow in Tissue" cellImgLink={imgMedMotionC03} />
+            <div className={`${bentoGap} grid grid-cols-2`}>
+                <bentos.CellImage cellImgAlt="Electric Flow in Tissue" cellImgLink={imgMedMotionC03} cellSpan="col-span-1"/>
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidMedMotionB04} />
-                </bentos.Cell1ColChildrenVideo>
+                <bentos.CellVideo cellVidLink={vidMedMotionB04} cellSpan="col-span-1" />
 
-                <div className="w-full h-full rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
+
+                <bentos.CellText cellSpan="col-span-1">
                     <bentos.ParagraphText text="My work in Medical Animation began over 6 years ago, after I graduated college. Since graduating I have produced dozens of videos, app designs, print collateral, and muchc more for several large medical companies. While much of my work is unreleased still, a notable amount of what is released can be found on Youtube under client channels, or directly on their websites." textSize={paraTextSize}/>
+                </bentos.CellText>
+
+                <bentos.CellVideo cellVidLink={vidMedMotionC03} cellSpan="col-span-1" /> 
+
+                <div className={`${bentoGap} grid grid-cols-4 col-span-2`}>
+                    <bentos.CellImage cellImgAlt="Staple Comparison" cellImgLink={imgMedMotionD02} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Tapered Pockets" cellImgLink={imgMedMotionD04} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Sealing Vessels" cellImgLink={imgMedMotionC06} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Staple Cartridge Chart" cellImgLink={imgMedMotionB02} cellSpan="col-span-1"/>
                 </div>
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidMedMotionC03} />
-                </bentos.Cell1ColChildrenVideo> 
+                <bentos.CellVideo cellVidLink={vidMedMotionC02} cellSpan="col-span-1" />
 
-                <div className={`${bentoGap} grid grid-cols-4 col-span-2 gap-[12px]`}>
-                    <bentos.Cell1ColImage cellImgAlt="Staple Comparison" cellImgLink={imgMedMotionD02} />
-                    <bentos.Cell1ColImage cellImgAlt="Tapered Pockets" cellImgLink={imgMedMotionD04} />
-                    <bentos.Cell1ColImage cellImgAlt="Sealing Vessels" cellImgLink={imgMedMotionC06} />
-                    <bentos.Cell1ColImage cellImgAlt="Staple Cartridge Chart" cellImgLink={imgMedMotionB02} />
-                </div>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidMedMotionC02} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <div className="w-full h-full rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
+                <bentos.CellText cellSpan="col-span-1">
                     <bentos.ParagraphText text="My work in motion for the medical field has expanded from trade show presentations, to full marketing collateral suites accompanying device launches, and even editing for surgical overviews or training videos." textSize={paraTextSize}/>
+                </bentos.CellText>
+
+                <bentos.CellVideo cellVidLink={vidMedMotionB02} cellSpan="col-span-1" />
+
+                <div className={`${bentoGap} grid grid-cols-2 col-span-1`}>
+                    <bentos.CellImage cellImgAlt="Medical Interface Flow" cellImgLink={imgMedMotionA01} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Energy Devices" cellImgLink={imgMedMotionC05} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Device Heat Profile" cellImgLink={imgMedMotionC04} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Bipolar Energy Timeline" cellImgLink={imgMedMotionC08} cellSpan="col-span-1"/>
                 </div>
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidMedMotionB02} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <div className={`${bentoGap} grid grid-cols-2 col-span-1 gap-[12px]`}>
-                    <bentos.Cell1ColImage cellImgAlt="Medical Interface Flow" cellImgLink={imgMedMotionA01} />
-                    <bentos.Cell1ColImage cellImgAlt="Energy Devices" cellImgLink={imgMedMotionC05} />
-                    <bentos.Cell1ColImage cellImgAlt="Device Heat Profile" cellImgLink={imgMedMotionC04} />
-                    <bentos.Cell1ColImage cellImgAlt="Bipolar Energy Timeline" cellImgLink={imgMedMotionC08} />
-                </div>
-
-                <bentos.Cell1ColImage cellImgAlt="Enseal Sales Application" cellImgLink={imgMedMotionB05} />
-                <bentos.Cell1ColImage cellImgAlt="Endopath Sales Application" cellImgLink={imgMedMotionB03} />
+                <bentos.CellImage cellImgAlt="Enseal Sales Application" cellImgLink={imgMedMotionB05} cellSpan="col-span-1"/>
+                <bentos.CellImage cellImgAlt="Endopath Sales Application" cellImgLink={imgMedMotionB03} cellSpan="col-span-1"/>
 
             </div>
 
@@ -109,10 +103,8 @@ function BentoBox() {
 
 export default function ProjectMedMotion() {
     return (
-        <div className="absolute left-0 right-0 top-0 bottom-0 py-[48px] overflow-scroll no-scrollbar bg-bgColor">
-            <div className="grid grid-cols-1 w-full h-auto gap-[12px]">
-                <BentoBox />
-            </div>
-        </div>
+        <pages.GroupProjectPage>
+            <BentoBox />
+        </pages.GroupProjectPage>
     )
 }

@@ -20,6 +20,10 @@ export const textMed = "18px";
 export const textLrg = "24px";
 export const textXL = "32px";
 
+export const hoverShadow = "shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30]";
+
+export const pageContainer = "absolute left-0 right-0 top-0 bottom-0 bg-bgColor";
+export const divContainer = "relative grid w-full h-full justify-center overflow-visible py-20 overflow-y-auto no-scrollbar";
 
 export default {
   content: [

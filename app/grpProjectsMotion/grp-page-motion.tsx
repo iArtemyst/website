@@ -6,7 +6,8 @@ import Link from "next/link";
 
 import * as vidcards from "@/app/globals/hover-cards";
 import * as fonts from "@/app/globals/fonts";
-
+import * as style from "@/tailwind.config"
+import * as pages from "@/app/globals/pages-main";
 
 import vidMedUI from "/app/assets/videos/_motionui/trimmed-loops_med-ui_001.mp4";
 import vidDDRMelee from "/app/assets/videos/_motionui/trimmed-loop_ddr-melee.mp4";
@@ -40,10 +41,8 @@ function CardDisplay () {
 
 export default function GroupProjectsMotion() {
     return (
-        <div className="absolute left-0 right-0 top-0 bottom-0 bg-bgColor">
-            <div className="relative grid w-full h-full justify-center overflow-visible py-20 overflow-y-auto no-scrollbar">
-                <CardDisplay />
-            </div>
-        </div>
+        <pages.GroupProjectPage>
+            <CardDisplay />
+        </pages.GroupProjectPage>
     )
 }

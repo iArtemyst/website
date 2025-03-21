@@ -15,6 +15,7 @@ import HHImage03 from "@/app/assets/images/_projects/hh_still_2.png";
 //---------------------
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import * as fonts from "@/app/globals/fonts";
+import * as pages from "@/app/globals/pages-main";
 //---------------------
 
 
@@ -196,10 +197,10 @@ export default function ProjectHorrorHousePage() {
     ]
 
     return (
-        <div className="relative w-[100dvw] h-[100dvh] overflow-hidden no-scrollbar flex">
-            <PopulateProjectInfo ProjectTitle="Horror Houses" ProjectDes="Test Description, more to follow later"/>
-            <ProjectGallery vidCardData={selectionData} imageCardData={cardData}/>
-            <backButtons.BackButtonRight backLink={linkGrpGame} buttonText="Back to Game"/>
-        </div>
+        <pages.GroupProjectPage>
+                <PopulateProjectInfo ProjectTitle="Horror Houses" ProjectDes="Test Description, more to follow later"/>
+                <ProjectGallery vidCardData={selectionData} imageCardData={cardData}/>
+                <backButtons.BackButtonRight backLink={linkGrpGame} buttonText="Back to Game"/>
+        </pages.GroupProjectPage>
     )
 }

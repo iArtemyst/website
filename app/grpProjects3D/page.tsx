@@ -8,8 +8,6 @@ import * as backButtons from "@/app/globals/back-buttons";
 
 const linkHome = './';
 
-
-
 export default function RenderGroup3D() {
   return (
     <div>

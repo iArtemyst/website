@@ -19,6 +19,7 @@ const groupGraphics = './grpProjectsMotion';
 
 import * as cards from "@/app/globals/hover-cards";
 import * as fonts from "@/app/globals/fonts";
+import * as pages from "@/app/globals/pages-main";
 
 
 
@@ -95,12 +96,11 @@ function CardsContainer() {
 
 export default function LandingMain() {
     return (
-        <div className="absolute left-0 top-0 bottom-0 right-0 overflow-hidden bg-bgColor">
-            <div className="absolute left-0 top-0 bottom-0 right-0 bg-gradient-to-t from-gradientColor1 to-gradientColor2">
-                <LandingTitleText />
-                <CardsContainer />
-                <LandingAboutText  />
-            </div>
-        </div>
+        <pages.GroupProjectPage>
+            <LandingTitleText />
+            <CardsContainer />
+            <LandingAboutText  />
+        </pages.GroupProjectPage>
+
     )
 }

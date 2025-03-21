@@ -7,6 +7,7 @@ import Link from "next/link";
 import * as fonts from "@/app/globals/fonts";
 import * as bentos from "@/app/globals/bento-boxes";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
+import * as pages from "@/app/globals/pages-main";
 
 import imgDDRMelee01 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_00.png";
 import imgDDRMelee02 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_01.png";
@@ -25,64 +26,44 @@ const bentoGap = "gap-[12px]";
 const titleTextSize= "text-[24px]";
 const paraTextSize = "text-[12px]";
 
-export function KeypointText({keypointText=""}:{keypointText:String}) {
-    return (
-        <div className="relative h-auto w-full flex justify-center py-8 align-middle">
-            <p className={`${fonts.dotoBlack.className} text-textSml text-pretty text-center content-center`}>{keypointText}</p>
-        </div>
-    )
-}
-
-export function ParagraphText({paraText=""}:{paraText:String}) {
-    return (
-        <div className="relative h-auto w-full flex justify-center">
-            <p className={`${fonts.dotoBold.className} text-textMed text-balance text-center content-center`}>{paraText}</p>
-        </div>
-    )
-}
-
 function BentoBoxA() {
     return (
         <div className="relative z-0 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
 
                 <div className="w-full justify-self-center grid grid-cols-3 gap-[12px]">
-                    <bentos.CellAutoText>
+                    <bentos.CellText cellSpan="col-span-1">
                         <bentos.HeaderText text="DDR Melee Motion Graphics" textSize={titleTextSize}/>
-                        <bentos.ParagraphText textSize="text-[14px]" text="When my partner came to me with the idea for a Super Smash Bros Melee combo video, I was immediately on board. The idea they had developed was a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
-                    </bentos.CellAutoText>
+                        <bentos.ParagraphText textSize={paraTextSize} text="When my partner came to me with the idea for a Super Smash Bros Melee combo video, I was immediately on board. The idea they had developed was a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
+                    </bentos.CellText>
                     
-                    <bentos.Cell2ColChildrenVideo>
-                        <ImportVideoMute vidLink={vidDDRMelee01} />
-                    </bentos.Cell2ColChildrenVideo>
+                    <bentos.CellVideo cellVidLink={vidDDRMelee01} cellSpan="col-span-2" />
                 </div>
 
                 <div className="grid grid-cols-3 h-fit gap-[12px]">
-                    <bentos.Cell1ColImage cellImgAlt="Opening menu screen" cellImgLink={imgDDRMelee01} />
-                    <bentos.Cell1ColImage cellImgAlt="Game type selection screen" cellImgLink={imgDDRMelee03} />
-                    <bentos.Cell1ColImage cellImgAlt="Song selection screen" cellImgLink={imgDDRMelee05} />
+                    <bentos.CellImage cellImgAlt="Opening menu screen" cellImgLink={imgDDRMelee01} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Game type selection screen" cellImgLink={imgDDRMelee03} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Song selection screen" cellImgLink={imgDDRMelee05} cellSpan="col-span-1"/>
                 </div>
 
                 <div className="w-full justify-self-center grid grid-cols-3 gap-[12px]">
-                    <bentos.Cell2ColChildrenVideo>
-                        <ImportVideoMute vidLink={vidDDRMelee02} />
-                    </bentos.Cell2ColChildrenVideo>
+                    <bentos.CellVideo cellVidLink={vidDDRMelee01} cellSpan="col-span-2" />
 
-                    <div className="w-full h-full rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
-                        <bentos.ParagraphText text="While they took the helm on programming the functionality of coordinating button presses from controller to on screen assets in time, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM." textSize="text-[14px]"/>
+                    <bentos.CellText cellSpan="col-span-1">
+                        <bentos.ParagraphText text="While they took the helm on programming the functionality of coordinating button presses from controller to on screen assets in time, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM." textSize={paraTextSize}/>
                         <bentos.ParagraphText text="View the full video on Youtube!" textSize="text-[10px]" />
-                    </div>
+                    </bentos.CellText>
                 </div>
 
                 <div className="grid grid-cols-3 h-fit gap-[12px]">
-                    <bentos.Cell1ColImage cellImgAlt="Cleared stage screen" cellImgLink={imgDDRMelee06} />
-                    <bentos.Cell1ColImage cellImgAlt="Score counting screen" cellImgLink={imgDDRMelee08} />
-                    <bentos.Cell1ColImage cellImgAlt="Score results screen" cellImgLink={imgDDRMelee09} />
+                    <bentos.CellImage cellImgAlt="Cleared stage screen" cellImgLink={imgDDRMelee06} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Score counting screen" cellImgLink={imgDDRMelee08} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Score results screen" cellImgLink={imgDDRMelee09} cellSpan="col-span-1"/>
                 </div>
         </div>
     )
 }
 
-function BentoBoxC() {
+function BentoBoxB() {
     return (
         <div className="relative z-0 flex w-[70%] h-auto justify-self-center grid-cols-1 gap-[12px] rounded-3xl place-content-center text-white hover:cursor-pointer">
             <div className="row-span-1">
@@ -92,27 +73,9 @@ function BentoBoxC() {
     )
 }
 
-function ImportVideo({vidLink}:{vidLink:string}) {
-    return (
-        <video src={vidLink} width="100%" height="auto" loop className="self-center"/>
-    )
-}
-
 function ImportVideoMute({vidLink}:{vidLink:string}) {
     return (
         <video src={vidLink} width="100%" height="auto" controls muted loop className="self-center"/>
-    )
-}
-
-function MainVideoBox({videoLink}:{videoLink:string}) {
-    return (
-        <div className="group">
-            <CardHoverFX bufferZone={0} rotateAmount={24}>
-                <div className="relative w-[70%] h-[auto] justify-self-center rounded-[24px] overflow-hidden my-[24px] shadow-[0px_0px_8px_#FFFFFF90] group-hover:shadow-[0px_0px_16px_#FFFFFF45] z-0 group-hover:z-10">
-                    <ImportVideo vidLink={videoLink} />
-                </div>
-            </CardHoverFX>
-        </div>
     )
 }
 
@@ -126,12 +89,11 @@ function YoutubeVideo(){
 
 export default function ProjectDartPubPage() {
     return (
-        <div className="absolute left-0 right-0 top-0 bottom-0 py-[48px] overflow-scroll no-scrollbar bg-bgColor">
-            {/* <MainVideoBox videoLink={vidDDRMelee01}/> */}
-            <div className="relative grid grid-cols-1 gap-[24px]">
-                <BentoBoxA />
-                <BentoBoxC />
-            </div>
+    <pages.GroupProjectPage>
+        <div className="relative grid grid-cols-1 gap-[24px]">
+            <BentoBoxA />
+            <BentoBoxB />
         </div>
+    </pages.GroupProjectPage>
     )
 }

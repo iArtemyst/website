@@ -7,6 +7,7 @@ import Card02 from "/app/assets/videos/_3d/_horrorHouses/HH_Halloween_Card.mp4";
 import Card03 from "/app/assets/videos/_3d/_horrorHouses/HH_Midsommar_Card.mp4";
 import * as cards from "@/app/globals/hover-cards";
 import * as fonts from "@/app/globals/fonts";
+import * as pages from "@/app/globals/pages-main";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 
 const cardWidth = "w-[240px]";
@@ -66,13 +67,11 @@ function CardsContainer() {
 
 export default function HorrorHousesPage() {
     return (
-        <div className="absolute left-0 top-0 bottom-0 right-0 overflow-hidden bg-bgColor">
-            <div className="absolute left-0 top-0 bottom-0 right-0 bg-gradient-to-t from-gradientColor1 to-gradientColor2">
+        <pages.GroupProjectPage>
                 <CardsContainer />
                 <ProjectDetailText TitleText="HORROR HOUSES" MoreText="A good friend of mine, @KaitlinMooresArt, posted drawings she did of a few famous structures from horror films. 
                     I loved the style of the 2D drawings and reached out to her about making 3D models based off her drawings. 
                     She approved, and I spent a weekend modeling, adding lights and textures, and then rendering short animations to showcase the new dimension." />  
-            </div>
-        </div>
+        </pages.GroupProjectPage>
     )
 }

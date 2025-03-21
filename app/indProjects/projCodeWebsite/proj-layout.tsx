@@ -5,6 +5,7 @@ import "@/app/globals/globals.css";
 
 import * as bentos from "@/app/globals/bento-boxes";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
+import * as pages from "@/app/globals/pages-main";
 
 
 // function BentoBoxA() {
@@ -61,12 +62,12 @@ import { CardHoverFX } from "@/app/globals/card-hover-fx";
 
 export default function ProjectCodePortfolio() {
     return (
-        <div className="absolute left-0 right-0 top-0 bottom-0 overflow-scroll no-scrollbar bg-bgColor">
-            <div className="grid grid-rows-3 gap-[24px] w-[90%] justify-self-center my-[48px] bg-blue-200">
-                {/* <MainVideoBox videoLink={vidPubDart02}/>
-                <BentoBoxA />
-                <BentoBoxB /> */}
-            </div>
+    <pages.GroupProjectPage>
+        <div className="grid grid-rows-3 gap-[24px] w-[90%] justify-self-center my-[48px] bg-blue-200">
+            {/* <MainVideoBox videoLink={vidPubDart02}/>
+            <BentoBoxA />
+            <BentoBoxB /> */}
         </div>
+    </pages.GroupProjectPage>
     )
 }

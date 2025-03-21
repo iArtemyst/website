@@ -7,6 +7,7 @@ import { CardHoverFX } from "@/app/globals/card-hover-fx";
 
 import * as fonts from "@/app/globals/fonts";
 import * as bentos from "@/app/globals/bento-boxes";
+import * as pages from "@/app/globals/pages-main";
 
 import imgConMotionA01 from "@/app/assets/images/_motionui/_consumermotion/MidMark_Stills0.png";
 import imgConMotionA02 from "@/app/assets/images/_motionui/_consumermotion/MidMark_Stills1.png";
@@ -55,7 +56,7 @@ const paraTextSize = "text-[12px]";
 
 function ImportVideoMute({vidLink}:{vidLink:string}) {
     return (
-        <video src={vidLink} width="100%" height="auto" muted controls loop className="self-center"/>
+        <video src={vidLink} width="100%" height="auto" muted loop/>
     )
 }
 
@@ -67,61 +68,45 @@ function BentoBox() {
             </div>
 
             <div className={`${bentoGap} grid grid-cols-2 gap-[12px]`}>
-                <bentos.Cell1ColImage cellImgAlt="Dental Map" cellImgLink={imgConMotionA04} />
+                <bentos.CellImage cellImgAlt="Dental Map" cellImgLink={imgConMotionA04} cellSpan="col-span-1"/>
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidConMotionA01} />
-                </bentos.Cell1ColChildrenVideo>
+                <bentos.CellVideo cellVidLink={vidConMotionA01} cellSpan="col-span-1" />
 
                 <div className="w-full h-full rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
                     <bentos.ParagraphText text="In my years of professional design, I have had the great oppurtunity to work on numerous motion design videos for great companies. Storytelling through 2D assets and animations, creating emphasis and focus to engage or assist a user, and create a better experience through motion." textSize={paraTextSize}/>
                 </div>
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidConMotionB02} />
-                </bentos.Cell1ColChildrenVideo> 
+                <bentos.CellVideo cellVidLink={vidConMotionB02} cellSpan="col-span-1" /> 
 
                 <div className={`${bentoGap} grid grid-cols-2 col-span-1 gap-[12px]`}>
-                    <bentos.Cell1ColImage cellImgAlt="Internal Research" cellImgLink={imgConMotionB01} />
-                    <bentos.Cell1ColImage cellImgAlt="Connected Software" cellImgLink={imgConMotionA03} />
-                    <bentos.Cell1ColImage cellImgAlt="Discovery" cellImgLink={imgConMotionB02} />
-                    <bentos.Cell1ColImage cellImgAlt="Connected Alerts" cellImgLink={imgConMotionA05} />
+                    <bentos.CellImage cellImgAlt="Internal Research" cellImgLink={imgConMotionB01} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Connected Software" cellImgLink={imgConMotionA03} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Discovery" cellImgLink={imgConMotionB02} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Connected Alerts" cellImgLink={imgConMotionA05} cellSpan="col-span-1"/>
                 </div>
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidConMotionA03} />
-                </bentos.Cell1ColChildrenVideo>
+                <bentos.CellVideo cellVidLink={vidConMotionA03} cellSpan="col-span-1" />
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidConMotionC02} />
-                </bentos.Cell1ColChildrenVideo>
+                <bentos.CellVideo cellVidLink={vidConMotionC02} cellSpan="col-span-1" />
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidConMotionD01} />
-                </bentos.Cell1ColChildrenVideo>
+                <bentos.CellVideo cellVidLink={vidConMotionD01} cellSpan="col-span-1" />
 
                 <div className={`${bentoGap} grid grid-cols-4 col-span-2 gap-[12px]`}>
-                    <bentos.Cell1ColImage cellImgAlt="Branding Refresh" cellImgLink={imgConMotionC11} />
-                    <bentos.Cell1ColImage cellImgAlt="Shared Intelligence" cellImgLink={imgConMotionD03} />
-                    <bentos.Cell1ColImage cellImgAlt="Virtual Graphics" cellImgLink={imgConMotionC12} />
-                    <bentos.Cell1ColImage cellImgAlt="Generating Interest" cellImgLink={imgConMotionC03} />
+                    <bentos.CellImage cellImgAlt="Branding Refresh" cellImgLink={imgConMotionC11} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Shared Intelligence" cellImgLink={imgConMotionD03} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Virtual Graphics" cellImgLink={imgConMotionC12} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Generating Interest" cellImgLink={imgConMotionC03} cellSpan="col-span-1"/>
                 </div>
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidConMotionC07} />
-                </bentos.Cell1ColChildrenVideo>
+                <bentos.CellVideo cellVidLink={vidConMotionC07} cellSpan="col-span-1" />
 
                 <div className="w-full h-full rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
                     <bentos.ParagraphText text="With over 8 years of experience in After Effects, and over 15 years of experience with 3D Design and the Adobe Creative Suite, I excel at producing high quality motion graphics work for any scenario." textSize={paraTextSize}/>
                 </div>
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidConMotionD02} />
-                </bentos.Cell1ColChildrenVideo>
+                <bentos.CellVideo cellVidLink={vidConMotionD02} cellSpan="col-span-1" />
 
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidConMotionC03} />
-                </bentos.Cell1ColChildrenVideo>
+                <bentos.CellVideo cellVidLink={vidConMotionC03} cellSpan="col-span-1" />
 
             </div>
 
@@ -131,10 +116,10 @@ function BentoBox() {
 
 export default function ProjectConsumerMotion() {
     return (
-        <div className="absolute left-0 right-0 top-0 bottom-0 py-[48px] overflow-scroll no-scrollbar bg-bgColor">
+        <pages.GroupProjectPage>
             <div className="grid grid-cols-1 w-full h-auto gap-[12px]">
                 <BentoBox />
             </div>
-        </div>
+        </pages.GroupProjectPage>
     )
 }

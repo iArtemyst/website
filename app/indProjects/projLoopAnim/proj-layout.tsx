@@ -6,6 +6,7 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import * as fonts from "@/app/globals/fonts";
+import * as pages from "@/app/globals/pages-main";
 
 import vidAnimLoop001 from "@/app/assets/videos/_motionui/_loops/anim-loop_00.mp4";
 import vidAnimLoop002 from "@/app/assets/videos/_motionui/_loops/anim-loop_01.mp4";
@@ -75,105 +76,54 @@ function ImportVideoMute({vidLink}:{vidLink:string}) {
     )
 }
 
+export interface IVideoData {
+    vidLink: string,
+}
+
 function BentoBoxA() {
+    const cellData: string[] = [
+        vidAnimLoop035,
+        vidAnimLoop039,
+        vidAnimLoop013,
+        vidAnimLoop007,
+        vidAnimLoop009,
+        vidAnimLoop010,
+        vidAnimLoop012,
+        vidAnimLoop014,
+        vidAnimLoop015,
+        vidAnimLoop018,
+        vidAnimLoop037,
+        vidAnimLoop022,
+        vidAnimLoop025,
+        vidAnimLoop027,
+        vidAnimLoop028,
+        vidAnimLoop031,
+        vidAnimLoop032,
+        vidAnimLoop033,
+        vidAnimLoop034,
+        vidAnimLoop041,
+        vidAnimLoop042,
+    ];
+
     return (
-        <div className="relative z-0 grid grid-cols-3 grid-rows-auto w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] text-white
-                        hover:cursor-pointer">
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop035} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop039} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop013} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop007} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop009} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop010} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop012} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop014} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop015} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop018} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop037} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop022} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop025} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop027} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop028} />
-                </bentos.Cell1ColChildrenVideo>
-
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop031} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop032} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop033} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop034} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop041} />
-                </bentos.Cell1ColChildrenVideo>
-
-                <bentos.Cell1ColChildrenVideo>
-                    <ImportVideoMute vidLink={vidAnimLoop042} />
-                </bentos.Cell1ColChildrenVideo>
+        <div className="relative z-0 grid grid-cols-3 grid-rows-auto w-[80%] h-auto justify-self-center 
+                        rounded-3xl place-content-center gap-[12px] text-white hover:cursor-pointer">
+            {
+                cellData.map((videoLink) => {
+                    return <bentos.CellVideo cellVidLink={videoLink} cellSpan="col-span-1"/>;
+                })
+            };
         </div>
-    )
+    );
 }
 
 export default function ProjectLoopAnims() {
     return (
-        <div className="absolute left-0 right-0 top-0 bottom-0 overflow-scroll no-scrollbar bg-bgColor py-[48px]">
-            <ProjectDetailText 
-                TitleText="LOOPING DOODLES" 
-                MoreText="I consider these animations my doodles. While these started as simple loops, I quickly expanded into procedurally generated motion and modeling systems, simulations, and more, while still challenging myself to create an appealing loop. For more of my Looping Doodles, please visit my Artstation Page."/>
-            <BentoBoxA />
-        </div>
+        <pages.GroupProjectPage>
+                <ProjectDetailText 
+                    TitleText="LOOPING DOODLES" 
+                    MoreText="I consider these animations my doodles. While these started as simple loops, I quickly expanded into procedurally generated motion and modeling systems, simulations, and more, while still challenging myself to create an appealing loop. For more of my Looping Doodles, please visit my Artstation Page."/>
+                <BentoBoxA />
+        </pages.GroupProjectPage>
     )
 }

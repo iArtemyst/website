@@ -4,6 +4,7 @@ import React from "react";
 import "@/app/globals/globals.css";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import * as bentos from "@/app/globals/bento-boxes"
+import * as pages from "@/app/globals/pages-main";
 //---------------------
 import vidMonsoonVermut from "@/app/assets/videos/_3d/_monsoonVermut/monsoonVermut_Clip01.mp4";
 //---------------------
@@ -29,26 +30,26 @@ function MainVideoBox({videoLink}:{videoLink:string}) {
     )
 }
 
-function BentoBoxA() {
+function BentoBox() {
     return (
         <div className={` ${bentoGap} relative z-0 grid grid-cols-2 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-x-[12px] my-[24px]  text-white
                         hover:cursor-pointer`}>
             <div className="relative col-span-2 row-span-1">
-                <bentos.Cell2RowText>
+                <bentos.CellText cellSpan="row-span-2">
                     <bentos.HeaderText text="Monsoon Vermut" textSize={titleTextSize}/>
                     <bentos.ParagraphText text="For the release of a small batch Vermuth company based out of Arizona, I assisted in producing marketing collateral in the form of several social media images and a release video.
                     For this client I was given the freedom to develop a creative direction and art direct myself to produce the final assets.
                     I was responsible for modeling the assets, developing the textures and shaders, creating the environment and lighting." textSize={paraTextSize}/>
-                </bentos.Cell2RowText>
+                </bentos.CellText>
             </div>
 
-                <bentos.Cell1ColImage cellImgLink={MVimg01} cellImgAlt="Monsoon Vermut wine glass render" />
+                <bentos.CellImage cellImgLink={MVimg01} cellImgAlt="Monsoon Vermut wine glass render" cellSpan="col-span-1"/>
 
-                <bentos.Cell1ColImage cellImgLink={MVimg02} cellImgAlt="Monsoon Vermut desert render" />
+                <bentos.CellImage cellImgLink={MVimg02} cellImgAlt="Monsoon Vermut desert render" cellSpan="col-span-1"/>
 
-                <bentos.Cell1ColImage cellImgLink={MVimg03} cellImgAlt="Monsoon Vermut with cactus render" />
+                <bentos.CellImage cellImgLink={MVimg03} cellImgAlt="Monsoon Vermut with cactus render" cellSpan="col-span-1"/>
 
-                <bentos.Cell1ColImage cellImgLink={MVimg04} cellImgAlt="Monsoon Vermut group sand render" />
+                <bentos.CellImage cellImgLink={MVimg04} cellImgAlt="Monsoon Vermut group sand render" cellSpan="col-span-1"/>
 
         </div>
     )
@@ -56,11 +57,11 @@ function BentoBoxA() {
 //---------------------
 export default function ProjectMonsoonVermutPage() {
     return (
-        <div className="absolute left-0 right-0 top-0 bottom-0 overflow-auto no-scrollbar py-[48px] bg-bgVariant">
-            <div className={`grid grid-cols-1 gap-[12px]`}>
-                <MainVideoBox videoLink={vidMonsoonVermut}/>
-                <BentoBoxA />
-            </div>
-        </div>
+        <pages.GroupProjectPage>
+                <div className={`grid grid-cols-1 gap-[12px]`}>
+                    <MainVideoBox videoLink={vidMonsoonVermut}/>
+                    <BentoBox />
+                </div>
+        </pages.GroupProjectPage>
     )
 }

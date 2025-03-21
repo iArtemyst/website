@@ -9,6 +9,7 @@ import Card04 from "/app/assets/images/_game/_stubbleGen/shave-gen_still-d.png";
 
 import * as cards from "@/app/globals/hover-cards";
 import * as fonts from "@/app/globals/fonts";
+import * as pages from "@/app/globals/pages-main";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 
 const cardWidth = "w-[240px]";
@@ -77,15 +78,15 @@ function CardsContainer() {
 
 export default function StubbleGenPage() {
     return (
-        <div className="absolute left-0 top-0 bottom-0 right-0 overflow-hidden bg-bgColor">
-            <div className="absolute left-0 top-0 bottom-0 right-0 bg-gradient-to-t from-gradientColor1 to-gradientColor2">
-                <CardsContainer />
-                <ProjectDetailText TitleText="PROCEDURAL HAIR GENERATOR" MoreText="Using Substance Designer and a little math, I designed and developed a procedural generator for the growth of facial hair over the course of a week.
-                The goal of this project was to accurately create thousands of images that are similar to existing medical research images of the same subject, in an effort to have a database to train artificial intelligence on.
-                Starting with a single hair strand, this generator system builds up many layers of operations to produce thousands of unique strands per image, and millions of possible generator results.
-                After getting the generator system designed and working, I carefully collapsed the system into a user friendly node with parameters and timeline rendering." />
-                
-            </div>
-        </div>
+        <pages.GroupProjectPage>
+                <div className="absolute left-0 top-0 bottom-0 right-0 bg-gradient-to-t from-gradientColor1 to-gradientColor2">
+                    <CardsContainer />
+                    <ProjectDetailText TitleText="PROCEDURAL HAIR GENERATOR" MoreText="Using Substance Designer and a little math, I designed and developed a procedural generator for the growth of facial hair over the course of a week.
+                    The goal of this project was to accurately create thousands of images that are similar to existing medical research images of the same subject, in an effort to have a database to train artificial intelligence on.
+                    Starting with a single hair strand, this generator system builds up many layers of operations to produce thousands of unique strands per image, and millions of possible generator results.
+                    After getting the generator system designed and working, I carefully collapsed the system into a user friendly node with parameters and timeline rendering." />
+                    
+                </div>
+        </pages.GroupProjectPage>
     )
 }

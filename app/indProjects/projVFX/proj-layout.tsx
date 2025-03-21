@@ -10,14 +10,12 @@ import Card05 from "/app/assets/videos/_game/_vfx/vfx_powerup_clip.mp4";
 import * as cards from "@/app/globals/hover-cards";
 import * as fonts from "@/app/globals/fonts";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
-
-const linkGrpGame = '../grpProjectsGame';
+import * as pages from "@/app/globals/pages-main";
 
 const cardWidth = "w-[300px]";
 const hoverSize = "group-hover:w-[480px]";
 const hoverMarg = "group-hover:m-[-90px]";
 const cardContMargin = "mx-[64px]";
-
 
 function ProjectDetailText({TitleText="", MoreText=""}:{TitleText:String, MoreText:String}) {
     return (
@@ -31,7 +29,6 @@ function ProjectDetailText({TitleText="", MoreText=""}:{TitleText:String, MoreTe
                 </div>
             </div>
         </div>
-
     )
 }
 
@@ -90,12 +87,12 @@ function CardsContainer() {
 
 export default function ProjectVFXPage() {
     return (
-        <div className="absolute left-0 top-0 bottom-0 right-0 overflow-y-scroll no-scrollbar py-[48px] bg-bgColor">
+        <pages.GroupProjectPage>
             <ProjectDetailText 
                 TitleText="STYLIZED VFX"
                 MoreText="In an effort to practice my 2D shader development, I quickly rigged and animated a simple character model and set about recreating some stylized shaders applied to simple geometry.
                 The VFX assets are made of several layers of meshes, shaders, and timed animations. And with the fireball animation, I developed a procedural system to spawn and cast a fireball along a spline in scene." /> 
             <CardsContainer />
-        </div>
+        </pages.GroupProjectPage>
     )
 }

@@ -7,6 +7,7 @@ import Card02 from "/app/assets/images/_game/_islandCity/islandcity_still-b_00.p
 import Card03 from "/app/assets/videos/_game/_islandCity/islandCity_clip001.mp4";
 import * as cards from "@/app/globals/hover-cards";
 import * as fonts from "@/app/globals/fonts";
+import * as pages from "@/app/globals/pages-main";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 
 const cardWidth = "w-[240px]";
@@ -68,12 +69,12 @@ function CardsContainer() {
 
 export default function IslandCityPage() {
     return (
-        <div className="absolute left-0 top-0 bottom-0 right-0 overflow-hidden bg-bgColor">
-            <div className="absolute left-0 top-0 bottom-0 right-0 bg-gradient-to-t from-gradientColor1 to-gradientColor2">
-                <CardsContainer />
-                <ProjectDetailText TitleText="ISLAND CITY GENERATOR" MoreText="This procedural generating system took many of my learned node and shader skills to develop. 
-                    My final node asset has organized parameters that control many aspects of this Island City Generator, including the island shape, number of buildings, how the buildings are, scarcity of the assets, how many lights are on in the buildings, and far more." />  
-            </div>
-        </div>
+        <pages.GroupProjectPage>
+                <div className="absolute left-0 top-0 bottom-0 right-0 bg-gradient-to-t from-gradientColor1 to-gradientColor2">
+                    <CardsContainer />
+                    <ProjectDetailText TitleText="ISLAND CITY GENERATOR" MoreText="This procedural generating system took many of my learned node and shader skills to develop. 
+                        My final node asset has organized parameters that control many aspects of this Island City Generator, including the island shape, number of buildings, how the buildings are, scarcity of the assets, how many lights are on in the buildings, and far more." />  
+                </div>
+        </pages.GroupProjectPage>
     )
 }

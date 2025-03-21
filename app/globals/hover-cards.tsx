@@ -51,7 +51,7 @@ export function VideoCardA({projectTitle = "", projectDate = "", projectVideo, c
 export function VideoCardNoLink({projectTitle = "", projectDate = "", projectVideo}: {projectTitle:String, projectDate:String, projectVideo:string}) {
     return(
         <CardHoverFX bufferZone={0} rotateAmount={7}>
-                <div className="group relative grid aspect-square w-full h-auto px-[10px] bg-slate-100 pt-3 shadow-[0px_0px_5px_#00000050] hover:shadow-[0px_0px_20px_#00000050] opacity-80 hover:opacity-100 scale-[80%] hover:scale-110 transition-all duration-100 rounded-md">
+                <div className="group relative grid aspect-square w-full h-auto px-[10px] bg-red-200 pt-3 shadow-[0px_0px_5px_#00000050] hover:shadow-[0px_0px_20px_#00000050] opacity-80 hover:opacity-100 scale-[80%] hover:scale-110 transition-all duration-100 rounded-md">
                     <div className="relative grid grid-cols-1 content-center w-full h-full overflow-hidden rounded-t-md rounded-b-sm z-20"
                         onMouseMove={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}>
