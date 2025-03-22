@@ -1,25 +1,17 @@
 'use client'
 
-import React from "react";
 import "@/app/globals/globals.css";
-import Link from "next/link";
 
-import * as fonts from "@/app/globals/fonts";
 import * as bentos from "@/app/globals/bento-boxes";
-import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import * as pages from "@/app/globals/pages-main";
 
 import imgDDRMelee01 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_00.png";
-import imgDDRMelee02 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_01.png";
 import imgDDRMelee03 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_02.png";
-import imgDDRMelee04 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_03.png";
 import imgDDRMelee05 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_04.png";
 import imgDDRMelee06 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_05.png";
-import imgDDRMelee07 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_06.png";
 import imgDDRMelee08 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_07.png";
 import imgDDRMelee09 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_08.png";
-import vidDDRMelee01 from "@/app/assets/videos/_motionui/_ddrmelee/ddr-melee-intro_collat-edit_compressed.mp4"
-import vidDDRMelee02 from "@/app/assets/videos/_motionui/_ddrmelee/ddr-melee_outro_collat-edit_compressed.mp4"
+import vidDDRMelee01 from "@/app/assets/videos/_motionui/_ddrmelee/ddr-melee-intro_collat-edit_compressed.mp4";
 
 const ddrMeleeYTLink = "https://youtu.be/IljUm6WHTXE?si=CqcDqtQnCYTAc_Q4";
 const bentoGap = "gap-[12px]";
@@ -73,12 +65,6 @@ function BentoBoxB() {
     )
 }
 
-function ImportVideoMute({vidLink}:{vidLink:string}) {
-    return (
-        <video src={vidLink} width="100%" height="auto" controls muted loop className="self-center"/>
-    )
-}
-
 function YoutubeVideo(){
     return(
         <div className="justify-self-center rounded-xl overflow-clip w-full">
@@ -89,7 +75,7 @@ function YoutubeVideo(){
 
 export default function ProjectDartPubPage() {
     return (
-    <pages.GroupProjectPage>
+    <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
         <div className="relative grid grid-cols-1 gap-[24px]">
             <BentoBoxA />
             <BentoBoxB />

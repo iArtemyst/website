@@ -1,11 +1,7 @@
 'use client'
 
-import React from "react";
 import "@/app/globals/globals.css";
-import { CardHoverFX } from "@/app/globals/card-hover-fx";
-import Link from "next/link";
 
-import * as fonts from "@/app/globals/fonts";
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 
@@ -19,13 +15,11 @@ import imgConceptAppB02 from "@/app/assets/images/_motionui/_concept-apps/concep
 import imgConceptAppB03 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Podcast_02.jpg";
 import imgConceptAppB04 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Podcast_03.jpg";
 import imgConceptAppB05 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Podcast_04.jpg";
-import imgConceptAppB06 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Podcast_05.jpg";
 import imgConceptAppC01 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_00.jpg";
 import imgConceptAppC02 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_01.jpg";
 import imgConceptAppC03 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_02.jpg";
 import imgConceptAppC04 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_03.jpg";
 import imgConceptAppC05 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_04.jpg";
-import imgConceptAppC06 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_05.jpg";
 
 function BentoBoxA() {
     return (
@@ -36,7 +30,7 @@ function BentoBoxA() {
                             <bentos.HeaderText text="CONCEPTUAL APPLICATION DESIGN: APPLE BANK | USER EXPERIENCE" textSize="text-[16px]"/>
                         </bentos.CellText>
 
-                        <bentos.Cell2SquareImage cellImgAlt="" cellImgLink={imgConceptAppA02} />
+                        <bentos.CellImage cellImgAlt="" cellImgLink={imgConceptAppA02} cellSpan="col-span-2 row-span-2"/>
 
                         <bentos.CellImage cellImgAlt="" cellImgLink={imgConceptAppA01} cellSpan="col-span-1"/>
 
@@ -110,7 +104,7 @@ function BentoBoxC() {
 
 export default function ProjectConceptApps() {
     return (
-        <pages.GroupProjectPage>
+        <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <BentoBoxA />
             <BentoBoxB />
             <BentoBoxC />

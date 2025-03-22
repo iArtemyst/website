@@ -1,6 +1,5 @@
-import React from "react";
 import "@/app/globals/globals.css";
-import Link from "next/link"
+import Link from "next/link";
 
 import * as fonts from "@/app/globals/fonts";
 

@@ -1,5 +1,4 @@
-import React from "react";
-import "@/app/globals/globals.css"
+import "@/app/globals/globals.css";
 
 import SiteHeader from "@/app/globals/nav-ui";
 import HorrorHousesPage from "./proj-layout";

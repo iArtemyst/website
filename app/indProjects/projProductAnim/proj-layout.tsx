@@ -1,19 +1,14 @@
 'use client'
 
-import React from "react";
 import "@/app/globals/globals.css";
-import Link from "next/link";
 
 import * as bentos from "@/app/globals/bento-boxes";
-import { CardHoverFX } from "@/app/globals/card-hover-fx";
-import * as fonts from "@/app/globals/fonts";
 import * as pages from "@/app/globals/pages-main";
 
 import imgFlowserve01 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_00.png";
 import imgFlowserve02 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_01.png";
-import imgFlowserve03 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_02.png";
-import imgFlowserve04 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_05.png";
 import imgFlowserve05 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_04.png";
+import imgFlowserve04 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_05.png";
 import imgFlowserve06 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_06.png";
 import imgFlowserve07 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_07.png";
 import imgFlowserve08 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_08.png";
@@ -22,7 +17,6 @@ import imgFlowserve09 from "@/app/assets/images/_3d/_prodAnim/Flowserve_Stills_0
 import imgJnJ01 from "@/app/assets/images/_3d/_prodAnim/JnJ_Stills_1.png";
 import imgJnJ02 from "@/app/assets/images/_3d/_prodAnim/JnJ_Stills_2.png";
 import imgJnJ03 from "@/app/assets/images/_3d/_prodAnim/JnJ_Stills_3.png";
-import imgJnJ04 from "@/app/assets/images/_3d/_prodAnim/JnJ_Stills_4.png";
 import imgJnJ05 from "@/app/assets/images/_3d/_prodAnim/JnJ_Stills_5.png";
 
 import imgProd01 from "@/app/assets/images/_3d/_prodAnim/ProdAnim_Stills_00.png";
@@ -30,33 +24,19 @@ import imgProd02 from "@/app/assets/images/_3d/_prodAnim/ProdAnim_Stills_01.png"
 import imgProd03 from "@/app/assets/images/_3d/_prodAnim/ProdAnim_Stills_02.png";
 import imgProd04 from "@/app/assets/images/_3d/_prodAnim/ProdAnim_Stills_03.png";
 
-import imgMakino01 from "@/app/assets/images/_3d/_prodAnim/Makino_Stills__00.png";
 import imgMakino02 from "@/app/assets/images/_3d/_prodAnim/Makino_Stills__01.png";
 import imgMakino03 from "@/app/assets/images/_3d/_prodAnim/Makino_Stills__02.png";
 import imgMakino04 from "@/app/assets/images/_3d/_prodAnim/Makino_Stills__03.png";
 import imgMakino05 from "@/app/assets/images/_3d/_prodAnim/Makino_Stills__04.png";
-import imgMakino06 from "@/app/assets/images/_3d/_prodAnim/Makino_Stills__05.png";
 
-import vidFlowserve01 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipA_001.mp4";
 import vidFlowserve02 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipA_002.mp4";
-import vidFlowserve03 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipA_003.mp4";
-import vidFlowserve04 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipA_004.mp4";
-import vidFlowserve05 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipA_005.mp4";
 import vidFlowserve06 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipA_006.mp4";
-import vidFlowserve07 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipB_001.mp4";
 import vidFlowserve08 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipB_002.mp4";
-import vidFlowserve09 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipB_003.mp4";
-import vidFlowserve10 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipB_004.mp4";
-import vidFlowserve11 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipB_005.mp4";
-import vidFlowserve12 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipB_006.mp4";
 
 import vidJnJ01 from "@/app/assets/videos/_3d/_prodAnim/JnJ_ClipA_001.mp4";
-import vidJnJ02 from "@/app/assets/videos/_3d/_prodAnim/JnJ_ClipA_002.mp4";
-import vidJnJ03 from "@/app/assets/videos/_3d/_prodAnim/JnJ_ClipB_001.mp4";
 import vidJnJ04 from "@/app/assets/videos/_3d/_prodAnim/JnJ_ClipB_002.mp4";
 
 import vidMakino01 from "@/app/assets/videos/_3d/_prodAnim/Makino_ClipA_001.mp4";
-import vidMakino02 from "@/app/assets/videos/_3d/_prodAnim/Makino_ClipA_002.mp4";
 import vidMakino03 from "@/app/assets/videos/_3d/_prodAnim/Makino_ClipB_001.mp4";
 import vidMakino04 from "@/app/assets/videos/_3d/_prodAnim/Makino_ClipC_001.mp4";
 
@@ -164,7 +144,7 @@ function BentoBoxC() {
 
 export default function ProjectProdAnimPage() {
     return (
-        <pages.GroupProjectPage>
+        <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
                 <BentoBoxA />
                 <BentoBoxB />
                 <BentoBoxC />

@@ -15,13 +15,18 @@ import vidBackD from "/app/assets/videos/grp_card_motion_back.mp4";
 const group3D = './grpProjects3D';
 const groupCode = './grpProjectsCode';
 const groupGame = './grpProjectsGame';
-const groupGraphics = './grpProjectsMotion';
+const groupMotion = './grpProjectsMotion';
 
-import * as cards from "@/app/globals/hover-cards";
+import * as cards from "@/app/globals/card-generator";
 import * as fonts from "@/app/globals/fonts";
 import * as pages from "@/app/globals/pages-main";
+import { IDoubleSideCard, DoubleSidedCardContainer } from "@/app/globals/card-generator";
 
-
+const width = "w-[240px]";
+const hWidth = "group-hover:w-[360px]";
+const hMargin = "group-hover:m-[-60px]";
+const cMargin = "mx-[24px]";
+const columnAmount = "grid-cols-4";
 
 function LandingTitleText() {
     return (
@@ -50,55 +55,106 @@ function LandingAboutText() {
     )
 }
 
-function CardsContainer() {
-    return(
-        <div className="absolute left-[50%] -translate-x-[50%] top-[38%] -translate-y-[50%] overflow-visible grid grid-cols-1 content-center">
-            <div className="relative flex w-full h-auto justify-center">
-                    <cards.SkillCard 
-                        cardLink={group3D} 
-                        cardTitle="3D Page" 
-                        cardDesc="Description" 
-                        cardVid={vidFrontA} 
-                        cardBack={vidBackA}
-                        startAngle="rotate-[15deg]"
-                        />
+// function CardsContainer() {
+//     return(
+//         <div className="absolute left-[50%] -translate-x-[50%] top-[38%] -translate-y-[50%] overflow-visible grid grid-cols-1 content-center">
+//             <div className="relative flex w-full h-auto justify-center">
+//                     <cards.DoubleSidedCard 
+//                         cardLink={group3D} 
+//                         cardTitle="3D Page" 
+//                         cardDesc="Description" 
+//                         cardVid={vidFrontA} 
+//                         cardBack={vidBackA}
+//                         startAngle="rotate-[15deg]"
+//                         />
 
-                    <cards.SkillCard 
-                        cardLink={groupGame} 
-                        cardTitle="Game Page" 
-                        cardDesc="Description" 
-                        cardVid={vidFrontC} 
-                        cardBack={vidBackC}
-                        startAngle="rotate-[-15deg]"
-                        />
+//                     <cards.DoubleSidedCard 
+//                         cardLink={groupGame} 
+//                         cardTitle="Game Page" 
+//                         cardDesc="Description" 
+//                         cardVid={vidFrontC} 
+//                         cardBack={vidBackC}
+//                         startAngle="rotate-[-15deg]"
+//                         />
 
-                    <cards.SkillCard 
-                    cardLink={groupGraphics}
-                    cardTitle="Interactive Projects" 
-                    cardDesc="Description" 
-                    cardVid={vidFrontD}  
-                    cardBack={vidBackD}
-                    startAngle="rotate-[15deg]"
-                    />
+//                     <cards.DoubleSidedCard 
+//                     cardLink={groupGraphics}
+//                     cardTitle="Interactive Projects" 
+//                     cardDesc="Description" 
+//                     cardVid={vidFrontD}  
+//                     cardBack={vidBackD}
+//                     startAngle="rotate-[15deg]"
+//                     />
 
-                    <cards.SkillCard 
-                        cardLink={groupCode} 
-                        cardTitle="Code Playground" 
-                        cardDesc="Description" 
-                        cardVid={vidFrontB}  
-                        cardBack={vidBackB}
-                        startAngle="rotate-[-15deg]"
-                        />
-            </div>
-        </div>
-    )
-}
+//                     <cards.DoubleSidedCard 
+//                         cardLink={groupCode} 
+//                         cardTitle="Code Playground" 
+//                         cardDesc="Description" 
+//                         cardVid={vidFrontB}  
+//                         cardBack={vidBackB}
+//                         startAngle="rotate-[-15deg]"
+//                         />
+//             </div>
+//         </div>
+//     )
+// }
+
+const cardMedia: IDoubleSideCard[] = [
+    {
+        cardLink: group3D,
+        cardTitle: "3D",
+        cardDescription: "Description",
+        cardVideoFront: vidFrontA,
+        cardVideoBack: vidBackA,
+        rotatedAngle: "rotate-[15deg]",
+        cardWidth: width,
+        hoverWidth: hWidth,
+        hoverMargin: hMargin,
+        conMargin: cMargin,
+    },
+    {
+        cardLink: groupGame,
+        cardTitle: "Game Design and Tech Art",
+        cardDescription: "Description",
+        cardVideoFront: vidFrontC,
+        cardVideoBack: vidBackC,
+        rotatedAngle: "rotate-[-15deg]",
+        cardWidth: width,
+        hoverWidth: hWidth,
+        hoverMargin: hMargin,
+        conMargin: cMargin,
+    },
+    {
+        cardLink: groupMotion,
+        cardTitle: "Motion Design and UI/UX",
+        cardDescription: "Description",
+        cardVideoFront: vidFrontD,
+        cardVideoBack: vidBackD,
+        rotatedAngle: "rotate-[15deg]",
+        cardWidth: width,
+        hoverWidth: hWidth,
+        hoverMargin: hMargin,
+        conMargin: cMargin,
+    },
+    {
+        cardLink: groupCode,
+        cardTitle: "Web Design and Code Playground",
+        cardDescription: "Description",
+        cardVideoFront: vidFrontB,
+        cardVideoBack: vidBackB,
+        rotatedAngle: "rotate-[-15deg]",
+        cardWidth: width,
+        hoverWidth: hWidth,
+        hoverMargin: hMargin,
+        conMargin: cMargin,
+    },
+]
 
 export default function LandingMain() {
     return (
-        <pages.GroupProjectPage>
+        <pages.GroupProjectPage overflowStyle="overflow-hidden">
             <LandingTitleText />
-            <CardsContainer />
+            <DoubleSidedCardContainer dataArray={cardMedia} gridCols={columnAmount} />
             <LandingAboutText  />
         </pages.GroupProjectPage>
 

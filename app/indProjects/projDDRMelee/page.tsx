@@ -1,9 +1,8 @@
-import React from "react";
 import "@/app/globals/globals.css";
 
+import * as backButtons from "@/app/globals/back-buttons";
 import SiteHeader from "@/app/globals/nav-ui";
 import Project1Page from "./proj-layout";
-import * as backButtons from "@/app/globals/back-buttons";
 
 const linkGrpMotion = '../grpProjectsMotion';
 

@@ -64,9 +64,23 @@ export default {
           '50%': { transform: 'rotate(5.0deg) translateY(12px)' },
           '100%': { transform: 'rotate(-5.0deg) translateY(-12px)' },
         },
+        error: {
+          '0%': { transform: 'rotate(0.0deg)' },
+          '33%': { transform: 'rotate(3.0deg)' },
+          '66%': { transform: 'rotate(-3.0deg)' },
+          '100%': { transform: 'rotate(0.0deg)' },
+        },
+        textError: {
+          '0%': { transform: 'translate(0px, -12px) opacity(0)'},
+          '20%': { transform: 'translate(0px, 24px) opacity(1)'},
+          '80%': { transform: 'translate(0px, 24px) opacity(1)'},
+          '100%': { transform: 'translate(0px, -12px) opacity(0)'},
+        },
       },
       animation: {
         'wiggle-bounce': 'wiggle 4s linear infinite',
+        'error-wiggle' : 'error 250ms ease-in-out' ,
+        'text-error' : 'textError 3s ease-in-out',
       },
     },
   },

@@ -1,6 +1,5 @@
 'use client'
 
-import React from "react";
 import "@/app/globals/globals.css";
 
 import * as bentos from "@/app/globals/bento-boxes";
@@ -54,7 +53,7 @@ function MainVideoBox({videoLink}:{videoLink:string}) {
 
 export default function ProjectDartPubPage() {
     return (
-        <pages.GroupProjectPage>
+        <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <div className="grid grid-cols-1 gap-[24px]">
                 <MainVideoBox videoLink={vidPubDart02}/>
                 <BentoBoxA />

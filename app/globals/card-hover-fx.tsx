@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState, MouseEvent, useCallback } from "react";
-import "@/app/globals/globals.css"
+import "@/app/globals/globals.css";
+import { MouseEvent, useCallback, useState } from "react";
 
 
 export function CardHoverFX({children, bufferZone, rotateAmount}:{children:any, bufferZone:number, rotateAmount:number}) {

@@ -1,45 +1,27 @@
 'use client'
 
-import React from "react";
 import "@/app/globals/globals.css";
 
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
-import { CardHoverFX } from "@/app/globals/card-hover-fx";
-import Link from "next/link";
 
 import imgMedMotionA01 from "@/app/assets/images/_motionui/_medmotion/BWI_Stills0.png";
-import imgMedMotionA02 from "@/app/assets/images/_motionui/_medmotion/BWI_Stills1.png";
-import imgMedMotionA03 from "@/app/assets/images/_motionui/_medmotion/BWI_Stills2.png";
-import imgMedMotionA04 from "@/app/assets/images/_motionui/_medmotion/BWI_Stills3.png";
-import imgMedMotionB01 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills13.png";
-import imgMedMotionB02 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills14.png";
-import imgMedMotionB03 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills15.jpg";
-import imgMedMotionB04 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills16.jpg";
-import imgMedMotionB05 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills17.jpg";
-import imgMedMotionC01 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills00.png";
-import imgMedMotionC02 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills01.png";
 import imgMedMotionC03 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills02.png";
 import imgMedMotionC04 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills03.png";
 import imgMedMotionC05 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills04.png";
 import imgMedMotionC06 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills05.png";
-import imgMedMotionC07 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills06.png";
 import imgMedMotionC08 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills07.png";
-import imgMedMotionC09 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills08.png";
 import imgMedMotionD01 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills09.png";
 import imgMedMotionD02 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills10.png";
-import imgMedMotionD03 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills11.png";
 import imgMedMotionD04 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills12.png";
+import imgMedMotionB02 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills14.png";
+import imgMedMotionB03 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills15.png";
+import imgMedMotionB05 from "@/app/assets/images/_motionui/_medmotion/EES-UI_Stills17.png";
 
-import vidMedMotionA01 from "@/app/assets/videos/_motionui/_medmotion/BWI_Clip001.mp4";
-import vidMedMotionA02 from "@/app/assets/videos/_motionui/_medmotion/BWI_Clip002.mp4";
-import vidMedMotionB01 from "@/app/assets/videos/_motionui/_medmotion/EES-UI_A_Clip001.mp4";
 import vidMedMotionB02 from "@/app/assets/videos/_motionui/_medmotion/EES-UI_B_Clip001.mp4";
-import vidMedMotionB03 from "@/app/assets/videos/_motionui/_medmotion/EES-UI_C_Clip001.mp4";
-import vidMedMotionB04 from "@/app/assets/videos/_motionui/_medmotion/EES-UI_G_Clip001.mp4";
-import vidMedMotionC01 from "@/app/assets/videos/_motionui/_medmotion/EES-UI_E_Clip001.mp4";
-import vidMedMotionC02 from "@/app/assets/videos/_motionui/_medmotion/EES-UI_F_Clip001.mp4";
 import vidMedMotionC03 from "@/app/assets/videos/_motionui/_medmotion/EES-UI_D_Clip001.mp4";
+import vidMedMotionC02 from "@/app/assets/videos/_motionui/_medmotion/EES-UI_F_Clip001.mp4";
+import vidMedMotionB04 from "@/app/assets/videos/_motionui/_medmotion/EES-UI_G_Clip001.mp4";
 
 const bentoGap = "gap-[12px]";
 const titleTextSize= "text-[24px]";
@@ -59,7 +41,12 @@ function BentoBox() {
             </bentos.CellText>
 
             <div className={`${bentoGap} grid grid-cols-2`}>
+                <div className={`${bentoGap} grid grid-cols-2`}>
                 <bentos.CellImage cellImgAlt="Electric Flow in Tissue" cellImgLink={imgMedMotionC03} cellSpan="col-span-1"/>
+                <bentos.CellImage cellImgAlt="Enseal Sales Application" cellImgLink={imgMedMotionB05} cellSpan="col-span-1"/>
+                <bentos.CellImage cellImgAlt="Tapered Pockets" cellImgLink={imgMedMotionD04} cellSpan="col-span-1"/>
+                <bentos.CellImage cellImgAlt="Device Heat Profile" cellImgLink={imgMedMotionC04} cellSpan="col-span-1"/>
+                </div>
 
                 <bentos.CellVideo cellVidLink={vidMedMotionB04} cellSpan="col-span-1" />
 
@@ -72,7 +59,7 @@ function BentoBox() {
 
                 <div className={`${bentoGap} grid grid-cols-4 col-span-2`}>
                     <bentos.CellImage cellImgAlt="Staple Comparison" cellImgLink={imgMedMotionD02} cellSpan="col-span-1"/>
-                    <bentos.CellImage cellImgAlt="Tapered Pockets" cellImgLink={imgMedMotionD04} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Endopath Sales Application" cellImgLink={imgMedMotionB03} cellSpan="col-span-1"/>
                     <bentos.CellImage cellImgAlt="Sealing Vessels" cellImgLink={imgMedMotionC06} cellSpan="col-span-1"/>
                     <bentos.CellImage cellImgAlt="Staple Cartridge Chart" cellImgLink={imgMedMotionB02} cellSpan="col-span-1"/>
                 </div>
@@ -88,12 +75,9 @@ function BentoBox() {
                 <div className={`${bentoGap} grid grid-cols-2 col-span-1`}>
                     <bentos.CellImage cellImgAlt="Medical Interface Flow" cellImgLink={imgMedMotionA01} cellSpan="col-span-1"/>
                     <bentos.CellImage cellImgAlt="Energy Devices" cellImgLink={imgMedMotionC05} cellSpan="col-span-1"/>
-                    <bentos.CellImage cellImgAlt="Device Heat Profile" cellImgLink={imgMedMotionC04} cellSpan="col-span-1"/>
                     <bentos.CellImage cellImgAlt="Bipolar Energy Timeline" cellImgLink={imgMedMotionC08} cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgAlt="Device Heat Profile" cellImgLink={imgMedMotionD01} cellSpan="col-span-1"/>
                 </div>
-
-                <bentos.CellImage cellImgAlt="Enseal Sales Application" cellImgLink={imgMedMotionB05} cellSpan="col-span-1"/>
-                <bentos.CellImage cellImgAlt="Endopath Sales Application" cellImgLink={imgMedMotionB03} cellSpan="col-span-1"/>
 
             </div>
 
@@ -103,7 +87,7 @@ function BentoBox() {
 
 export default function ProjectMedMotion() {
     return (
-        <pages.GroupProjectPage>
+        <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <BentoBox />
         </pages.GroupProjectPage>
     )

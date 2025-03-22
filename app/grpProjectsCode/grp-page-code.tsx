@@ -1,38 +1,53 @@
 'use client'
 
-import React from "react";
 import "@/app/globals/globals.css";
-import { CardHoverFX } from "@/app/globals/card-hover-fx";
-import Link from "next/link";
 
-import * as style from "@/tailwind.config"
-import * as vidcards from "@/app/globals/hover-cards";
 import * as pages from "@/app/globals/pages-main";
+import * as cards from "../globals/card-generator";
 
-import vidWebsite from "/app/assets/videos/_motionui/trimmed-loops_mogr-ui_001.mp4";
 import vidBingo from "/app/assets/videos/_code/sqr-loop_codeBingo.mp4";
 import vidResume from "/app/assets/videos/_code/sqr-loop_codeResume.mp4";
-import { divContainer } from "@/tailwind.config";
-
+import vidWebsite from "/app/assets/videos/_motionui/trimmed-loops_mogr-ui_001.mp4";
 
 const linkWebsite = "../indProjects/projCodeWebsite/";
+const columnAmount = "grid-cols-3"
 
-const gridGap = "gap-[0px]"
+const groupCardData: cards.IProjectLinkCard[] = [
+    {
+        projectTitle: "Javascript + HTML Bingo",
+        projectDates: "2025",
+        mediaLink: vidBingo,
+        cardLink: linkWebsite,
+    },
+    {
+        projectTitle: "ReactJS Resume Page",
+        projectDates: "2025",
+        mediaLink: vidResume,
+        cardLink: linkWebsite,
+    },
+    {
+        projectTitle: "Portfolio Website",
+        projectDates: "2025",
+        mediaLink: vidWebsite,
+        cardLink: linkWebsite,
+    },
+]
 
-function CardDisplay () {
+function CodeCardsLinkContainer() {
     return (
-        <div className={`${gridGap} w-[90%] grid grid-cols-3 justify-self-center overflow-visible`}>
-            <vidcards.VideoCardNoLink projectTitle="Javascript + HTML Bingo" projectDate="2025" projectVideo={vidBingo} />
-            <vidcards.VideoCardNoLink projectTitle="ReactJS Resume Page" projectDate="2025" projectVideo={vidResume} />
-            <vidcards.VideoCardA cardLink={linkWebsite} projectTitle="NextJS Portfolio Website" projectDate="2025" projectVideo={vidWebsite} />
+        <div className={`${columnAmount} w-[90%] justify-self-center grid gap-[24px] h-auto content-center`}>
+            <cards.ProjectCardNoLink projectTitle="Javascript + HTML Bingo" projectDate="2025" projectVideo={vidBingo}/>
+            <cards.ProjectCardNoLink projectTitle="ReactJS Resume Page" projectDate="2025" projectVideo={vidResume}/>
+            <cards.ProjectCardWithLink projectTitle="Portfolio Website" projectDate="2025" projectVideo={vidWebsite} cardLink={linkWebsite}/>
         </div>
     )
 }
 
 export default function GroupProjectsCode() {
     return (
-        <pages.GroupProjectPage>
-            <CardDisplay />
+        <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
+            {/* <cards.ProjectLinkCardsContainer dataArray={groupCardData} gridCols={columnAmount} /> */}
+            <CodeCardsLinkContainer />
         </pages.GroupProjectPage>
     )
 }

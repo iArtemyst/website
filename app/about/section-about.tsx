@@ -35,9 +35,12 @@ import imageAnim from "../assets/images/aboutPage/still-for-website-layout (0209
 import imageGame from "../assets/images/aboutPage/4x3_stills_forTechGame_0.png"
 import imageAdobe from "../assets/images/aboutPage/lndscp_stills_forMograph_0.png"
 import profPhoto from "../assets/images/profile/ey-profile.png"
+import { hoverShadow } from "@/tailwind.config";
 
 import * as fonts from "../globals/fonts";
 import { CardHoverFX } from "../globals/card-hover-fx";
+import * as pages from "@/app/globals/pages-main";
+import { GetImage } from "../globals/media";
 
 const Card1Logos: StaticImageData[] = [
     linkLogo3DS,
@@ -48,28 +51,28 @@ const Card1Logos: StaticImageData[] = [
 ]
 
 function AboutSection(){
-    return(
-        <div className="w-[75%] h-[50%] relative flex justify-self-center mt-[4em] p-3 rounded-[3em]">
-            <div className="w-[80%] h-auto mx-4 relative justify-items-center self-center overflow-hidden rounded-full"
-                >
-                <Image
-                src={profPhoto}
-                alt="Hi! I'm Eevee"
-                className="object-cover w-full h-full"/>
-            </div>
+    return (
+        <div className="w-[70%] h-auto grid grid-cols-3 gap-[24px] justify-self-center items-center">
+            <CardHoverFX bufferZone={0} rotateAmount={10}>
+                <div className={` ${hoverShadow} w-auto h-auto col-span-1 relative self-center rounded-full overflow-hidden `} >
+                    <div className={`w-auto h-auto aspect-square`}>
+                        <GetImage imgLink={profPhoto} imgAlt="Personal Profile Picture"/>
+                    </div>
+                </div>
+            </CardHoverFX>
 
-            <div className="w-full h-auto relative flex-row self-center rounded-[2em] mx-2 p-[1em] hover:cursor-pointer shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30]">
+            <div className={` ${hoverShadow} w-full h-full  col-span-2 content-center relative flex-row self-center rounded-[12px] p-[16px] hover:cursor-pointer`}>
                 <div className="text-textLrg text-right text-nowrap text-priColor">
-                    <h1 className={fonts.bebasNeue.className}>Jack of far too many trades</h1>
+                    <h1 className={fonts.dotoBlack.className}>JACK OF TOO MANY TRADES</h1>
                 </div>
 
-                <div className="flex-inline text-right text-priColor">
-                    <div className="text-textSml text-pretty py-1"><p className={fonts.poppins.className}>My journey began with a crude animation of a UFO abducting a cow in Microsoft Paint in middle school. I fell in love with the craft and started learning everything I could to become a better artist and creator for a variety of experiences and designs.</p></div>
-                    <div className="text-textSml text-pretty py-1"><p className={fonts.poppins.className}>Currently I work as a Visual Production Artist for clients in multiple industries. I have produced marketing collateral, animations, game assets, simulations, apps and websites, and much more. Whatever the task at hand, I find the tools to get the job done.</p></div>
-                    <div className="text-textSml text-pretty py-1"><p className={fonts.poppins.className}>While the render farm churns through frames, I spend my time developing the game ideas in my head, designing harrowing dungeons and dragons adventures for my friends and family, or when the rain holds out enough, you can find me teeing it up on a local course, trying to improve my handicap.</p></div>
+                <div className={` ${fonts.dotoBold.className} flex-inline text-right text-priColor text-pretty py-[8px] text-textSml `}>
+                    <p>My journey began with a crude animation of a UFO abducting a cow in Microsoft Paint in middle school. I fell in love with the craft and started learning everything I could to become a better artist and creator for a variety of experiences and designs.</p>
+                    <p>Currently I work as a Visual Production Artist for clients in multiple industries. I have produced marketing collateral, animations, game assets, simulations, apps and websites, and much more. Whatever the task at hand, I find the tools to get the job done.</p>
+                    <p>While the render farm churns through frames, I spend my time developing the game ideas in my head, designing harrowing dungeons and dragons adventures for my friends and family, or when the rain holds out enough, you can find me teeing it up on a local course, trying to improve my handicap.</p>
                 </div>
+
             </div>
-
         </div>
     )
 }
@@ -107,7 +110,7 @@ function AboutSkillCard({CardTitle = "Card Title", CardImg, CardDescript = "Card
 
     return(
         <div className={`w-fit h-fit -mx-[125px] z-0 hover:z-10 hover:-translate-y-[125px] transition-all duration-500`}>
-            <CardHoverFX>
+            <CardHoverFX bufferZone={10} rotateAmount={10}>
                 <div className={`w-fit h-fit rounded-[2em] bg-opacity-30 backdrop-blur-lg ${CardColor}`}>
                     <div className="
                         relative 
@@ -178,15 +181,11 @@ function SkillCardSection() {
     )
 }
 
-function RenderAboutPage() {
+export default function RenderAboutPage() {
     return (
-        <div className="bg-[#C8C8C8] absolute left-0 right-0 bottom-0 top-0 overflow-clip">
-        <AboutSection />
-        <SkillCardSection />
-        </div>
+        <pages.GroupProjectPage overflowStyle="overflow-hidden">
+                <AboutSection />
+                <SkillCardSection />
+        </pages.GroupProjectPage>
     );
-  }
-  
-
-
-export default RenderAboutPage;
+}

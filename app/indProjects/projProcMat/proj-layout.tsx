@@ -19,23 +19,46 @@ import vidProcMat08 from "@/app/assets/videos/_game/_procmats/procmats_loop_07.m
 import vidProcMat09 from "@/app/assets/videos/_game/_procmats/procmats_loop_08.mp4";
 import vidProcMat10 from "@/app/assets/videos/_game/_procmats/procmats_loop_09.mp4";
 
-function ProjectDetailText({TitleText="", MoreText=""}:{TitleText:String, MoreText:String}) {
-    return (
-        <div className="w-full relative justify-self-center z-0">
-            <div className="w-[70%] justify-self-center border-white border-[1px] px-[16px] py-[8px] opacity-30 hover:opacity-100 transition-all duration-200">
-                <div className={`${fonts.dotoBlack.className} text-priColor w-full text-[48px] text-left text-nowrap leading-none relative h-auto content-center my-[8px]`}>
-                    <p>{TitleText}</p>
-                </div>
-                <div className={`${fonts.dotoBlack.className} text-[12px] relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>
-                    <p>{MoreText}</p>
-                </div>
-            </div>
-        </div>
-    )
+export interface IVideoWithTitle {
+    vidLink: string,
+    vidTitle: String,
 }
 
 function BentoBoxA() {
-    function VideoCell({link, vidTitle=""}:{link:string, vidTitle:String}){
+    const cellData: IVideoWithTitle[] = [
+        { vidLink: vidProcMat01,
+            vidTitle: "Asphalt Material",
+        },
+        { vidLink: vidProcMat02,
+            vidTitle: "Green Bark and Wood Material",
+        },
+        { vidLink: vidProcMat03,
+            vidTitle: "White Bark and Wood Material",
+        },
+        { vidLink: vidProcMat04,
+            vidTitle: "Brick Material",
+        },
+        { vidLink: vidProcMat05,
+            vidTitle: "Refractive Glass Material",
+        },
+        { vidLink: vidProcMat06,
+            vidTitle: "Snow and Ice Material",
+        },
+        { vidLink: vidProcMat07,
+            vidTitle: "Lava Material",
+        },
+        { vidLink: vidProcMat08,
+            vidTitle: "Worn Metal Material",
+        },
+        { vidLink: vidProcMat09,
+            vidTitle: "Quartz Rock Material",
+        },
+        { vidLink: vidProcMat10,
+            vidTitle: "Sand Dunes Material",
+        },
+    ]
+
+    function VideoCell({link, vidTitle="", index}:{link:string, vidTitle:String, index:number}){
         return (
             <CardHoverFX bufferZone={0} rotateAmount={12}>
                 <div className="relative group">
@@ -45,27 +68,22 @@ function BentoBoxA() {
             </CardHoverFX>
         )
     }
-    
+
     return (
         <div className="relative z-0 grid grid-cols-2 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] my-[24px] text-white hover:cursor-pointer">
-            <VideoCell link={vidProcMat01} vidTitle="Asphalt Material"/>
-            <VideoCell link={vidProcMat02} vidTitle="Green Bark and Wood Material"/>
-            <VideoCell link={vidProcMat03} vidTitle="White Bark and Wood Material"/>
-            <VideoCell link={vidProcMat04} vidTitle="Brick Material"/>
-            <VideoCell link={vidProcMat05} vidTitle="Refractive Glass Material"/>
-            <VideoCell link={vidProcMat06} vidTitle="Snow and Ice Material"/>
-            <VideoCell link={vidProcMat07} vidTitle="Lava Material"/>
-            <VideoCell link={vidProcMat08} vidTitle="Worn Metal Material"/>
-            <VideoCell link={vidProcMat09} vidTitle="Quartz Rock Material"/>
-            <VideoCell link={vidProcMat10} vidTitle="Sand Dunes Material"/>
+            {
+            cellData.map((data, i) => {
+                return <VideoCell link={data.vidLink} vidTitle={data.vidTitle} index={i}/>
+            })
+            }
         </div>
     )
 }
 
 export default function ProjectProcMatPage() {
     return (
-        <pages.GroupProjectPage>
-                <ProjectDetailText 
+        <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
+                <bentos.ProjectDetailTextTop
                     TitleText="PROCEDUAL MATERIALS" 
                     MoreText="Creating a library of reusable materials and shaders, with detailed parameters for adjusting the materials to future scenes. For a deeper look at the nodes behind these materials, please visit my Artstation Page."/>
                 <BentoBoxA />

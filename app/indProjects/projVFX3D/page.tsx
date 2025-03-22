@@ -1,9 +1,8 @@
-import React from "react";
 import "@/app/globals/globals.css";
 
+import * as backButtons from "@/app/globals/back-buttons";
 import SiteHeader from "@/app/globals/nav-ui";
 import ProjectVFXPage from "../projVFX/proj-layout";
-import * as backButtons from "@/app/globals/back-buttons";
 
 const linkGrp3D = '../grpProjects3D';
 

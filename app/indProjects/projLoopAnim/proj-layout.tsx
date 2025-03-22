@@ -51,31 +51,6 @@ import vidAnimLoop040 from "@/app/assets/videos/_motionui/_loops/anim-loop_39.mp
 import vidAnimLoop041 from "@/app/assets/videos/_motionui/_loops/anim-loop_40.mp4";
 import vidAnimLoop042 from "@/app/assets/videos/_motionui/_loops/anim-loop_41.mp4";
 
-function ProjectDetailText({TitleText="", MoreText=""}:{TitleText:String, MoreText:String}) {
-    return (
-        <div className="relative w-[80%] grid grid-rows-auto h-fit justify-self-center border-white border-[1px] gap-[8px] px-[16px] py-[8px] mb-[24px]">
-
-            <div className={`${fonts.dotoBlack.className} text-priColor w-full text-[48px] text-left text-nowrap leading-none relative h-auto content-center`}>
-                <p>{TitleText}</p>
-            </div>
-
-            <div className={`${fonts.dotoBlack.className} text-textSml relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>
-                <p>{MoreText}</p>
-            </div>
-
-            <div>
-                <p className={`${fonts.dotoReg.className} text-left text-gray-400 text-textSml h-fit`}>Hover Over a Video to Play</p>
-            </div>
-        </div>
-    )
-}
-
-function ImportVideoMute({vidLink}:{vidLink:string}) {
-    return (
-        <video src={vidLink} width="100%" height="auto" muted loop className="self-center"/>
-    )
-}
-
 export interface IVideoData {
     vidLink: string,
 }
@@ -105,22 +80,29 @@ function BentoBoxA() {
         vidAnimLoop042,
     ];
 
+    function VideoCell({link}:{link:string}){
+        return (
+            <CardHoverFX bufferZone={0} rotateAmount={12}>
+                    <bentos.CellVideo cellVidLink={link} cellSpan="col-span-1"/>
+            </CardHoverFX>
+        )
+    }
+
     return (
-        <div className="relative z-0 grid grid-cols-3 grid-rows-auto w-[80%] h-auto justify-self-center 
-                        rounded-3xl place-content-center gap-[12px] text-white hover:cursor-pointer">
+        <div className="relative z-0 grid grid-cols-3 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] my-[24px] text-white hover:cursor-pointer">
             {
-                cellData.map((videoLink) => {
-                    return <bentos.CellVideo cellVidLink={videoLink} cellSpan="col-span-1"/>;
-                })
-            };
+            cellData.map((data) => {
+                return <VideoCell link={data}/>
+            })
+            }
         </div>
-    );
+    )
 }
 
 export default function ProjectLoopAnims() {
     return (
-        <pages.GroupProjectPage>
-                <ProjectDetailText 
+        <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
+                <bentos.ProjectDetailTextTop 
                     TitleText="LOOPING DOODLES" 
                     MoreText="I consider these animations my doodles. While these started as simple loops, I quickly expanded into procedurally generated motion and modeling systems, simulations, and more, while still challenging myself to create an appealing loop. For more of my Looping Doodles, please visit my Artstation Page."/>
                 <BentoBoxA />

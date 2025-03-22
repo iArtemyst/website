@@ -1,9 +1,8 @@
 'use client'
 //---------------------
-import React from "react";
-import "@/app/globals/globals.css";
+import * as bentos from "@/app/globals/bento-boxes";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
-import * as bentos from "@/app/globals/bento-boxes"
+import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 //---------------------
 import vidMonsoonVermut from "@/app/assets/videos/_3d/_monsoonVermut/monsoonVermut_Clip01.mp4";
@@ -57,7 +56,7 @@ function BentoBox() {
 //---------------------
 export default function ProjectMonsoonVermutPage() {
     return (
-        <pages.GroupProjectPage>
+        <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
                 <div className={`grid grid-cols-1 gap-[12px]`}>
                     <MainVideoBox videoLink={vidMonsoonVermut}/>
                     <BentoBox />

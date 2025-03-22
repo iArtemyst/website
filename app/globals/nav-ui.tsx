@@ -1,6 +1,6 @@
-import "@/app/globals/globals.css"
-import Link from "next/link";
+import "@/app/globals/globals.css";
 import { Url } from "next/dist/shared/lib/router/router";
+import Link from "next/link";
 
 import * as SVGComponents from "../assets/svgs/index";
 import * as fonts from "./fonts";
@@ -45,7 +45,7 @@ function NavUI() {
             <div className="absolute top-0 w-auto h-[32px] left-[50%] -translate-x-[50%] z-50 rounded-full mt-[8px]
                 flex justify-between gap-[12px] px-[12px] hover:cursor-pointer           
                 bg-opacity-[30%] backdrop-blur-[4px]
-                scale-[65%] hover:scale-[100%] -translate-y-[8px] hover:translate-y-0 transition-all duration-200">
+                scale-[85%] hover:scale-[125%] -translate-y-[8px] hover:translate-y-0 transition-all duration-200">
                 
                 {/* <NavBarLine /> */}
 
