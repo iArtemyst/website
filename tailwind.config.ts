@@ -24,6 +24,7 @@ export const hoverShadow = "shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff2
 
 export const pageContainer = "absolute left-0 right-0 top-0 bottom-0 bg-bgColor";
 export const divContainer = "relative grid w-full h-full justify-center overflow-visible py-20 overflow-y-auto no-scrollbar";
+export const absoluteCenter = "absolute left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%]";
 
 export default {
   content: [

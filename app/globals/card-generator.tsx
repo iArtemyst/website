@@ -11,7 +11,12 @@ import { useState } from "react";
 import { CardHoverFX } from "./card-hover-fx";
 import * as fonts from "./fonts";
 
+const galleryBarImageSize = "w-[120px] h-[120px]";
+const galleryMainAssetSize = ""
+const gridGap = "gap-[12px]";
+
 //--------------------------------------
+//INDIVIDUAL PROJECT PAGE CARD COMPONENTS
 
 export interface IProjectCardData
 {
@@ -23,7 +28,7 @@ export interface IProjectCardData
     cardMediaLink: string|StaticImageData,
 }
 
-export function MainCardGenerator({cardWidth, hovWidth, conMargin, hovMargin, cardText, children}:{cardWidth:string, hovWidth:string, conMargin:string, hovMargin:string, cardText:string, children:any}) {
+export function ProjectCardGenerator({cardWidth, hovWidth, conMargin, hovMargin, cardText, children}:{cardWidth:string, hovWidth:string, conMargin:string, hovMargin:string, cardText:string, children:any}) {
     return (
         <cards.DetailCard width={cardWidth} containerMargin={conMargin} cardText={cardText} hoverMargin={hovMargin} hoverWidth={hovWidth}>
             {children}
@@ -31,58 +36,28 @@ export function MainCardGenerator({cardWidth, hovWidth, conMargin, hovMargin, ca
     )
 }
 
-export function CardsContainer({dataArray, gridCols}:{dataArray:IProjectCardData[], gridCols:string})
+export function CardsContainer({dataArray, gridCols}:{dataArray:IProjectCardData, gridCols:string})
 {
     return <div className="absolute left-[50%] z-10 -translate-x-[50%] top-[40%] -translate-y-[50%] overflow-visible w-[75%]">
         <div className={` ${gridCols} relative grid w-full h-auto justify-center place-items-center`}>
             {
-                dataArray.map((data) => {
-                    return <MainCardGenerator cardWidth={data.cardWidth} hovWidth={data.hoverWidth} hovMargin={data.hoverMargin} conMargin={data.containerMargin} cardText={data.cardText}>
+                dataArray.map((data,i ) => {
+                    return <ProjectCardGenerator key={i} cardWidth={data.cardWidth} hovWidth={data.hoverWidth} hovMargin={data.hoverMargin} conMargin={data.containerMargin} cardText={data.cardText}>
                         {
                             typeof data.cardMediaLink === "string" ? 
                                 <cards.VidDetailCard cardVid={data.cardMediaLink} /> : 
                                 <cards.ImgDetailCard imgAlt={data.cardText} imgSrc={data.cardMediaLink} />
                         }
-                    </MainCardGenerator>
+                    </ProjectCardGenerator>
                 })
             };
         </div>
     </div>
 }
 
-export function VideoCardsContainer({dataArray, gridCols}:{dataArray:IProjectCardData[], gridCols:string}) {
-    return (
-        <div className="absolute left-[50%] z-10 -translate-x-[50%] top-[40%] -translate-y-[50%] overflow-visible w-[75%]">
-            <div className={` ${gridCols} relative grid w-full h-auto justify-center place-items-center`}>
-                {
-                    dataArray.map((data) => {
-                    return <MainCardGenerator cardWidth={data.cardWidth} hovWidth={data.hoverWidth} hovMargin={data.hoverMargin} conMargin={data.containerMargin} cardText={data.cardText}>
-                                <cards.VidDetailCard cardVid={data.cardMediaLink} />
-                            </MainCardGenerator>
-                })
-            }
-            </div>
-        </div>
-    )
-}
-
-export function ImageCardsContainer({dataArray, gridCols}:{dataArray:IProjectCardData[], gridCols:string}) {
-    return (
-        <div className="absolute left-[50%] z-10 -translate-x-[50%] top-[40%] -translate-y-[50%] overflow-visible w-[75%]">
-            <div className={` ${gridCols} relative grid w-full h-auto justify-center place-items-center`}>
-                {
-                    dataArray.map((data) => {
-                    return <MainCardGenerator cardWidth={data.cardWidth} hovWidth={data.hoverWidth} hovMargin={data.hoverMargin} conMargin={data.containerMargin} cardText={data.cardText}>
-                                <cards.ImgDetailCard imgAlt={data.cardText} imgSrc={data.cardMediaLink} />
-                            </MainCardGenerator>
-                })
-            }
-            </div>
-        </div>
-    )
-}
 
 //--------------------------------------
+//LANDING PAGE DOUBLE SIDE CARD COMPONENTS
 
 export interface IDoubleSideCard
 {
@@ -137,7 +112,7 @@ export function DoubleSidedCard({cardLink="", cardTitle ="", cardDesc ="", vidFr
 
 export function DoubleSidedCardContainer({dataArray, gridCols}:{dataArray:IDoubleSideCard[], gridCols:string}) {
     return (
-        <div className={` ${gridCols} absolute left-[50%] -translate-x-[50%] top-[40%] -translate-y-[50%] overflow-visible grid content-center w-[80%] h-auto items-center`}>
+        <div className={`grid-cols-2 sm:grid-cols-4 absolute left-[50%] -translate-x-[50%] top-[40%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[80%] tablet:w-[60%] h-auto items-center`}>
             {
                 dataArray.map((data, i) =>{
                     return <DoubleSidedCard key={i} cardLink={data.cardLink} cardTitle={data.cardTitle} cardDesc={data.cardTitle} vidFront={data.cardVideoFront} vidBack={data.cardVideoBack} startAngle={data.rotatedAngle} cardWidth={data.cardWidth} hoverWidth={data.hoverWidth} hoverMargin={data.hoverMargin} margin={data.conMargin}/>
@@ -148,6 +123,7 @@ export function DoubleSidedCardContainer({dataArray, gridCols}:{dataArray:IDoubl
 }
 
 //--------------------------------------
+//PROJECT GALLERY PAGE CARD COMPONENTS
 
 export interface IProjectLinkCard
 {

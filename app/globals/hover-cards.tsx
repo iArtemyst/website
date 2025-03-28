@@ -91,6 +91,7 @@ export function VidDetailCard({cardVid=""}:{cardVid:string}) {
     )
 }
 
+
 export function VidDetailPlayCard({cardVid=""}:{cardVid:string}) {
     return(
         <div className="relative w-full h-full content-center cursor-pointer">
@@ -106,7 +107,6 @@ export function ImgDetailCard({imgSrc, imgAlt=""}:{imgSrc:StaticImageData, imgAl
         </div>
     )
 }
-
 
 
 

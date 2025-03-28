@@ -17,3 +17,11 @@ main, body, html {
   margin: 0;
   padding: 0;
 }
+
+@theme {
+  --breakpoint-mobile: 479px;
+  --breakpoint-tablet: 719px;
+  --breakpoint-laptop: 1023px;
+  --breakpoint-desktop: 1279px;
+  --breaktpoint-xl: 1619px;
+}

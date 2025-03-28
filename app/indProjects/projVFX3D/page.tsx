@@ -2,7 +2,7 @@ import "@/app/globals/globals.css";
 
 import * as backButtons from "@/app/globals/back-buttons";
 import SiteHeader from "@/app/globals/nav-ui";
-import ProjectVFXPage from "../projVFX/proj-layout";
+import ProjectVFXPage from "../projVFX/vfx-proj-pg";
 
 const linkGrp3D = '../grpProjects3D';
 

@@ -1,103 +1,50 @@
 'use client'
 
-import React from "react";
 import "./globals/globals.css";
+import * as themes from "@/tailwind.config";
 
-import vidFrontA from "/app/assets/videos/grp_card_3d_front.mp4";
-import vidFrontB from "/app/assets/videos/grp_card_code_front.mp4";
-import vidFrontC from "/app/assets/videos/grp_card_game_front.mp4";
-import vidFrontD from "/app/assets/videos/grp_card_motion_front.mp4";
 import vidBackA from "/app/assets/videos/grp_card_3d_back.mp4";
+import vidFrontA from "/app/assets/videos/grp_card_3d_front.mp4";
 import vidBackB from "/app/assets/videos/grp_card_code_back.mp4";
+import vidFrontB from "/app/assets/videos/grp_card_code_front.mp4";
 import vidBackC from "/app/assets/videos/grp_card_game_back.mp4";
+import vidFrontC from "/app/assets/videos/grp_card_game_front.mp4";
 import vidBackD from "/app/assets/videos/grp_card_motion_back.mp4";
+import vidFrontD from "/app/assets/videos/grp_card_motion_front.mp4";
 
 const group3D = './grpProjects3D';
 const groupCode = './grpProjectsCode';
 const groupGame = './grpProjectsGame';
 const groupMotion = './grpProjectsMotion';
 
-import * as cards from "@/app/globals/card-generator";
+import { DoubleSidedCardContainer, IDoubleSideCard } from "@/app/globals/card-generator";
 import * as fonts from "@/app/globals/fonts";
 import * as pages from "@/app/globals/pages-main";
-import { IDoubleSideCard, DoubleSidedCardContainer } from "@/app/globals/card-generator";
 
-const width = "w-[240px]";
+const width = "w-[160px] laptop:w-[240px] desktop:w-[320px] xl:w-[400px]";
 const hWidth = "group-hover:w-[360px]";
 const hMargin = "group-hover:m-[-60px]";
 const cMargin = "mx-[24px]";
-const columnAmount = "grid-cols-4";
+const columnAmount = 'grid-cols-2 laptop:grid-cols-4';
+const paraTextStyle = `${fonts.dotoBlack.className} text-balance text-[10px] laptop:text-[14px] desktop:text-[32px]`;
+const titleSmlTextStyle= `${fonts.dotoBold.className} h-fit w-fit text-[9px] laptop:text-[16px] desktop:text-[32px] text-secColor leading-none tracking-tighter self-end my-[8px] laptop:my-[16px]`;
+const titleTextStyle = `${fonts.dotoBlack.className} text-priColor w-[600px] text-[28px] laptop:text-[48px] desktop:text-[72px] text-left text-balance leading-none -my-[2px] laptop:-my-[12px]`;
 
-function LandingTitleText() {
+function LandingPageText() {
     return (
-        <div className="absolute bottom-0 left-0 justify-center p-8">
-            <div className="relative flex-col w-fit h-auto content-center">
-                <div className={`w-fit h-fit flex justify-self-start gap-[18px] px-2`}>
-                    <p className={`${fonts.dotoBold.className} text-[28px] text-secColor leading-none tracking-tighter`}>Hello, I'm </p>
-                    <p className={`${fonts.dotoBlack.className} text-[28px] text-priColor leading-none tracking-tighter`}>Eevee</p>
-                    <p className={`${fonts.dotoBold.className} text-[28px] text-secColor leading-none tracking-tighter`}>And I Am A</p>
-                </div>
-                <div className="h-fit mb-1 mt-2">
-                    <p className={`${fonts.dotoBlack.className} text-priColor w-[600px] text-[92px] text-left text-balance leading-none -my-[12px]`}>CREATIVE</p>
-                    <p className={`${fonts.dotoBlack.className} text-priColor w-[600px] text-[92px] text-left text-balance leading-none -my-[12px]`}>DESIGNER</p>
-                </div>
+        <div className={`absolute left-[50%] -translate-x-[50%] bottom-0 w-[90%] tablet:w-[85%] laptop:w-[80%] xl:w-[50%] h-auto grid grid-cols-2 py-[8px] tablet:py-[24px] laptop:py-[24px] place-items-end`}>
+            <div className={`w-fit h-fit flex-inline justify-self-start`}>
+                <p className={`${titleSmlTextStyle}`}>Hello, I'm Eevee, and I am a </p>
+                <p className={`${titleTextStyle}`}>CREATIVE</p>
+                <p className={`${titleTextStyle}`}>DESIGNER</p>
+            </div>
+            
+            <div className="relative justify-self-end w-full text-secColor text-right ">
+                <p className={`${paraTextStyle}`}>I make things, all sorts of things. <br/> I like to model stuff, animate things, generate procedural systems, create better experiences, and make things beautiful. Welcome to my portfolio.</p>
             </div>
         </div>
     )
 }
-
-function LandingAboutText() {
-    return (
-    <div className="absolute flex-row right-0 bottom-0 w-[50%] text-secColor text-right p-8">
-        <p className={`${fonts.dotoBlack.className} text-textMed`}>I make things, all sorts of things.</p>
-        <p className={`${fonts.dotoBlack.className} text-balance text-text`}>I like to model stuff, animate things, generate procedural systems, create better experiences, and make things beautiful. Welcome to my portfolio.</p>
-    </div>
-    )
-}
-
-// function CardsContainer() {
-//     return(
-//         <div className="absolute left-[50%] -translate-x-[50%] top-[38%] -translate-y-[50%] overflow-visible grid grid-cols-1 content-center">
-//             <div className="relative flex w-full h-auto justify-center">
-//                     <cards.DoubleSidedCard 
-//                         cardLink={group3D} 
-//                         cardTitle="3D Page" 
-//                         cardDesc="Description" 
-//                         cardVid={vidFrontA} 
-//                         cardBack={vidBackA}
-//                         startAngle="rotate-[15deg]"
-//                         />
-
-//                     <cards.DoubleSidedCard 
-//                         cardLink={groupGame} 
-//                         cardTitle="Game Page" 
-//                         cardDesc="Description" 
-//                         cardVid={vidFrontC} 
-//                         cardBack={vidBackC}
-//                         startAngle="rotate-[-15deg]"
-//                         />
-
-//                     <cards.DoubleSidedCard 
-//                     cardLink={groupGraphics}
-//                     cardTitle="Interactive Projects" 
-//                     cardDesc="Description" 
-//                     cardVid={vidFrontD}  
-//                     cardBack={vidBackD}
-//                     startAngle="rotate-[15deg]"
-//                     />
-
-//                     <cards.DoubleSidedCard 
-//                         cardLink={groupCode} 
-//                         cardTitle="Code Playground" 
-//                         cardDesc="Description" 
-//                         cardVid={vidFrontB}  
-//                         cardBack={vidBackB}
-//                         startAngle="rotate-[-15deg]"
-//                         />
-//             </div>
-//         </div>
-//     )
-// }
 
 const cardMedia: IDoubleSideCard[] = [
     {
@@ -153,9 +100,8 @@ const cardMedia: IDoubleSideCard[] = [
 export default function LandingMain() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-hidden">
-            <LandingTitleText />
+            <LandingPageText />
             <DoubleSidedCardContainer dataArray={cardMedia} gridCols={columnAmount} />
-            <LandingAboutText  />
         </pages.GroupProjectPage>
 
     )

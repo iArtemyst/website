@@ -15,7 +15,7 @@ const columnAmount = "grid-cols-3";
 
 import { CardsContainer, IProjectCardData } from "@/app/globals/card-generator";
 
-const cardMedia: IProjectCardData[] = [
+const cardMedia: IProjectCardData = [
     {
         cardWidth: width,
         hoverWidth: hWidth,
