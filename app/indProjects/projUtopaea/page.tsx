@@ -1,19 +1,16 @@
 import "@/app/globals/globals.css";
 
-import * as backButtons from "@/app/globals/back-buttons";
-import SiteHeader from "@/app/globals/nav-ui";
-import ProjectUtopaeaPage from "./proj-layout";
+import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
+import { ProjectUtopaeaPage } from "./utopaea-proj-pg";
 
 const linkGrpGame = '../grpProjectsGame';
 
-function RenderProjUtopaea() {
+export default function RenderProjUtopaea() {
   return (
     <>
-        <SiteHeader />
+        <NavUI />
         <ProjectUtopaeaPage />
-        <backButtons.BackButtonRSticky backLink={linkGrpGame} buttonText="Back to Game"/>
+        <BackButtonRSticky backLink={linkGrpGame} buttonText="Back to Game"/>
     </>
   )
 }
-
-export default RenderProjUtopaea;

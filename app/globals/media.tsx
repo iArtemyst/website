@@ -55,17 +55,6 @@ export function GetGalleryImage({imgLink, imgAlt = "Default Image",}: {imgLink:S
 }
 
 
-export function GetGallerySmlImage({imgLink, imgAlt = "Default Image",}: {imgLink:StaticImageData, imgAlt:string}) {
-    return (
-        <Image
-            src={imgLink}
-            alt={imgAlt}
-            fill
-            className="w-full h-full relative object-cover rounded-[8px] aspect-square"
-            />
-    )
-}
-
 export function GetGalleryLrgImage({imgLink, imgAlt = "Default Image",}: {imgLink:StaticImageData, imgAlt:string}) {
     return (
         <Image
@@ -78,7 +67,7 @@ export function GetGalleryLrgImage({imgLink, imgAlt = "Default Image",}: {imgLin
 
 export function GetHoverVideo({vidLink}:{vidLink:string}) {
     return (
-        <video onMouseEnter={handleMouseEnterVideo} onMouseLeave={handleMouseLeaveVideo} src={vidLink} width="100%" height="100%" muted loop className=""/>
+        <video onMouseEnter={handleMouseEnterVideo} onMouseLeave={handleMouseLeaveVideo} src={vidLink} width="100%" height="100%" muted loop/>
     )
 }
 
@@ -103,5 +92,16 @@ export function GetGalleryLrgMedia({mediaLink, mediaText}:{mediaLink:string|Stat
                 <Image src={mediaLink} alt={mediaText} className="w-full h-full object-cover rounded-[8px]" />
             }
         </div>
+    )
+}
+
+export function GetGallerySmlImage({imgLink, imgAlt = "Default Image",}: {imgLink:StaticImageData, imgAlt:string}) {
+    return (
+        <Image
+            src={imgLink}
+            alt={imgAlt}
+            fill
+            className="w-full h-full relative object-cover rounded-[8px] aspect-square"
+            />
     )
 }

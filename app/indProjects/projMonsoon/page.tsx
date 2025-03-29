@@ -1,7 +1,7 @@
 import "@/app/globals/globals.css";
 
-import SiteHeader from "@/app/globals/nav-ui";
-import ProjectMonsoonVermutPage from "./proj-layout";
+import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
+import { ProjectMonsoonVermutPage } from "./monver-proj-pg";
 const linkGrp3D = '../grpProjects3D';
 
 import * as backButtons from "@/app/globals/back-buttons";
@@ -9,9 +9,9 @@ import * as backButtons from "@/app/globals/back-buttons";
 function RenderProjMonsoonVermut() {
   return (
     <>
-        <SiteHeader />
+        <NavUI />
         <ProjectMonsoonVermutPage />
-        <backButtons.BackButtonRSticky backLink={linkGrp3D} buttonText="Back to 3D"/>
+        <BackButtonRSticky backLink={linkGrp3D} buttonText="Back to 3D"/>
     </>
   )
 }

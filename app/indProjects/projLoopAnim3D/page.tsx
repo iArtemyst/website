@@ -1,17 +1,17 @@
 import "@/app/globals/globals.css";
 
 import * as backButtons from "@/app/globals/back-buttons";
-import SiteHeader from "@/app/globals/nav-ui";
-import ProjectLoopAnims from "../projLoopAnim/proj-layout";
+import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
+import ProjectLoopAnims from "../projLoopAnim/loopanim-proj-pg";
 
 const linkGrp3D = '../grpProjects3D';
 
 function RenderProjLoopAnim() {
   return (
     <>
-        <SiteHeader />
+        <NavUI />
         <ProjectLoopAnims />
-        <backButtons.BackButtonRSticky backLink={linkGrp3D} buttonText="Back to 3D"/>
+        <BackButtonRSticky backLink={linkGrp3D} buttonText="Back to 3D"/>
     </>
   )
 }

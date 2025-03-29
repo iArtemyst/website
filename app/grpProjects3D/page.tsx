@@ -2,7 +2,7 @@ import "@/app/globals/nav-ui";
 
 
 import * as backButtons from "@/app/globals/back-buttons";
-import LandingHeader from "@/app/globals/nav-ui";
+import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import GroupProjects3D from "./grp-page-3d";
 
 const linkHome = './';
@@ -10,9 +10,9 @@ const linkHome = './';
 export default function RenderGroup3D() {
   return (
     <div>
-    <LandingHeader />
+    <NavUI />
     <GroupProjects3D />
-    <backButtons.BackButtonRSticky backLink={linkHome} buttonText="Head Back Home"/>
+    <BackButtonRSticky backLink={linkHome} buttonText="Head Back Home"/>
     </div>
   )
 }

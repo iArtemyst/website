@@ -19,7 +19,7 @@ const linkProcToonCity = "../indProjects/projProcToonCity";
 const linkProcMats = "../indProjects/projProcMat";
 const linkHairGenerator = "../indProjects/projHairGenerator";
 
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/card-generator";
+import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
 
 const columnAmount = "grid-cols-3"
 
@@ -66,7 +66,7 @@ const groupCardData: IProjectLinkCard[] = [
 export default function GroupProjectsGame() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <ProjectLinkCardsContainer dataArray={groupCardData} gridCols={columnAmount} />
+            <ProjectLinkCardsContainer dataArray={groupCardData} />
         </pages.GroupProjectPage>
     )
 }

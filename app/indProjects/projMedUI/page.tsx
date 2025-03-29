@@ -1,7 +1,7 @@
 import "@/app/globals/globals.css";
 
 import * as backButtons from "@/app/globals/back-buttons";
-import SiteHeader from "@/app/globals/nav-ui";
+import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import ProjectMedMotion from "./proj-layout";
 
 const linkGrpMotion = '../grpProjectsMotion';
@@ -9,9 +9,9 @@ const linkGrpMotion = '../grpProjectsMotion';
 export default function RenderProjMedMotion() {
   return (
     <>
-        <SiteHeader />
+        <NavUI />
         <ProjectMedMotion />
-        <backButtons.BackButtonRSticky backLink={linkGrpMotion} buttonText="Back to Motion UI"/>
+        <BackButtonRSticky backLink={linkGrpMotion} buttonText="Back to Motion UI"/>
     </>
   )
 }

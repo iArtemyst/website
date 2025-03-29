@@ -10,28 +10,21 @@ const linkHome = '/'
 const linkArtstation = 'https://eevee-feywild.artstation.com/';
 const linkGithub = 'https://github.com/iArtemyst';
 
-function HeaderSVGButton({buttonLink = "", children}: {buttonLink:Url, children:any}) {
+function HeaderSVGButton({buttonLink, children}: {buttonLink:Url, children:any}) {
     return (
             <Link href={buttonLink} rel="noopener noreferrer" target="_blank" className="hover:cursor-pointer justify-self-center content-center col-span-1 opacity-100">
-                <div className="relative h-[24px] w-auto">
+                <div className={`relative w-[18px] sm:w-[20px] md:w-[22px] lg:w-[24px] xl:w-[28px] 2xl:w-[32px]`}>
                     {children}
                 </div>
             </Link>
     )
 }
-function NavBarLine() {
-    return (
-        <div className="absolute left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-full h-full rounded-full group-hover:opacity-0 transition-all duration-300 content-center delay-100">
-            <p className={`${fonts.dotoBlack.className} text-center text-[18px] text-hoverTextColor`}>HOVER FOR MENU</p>
-        </div>
-    )
-}
 
-function HeaderTextButton({buttonText = "Button", buttonLink = ""}: {buttonText:String, buttonLink:Url}) {
+function HeaderTextButton({buttonText, buttonLink}: {buttonText:String, buttonLink:Url}) {
     return(
         <Link href={buttonLink}>
-            <button className="relative h-full w-auto justify-self-center col-span-1 opacity-100">
-                <p className={`${fonts.bebasNeue.className} text-[20px] w-auto text-priColor`}>
+            <button className="relative h-fit w-fit justify-self-center flex">
+                <p className={`${fonts.bebasNeue.className} text-[18px] md:text-[24px] lg:text-[32px] text-priColor`}>
                     {buttonText}
                 </p>
             </button>
@@ -39,22 +32,17 @@ function HeaderTextButton({buttonText = "Button", buttonLink = ""}: {buttonText:
     )
 }
 
-function NavUI() {
+export function NavUI() {
     return(
-        <nav>
-            <div className="absolute top-0 w-auto h-[32px] left-[50%] -translate-x-[50%] z-50 rounded-full mt-[8px]
-                flex justify-between gap-[12px] px-[12px] hover:cursor-pointer           
-                bg-opacity-[30%] backdrop-blur-[4px]
+        <nav className={`absolute left-0 right-0 top-0 bottom-0 w-full h-full`}>
+            <div className="absolute top-[4px] w-auto h-auto left-[50%] -translate-x-[50%] z-50 rounded-full mt-[8px]
+                flex justify-between gap-[12px] px-[12px] hover:cursor-pointer bg-opacity-[30%] backdrop-blur-[4px]
                 scale-[85%] hover:scale-[125%] -translate-y-[8px] hover:translate-y-0 transition-all duration-200">
-                
-                {/* <NavBarLine /> */}
-
-                <HeaderTextButton buttonText="Home" buttonLink={linkHome}/>
-
-                <HeaderTextButton buttonText="ABOUT" buttonLink={linkAbout}/>
+                    <HeaderTextButton buttonText="HOME" buttonLink={linkHome}/>
+                    <HeaderTextButton buttonText="ABOUT" buttonLink={linkAbout}/>
             </div>
 
-            <div className="absolute flex right-0 top-0 w-[40px] h-auto hover:cursor-pointer grid-cols-2 gap-2 mx-[12px] my-[8px] z-50">
+            <div className="absolute flex right-0 top-0 w-fit h-fit hover:cursor-pointer grid-cols-2 gap-2 m-[12px] md:m-[16px] z-50">
                 <HeaderSVGButton buttonLink={linkArtstation}><SVGComponents.ArtstationSVG /></HeaderSVGButton>
                 <HeaderSVGButton buttonLink={linkGithub}><SVGComponents.GithubSVG /></HeaderSVGButton>
             </div>
@@ -62,5 +50,20 @@ function NavUI() {
     )
 }
 
+function BackButton({buttonText=""}:{buttonText:String}){
+    return (
+    <div className={`${fonts.dotoBlack.className} text-[7px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[14px] relative text-center w-auto h-auto px-[.5rem] sm:px-[1rem] py-[.25rem] rounded-full backdrop-blur-[8px] bg-[#FFFFFF40] hover:bg-[#FFFFFF] hover:scale-[110%] transition-all duration-[200ms]`}>
+        <p>{buttonText}</p>
+    </div>
+    )
+}
 
-export default NavUI;
+export function BackButtonRSticky({backLink="", buttonText=""}:{backLink:string, buttonText:String}) {
+    return (
+    <Link href={backLink}>
+        <div className="fixed right-0 bottom-0 w-auto h-auto m-[24px]">
+            <BackButton buttonText={buttonText} />
+        </div>
+    </Link>
+    )
+}

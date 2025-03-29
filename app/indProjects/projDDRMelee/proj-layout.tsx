@@ -73,7 +73,7 @@ function YoutubeVideo(){
     )
 }
 
-export default function ProjectDartPubPage() {
+export function DDRMeleePage() {
     return (
     <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
         <div className="relative grid grid-cols-1 gap-[24px]">

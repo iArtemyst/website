@@ -1,19 +1,17 @@
 import "@/app/globals/globals.css";
 
 import * as backButtons from "@/app/globals/back-buttons";
-import SiteHeader from "@/app/globals/nav-ui";
-import StubbleGenPage from "./proj-layout";
+import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
+import StubbleGenPage from "@/app/indProjects/projHairGenerator/hairgen-proj-pg";
 
 const linkGrpGame = '../grpProjectsGame';
 
-function RenderProjHairGeneratorPage() {
+export default function RenderProjHairGeneratorPage() {
   return (
     <>
-        <SiteHeader />
+        <NavUI />
         <StubbleGenPage />
-        <backButtons.BackButtonRSticky backLink={linkGrpGame} buttonText="Back to Game"/>
+        <BackButtonRSticky backLink={linkGrpGame} buttonText="Back to Game"/>
     </>
   )
 }
-
-export default RenderProjHairGeneratorPage;

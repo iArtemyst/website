@@ -3,7 +3,7 @@
 import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/card-generator";
+import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
 
 import vidBankApp from "/app/assets/videos/_motionui/trimmed-loop_bankapp.mp4";
 import vidDDRMelee from "/app/assets/videos/_motionui/trimmed-loop_ddr-melee.mp4";
@@ -55,7 +55,7 @@ const groupCardData: IProjectLinkCard[] = [
 export default function GroupProjectsMotion() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <ProjectLinkCardsContainer dataArray={groupCardData} gridCols={columnAmount} />
+            <ProjectLinkCardsContainer dataArray={groupCardData} />
         </pages.GroupProjectPage>
     )
 }

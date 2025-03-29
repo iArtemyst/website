@@ -14,15 +14,15 @@ import MVimg04 from "@/app/assets/images/_3d/_monsoonVermut/monsoonvermut_stills
 //---------------------
 
 const bentoGap = "gap-[12px]";
-const titleTextSize= "text-[24px]";
-const paraTextSize = "text-[12px]";
+const titleTextSize= "text-[16px] sm:text-[20px] md:text-[24px] lg:text-[32px] xl:text-[36px] 2xl:text-[40px]";
+const paraTextSize = "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px]";
 
 function MainVideoBox({videoLink}:{videoLink:string}) {
     return (
         <div className="group">
             <CardHoverFX bufferZone={0} rotateAmount={24}>
-                <div className="relative w-[80%] h-[auto] justify-self-center rounded-[24px] overflow-hidden shadow-[0px_0px_8px_#FFFFFF90] group-hover:shadow-[0px_0px_16px_#FFFFFF45] z-0 group-hover:z-10">
-                    <video src={vidMonsoonVermut} width="100%" height="auto" controls autoPlay muted loop className="self-center"/>
+                <div className="relative w-[80%] h-[auto] justify-self-center rounded-[24px] overflow-hidden shadow-[0px_0px_8px_#FFFFFF90] group-hover:shadow-[0px_0px_16px_#FFFFFF45] z-0 group-hover:z-10">                   
+                    <video src={vidMonsoonVermut} width="100%" height="auto" controls autoPlay muted loop/>
                 </div>
             </CardHoverFX>
         </div>
@@ -31,7 +31,7 @@ function MainVideoBox({videoLink}:{videoLink:string}) {
 
 function BentoBox() {
     return (
-        <div className={` ${bentoGap} relative z-0 grid grid-cols-2 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-x-[12px] my-[24px]  text-white
+        <div className={` ${bentoGap} relative z-0 grid grid-cols-2 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-x-[12px] my-[8px] sm:my-[12px] md:my-[18px] lg:my-[24px] text-white
                         hover:cursor-pointer`}>
             <div className="relative col-span-2 row-span-1">
                 <bentos.CellText cellSpan="row-span-2">
@@ -54,10 +54,10 @@ function BentoBox() {
     )
 }
 //---------------------
-export default function ProjectMonsoonVermutPage() {
+export function ProjectMonsoonVermutPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-                <div className={`grid grid-cols-1 gap-[12px]`}>
+                <div className={`grid grid-cols-1 gap-[12px] place-content-center`}>
                     <MainVideoBox videoLink={vidMonsoonVermut}/>
                     <BentoBox />
                 </div>

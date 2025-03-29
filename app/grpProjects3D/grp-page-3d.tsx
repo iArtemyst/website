@@ -3,7 +3,7 @@
 import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/card-generator";
+import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
 
 import vidDartPub from "/app/assets/videos/_3d/trimmed-loop_dartspub.mp4";
 import vidHorrorHouse from "/app/assets/videos/_3d/trimmed-loop_horrorhouses.mp4";
@@ -80,7 +80,7 @@ const groupCardData: IProjectLinkCard[] = [
 export default function GroupProjects3D() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <ProjectLinkCardsContainer dataArray={groupCardData} gridCols={columnAmount} />
+            <ProjectLinkCardsContainer dataArray={groupCardData} />
         </pages.GroupProjectPage>
     )
 }

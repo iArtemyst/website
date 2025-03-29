@@ -1,6 +1,6 @@
 import "./globals/globals.css";
 
-import NavUI from "./globals/nav-ui";
+import { NavUI } from "@/app/globals/nav-ui";
 import LandingMain from "./landing-main";
 
 export default function RenderLandingPage() {

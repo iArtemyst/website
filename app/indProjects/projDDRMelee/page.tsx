@@ -1,8 +1,8 @@
 import "@/app/globals/globals.css";
 
 import * as backButtons from "@/app/globals/back-buttons";
-import SiteHeader from "@/app/globals/nav-ui";
-import Project1Page from "./proj-layout";
+import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
+import { DDRMeleePage } from "./proj-layout";
 
 const linkGrpMotion = '../grpProjectsMotion';
 
@@ -11,9 +11,9 @@ const linkGrpMotion = '../grpProjectsMotion';
 function RenderProjDDRMelee() {
   return (
     <>
-        <SiteHeader />
-        <Project1Page />
-        <backButtons.BackButtonRSticky backLink={linkGrpMotion} buttonText="Back to Motion UI"/>
+        <NavUI />
+        <DDRMeleePage />
+        <BackButtonRSticky backLink={linkGrpMotion} buttonText="Back to Motion UI"/>
     </>
   )
 }

@@ -89,10 +89,10 @@ function BentoBoxA() {
     }
 
     return (
-        <div className="relative z-0 grid grid-cols-3 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] my-[24px] text-white hover:cursor-pointer">
+        <div className="relative z-0 grid grid-cols-2 md:grid-cols-3 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] my-[24px] text-white hover:cursor-pointer">
             {
-            cellData.map((data) => {
-                return <VideoCell link={data}/>
+            cellData.map((data, i) => {
+                return <VideoCell link={data} key={i}/>
             })
             }
         </div>

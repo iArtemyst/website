@@ -1,8 +1,8 @@
 import "@/app/globals/globals.css";
 
 import * as backButtons from "@/app/globals/back-buttons";
-import SiteHeader from "@/app/globals/nav-ui";
-import ProjectProcMatPage from "./proj-layout";
+import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
+import ProjectProcMatPage from "./proc-mats-proj-pg";
 
 const linkGrpGame = '../grpProjectsGame';
 
@@ -11,9 +11,9 @@ const linkGrpGame = '../grpProjectsGame';
 function RenderProjProcMat() {
   return (
     <>
-        <SiteHeader />
+        <NavUI />
         <ProjectProcMatPage />
-        <backButtons.BackButtonRSticky backLink={linkGrpGame} buttonText="Back to Game"/>
+        <BackButtonRSticky backLink={linkGrpGame} buttonText="Back to Game"/>
     </>
   )
 }

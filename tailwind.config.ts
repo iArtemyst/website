@@ -14,8 +14,8 @@ export const gradientColor2: string = "#00000000";
 export const gradientColor3: string = "#7402B8";
 export const gradientColor4: string = "#4F009F";
 
-export const textXs = "8px";
-export const textSml = "12px";
+export const textXs = "6px";
+export const textSml = "8px sm:10px md:12px lg:14px xl:18px";
 export const textMed = "18px";
 export const textLrg = "24px";
 export const textXL = "32px";
