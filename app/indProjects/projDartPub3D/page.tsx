@@ -1,8 +1,7 @@
 import "@/app/globals/globals.css";
 
-import * as backButtons from "@/app/globals/back-buttons";
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
-import ProjectDartPubPage from "../projDartPub/proj-layout";
+import ProjectDartPubPage from "../projDartPub/dartpub-proj-pg";
 
 const linkGrp3D = '../grpProjects3D';
 

@@ -1,6 +1,5 @@
 import "@/app/globals/globals.css";
 
-import * as backButtons from "@/app/globals/back-buttons";
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import { IslandCityPage } from "./islandcity-proj-pg";
 

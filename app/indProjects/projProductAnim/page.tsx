@@ -1,10 +1,8 @@
 import "@/app/globals/globals.css";
 
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
-import ProjectProdAnimPage from "./proj-layout";
+import ProjectProdAnimPage from "./prodanim-proj-pg";
 const linkGrp3D = '../grpProjects3D';
-
-import * as backButtons from "@/app/globals/back-buttons";
 
 function RenderProjMedAnim() {
   return (

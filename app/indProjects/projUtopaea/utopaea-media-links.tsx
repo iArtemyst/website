@@ -4,43 +4,39 @@
 import "@/app/globals/globals.css";
 
 import CardA from "@/app/assets/images/_game/_utopaea/utopaea_card_01_00.png";
-import vfxStillA from "@/app/assets/images/_game/_vfx/vfx_stills_01.png";
-import vfxGalleryVidA from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_00.mp4";
-import vfxNodeA01 from "@/app/assets/images/_game/_vfx/vfx_nodes_001.png";
-import vfxNodeA02 from "@/app/assets/images/_game/_vfx/vfx_nodes_002.png";
-import vfxNodeA03 from "@/app/assets/images/_game/_vfx/vfx_nodes_013.png";
-import vfxNodeA04 from "@/app/assets/images/_game/_vfx/vfx_nodes_014.png";
-import vfxNodeA05 from "@/app/assets/images/_game/_vfx/vfx_nodes_015.png";
-import vfxNodeA06 from "@/app/assets/images/_game/_vfx/vfx_nodes_016.png";
+import CardAMedia01 from "@/app/assets/images/_game/_utopaea/utopaea_card01_04.png";
+import CardAMedia02 from "@/app/assets/images/_game/_utopaea/utopaea_card01_01.jpeg";
+import CardAMedia03 from "@/app/assets/images/_game/_utopaea/utopaea_card01_02.jpeg";
+import CardAMedia04 from "@/app/assets/images/_game/_utopaea/utopaea_card01_03.jpeg";
+import CardAMedia05 from "@/app/assets/images/_game/_utopaea/utopaea_card01_00.png";
+
 
 import CardB from "@/app/assets/images/_game/_utopaea/utopaea_card_02_00.png";
-import vfxStillB from "@/app/assets/images/_game/_vfx/vfx_stills_00.png";
-import vfxGalleryVidB from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_02.mp4";
-import vfxNodeB01 from "@/app/assets/images/_game/_vfx/vfx_nodes_004.png";
-import vfxNodeB02 from "@/app/assets/images/_game/_vfx/vfx_nodes_005.png";
-
-
+import CardBMedia01 from "@/app/assets/images/_game/_utopaea/utopaea_card02_01.png";
+import CardBMedia02 from "@/app/assets/images/_game/_utopaea/utopaea_card02_00.png";
 
 import CardC from "@/app/assets/images/_game/_utopaea/utopaea_card_03_00.png";
-import vfxStillC from "@/app/assets/images/_game/_vfx/vfx_stills_02.png";
-import vfxGalleryVidC from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_01.mp4";
-import vfxNodeC01 from "@/app/assets/images/_game/_vfx/vfx_nodes_006.png";
-import vfxNodeC02 from "@/app/assets/images/_game/_vfx/vfx_nodes_007.png";
-import vfxNodeC03 from "@/app/assets/images/_game/_vfx/vfx_nodes_008.png";
+import CardCMedia01 from "@/app/assets/images/_game/_utopaea/utopaea_card03_03.png";
+import CardCMedia02 from "@/app/assets/images/_game/_utopaea/utopaea_card03_01.png";
+import CardCMedia03 from "@/app/assets/images/_game/_utopaea/utopaea_card03_02.png";
+import CardCMedia04 from "@/app/assets/images/_game/_utopaea/utopaea_card03_00.png";
 
 import CardD from "@/app/assets/images/_game/_utopaea/utopaea_card_04_00.png";
-import vfxStillD from "@/app/assets/images/_game/_vfx/vfx_stills_03.png";
-import vfxGalleryVidD from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_03.mp4";
-import vfxNodeD01 from "@/app/assets/images/_game/_vfx/vfx_nodes_011.png";
-import vfxNodeD02 from "@/app/assets/images/_game/_vfx/vfx_nodes_012.png";
+import CardDMedia01 from "@/app/assets/images/_game/_utopaea/utopaea_card04_00.png";
+import CardDMedia02 from "@/app/assets/images/_game/_utopaea/utopaea_card04_01.png";
+import CardDMedia03 from "@/app/assets/images/_game/_utopaea/utopaea_card04_02.png";
+import CardDMedia04 from "@/app/assets/images/_game/_utopaea/utopaea_card04_03.png";
+import CardDMedia05 from "@/app/assets/images/_game/_utopaea/utopaea_card04_04.png";
+import CardDMedia06 from "@/app/assets/images/_game/_utopaea/utopaea_card04_05.png";
+import CardDMedia07 from "@/app/assets/images/_game/_utopaea/utopaea_card04_06.png";
 
 import * as gallery from "@/app/globals/gallery-component";
 import * as mediaData from "@/app/globals/media";
 
-const cardStyleWHM = "w-[120px] md:w-[240px] lg:w-[360px] group-hover:w-[180px] md:group-hover:w-[360px] lg:group-hover:w-[480px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
+const cardStyleWHM = "w-[120px] sm:w-[120px] md:w-[160px] lg:w-[240px] group-hover:w-[120px] sm:group-hover:w-[160px] md:group-hover:w-[240px] lg:group-hover:w-[360px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
 const cardContainerMargin = "mx-64px";
 
-const VFXProjectCardAData: gallery.IProjectCardData = 
+const ProjectCardAData: gallery.IProjectCardData = 
 {
     cardMedia: CardA,
     cardText: "sample text",
@@ -48,30 +44,35 @@ const VFXProjectCardAData: gallery.IProjectCardData =
     cardContainerMargin: cardContainerMargin,
 }
 
-const VFXCardAGallery: gallery.IGalleryMedia[] = [
+const CardAGallery: gallery.IGalleryMedia[] = [
     {
         assetText: "Asset Text Test 1",
-        assetMediaLink: vfxGalleryVidA,
-        assetStillLink: vfxStillA,
+        assetMediaLink: CardAMedia01,
+        assetStillLink: CardAMedia01,
     },
     {
         assetText: "Asset Text Test 2",
-        assetMediaLink: vfxNodeA02,
-        assetStillLink: vfxNodeA02,
+        assetMediaLink: CardAMedia02,
+        assetStillLink: CardAMedia02,
     },
     {
         assetText: "Asset Text Test 3",
-        assetMediaLink: vfxNodeA03,
-        assetStillLink: vfxNodeA03,
+        assetMediaLink: CardAMedia03,
+        assetStillLink: CardAMedia03,
     },
     {
-        assetText: "Asset Text Test 4",
-        assetMediaLink: vfxNodeA04,
-        assetStillLink: vfxNodeA04,
+        assetText: "Asset Text Test 3",
+        assetMediaLink: CardAMedia04,
+        assetStillLink: CardAMedia04,
+    },
+    {
+        assetText: "Asset Text Test 3",
+        assetMediaLink: CardAMedia05,
+        assetStillLink: CardAMedia05,
     },
 ]
 
-const VFXProjectCardBData: gallery.IProjectCardData = 
+const ProjectCardBData: gallery.IProjectCardData = 
 {
     cardMedia: CardB,
     cardText: "sample text",
@@ -80,25 +81,20 @@ const VFXProjectCardBData: gallery.IProjectCardData =
 }
 
 
-const VFXCardBGallery: gallery.IGalleryMedia[] = [
+const CardBGallery: gallery.IGalleryMedia[] = [
     {
         assetText: "Asset Text Test 1",
-        assetMediaLink: vfxGalleryVidB,
-        assetStillLink: vfxStillB,
+        assetMediaLink: CardBMedia01,
+        assetStillLink: CardBMedia01,
     },
     {
         assetText: "Asset Text Test 2",
-        assetMediaLink: vfxNodeB01,
-        assetStillLink: vfxNodeB01,
-    },
-    {
-        assetText: "Asset Text Test 3",
-        assetMediaLink: vfxNodeB02,
-        assetStillLink: vfxNodeB02,
+        assetMediaLink: CardBMedia02,
+        assetStillLink: CardBMedia02,
     },
 ]
 
-const VFXProjectCardCData: gallery.IProjectCardData =
+const ProjectCardCData: gallery.IProjectCardData =
 {
     cardMedia: CardC,
     cardText: "sample text",
@@ -107,25 +103,30 @@ const VFXProjectCardCData: gallery.IProjectCardData =
 }
 
 
-const VFXCardCGallery: gallery.IGalleryMedia[] = [
+const CardCGallery: gallery.IGalleryMedia[] = [
     {
         assetText: "Asset Text Test 1",
-        assetMediaLink: vfxGalleryVidC,
-        assetStillLink: vfxStillC,
+        assetMediaLink: CardCMedia01,
+        assetStillLink: CardCMedia01,
     },
     {
-        assetText: "Asset Text Test 2",
-        assetMediaLink: vfxNodeC01,
-        assetStillLink: vfxNodeC01,
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardCMedia02,
+        assetStillLink: CardCMedia02,
     },
     {
-        assetText: "Asset Text Test 3",
-        assetMediaLink: vfxNodeC02,
-        assetStillLink: vfxNodeC02,
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardCMedia03,
+        assetStillLink: CardCMedia03,
+    },
+    {
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardCMedia04,
+        assetStillLink: CardCMedia04,
     },
 ]
 
-const VFXProjectCardDData: gallery.IProjectCardData = 
+const ProjectCardDData: gallery.IProjectCardData =
 {
     cardMedia: CardD,
     cardText: "sample text",
@@ -134,40 +135,61 @@ const VFXProjectCardDData: gallery.IProjectCardData =
 }
 
 
-const VFXCardDGallery: gallery.IGalleryMedia[] = [
+const CardDGallery: gallery.IGalleryMedia[] = [
     {
         assetText: "Asset Text Test 1",
-        assetMediaLink: vfxGalleryVidD,
-        assetStillLink: vfxStillD,
+        assetMediaLink: CardDMedia01,
+        assetStillLink: CardDMedia01,
     },
     {
-        assetText: "Asset Text Test 2",
-        assetMediaLink: vfxNodeD01,
-        assetStillLink: vfxNodeD01,
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardDMedia02,
+        assetStillLink: CardDMedia02,
     },
     {
-        assetText: "Asset Text Test 2",
-        assetMediaLink: vfxNodeD02,
-        assetStillLink: vfxNodeD02,
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardDMedia03,
+        assetStillLink: CardDMedia03,
+    },
+    {
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardDMedia04,
+        assetStillLink: CardDMedia04,
+    },
+    {
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardDMedia05,
+        assetStillLink: CardDMedia05,
+    },
+    {
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardDMedia06,
+        assetStillLink: CardDMedia06,
+    },
+    {
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardDMedia07,
+        assetStillLink: CardDMedia07,
     },
 ]
+
 
 export const UtopaeaProjectCardArrays: gallery.ICardWithGalleryArrays[] = 
 [
     {
-        cardData: VFXProjectCardAData,
-        galleryData: VFXCardAGallery,
+        cardData: ProjectCardAData,
+        galleryData: CardAGallery,
     },
     {
-        cardData: VFXProjectCardBData,
-        galleryData: VFXCardBGallery,
+        cardData: ProjectCardBData,
+        galleryData: CardBGallery,
     },
     {
-        cardData: VFXProjectCardCData,
-        galleryData: VFXCardCGallery,
+        cardData: ProjectCardCData,
+        galleryData: CardCGallery,
     },
     {
-        cardData: VFXProjectCardDData,
-        galleryData: VFXCardDGallery,
+        cardData: ProjectCardDData,
+        galleryData: CardDGallery,
     },
 ]

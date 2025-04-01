@@ -9,7 +9,7 @@ import * as utopaeamedia from "./utopaea-media-links";
 export function ProjectUtopaeaPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-                <gallery.ProjectCardsWithGalleryContainer cardArray={utopaeamedia.UtopaeaProjectCardArrays} />
+                <gallery.ProjectCardsWithGalleryContainer cardArray={utopaeamedia.UtopaeaProjectCardArrays} columnAmount="grid-cols-4"/>
                 <gallery.ProjectDetailRelativeText 
                     TitleText="UTOPAEA LEVEL & GAME DESIGN" 
                     MoreText="What began as a capstone project in college, turned into a years long passion project. I have always had a great desire to make assets and levels for games, and this project was my first foray into a full scale design for an active FPS game.

@@ -3,18 +3,16 @@ import "../globals/globals.css";
 
 import NewAboutPage from "./about-design";
 import AboutSection from "./section-about";
-import SiteHeader from "../globals/nav-ui";
-import * as backButtons from "@/app/globals/back-buttons";
+import { NavUI, BackButtonRSticky } from "../globals/nav-ui";
 
 const linkHome = './';
 
 export default function RenderAboutPage() {
   return (
     <>
-      <SiteHeader />
+      <NavUI />
       <AboutSection />
-      {/* <NewAboutPage /> */}
-      <backButtons.BackButtonRSticky backLink={linkHome} buttonText="Head Back Home"/>
+      <BackButtonRSticky backLink={linkHome} buttonText="Head Back Home"/>
     </>
   )
 }

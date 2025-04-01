@@ -1,72 +1,33 @@
-
 'use client'
 
+import * as gallery from "@/app/globals/gallery-component";
 import "@/app/globals/globals.css";
 
-
-import vfxStillA from "@/app/assets/images/_game/_vfx/vfx_stills_01.png";
-import vfxGalleryVidA from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_00.mp4";
-import vfxNodeA01 from "@/app/assets/images/_game/_vfx/vfx_nodes_001.png";
-import vfxNodeA02 from "@/app/assets/images/_game/_vfx/vfx_nodes_002.png";
-import vfxNodeA03 from "@/app/assets/images/_game/_vfx/vfx_nodes_013.png";
-import vfxNodeA04 from "@/app/assets/images/_game/_vfx/vfx_nodes_014.png";
-import vfxNodeA05 from "@/app/assets/images/_game/_vfx/vfx_nodes_015.png";
-import vfxNodeA06 from "@/app/assets/images/_game/_vfx/vfx_nodes_016.png";
-
-import vfxStillB from "@/app/assets/images/_game/_vfx/vfx_stills_00.png";
-import vfxGalleryVidB from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_02.mp4";
-import vfxNodeB01 from "@/app/assets/images/_game/_vfx/vfx_nodes_004.png";
-import vfxNodeB02 from "@/app/assets/images/_game/_vfx/vfx_nodes_005.png";
-
-import vfxStillC from "@/app/assets/images/_game/_vfx/vfx_stills_02.png";
-import vfxGalleryVidC from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_01.mp4";
-import vfxNodeC01 from "@/app/assets/images/_game/_vfx/vfx_nodes_006.png";
-import vfxNodeC02 from "@/app/assets/images/_game/_vfx/vfx_nodes_007.png";
-import vfxNodeC03 from "@/app/assets/images/_game/_vfx/vfx_nodes_008.png";
-
+import CardAMedia01b from "@/app/assets/images/_3d/_horrorHouses/hh-gallery-stills__00.png";
+import CardAMedia02b from "@/app/assets/images/_3d/_horrorHouses/hh-gallery-stills__01.png";
+import CardAMedia03 from "@/app/assets/images/_3d/_horrorHouses/km_hh-sketches__01.png";
+import CardAMedia01a from "@/app/assets/videos/_3d/_horrorHouses/hh_diffuse_00.mp4";
+import CardAMedia02a from "@/app/assets/videos/_3d/_horrorHouses/hh_wireframe_00.mp4";
 import CardA from "/app/assets/videos/_3d/_horrorHouses/HH_FNAF_Card.mp4";
+
+import CardBMedia01b from "@/app/assets/images/_3d/_horrorHouses/hh-gallery-stills__02.png";
+import CardBMedia02b from "@/app/assets/images/_3d/_horrorHouses/hh-gallery-stills__03.png";
+import CardBMedia03 from "@/app/assets/images/_3d/_horrorHouses/km_hh-sketches__02.png";
+import CardBMedia01a from "@/app/assets/videos/_3d/_horrorHouses/hh_diffuse_01.mp4";
+import CardBMedia02a from "@/app/assets/videos/_3d/_horrorHouses/hh_wireframe_01.mp4";
 import CardB from "/app/assets/videos/_3d/_horrorHouses/HH_Halloween_Card.mp4";
+
+import CardCMedia01b from "@/app/assets/images/_3d/_horrorHouses/hh-gallery-stills__04.png";
+import CardCMedia02b from "@/app/assets/images/_3d/_horrorHouses/hh-gallery-stills__05.png";
+import CardCMedia03 from "@/app/assets/images/_3d/_horrorHouses/km_hh-sketches__00.png";
+import CardCMedia01a from "@/app/assets/videos/_3d/_horrorHouses/hh_diffuse_02.mp4";
+import CardCMedia02a from "@/app/assets/videos/_3d/_horrorHouses/hh_wireframe_02.mp4";
 import CardC from "/app/assets/videos/_3d/_horrorHouses/HH_Midsommar_Card.mp4";
 
-import * as gallery from "@/app/globals/gallery-component";
-import * as mediaData from "@/app/globals/media";
-
-const width = "w-[240px]";
-const hWidth = "group-hover:w-[360px]";
-const hMargin = "group-hover:m-[-60px]";
-const conMargin = "mx-[24px]";
-const columnAmount = "grid-cols-3";
-const cardStyleWHM = "w-[120px] md:w-[240px] lg:w-[360px] group-hover:w-[180px] md:group-hover:w-[360px] lg:group-hover:w-[480px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
+const cardStyleWHM = "w-[120px] sm:w-[120px] md:w-[160px] lg:w-[240px] group-hover:w-[120px] sm:group-hover:w-[160px] md:group-hover:w-[240px] lg:group-hover:w-[360px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
 const cardContainerMargin = "mx-64px";
 
-// const cardMedia: IProjectCardData = [
-//     {
-//         cardWidth: width,
-//         hoverWidth: hWidth,
-//         hoverMargin: hMargin,
-//         containerMargin: conMargin,
-//         cardText: "Five Nights at Freddy's",
-//         cardMediaLink: Card01,
-//     },
-//     {
-//         cardWidth: width,
-//         hoverWidth: hWidth,
-//         hoverMargin: hMargin,
-//         containerMargin: conMargin,
-//         cardText: "Halloween House",
-//         cardMediaLink: Card02,
-//     },
-//     {
-//         cardWidth: width,
-//         hoverWidth: hWidth,
-//         hoverMargin: hMargin,
-//         containerMargin: conMargin,
-//         cardText: "Midsommar Tent",
-//         cardMediaLink: Card03,
-//     },
-// ];
-
-const VFXProjectCardAData: gallery.IProjectCardData = 
+const ProjectCardAData: gallery.IProjectCardData = 
 {
     cardMedia: CardA,
     cardText: "sample text",
@@ -74,30 +35,25 @@ const VFXProjectCardAData: gallery.IProjectCardData =
     cardContainerMargin: cardContainerMargin,
 }
 
-const VFXCardAGallery: gallery.IGalleryMedia[] = [
+const CardAGallery: gallery.IGalleryMedia[] = [
     {
         assetText: "Asset Text Test 1",
-        assetMediaLink: vfxGalleryVidA,
-        assetStillLink: vfxStillA,
+        assetMediaLink: CardAMedia01a,
+        assetStillLink: CardAMedia01b,
     },
     {
         assetText: "Asset Text Test 2",
-        assetMediaLink: vfxNodeA02,
-        assetStillLink: vfxNodeA02,
+        assetMediaLink: CardAMedia02a,
+        assetStillLink: CardAMedia02b,
     },
     {
         assetText: "Asset Text Test 3",
-        assetMediaLink: vfxNodeA03,
-        assetStillLink: vfxNodeA03,
-    },
-    {
-        assetText: "Asset Text Test 4",
-        assetMediaLink: vfxNodeA04,
-        assetStillLink: vfxNodeA04,
+        assetMediaLink: CardAMedia03,
+        assetStillLink: CardAMedia03,
     },
 ]
 
-const VFXProjectCardBData: gallery.IProjectCardData = 
+const ProjectCardBData: gallery.IProjectCardData = 
 {
     cardMedia: CardB,
     cardText: "sample text",
@@ -106,25 +62,25 @@ const VFXProjectCardBData: gallery.IProjectCardData =
 }
 
 
-const VFXCardBGallery: gallery.IGalleryMedia[] = [
+const CardBGallery: gallery.IGalleryMedia[] = [
     {
         assetText: "Asset Text Test 1",
-        assetMediaLink: vfxGalleryVidB,
-        assetStillLink: vfxStillB,
+        assetMediaLink: CardBMedia01a,
+        assetStillLink: CardBMedia01b,
     },
     {
-        assetText: "Asset Text Test 2",
-        assetMediaLink: vfxNodeB01,
-        assetStillLink: vfxNodeB01,
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardBMedia02a,
+        assetStillLink: CardBMedia02b,
     },
     {
-        assetText: "Asset Text Test 3",
-        assetMediaLink: vfxNodeB02,
-        assetStillLink: vfxNodeB02,
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardBMedia03,
+        assetStillLink: CardBMedia03,
     },
 ]
 
-const VFXProjectCardCData: gallery.IProjectCardData =
+const ProjectCardCData: gallery.IProjectCardData =
 {
     cardMedia: CardC,
     cardText: "sample text",
@@ -133,21 +89,21 @@ const VFXProjectCardCData: gallery.IProjectCardData =
 }
 
 
-const VFXCardCGallery: gallery.IGalleryMedia[] = [
+const CardCGallery: gallery.IGalleryMedia[] = [
     {
         assetText: "Asset Text Test 1",
-        assetMediaLink: vfxGalleryVidC,
-        assetStillLink: vfxStillC,
+        assetMediaLink: CardCMedia01a,
+        assetStillLink: CardCMedia01b,
     },
     {
-        assetText: "Asset Text Test 2",
-        assetMediaLink: vfxNodeC01,
-        assetStillLink: vfxNodeC01,
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardCMedia02a,
+        assetStillLink: CardCMedia02b,
     },
     {
-        assetText: "Asset Text Test 3",
-        assetMediaLink: vfxNodeC02,
-        assetStillLink: vfxNodeC02,
+        assetText: "Asset Text Test 1",
+        assetMediaLink: CardCMedia03,
+        assetStillLink: CardCMedia03,
     },
 ]
 
@@ -155,15 +111,15 @@ const VFXCardCGallery: gallery.IGalleryMedia[] = [
 export const HHProjectCardArrays: gallery.ICardWithGalleryArrays[] = 
 [
     {
-        cardData: VFXProjectCardAData,
-        galleryData: VFXCardAGallery,
+        cardData: ProjectCardAData,
+        galleryData: CardAGallery,
     },
     {
-        cardData: VFXProjectCardBData,
-        galleryData: VFXCardBGallery,
+        cardData: ProjectCardBData,
+        galleryData: CardBGallery,
     },
     {
-        cardData: VFXProjectCardCData,
-        galleryData: VFXCardCGallery,
+        cardData: ProjectCardCData,
+        galleryData: CardCGallery,
     },
 ]

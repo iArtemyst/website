@@ -5,6 +5,7 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import * as pages from "@/app/globals/pages-main";
+import * as gallery from "@/app/globals/gallery-component";
 
 import imgPubDart04 from "@/app/assets/images/_3d/_pubDart/pubDart_img_03.png";
 import imgPubDart05 from "@/app/assets/images/_3d/_pubDart/pubDart_img_04.png";
@@ -18,6 +19,11 @@ const bentoGap = "gap-[12px]";
 const titleTextSize= "text-[24px]";
 const paraTextSize = "text-[12px]";
 
+const cell01Media: bentos.IPopupMedia = {
+        assetMediaLink: imgPubDart05,
+        assetText: "test",
+}
+
 function BentoBoxA() {
     return (
         <div className={`${bentoGap} grid grid-cols-2 w-[80%] justify-self-center text-textVariant`}>
@@ -28,13 +34,13 @@ function BentoBoxA() {
                     All modeling, UVing, shader development, and texture baking was done in Blender 3D." textSize={paraTextSize}/>
                 </bentos.CellText>
 
-                <bentos.CellVideo cellVidLink={vidPubDart01} cellSpan="col-span-1"/>
-                <bentos.CellVideo cellVidLink={vidPubDart03} cellSpan="col-span-1"/>
-                <bentos.CellVideo cellVidLink={vidPubDart04} cellSpan="col-span-1"/>
-                <bentos.CellVideo cellVidLink={vidPubDart05} cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={vidPubDart01} mediaText="Environment Models and Maps" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={vidPubDart03} mediaText="Darboard Housing Model and Maps" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={vidPubDart04} mediaText="Table and Chairs Model and Maps" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={vidPubDart05} mediaText="Datboard and Darts Model and Maps" cellSpan="col-span-1"/>
 
-                <bentos.CellImage cellImgLink={imgPubDart04} cellImgAlt="Pub Scene Render" cellSpan="col-span-1"/>
-                <bentos.CellImage cellImgLink={imgPubDart05} cellImgAlt="Pub Scene Wireframe" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={imgPubDart04} mediaText="Pub Scene Render" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={imgPubDart05} mediaText="Pub Scene Wireframe" cellSpan="col-span-1"/>
         </div>
     )
 }

@@ -105,3 +105,16 @@ export function GetGallerySmlImage({imgLink, imgAlt = "Default Image",}: {imgLin
             />
     )
 }
+
+
+export function GetBentoGalleryMedia({mediaLink, mediaText}:{mediaLink:string|StaticImageData, mediaText:string}) {
+    return (
+        <div className={`rounded-[12px] overflow-clip shadow-[inset_0px_0px_24px_#00000090]`}>
+            {
+                typeof mediaLink === "string" ?
+                <video src={mediaLink} width="full" height="full" autoPlay muted controls loop/> :
+                <Image src={mediaLink} alt={mediaText} className="w-full h-full object-cover"/>
+            }
+        </div>
+    )
+}

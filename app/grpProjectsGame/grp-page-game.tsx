@@ -15,7 +15,7 @@ import vidHairGenerator from "/app/assets/videos/_game/_stubbleGen/ShavingGenera
 const linkStylizedVFX = "../indProjects/projVFX";
 const linkDartPub = "../indProjects/projDartPub";
 const linkUtopaea = "../indProjects/projUtopaea";
-const linkProcToonCity = "../indProjects/projProcToonCity";
+const linkProcToonCity = "../indProjects/projProcIslandCity";
 const linkProcMats = "../indProjects/projProcMat";
 const linkHairGenerator = "../indProjects/projHairGenerator";
 

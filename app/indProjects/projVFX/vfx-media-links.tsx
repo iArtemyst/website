@@ -59,7 +59,7 @@ const VFXProjectCardAData: gallery.IProjectCardData =
 
 const VFXCardAGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf",
         assetMediaLink: vfxGalleryVidA,
         assetStillLink: vfxStillA,
     },

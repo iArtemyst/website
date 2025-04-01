@@ -7,6 +7,7 @@ import * as pages from "@/app/globals/pages-main";
 import imgEES02 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_01.png";
 import imgEES03 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_02.png";
 import imgEES04 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_03.png";
+import imgEES05 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_04.png";
 import imgEES06 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_05.png";
 import imgEES07 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_06.png";
 import imgEES14 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_13.png";
@@ -16,14 +17,17 @@ import imgEES18 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_17.png";
 import imgEES19 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_18.png";
 import imgEES20 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_19.png";
 import imgEES21 from "@/app/assets/images/_3d/_medAnim/EESAnim_Stills_20.png";
+
+import imgMamm01 from "@/app/assets/images/_3d/_medAnim/Mammotome_Stills_0.png";
+import imgMamm03 from "@/app/assets/images/_3d/_medAnim/Mammotome_Stills_2.png";
+import imgMamm04 from "@/app/assets/images/_3d/_medAnim/Mammotome_Stills_3.png";
+
 import vidEESA04 from "@/app/assets/videos/_3d/_medAnim/EESAnim_ClipA_004.mp4";
 import vidEESB03 from "@/app/assets/videos/_3d/_medAnim/EESAnim_ClipB_003.mp4";
 import vidEESB04 from "@/app/assets/videos/_3d/_medAnim/EESAnim_ClipB_004.mp4";
 import vidEESB06 from "@/app/assets/videos/_3d/_medAnim/EESAnim_ClipB_006.mp4";
 import vidEESC03 from "@/app/assets/videos/_3d/_medAnim/EESAnim_ClipC_003.mp4";
-import imgMamm01 from "@/app/assets/images/_3d/_medAnim/Mammotome_Stills_0.png";
-import imgMamm03 from "@/app/assets/images/_3d/_medAnim/Mammotome_Stills_2.png";
-import imgMamm04 from "@/app/assets/images/_3d/_medAnim/Mammotome_Stills_3.png";
+
 import vidMamm01 from "@/app/assets/videos/_3d/_medAnim/Mammotome_Clip_001.mp4";
 import vidMamm02 from "@/app/assets/videos/_3d/_medAnim/Mammotome_Clip_002.mp4";
 
@@ -94,14 +98,14 @@ function BentoBox() {
                     </div>
 
                     <div className={`${bentoGap} col-span-4 grid grid-cols-2`}>
-                        <bentos.CellImage cellImgLink={imgEES02} cellImgAlt="" cellSpan="col-span-1"/>
-                        <bentos.CellImage cellImgLink={imgEES15} cellImgAlt="" cellSpan="col-span-1"/>
+                        <bentos.CellImage cellImgLink={imgEES21} cellImgAlt="" cellSpan="col-span-1"/>
+                        <bentos.CellImage cellImgLink={imgEES14} cellImgAlt="" cellSpan="col-span-1"/>
                     </div>                  
                 </div>
 
                 <div className={`${bentoGap} col-span-2 grid grid-cols-4`}>
                     <bentos.CellImage cellImgLink={imgMamm03} cellImgAlt="" cellSpan="col-span-1"/>
-                    <bentos.CellImage cellImgLink={imgEES21} cellImgAlt="" cellSpan="col-span-1"/>
+                    <bentos.CellImage cellImgLink={imgEES05} cellImgAlt="" cellSpan="col-span-1"/>
                     <bentos.CellImage cellImgLink={imgMamm01} cellImgAlt="" cellSpan="col-span-1"/>
                     <bentos.CellImage cellImgLink={imgMamm04} cellImgAlt="" cellSpan="col-span-1"/>
                 </div>

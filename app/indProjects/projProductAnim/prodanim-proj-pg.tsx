@@ -29,9 +29,9 @@ import imgMakino03 from "@/app/assets/images/_3d/_prodAnim/Makino_Stills__02.png
 import imgMakino04 from "@/app/assets/images/_3d/_prodAnim/Makino_Stills__03.png";
 import imgMakino05 from "@/app/assets/images/_3d/_prodAnim/Makino_Stills__04.png";
 
-import vidFlowserve02 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipA_002.mp4";
-import vidFlowserve06 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipA_006.mp4";
-import vidFlowserve08 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_ClipB_002.mp4";
+import vidFlowserve02 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_Clip01.mp4";
+import vidFlowserve06 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_Clip02.mp4";
+import vidFlowserve08 from "@/app/assets/videos/_3d/_prodAnim/Flowserve_Clip03.mp4";
 
 import vidJnJ01 from "@/app/assets/videos/_3d/_prodAnim/JnJ_ClipA_001.mp4";
 import vidJnJ04 from "@/app/assets/videos/_3d/_prodAnim/JnJ_ClipB_002.mp4";

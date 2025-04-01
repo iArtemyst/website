@@ -20,7 +20,7 @@ const paraTextSize = "text-[12px]";
 
 function BentoBoxA() {
     return (
-        <div className="relative z-0 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
+        <div className="relative z-auto grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
 
                 <div className="w-full justify-self-center grid grid-cols-3 gap-[12px]">
                     <bentos.CellText cellSpan="col-span-1">
@@ -28,13 +28,13 @@ function BentoBoxA() {
                         <bentos.ParagraphText textSize={paraTextSize} text="When my partner came to me with the idea for a Super Smash Bros Melee combo video, I was immediately on board. The idea they had developed was a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
                     </bentos.CellText>
                     
-                    <bentos.CellVideo cellVidLink={vidDDRMelee01} cellSpan="col-span-2" />
+                    <bentos.CellMediaOnClick mediaLink={vidDDRMelee01} mediaText="Test Text" cellSpan="col-span-2" />
                 </div>
 
                 <div className="grid grid-cols-3 h-fit gap-[12px]">
-                    <bentos.CellImage cellImgAlt="Opening menu screen" cellImgLink={imgDDRMelee01} cellSpan="col-span-1"/>
-                    <bentos.CellImage cellImgAlt="Game type selection screen" cellImgLink={imgDDRMelee03} cellSpan="col-span-1"/>
-                    <bentos.CellImage cellImgAlt="Song selection screen" cellImgLink={imgDDRMelee05} cellSpan="col-span-1"/>
+                    <bentos.CellMediaOnClick mediaText="Opening menu screen" mediaLink={imgDDRMelee01} cellSpan="col-span-1"/>
+                    <bentos.CellMediaOnClick mediaText="Game type selection screen" mediaLink={imgDDRMelee03} cellSpan="col-span-1"/>
+                    <bentos.CellMediaOnClick mediaText="Song selection screen" mediaLink={imgDDRMelee05} cellSpan="col-span-1"/>
                 </div>
 
                 <div className="w-full justify-self-center grid grid-cols-3 gap-[12px]">
@@ -57,7 +57,7 @@ function BentoBoxA() {
 
 function BentoBoxB() {
     return (
-        <div className="relative z-0 flex w-[70%] h-auto justify-self-center grid-cols-1 gap-[12px] rounded-3xl place-content-center text-white hover:cursor-pointer">
+        <div className="relative z-auto flex w-[70%] h-auto justify-self-center grid-cols-1 gap-[12px] rounded-3xl place-content-center text-white hover:cursor-pointer">
             <div className="row-span-1">
             <YoutubeVideo />
             </div>

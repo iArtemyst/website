@@ -3,6 +3,8 @@ import type { Config } from "tailwindcss";
 export const accentColor: string = "#20F38A";
 export const bgColor: string = "#1e1a1e";
 export const bgVariant: string = "#111111";
+export const cardBGColor: string = "#eeeeee";
+export const cardBGInactiveColor: string = "#CCCCCC";
 export const textColor: string = "#111111";
 export const textVariant: string = "#fcfcfc";
 export const priColor: string = "#FFFFFF";
@@ -38,6 +40,9 @@ export default {
         bgColor: bgColor,
         bgVariant: bgVariant,
         accentColor: accentColor,
+
+        cardBGColor:cardBGColor,
+        cardBGInactiveColor:cardBGInactiveColor,
 
         textColor: textColor,
         textVariant: textVariant,

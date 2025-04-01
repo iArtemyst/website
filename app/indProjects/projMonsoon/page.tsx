@@ -4,7 +4,6 @@ import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import { ProjectMonsoonVermutPage } from "./monver-proj-pg";
 const linkGrp3D = '../grpProjects3D';
 
-import * as backButtons from "@/app/globals/back-buttons";
 
 function RenderProjMonsoonVermut() {
   return (

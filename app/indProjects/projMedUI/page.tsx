@@ -1,8 +1,7 @@
 import "@/app/globals/globals.css";
 
-import * as backButtons from "@/app/globals/back-buttons";
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
-import ProjectMedMotion from "./proj-layout";
+import ProjectMedMotion from "./medui-proj-pg";
 
 const linkGrpMotion = '../grpProjectsMotion';
 

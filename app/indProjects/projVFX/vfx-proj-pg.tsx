@@ -9,7 +9,7 @@ import * as vfxmedia from "./vfx-media-links";
 export default function ProjectVFXPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <gallery.ProjectCardsWithGalleryContainer cardArray={vfxmedia.VFXProjectCardArrays} />
+            <gallery.ProjectCardsWithGalleryContainer cardArray={vfxmedia.VFXProjectCardArrays} columnAmount="grid-cols-5"/>
             <gallery.ProjectDetailRelativeText
                 TitleText="STYLIZED VFX"
                 MoreText="In an effort to practice my 2D shader development, I quickly rigged and animated a simple character model and set about recreating some stylized shaders applied to simple geometry.

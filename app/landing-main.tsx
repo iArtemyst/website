@@ -21,7 +21,7 @@ import { DoubleSidedCardContainer, IDoubleSideCard } from "@/app/globals/double-
 import * as fonts from "@/app/globals/fonts";
 import * as pages from "@/app/globals/pages-main";
 
-const width = "w-[160px] md:w-[240px] lg:w-[320px] xl:w-[360px] 2xl:w-[420px]";
+const width = "w-[160px] md:w-[240px] lg:w-[275px] xl:w-[320px] 2xl:w-[360px]";
 const hWidth = "group-hover:w-[200px] md:group-hover:w-[320px] lg:group-hover:w-[400px] xl:group-hover:w-[440px] 2xl:group-hover:w-[540px]";
 const hMargin = "group-hover:m-[-20px] md:group-hover:m-[-40px] 2xl:group-hover:m-[-60px]";
 const cMargin = "mx-[24px]";
