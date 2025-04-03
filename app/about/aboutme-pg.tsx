@@ -181,7 +181,7 @@ function SkillCardSection() {
     )
 }
 
-export default function RenderAboutPage() {
+export function AboutMePage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-hidden">
                 <AboutSection />

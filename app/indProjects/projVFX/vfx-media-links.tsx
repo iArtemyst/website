@@ -43,7 +43,7 @@ import vfxNodeE02 from "@/app/assets/images/_game/_vfx/vfx_nodes_010.png";
 
 
 
-import * as gallery from "@/app/globals/gallery-component";
+import * as gallery from "@/app/globals/project-galleries";
 import * as mediaData from "@/app/globals/media";
 
 const cardStyleWHM = "w-[120px] md:w-[240px] lg:w-[360px] group-hover:w-[180px] md:group-hover:w-[360px] lg:group-hover:w-[480px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
@@ -52,38 +52,38 @@ const cardContainerMargin = "mx-64px";
 const VFXProjectCardAData: gallery.IProjectCardData = 
 {
     cardMedia: CardA,
-    cardText: "sample text",
+    cardText: "Fireball VFX",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
 
 const VFXCardAGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf Asset Text Test 1 asfddddddddddddddddddddddddddddddasdfasdfasdfasdfasdf",
+        assetText: "Casting a fireball loop. Rigged, animated, and rendered in Blender3D",
         assetMediaLink: vfxGalleryVidA,
         assetStillLink: vfxStillA,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: "Shader nodes for the fireball",
+        assetMediaLink: vfxNodeA01,
+        assetStillLink: vfxNodeA01,
+    },
+    {
+        assetText: "Shader nodes for the fireball  trail",
         assetMediaLink: vfxNodeA02,
         assetStillLink: vfxNodeA02,
     },
     {
-        assetText: "Asset Text Test 3",
-        assetMediaLink: vfxNodeA03,
-        assetStillLink: vfxNodeA03,
-    },
-    {
-        assetText: "Asset Text Test 4",
-        assetMediaLink: vfxNodeA04,
-        assetStillLink: vfxNodeA04,
+        assetText: "Simulation and generation nodes for fireball creation",
+        assetMediaLink: vfxNodeA06,
+        assetStillLink: vfxNodeA06,
     },
 ]
 
 const VFXProjectCardBData: gallery.IProjectCardData = 
 {
     cardMedia: CardB,
-    cardText: "sample text",
+    cardText: "Energy Shield VFX",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -91,17 +91,17 @@ const VFXProjectCardBData: gallery.IProjectCardData =
 
 const VFXCardBGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Casting an energy shield. Rigged, animated, and rendered in Blender3D",
         assetMediaLink: vfxGalleryVidB,
         assetStillLink: vfxStillB,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: "Shader nodes for energy shield pt. 1",
         assetMediaLink: vfxNodeB01,
         assetStillLink: vfxNodeB01,
     },
     {
-        assetText: "Asset Text Test 3",
+        assetText: "Shader nodes for energy shield pt. 2",
         assetMediaLink: vfxNodeB02,
         assetStillLink: vfxNodeB02,
     },
@@ -110,7 +110,7 @@ const VFXCardBGallery: gallery.IGalleryMedia[] = [
 const VFXProjectCardCData: gallery.IProjectCardData =
 {
     cardMedia: CardC,
-    cardText: "sample text",
+    cardText: "Laser Beam VFX",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -118,17 +118,17 @@ const VFXProjectCardCData: gallery.IProjectCardData =
 
 const VFXCardCGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Lab testing a laser beam. Rigged, animated, and rendered in Blender3D",
         assetMediaLink: vfxGalleryVidC,
         assetStillLink: vfxStillC,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: "Shader nodes for laser beam",
         assetMediaLink: vfxNodeC01,
         assetStillLink: vfxNodeC01,
     },
     {
-        assetText: "Asset Text Test 3",
+        assetText: "Shader nodes for laser collision",
         assetMediaLink: vfxNodeC02,
         assetStillLink: vfxNodeC02,
     },
@@ -137,7 +137,7 @@ const VFXCardCGallery: gallery.IGalleryMedia[] = [
 const VFXProjectCardDData: gallery.IProjectCardData = 
 {
     cardMedia: CardD,
-    cardText: "sample text",
+    cardText: "Power Sphere VFX",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -145,17 +145,17 @@ const VFXProjectCardDData: gallery.IProjectCardData =
 
 const VFXCardDGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Tossing a power sphere. Rigged, animated, and rendered in Blender3D",
         assetMediaLink: vfxGalleryVidD,
         assetStillLink: vfxStillD,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: "Shader nodes for power sphere pt. 1.",
         assetMediaLink: vfxNodeD01,
         assetStillLink: vfxNodeD01,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: "Shader nodes for power sphere pt. 2.",
         assetMediaLink: vfxNodeD02,
         assetStillLink: vfxNodeD02,
     },
@@ -164,7 +164,7 @@ const VFXCardDGallery: gallery.IGalleryMedia[] = [
 const VFXProjectCardEData: gallery.IProjectCardData = 
 {
     cardMedia: CardE,
-    cardText: "sample text",
+    cardText: "Powering Up VFX",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -172,17 +172,17 @@ const VFXProjectCardEData: gallery.IProjectCardData =
 
 const VFXCardEGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Powering up to another level. Rigged, animated, and rendered in Blender3D",
         assetMediaLink: vfxGalleryVidE,
         assetStillLink: vfxStillE,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: "Shader nodes for power up core.",
         assetMediaLink: vfxNodeE01,
         assetStillLink: vfxNodeE01,
     },
     {
-        assetText: "Asset Text Test 3",
+        assetText: "Shader nodes for power up rings.",
         assetMediaLink: vfxNodeE02,
         assetStillLink: vfxNodeE02,
     },

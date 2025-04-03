@@ -9,9 +9,11 @@ import { CardHoverFX } from "./card-hover-fx";
 import * as fonts from "./fonts";
 
 const galleryBarImageSize = 'w-[24px] sm:w-[32px] md:w-[48px] lg:w-[64px]';
-const gallerySize = 'w-[360px] sm:w-[480px] md:w-[640px] lg:w-[720px] 2xl:w-[960px]';
+const gallerySize = 'min-w-[360px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[640px] xl:min-w-[720px] 2xl:min-w-[960px]';
 const gridGap = "gap-[12px]";
 const projectTextPadding = 'px-[2px] py-[2px] md:px-[4px] md:py-[4px] lg:px-[8px] lg:py-[8px]';
+const hoverTextSize = "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] 2xl:text-[18px]";
+const hoverTextDist = "group-hover:-translate-y-[12px] sm:group-hover:-translate-y-[14px] md:group-hover:-translate-y-[18px] lg:group-hover:-translate-y-[20px] 2xlgroup-hover:-translate-y-[24px] px-[6px] sm:px-[8px] md:px-[10px] lg:px-[12px] 2xl:px-[16px]";
 
 //--------------------------------------
 // INTERFACES FOR INDIVIDUAL PROJECT CARDS AND ASSOCIATED GALLERIES
@@ -41,7 +43,7 @@ export interface ICardWithGalleryArrays
 
 export function ProjectDetailRelativeText({TitleText="", MoreText=""}:{TitleText:String, MoreText:String}) {
     return (
-        <div className={`${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px] mb-[24px] flex-grow-0`}>
+        <div className={`${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px] mb-[24px] flex-grow-0 bg-bgColor`}>
             <p className={`${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full text-[18px] sm:text-[24px] md:text-[32px] lg:text-[48px] xl:text-[64px] 2xl:text-[92px] text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
             <p className={`${fonts.dotoBlack.className} ${projectTextPadding} text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
         </div>
@@ -62,6 +64,16 @@ function ProjDetailMediaCard({mediaSrc, mediaText,}:{mediaSrc:string | StaticIma
     )
 }
 
+function ProjectDetailHoverText({card}:{card:ICardWithGalleryArrays}) {
+    return (
+        <div className={` ${hoverTextDist} absolute left-0 top-0 w-full h-auto px-[16px] opacity-0 group-hover:opacity-100 -z-10 transition-all duration-300 `}>
+            <p className={`${fonts.dotoBlack.className} ${hoverTextSize} text-priColor`}>
+                {card.cardData.cardText}
+            </p>
+        </div>
+    )
+}
+
 function ProjectDetailCard({card, showGallery, setShowGallery} : { card:ICardWithGalleryArrays,  showGallery:boolean,  setShowGallery: (x: boolean) => void }) 
 {              
     return (
@@ -69,7 +81,8 @@ function ProjectDetailCard({card, showGallery, setShowGallery} : { card:ICardWit
                 onClick={(e) => { setShowGallery(!showGallery); }}>
             <CardHoverFX bufferZone={0} rotateAmount={7}>
                 <div className={`${card.cardData.cardStyleWHM} relative h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`}>
-                    <ProjDetailMediaCard mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText}/> 
+                    <ProjDetailMediaCard mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText}/>
+                    <ProjectDetailHoverText card={card}/> 
                 </div>
             </CardHoverFX>
         </div>
@@ -86,9 +99,7 @@ function ProjectCardNoGallery({card} : { card:ICardWithGalleryArrays}) {
                     <div className={`${effect && "animate-error-wiggle"} ${card.cardData.cardStyleWHM} relative h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`} 
                         onClick={() => { setEffect(true)}} onAnimationEnd={() => { setEffect(false)}}>
                         <ProjDetailMediaCard mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText}/> 
-                        <div className="absolute left-0 bottom-0 w-auto h-auto translate-y-[0px] opacity-0 group-hover:opacity-100 -z-10 group-hover:translate-y-[32px] transition-all duration-300">
-                            <p className={`${fonts.dotoBlack.className} text-textMed text-priColor`}>{card.cardData.cardText}</p>
-                        </div>
+                        <ProjectDetailHoverText card={card}/>
                     </div>
                 </CardHoverFX>
             </div>
@@ -109,7 +120,7 @@ function ProjectCardWithGallery({card}: {card:ICardWithGalleryArrays}) {
             {
                 showGallery && (
                     <div>
-                        <ClickIntoGallery galleryMedia={card.galleryData} setShowGallery={setShowGallery}/>
+                        <ClickIntoGallery galleryMedia={card.galleryData} setShowGallery={setShowGallery} galleryLength={card.galleryData.length}/>
                         <BackgroundBarrier setShowGallery={setShowGallery}/>
                     </div>
                 )
@@ -120,13 +131,14 @@ function ProjectCardWithGallery({card}: {card:ICardWithGalleryArrays}) {
 
 // CLIKC INTO GALLERY COMPONENTS
 
-function ClickIntoGallery({galleryMedia, setShowGallery}:{galleryMedia:IGalleryMedia[], setShowGallery: (x: boolean) => void}) {        
-    let [selectedIndex, setSelectedIndex] = useState(0)
+function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}:{galleryMedia:IGalleryMedia[], galleryLength:number, setShowGallery: (x: boolean) => void}) {        
+    let [selectedIndex, setSelectedIndex] = useState(0);
+    let [fullscreenMedia, setFullscreenMedia] = useState(false);
 
     //LARGE MEDIA IN GALLERY
     function GalleryMainMedia({mediaLink, mediaAbout}:{mediaLink:string|StaticImageData, mediaAbout:string}) {
         return (
-            <div className={`w-auto h-auto relative rounded-[24px] p-[24px] justify-items-center content-center`}>
+            <div className={`w-auto h-auto relative rounded-[24px] p-[24px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
                 <div className={`w-auto h-auto`}>
                         <media.GetGalleryLrgMedia mediaLink={mediaLink} mediaText={mediaAbout} />
                 </div>
@@ -134,9 +146,9 @@ function ClickIntoGallery({galleryMedia, setShowGallery}:{galleryMedia:IGalleryM
         )
     }
 
-    function GalleryImageNavBar({galleryImages} : {galleryImages: IGalleryMedia[]}) {
+    function GalleryImageNavBar({galleryImages, galleryLength} : {galleryImages: IGalleryMedia[], galleryLength:number}) {
         return (
-            <div className={`grid-cols-${galleryMedia.length} relative w-fit h-fit grid ${gridGap} justify-self-center content-center`}>
+            <div className={`grid-cols-${galleryLength} relative w-fit h-fit grid ${gridGap} justify-self-center content-center`}>
                 {
                     galleryImages.map((data, i) =>{
                         return (
@@ -176,20 +188,52 @@ function ClickIntoGallery({galleryMedia, setShowGallery}:{galleryMedia:IGalleryM
         )
     }
 
-    return (
-        <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] ${gridGap} w-fit h-fit z-[150] justify-items-center py-[12px]`}>
-            <div className={`relative ${gallerySize}`}>
-                <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor rounded-[24px]`}/>
-                <GalleryMainMedia mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText}/>
-                <GalleryMediaText galleryMediaText={galleryMedia[selectedIndex].assetText} />
-                <GalleryImageNavBar galleryImages={galleryMedia} />
-                <CloseButton />
+    function FullScreenMedia() {
+        function FsBgBarrier() {
+            return (
+                <div className={`fixed left-0 right-0 top-0 bottom-0 z-0 bg-black opacity-[75%]`} onClick={() => setFullscreenMedia(false)} />
+            )
+        }
+
+        function FsMediaAsset({mediaLink}:{mediaLink:string|StaticImageData}) {
+            return (
+                <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-full h-full z-10 content-center`} onClick={() => setFullscreenMedia(false)}>
+                    {
+                        typeof mediaLink === "string" ?
+                        <media.FullScreenVideo mediaLink={mediaLink}/> : 
+                        <media.FullScreenImg mediaLink={mediaLink}/>
+                    }
+                </div>
+            )
+        }
+
+        return (
+            <div className={`fixed z-[9999] left-0 right-0 top-0 bottom-0 content-center justify-items-center`}>
+                <FsBgBarrier/>
+                <FsMediaAsset mediaLink={galleryMedia[selectedIndex].assetMediaLink}/>
             </div>
-        </div>
+        )
+    }
+
+    return (
+        <>
+            <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] ${gridGap} w-fit h-fit z-[150] justify-items-center py-[12px]`}>
+                <div className={`relative ${gallerySize}`}>
+                    <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor rounded-[24px]`}/>
+                    <GalleryMainMedia mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText}/>
+                    <GalleryMediaText galleryMediaText={galleryMedia[selectedIndex].assetText} />
+                    <GalleryImageNavBar galleryImages={galleryMedia} galleryLength={galleryLength}/>
+                    <CloseButton />
+                </div>
+            </div>
+        {
+            fullscreenMedia && ( <FullScreenMedia /> )          
+        }
+        </>
     )
 }
 
-function BackgroundBarrier({setShowGallery,}:{setShowGallery:any,}) {
+function BackgroundBarrier({setShowGallery}:{setShowGallery:any}) {    
     return (
         <div className={`fixed left-0 right-0 top-0 bottom-0 z-[100]`} onClick={() => setShowGallery(false)}>
             <div className={`w-[100vw] h-[100vh] bg-black opacity-[75%] `}/>

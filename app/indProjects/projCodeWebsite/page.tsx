@@ -1,7 +1,7 @@
 import "@/app/globals/globals.css";
 
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
-import ProjectCodePortfolio from "./proj-layout";
+import { ProjectCodePortfolio } from "./portfoliosite-proj-pg";
 
 const linkGrpCode = '../grpProjectsCode';
 

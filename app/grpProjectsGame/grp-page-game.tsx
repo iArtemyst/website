@@ -19,46 +19,52 @@ const linkProcToonCity = "../indProjects/projProcIslandCity";
 const linkProcMats = "../indProjects/projProcMat";
 const linkHairGenerator = "../indProjects/projHairGenerator";
 
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
+import { IProjectLinkCard2, ProjectLinkCardsContainer } from "../globals/project-link-cards";
 
 const columnAmount = "grid-cols-3"
 
-const groupCardData: IProjectLinkCard[] = [
+const groupCardData: IProjectLinkCard2[] = [
     {
         projectTitle: "Stylized Character VFX",
         projectDates: "2024",
         mediaLink: vidStylizedVFX,
         cardLink: linkStylizedVFX,
+        errorText: undefined,
     },
     {
         projectTitle: "Darts and Pub Assets",
         projectDates: "2024",
         mediaLink: vidDartPub,
         cardLink: linkDartPub,
+        errorText: undefined,
     },
     {
         projectTitle: '"Utopaea" Game Level',
         projectDates: "2019 & 2024",
         mediaLink: vidUtopaea,
         cardLink: linkUtopaea,
+        errorText: undefined,
     },
     {
         projectTitle: "Procedural Materials",
         projectDates: "2023",
         mediaLink: vidProcMats,
         cardLink: linkProcMats,
+        errorText: undefined,
     },
     {
         projectTitle: "Island City Generator",
         projectDates: "2023",
         mediaLink: vidProcToonCity,
         cardLink: linkProcToonCity,
+        errorText: undefined,
     },
     {
         projectTitle: "Stubble Hair Generator",
         projectDates: "2024",
         mediaLink: vidHairGenerator,
         cardLink: linkHairGenerator,
+        errorText: undefined,
     },
 ]
 

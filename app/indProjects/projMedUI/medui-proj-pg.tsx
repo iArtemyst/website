@@ -36,41 +36,41 @@ function BentoBox() {
 
             <div className={`${bentoGap} grid grid-cols-2`}>
                 <div className={`${bentoGap} grid grid-cols-2`}>
-                <bentos.CellMediaOnClick mediaText="Electric Flow in Tissue" mediaLink={imgMedMotionC03} cellSpan="col-span-1"/>
-                <bentos.CellMediaOnClick mediaText="Enseal Sales Application" mediaLink={imgMedMotionB05} cellSpan="col-span-1"/>
-                <bentos.CellMediaOnClick mediaText="Tapered Pockets" mediaLink={imgMedMotionD04} cellSpan="col-span-1"/>
-                <bentos.CellMediaOnClick mediaText="Device Heat Profile" mediaLink={imgMedMotionC04} cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaText="Electric Flow in Tissue" mediaLink={imgMedMotionC03} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+                <bentos.CellMediaOnClick mediaText="Enseal Sales Application" mediaLink={imgMedMotionB05} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+                <bentos.CellMediaOnClick mediaText="Tapered Pockets" mediaLink={imgMedMotionD04} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+                <bentos.CellMediaOnClick mediaText="Device Heat Profile" mediaLink={imgMedMotionC04} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 </div>
 
-                <bentos.CellMediaOnClick mediaLink={vidMedMotionB04} mediaText="Test Text" cellSpan="col-span-1" />
+                <bentos.CellMediaOnClick mediaLink={vidMedMotionB04} mediaText="Mograph clip medical device comparisons" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
 
 
                 <bentos.CellText cellSpan="col-span-1">
                     <bentos.ParagraphText text="My work in Medical Animation began over 6 years ago, after I graduated college. Since graduating I have produced dozens of videos, app designs, print collateral, and muchc more for several large medical companies. While much of my work is unreleased still, a notable amount of what is released can be found on Youtube under client channels, or directly on their websites." textSize={paraTextSize}/>
                 </bentos.CellText>
 
-                <bentos.CellMediaOnClick mediaLink={vidMedMotionC03} mediaText="Test Text" cellSpan="col-span-1" /> 
+                <bentos.CellMediaOnClick mediaLink={vidMedMotionC03} mediaText="Mograph clip medical staple compression" cellSpan="col-span-1"  hoverTextColor="text-textColor"/> 
 
                 <div className={`${bentoGap} grid grid-cols-4 col-span-2`}>
-                    <bentos.CellMediaOnClick mediaText="Staple Comparison" mediaLink={imgMedMotionD02} cellSpan="col-span-1"/>
-                    <bentos.CellMediaOnClick mediaText="Endopath Sales Application" mediaLink={imgMedMotionB03} cellSpan="col-span-1"/>
-                    <bentos.CellMediaOnClick mediaText="Sealing Vessels" mediaLink={imgMedMotionC06} cellSpan="col-span-1"/>
-                    <bentos.CellMediaOnClick mediaText="Staple Cartridge Chart" mediaLink={imgMedMotionB02} cellSpan="col-span-1"/>
+                    <bentos.CellMediaOnClick mediaText="Staple Comparison" mediaLink={imgMedMotionD02} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+                    <bentos.CellMediaOnClick mediaText="Endopath Sales Application" mediaLink={imgMedMotionB03} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+                    <bentos.CellMediaOnClick mediaText="Sealing Vessels" mediaLink={imgMedMotionC06} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+                    <bentos.CellMediaOnClick mediaText="Staple Cartridge Chart" mediaLink={imgMedMotionB02} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 </div>
 
-                <bentos.CellMediaOnClick mediaLink={vidMedMotionC02} mediaText="Test Text" cellSpan="col-span-1" />
+                <bentos.CellMediaOnClick mediaLink={vidMedMotionC02} mediaText="Mograph clip medical stapler device" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
 
                 <bentos.CellText cellSpan="col-span-1">
                     <bentos.ParagraphText text="My work in motion for the medical field has expanded from trade show presentations, to full marketing collateral suites accompanying device launches, and even editing for surgical overviews or training videos." textSize={paraTextSize}/>
                 </bentos.CellText>
 
-                <bentos.CellMediaOnClick mediaLink={vidMedMotionB02} mediaText="Test Text" cellSpan="col-span-1" />
+                <bentos.CellMediaOnClick mediaLink={vidMedMotionB02} mediaText="Mograph clip energy devices" cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
 
                 <div className={`${bentoGap} grid grid-cols-2 col-span-1`}>
-                    <bentos.CellMediaOnClick mediaText="Medical Interface Flow" mediaLink={imgMedMotionA01} cellSpan="col-span-1"/>
-                    <bentos.CellMediaOnClick mediaText="Energy Devices" mediaLink={imgMedMotionC05} cellSpan="col-span-1"/>
-                    <bentos.CellMediaOnClick mediaText="Bipolar Energy Timeline" mediaLink={imgMedMotionC08} cellSpan="col-span-1"/>
-                    <bentos.CellMediaOnClick mediaText="Device Heat Profile" mediaLink={imgMedMotionD01} cellSpan="col-span-1"/>
+                    <bentos.CellMediaOnClick mediaText="Medical Interface Flow" mediaLink={imgMedMotionA01} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+                    <bentos.CellMediaOnClick mediaText="Energy Devices" mediaLink={imgMedMotionC05} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                    <bentos.CellMediaOnClick mediaText="Bipolar Energy Timeline" mediaLink={imgMedMotionC08} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                    <bentos.CellMediaOnClick mediaText="Device Heat Profile" mediaLink={imgMedMotionD01} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 </div>
 
             </div>

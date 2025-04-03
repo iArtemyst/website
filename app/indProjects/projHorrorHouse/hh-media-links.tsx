@@ -1,6 +1,6 @@
 'use client'
 
-import * as gallery from "@/app/globals/gallery-component";
+import * as gallery from "@/app/globals/project-galleries";
 import "@/app/globals/globals.css";
 
 import CardAMedia01b from "@/app/assets/images/_3d/_horrorHouses/hh-gallery-stills__00.png";
@@ -30,24 +30,24 @@ const cardContainerMargin = "mx-64px";
 const ProjectCardAData: gallery.IProjectCardData = 
 {
     cardMedia: CardA,
-    cardText: "sample text",
+    cardText: "Five Nights at Freddy's",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
 
 const CardAGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Five Nights at Freddy's render",
         assetMediaLink: CardAMedia01a,
         assetStillLink: CardAMedia01b,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: "Five Nights at Freddy's wireframe",
         assetMediaLink: CardAMedia02a,
         assetStillLink: CardAMedia02b,
     },
     {
-        assetText: "Asset Text Test 3",
+        assetText: "Five Nights at Freddy's original sketch by @KaitlinMooresArt",
         assetMediaLink: CardAMedia03,
         assetStillLink: CardAMedia03,
     },
@@ -56,7 +56,7 @@ const CardAGallery: gallery.IGalleryMedia[] = [
 const ProjectCardBData: gallery.IProjectCardData = 
 {
     cardMedia: CardB,
-    cardText: "sample text",
+    cardText: "Halloween House",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -64,17 +64,17 @@ const ProjectCardBData: gallery.IProjectCardData =
 
 const CardBGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Halloween House render",
         assetMediaLink: CardBMedia01a,
         assetStillLink: CardBMedia01b,
     },
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Halloween House wireframe",
         assetMediaLink: CardBMedia02a,
         assetStillLink: CardBMedia02b,
     },
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Halloween House original sketch by @KaitlinMooresArt",
         assetMediaLink: CardBMedia03,
         assetStillLink: CardBMedia03,
     },
@@ -83,7 +83,7 @@ const CardBGallery: gallery.IGalleryMedia[] = [
 const ProjectCardCData: gallery.IProjectCardData =
 {
     cardMedia: CardC,
-    cardText: "sample text",
+    cardText: "Midsommar Tent",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -91,17 +91,17 @@ const ProjectCardCData: gallery.IProjectCardData =
 
 const CardCGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Midsommar Tent render",
         assetMediaLink: CardCMedia01a,
         assetStillLink: CardCMedia01b,
     },
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Midsommar Tent wireframe",
         assetMediaLink: CardCMedia02a,
         assetStillLink: CardCMedia02b,
     },
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Midsommar Tent original sketch by @KaitlinMooresArt",
         assetMediaLink: CardCMedia03,
         assetStillLink: CardCMedia03,
     },

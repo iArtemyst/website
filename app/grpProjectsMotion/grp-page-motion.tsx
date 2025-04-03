@@ -3,7 +3,7 @@
 import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
+import { IProjectLinkCard2, ProjectLinkCardsContainer } from "../globals/project-link-cards";
 
 import vidBankApp from "/app/assets/videos/_motionui/trimmed-loop_bankapp.mp4";
 import vidDDRMelee from "/app/assets/videos/_motionui/trimmed-loop_ddr-melee.mp4";
@@ -19,36 +19,41 @@ const linkConceptApps = "../indProjects/projConceptApps";
 
 const columnAmount = "grid-cols-3"
 
-const groupCardData: IProjectLinkCard[] = [
+const groupCardData: IProjectLinkCard2[] = [
     {
         projectTitle: "DDR Melee Motion Graphics",
         projectDates: "2025",
         mediaLink: vidDDRMelee,
         cardLink: linkDDRMelee,
+        errorText: undefined,
     },
     {
         projectTitle: "Looping Animations",
         projectDates: "2020-2024",
         mediaLink: vidInstaLoops,
         cardLink: linkInstaLoops,
+        errorText: undefined,
     },
     {
         projectTitle: "Consumer Motion Graphics",
         projectDates: "2018-2025",
         mediaLink: vidConsumerMotion,
         cardLink: linkConsumerMotion,
+        errorText: undefined,
     },
     {
         projectTitle: "Medical Motion and UI",
         projectDates: "2018-2025",
         mediaLink: vidMedUI,
         cardLink: linkMedUI,
+        errorText: undefined,
     },
     {
         projectTitle: "Concept App Designs",
         projectDates: "2018-2020",
         mediaLink: vidBankApp,
         cardLink: linkConceptApps,
+        errorText: undefined,
     },
 ]
 

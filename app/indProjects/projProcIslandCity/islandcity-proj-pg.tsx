@@ -1,6 +1,6 @@
 'use client'
 
-import * as gallery from "@/app/globals/gallery-component";
+import * as gallery from "@/app/globals/project-galleries";
 import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 

@@ -82,9 +82,7 @@ function BentoBoxA() {
 
     function VideoCell({link}:{link:string}){
         return (
-            <CardHoverFX bufferZone={0} rotateAmount={12}>
-                    <bentos.CellVideo cellVidLink={link} cellSpan="col-span-1"/>
-            </CardHoverFX>
+            <bentos.CellMediaOnClick mediaLink={link} mediaText="" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
         )
     }
 

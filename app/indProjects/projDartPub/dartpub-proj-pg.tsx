@@ -5,8 +5,9 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import * as pages from "@/app/globals/pages-main";
-import * as gallery from "@/app/globals/gallery-component";
+import * as gallery from "@/app/globals/project-galleries";
 
+import imgPubDart01 from "@/app/assets/images/_3d/_pubDart/pubDart_img_05.jpg";
 import imgPubDart04 from "@/app/assets/images/_3d/_pubDart/pubDart_img_03.png";
 import imgPubDart05 from "@/app/assets/images/_3d/_pubDart/pubDart_img_04.png";
 import vidPubDart01 from "@/app/assets/videos/_3d/_pubDart/pubDart_vid_00.mp4";
@@ -29,18 +30,24 @@ function BentoBoxA() {
         <div className={`${bentoGap} grid grid-cols-2 w-[80%] justify-self-center text-textVariant`}>
                 <bentos.CellText cellSpan="col-span-2">
                     <bentos.HeaderText text="Game Ready Darts and Pub Assets" textSize={titleTextSize}/>
+                </bentos.CellText>
+
+                <div className="col-span-2 grid grid-cols-3">
+                    <bentos.CellMediaOnClick mediaLink={imgPubDart04} mediaText="Pub Scene Render" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                    <bentos.CellMediaOnClick mediaLink={imgPubDart05} mediaText="Pub Scene Wireframe" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                    <bentos.CellMediaOnClick mediaLink={imgPubDart01} mediaText="Photo from the Pub" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                </div>
+                
+                <bentos.CellText cellSpan="col-span-2">
                     <bentos.ParagraphText text="This project is inspired by a local pub that I visited to play darts with friends.
                     I challenged myself to make these models completely game ready, from consistent low quality polys, to UV unwrapping and texture baking.
                     All modeling, UVing, shader development, and texture baking was done in Blender 3D." textSize={paraTextSize}/>
                 </bentos.CellText>
 
-                <bentos.CellMediaOnClick mediaLink={vidPubDart01} mediaText="Environment Models and Maps" cellSpan="col-span-1"/>
-                <bentos.CellMediaOnClick mediaLink={vidPubDart03} mediaText="Darboard Housing Model and Maps" cellSpan="col-span-1"/>
-                <bentos.CellMediaOnClick mediaLink={vidPubDart04} mediaText="Table and Chairs Model and Maps" cellSpan="col-span-1"/>
-                <bentos.CellMediaOnClick mediaLink={vidPubDart05} mediaText="Datboard and Darts Model and Maps" cellSpan="col-span-1"/>
-
-                <bentos.CellMediaOnClick mediaLink={imgPubDart04} mediaText="Pub Scene Render" cellSpan="col-span-1"/>
-                <bentos.CellMediaOnClick mediaLink={imgPubDart05} mediaText="Pub Scene Wireframe" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={vidPubDart01} mediaText="Environment Models and Maps" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClick mediaLink={vidPubDart03} mediaText="Dartboard Housing Model and Maps" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClick mediaLink={vidPubDart04} mediaText="Table and Chairs Model and Maps" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClick mediaLink={vidPubDart05} mediaText="Dartboard and Darts Model and Maps" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
         </div>
     )
 }

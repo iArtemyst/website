@@ -3,7 +3,7 @@
 import * as bentos from "@/app/globals/bento-boxes";
 import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
-import * as gallery from "@/app/globals/gallery-component";
+import * as gallery from "@/app/globals/project-galleries";
 
 import Card01 from "/app/assets/videos/_3d/_horrorHouses/HH_FNAF_Card.mp4";
 import Card02 from "/app/assets/videos/_3d/_horrorHouses/HH_Halloween_Card.mp4";

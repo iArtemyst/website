@@ -42,13 +42,13 @@ function BentoBox() {
                 </bentos.CellText>
             </div>
 
-                <bentos.CellImage cellImgLink={MVimg01} cellImgAlt="Monsoon Vermut wine glass render" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={MVimg01} mediaText="Monsoon Vermut wine glass render" cellSpan="col-span-1"/>
 
-                <bentos.CellImage cellImgLink={MVimg02} cellImgAlt="Monsoon Vermut desert render" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={MVimg02} mediaText="Monsoon Vermut desert render" cellSpan="col-span-1"/>
 
-                <bentos.CellImage cellImgLink={MVimg03} cellImgAlt="Monsoon Vermut with cactus render" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={MVimg03} mediaText="Monsoon Vermut with cactus render" cellSpan="col-span-1"/>
 
-                <bentos.CellImage cellImgLink={MVimg04} cellImgAlt="Monsoon Vermut group sand render" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={MVimg04} mediaText="Monsoon Vermut group sand render" cellSpan="col-span-1"/>
 
         </div>
     )

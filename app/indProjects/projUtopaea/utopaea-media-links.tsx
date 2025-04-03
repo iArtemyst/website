@@ -30,7 +30,7 @@ import CardDMedia05 from "@/app/assets/images/_game/_utopaea/utopaea_card04_04.p
 import CardDMedia06 from "@/app/assets/images/_game/_utopaea/utopaea_card04_05.png";
 import CardDMedia07 from "@/app/assets/images/_game/_utopaea/utopaea_card04_06.png";
 
-import * as gallery from "@/app/globals/gallery-component";
+import * as gallery from "@/app/globals/project-galleries";
 import * as mediaData from "@/app/globals/media";
 
 const cardStyleWHM = "w-[120px] sm:w-[120px] md:w-[160px] lg:w-[240px] group-hover:w-[120px] sm:group-hover:w-[160px] md:group-hover:w-[240px] lg:group-hover:w-[360px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
@@ -39,34 +39,34 @@ const cardContainerMargin = "mx-64px";
 const ProjectCardAData: gallery.IProjectCardData = 
 {
     cardMedia: CardA,
-    cardText: "sample text",
+    cardText: "Concept Sketches and Asset Modeling",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
 
 const CardAGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Collected concept sketch page",
         assetMediaLink: CardAMedia01,
         assetStillLink: CardAMedia01,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: "3d models of in scene assets",
         assetMediaLink: CardAMedia02,
         assetStillLink: CardAMedia02,
     },
     {
-        assetText: "Asset Text Test 3",
+        assetText: "3d models of in scene assets",
         assetMediaLink: CardAMedia03,
         assetStillLink: CardAMedia03,
     },
     {
-        assetText: "Asset Text Test 3",
+        assetText: "3d models of in scene assets",
         assetMediaLink: CardAMedia04,
         assetStillLink: CardAMedia04,
     },
     {
-        assetText: "Asset Text Test 3",
+        assetText: "3d models of in scene assets remodel",
         assetMediaLink: CardAMedia05,
         assetStillLink: CardAMedia05,
     },
@@ -75,7 +75,7 @@ const CardAGallery: gallery.IGalleryMedia[] = [
 const ProjectCardBData: gallery.IProjectCardData = 
 {
     cardMedia: CardB,
-    cardText: "sample text",
+    cardText: "Level and Map Design",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -83,12 +83,12 @@ const ProjectCardBData: gallery.IProjectCardData =
 
 const CardBGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Sketching various map layouts",
         assetMediaLink: CardBMedia01,
         assetStillLink: CardBMedia01,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: "Model testing map layouts",
         assetMediaLink: CardBMedia02,
         assetStillLink: CardBMedia02,
     },
@@ -97,7 +97,7 @@ const CardBGallery: gallery.IGalleryMedia[] = [
 const ProjectCardCData: gallery.IProjectCardData =
 {
     cardMedia: CardC,
-    cardText: "sample text",
+    cardText: "Initial Environment Modeling",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -105,22 +105,22 @@ const ProjectCardCData: gallery.IProjectCardData =
 
 const CardCGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Initial final map design",
         assetMediaLink: CardCMedia01,
         assetStillLink: CardCMedia01,
     },
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Goal point area design.",
         assetMediaLink: CardCMedia02,
         assetStillLink: CardCMedia02,
     },
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Entrance to team building design.",
         assetMediaLink: CardCMedia03,
         assetStillLink: CardCMedia03,
     },
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Center market point area.",
         assetMediaLink: CardCMedia04,
         assetStillLink: CardCMedia04,
     },
@@ -129,7 +129,7 @@ const CardCGallery: gallery.IGalleryMedia[] = [
 const ProjectCardDData: gallery.IProjectCardData =
 {
     cardMedia: CardD,
-    cardText: "sample text",
+    cardText: "Final Map Design Renders",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -137,39 +137,29 @@ const ProjectCardDData: gallery.IProjectCardData =
 
 const CardDGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Final map layout.",
         assetMediaLink: CardDMedia01,
         assetStillLink: CardDMedia01,
     },
     {
-        assetText: "Asset Text Test 1",
-        assetMediaLink: CardDMedia02,
-        assetStillLink: CardDMedia02,
-    },
-    {
-        assetText: "Asset Text Test 1",
+        assetText: "Interior team building layout.",
         assetMediaLink: CardDMedia03,
         assetStillLink: CardDMedia03,
     },
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Center market point design.",
         assetMediaLink: CardDMedia04,
         assetStillLink: CardDMedia04,
     },
     {
-        assetText: "Asset Text Test 1",
-        assetMediaLink: CardDMedia05,
-        assetStillLink: CardDMedia05,
-    },
-    {
-        assetText: "Asset Text Test 1",
-        assetMediaLink: CardDMedia06,
-        assetStillLink: CardDMedia06,
-    },
-    {
-        assetText: "Asset Text Test 1",
+        assetText: "Market assets and design.",
         assetMediaLink: CardDMedia07,
         assetStillLink: CardDMedia07,
+    },
+    {
+        assetText: "View from player spawn point.",
+        assetMediaLink: CardDMedia06,
+        assetStillLink: CardDMedia06,
     },
 ]
 

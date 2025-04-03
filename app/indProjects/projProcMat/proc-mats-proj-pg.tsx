@@ -19,53 +19,62 @@ import vidProcMat08 from "@/app/assets/videos/_game/_procmats/procmats_loop_07.m
 import vidProcMat09 from "@/app/assets/videos/_game/_procmats/procmats_loop_08.mp4";
 import vidProcMat10 from "@/app/assets/videos/_game/_procmats/procmats_loop_09.mp4";
 
-export interface IVideoWithTitle {
+interface IVideoWithTitle {
     vidLink: string,
-    vidTitle: String,
+    vidTitle: string,
+    hoverColor: string,
 }
 
 function BentoBoxA() {
     const cellData: IVideoWithTitle[] = [
         { vidLink: vidProcMat01,
             vidTitle: "Asphalt Material",
+            hoverColor: "text-textColor",
         },
         { vidLink: vidProcMat02,
             vidTitle: "Green Bark and Wood Material",
+            hoverColor: "text-textVariant",
         },
         { vidLink: vidProcMat03,
             vidTitle: "White Bark and Wood Material",
+            hoverColor: "text-textVariant",
         },
         { vidLink: vidProcMat04,
             vidTitle: "Brick Material",
+            hoverColor: "text-textVariant",
         },
         { vidLink: vidProcMat05,
             vidTitle: "Refractive Glass Material",
+            hoverColor: "text-textVariant",
         },
         { vidLink: vidProcMat06,
             vidTitle: "Snow and Ice Material",
+            hoverColor: "text-textColor",
         },
         { vidLink: vidProcMat07,
             vidTitle: "Lava Material",
+            hoverColor: "text-textColor",
         },
         { vidLink: vidProcMat08,
             vidTitle: "Worn Metal Material",
+            hoverColor: "text-textColor",
         },
         { vidLink: vidProcMat09,
             vidTitle: "Quartz Rock Material",
+            hoverColor: "text-textVariant",
         },
         { vidLink: vidProcMat10,
             vidTitle: "Sand Dunes Material",
+            hoverColor: "text-textVariant",
         },
     ]
 
-    function VideoCell({link, vidTitle=""}:{link:string, vidTitle:String}){
+    function VideoCell({link, vidTitle="", hoverColor}:{link:string, vidTitle:string, hoverColor:string}){
         return (
-            <CardHoverFX bufferZone={0} rotateAmount={12}>
-                <div className="relative group">
-                    <bentos.CellVideo cellVidLink={link} cellSpan="col-span-1"/>
-                    <p className={`absolute left-[50%] -translate-x-[50%] w-[80%] bottom-0 my-[4px] md:my-[12px] text-[10px] opacity-0 group-hover:opacity-100 group-hover:translate-y-[0px] -translate-y-[12px] text-balance text-center text-white transition-all duration-400 drop-shadow-[0px_0px_8px_#000000] ${fonts.dotoBlack.className}`}>{vidTitle}</p>
-                </div>
-            </CardHoverFX>
+            <div>
+                <bentos.CellMediaOnClick mediaLink={link} mediaText={vidTitle} cellSpan="col-span-1" hoverTextColor={hoverColor}/>
+                <p className={`absolute left-[50%] -translate-x-[50%] w-[80%] bottom-0 my-[4px] md:my-[12px] text-[10px] opacity-0 group-hover:opacity-100 group-hover:translate-y-[0px] -translate-y-[12px] text-balance text-center text-white transition-all duration-400 drop-shadow-[0px_0px_8px_#000000] ${fonts.dotoBlack.className}`}>{vidTitle}</p>
+            </div>
         )
     }
 
@@ -73,7 +82,7 @@ function BentoBoxA() {
         <div className="relative z-0 grid grid-cols-2 xl:grid-cols-3 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] text-white hover:cursor-pointer">
             {
             cellData.map((data, i) => {
-                return <VideoCell link={data.vidLink} vidTitle={data.vidTitle} key={i}/>
+                return <VideoCell link={data.vidLink} vidTitle={data.vidTitle} hoverColor={data.hoverColor} key={i}/>
             })
             }
         </div>

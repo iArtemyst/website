@@ -3,7 +3,7 @@
 import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
+import { IProjectLinkCard2, ProjectLinkCardsContainer } from "../globals/project-link-cards";
 
 import vidDartPub from "/app/assets/videos/_3d/trimmed-loop_dartspub.mp4";
 import vidHorrorHouse from "/app/assets/videos/_3d/trimmed-loop_horrorhouses.mp4";
@@ -26,54 +26,62 @@ const linkInstaLoops = "../indProjects/projLoopAnim3D";
 
 const columnAmount = "grid-cols-3"
 
-const groupCardData: IProjectLinkCard[] = [
+const groupCardData: IProjectLinkCard2[] = [
     {
         projectTitle: "Horror Houses",
         projectDates: "2024",
         mediaLink: vidHorrorHouse,
         cardLink: linkHorrorHouse,
+        errorText: undefined,
     },
     {
         projectTitle: "Product Animation",
         projectDates: "2018-2025",
         mediaLink: vidProdAnim,
         cardLink: linkProdAnim,
+        errorText: undefined,
     },
     {
         projectTitle: "Monsoon Vermut",
         projectDates: "2022",
         mediaLink: vidMonsoonVermut,
         cardLink: linkMonsoonVermut,
+        errorText: undefined,
     },
     {
         projectTitle: "Stylized VFX",
         projectDates: "2024",
         mediaLink: vidStylizedVFX,
         cardLink: linkStylizedVFX,
+        errorText: undefined,
     },
     {
         projectTitle: "Darts and Pub Assets",
         projectDates: "2024",
         mediaLink: vidDartPub,
         cardLink: linkDartPub,
+        errorText: undefined,
     },
     {
         projectTitle: "Medical Animation",
         projectDates: "2018-2025",
         mediaLink: vidMedAnim,
         cardLink: linkMedAnim,
+        errorText: undefined,
     },
     {
         projectTitle: "Looping Animations",
         projectDates: "2020-2024",
         mediaLink: vidInstaLoops,
         cardLink: linkInstaLoops,
+        errorText: undefined,
     },
     {
         projectTitle: "Procedural Materials",
         projectDates: "2023",
         mediaLink: vidProcMats,
         cardLink: linkProcMats,
+        errorText: undefined,
     },
 ]
 

@@ -118,3 +118,19 @@ export function GetBentoGalleryMedia({mediaLink, mediaText}:{mediaLink:string|St
         </div>
     )
 }
+
+export function FullScreenVideo({mediaLink}:{mediaLink:string}) {
+    return (
+        <div className={`w-full h-full relative content-center`}>
+                <video src={mediaLink} className={`w-full h-full object-contain`} autoPlay muted controls loop/>
+        </div>
+    )
+}
+
+export function FullScreenImg({mediaLink}:{mediaLink:StaticImageData}) {
+    return (
+        <div className={`relative w-full h-full content-center`}>
+            <Image src={mediaLink} alt="" className="w-full h-full object-contain"/>
+        </div>
+    )
+}

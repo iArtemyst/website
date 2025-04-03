@@ -43,7 +43,7 @@ import CardD from "/app/assets/images/_game/_stubbleGen/shave-gen_still-d.png";
 
 
 
-import * as gallery from "@/app/globals/gallery-component";
+import * as gallery from "@/app/globals/project-galleries";
 
 const cardStyleWHM = "w-[120px] sm:w-[120px] md:w-[160px] lg:w-[240px] group-hover:w-[120px] sm:group-hover:w-[160px] md:group-hover:w-[240px] lg:group-hover:w-[360px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
 const cardContainerMargin = "mx-64px";
@@ -51,14 +51,14 @@ const cardContainerMargin = "mx-64px";
 const ProjectCardAData: gallery.IProjectCardData = 
 {
     cardMedia: CardA,
-    cardText: "sample text",
+    cardText: "Final hair generator and output",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
 
 const CardAGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Final hair generator and output",
         assetMediaLink: CardA,
         assetStillLink: CardA,
     },
@@ -67,7 +67,7 @@ const CardAGallery: gallery.IGalleryMedia[] = [
 const ProjectCardBData: gallery.IProjectCardData = 
 {
     cardMedia: CardB,
-    cardText: "sample text",
+    cardText: "Substance Designer nodes",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -75,7 +75,7 @@ const ProjectCardBData: gallery.IProjectCardData =
 
 const CardBGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Substance Designer nodes",
         assetMediaLink: CardB,
         assetStillLink: CardB,
     },
@@ -84,7 +84,7 @@ const CardBGallery: gallery.IGalleryMedia[] = [
 const ProjectCardCData: gallery.IProjectCardData =
 {
     cardMedia: CardC,
-    cardText: "sample text",
+    cardText: "Substance Designer math",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -92,7 +92,7 @@ const ProjectCardCData: gallery.IProjectCardData =
 
 const CardCGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Substance Designer math",
         assetMediaLink: CardC,
         assetStillLink: CardC,
     },
@@ -101,7 +101,7 @@ const CardCGallery: gallery.IGalleryMedia[] = [
 const ProjectCardDData: gallery.IProjectCardData = 
 {
     cardMedia: CardD,
-    cardText: "sample text",
+    cardText: "Generating and controlling hairs",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -109,7 +109,7 @@ const ProjectCardDData: gallery.IProjectCardData =
 
 const CardDGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Generating and controlling hairs",
         assetMediaLink: CardD,
         assetStillLink: CardD,
     },

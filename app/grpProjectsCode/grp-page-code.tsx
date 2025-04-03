@@ -5,31 +5,36 @@ import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 import * as cards from "../globals/project-link-cards";
 
-import vidBingo from "/app/assets/videos/_code/sqr-loop_codeBingo.mp4";
-import vidResume from "/app/assets/videos/_code/sqr-loop_codeResume.mp4";
-import vidWebsite from "/app/assets/videos/_motionui/trimmed-loops_mogr-ui_001.mp4";
+import vidBingo from "@/app/assets/videos/_code/sqr-loop_codeBingo.mp4";
+import vidResume from "@/app/assets/videos/_code/sqr-loop_codeResume.mp4";
+import vidWebsite from "@/app/assets/videos/_code/portfolio-proj-link.mp4";
 
 const linkWebsite = "../indProjects/projCodeWebsite/";
+const linkResume = 'https://github.com/iArtemyst/resume';
+const linkBingo = 'https://github.com/iArtemyst/_bingo-board';
 const columnAmount = "grid-cols-3"
 
-const groupCardData: cards.IProjectLinkCard[] = [
+const groupCardData: cards.IProjectLinkCard2[] = [
     {
-        projectTitle: "Javascript + HTML Bingo",
+        projectTitle: "JS + HTML Bingo",
         projectDates: "2025",
         mediaLink: vidBingo,
-        cardLink: undefined,
+        cardLink: linkBingo,
+        errorText: "link to my github!",
     },
     {
-        projectTitle: "ReactJS Resume Page",
+        projectTitle: "ReactJS Resume",
         projectDates: "2025",
         mediaLink: vidResume,
-        cardLink: undefined,
+        cardLink: linkResume,
+        errorText: "link to my github!",
     },
     {
-        projectTitle: "Portfolio Website",
+        projectTitle: "ReactJS Portfolio Site",
         projectDates: "2025",
         mediaLink: vidWebsite,
         cardLink: linkWebsite,
+        errorText: undefined,
     },
 ]
 

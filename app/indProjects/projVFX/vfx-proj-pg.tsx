@@ -2,7 +2,7 @@
 
 import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
-import * as gallery from "@/app/globals/gallery-component";
+import * as gallery from "@/app/globals/project-galleries";
 
 import * as vfxmedia from "./vfx-media-links";
 

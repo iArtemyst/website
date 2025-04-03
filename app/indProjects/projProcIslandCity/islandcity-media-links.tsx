@@ -1,7 +1,7 @@
 
 'use client'
 
-import * as gallery from "@/app/globals/gallery-component";
+import * as gallery from "@/app/globals/project-galleries";
 import "@/app/globals/globals.css";
 
 
@@ -24,35 +24,35 @@ import CardCMedia01 from "@/app/assets/images/_game/_islandCity/islandCity_card0
 import CardCMedia02 from "@/app/assets/images/_game/_islandCity/islandCity_card03_01.png";
 
 
-const cardStyleWHM = "w-[120px] sm:w-[120px] md:w-[160px] lg:w-[240px] group-hover:w-[120px] sm:group-hover:w-[160px] md:group-hover:w-[240px] lg:group-hover:w-[360px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
+const cardStyleWHM = "w-[120px] sm:w-[160px] md:w-[200px] lg:w-[240px] group-hover:w-[160px] sm:group-hover:w-[200px] md:group-hover:w-[240px] lg:group-hover:w-[360px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
 const cardContainerMargin = "mx-64px";
 
 const ProjectCardAData: gallery.IProjectCardData = 
 {
     cardMedia: CardA,
-    cardText: "sample text",
+    cardText: "Variable Output Elements",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
 
 const CardAGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: 'Island City "Summer" generation.',
         assetMediaLink: CardAMedia01a,
         assetStillLink: CardAMedia01b,
     },
     {
-        assetText: "Asset Text Test 2",
+        assetText: 'Island City "Evening" generation.',
         assetMediaLink: CardAMedia02a,
         assetStillLink: CardAMedia02b,
     },
     {
-        assetText: "Asset Text Test 3",
+        assetText: 'Island City "Autumn" generation.',
         assetMediaLink: CardAMedia03a,
         assetStillLink: CardAMedia03b,
     },
     {
-        assetText: "Asset Text Test 3",
+        assetText: 'Island City "Winter" generation.',
         assetMediaLink: CardAMedia04a,
         assetStillLink: CardAMedia04b,
     },
@@ -61,7 +61,7 @@ const CardAGallery: gallery.IGalleryMedia[] = [
 const ProjectCardBData: gallery.IProjectCardData = 
 {
     cardMedia: CardB,
-    cardText: "sample text",
+    cardText: "Island City Transitions",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -69,7 +69,7 @@ const ProjectCardBData: gallery.IProjectCardData =
 
 const CardBGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Island City Transitions",
         assetMediaLink: CardBMedia01a,
         assetStillLink: CardBMedia01b,
     },
@@ -78,7 +78,7 @@ const CardBGallery: gallery.IGalleryMedia[] = [
 const ProjectCardCData: gallery.IProjectCardData =
 {
     cardMedia: CardC,
-    cardText: "sample text",
+    cardText: "Island City Generator Nodes",
     cardStyleWHM: cardStyleWHM,
     cardContainerMargin: cardContainerMargin,
 }
@@ -86,12 +86,12 @@ const ProjectCardCData: gallery.IProjectCardData =
 
 const CardCGallery: gallery.IGalleryMedia[] = [
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Generator nodes and collected output controller.",
         assetMediaLink: CardCMedia01,
         assetStillLink: CardCMedia01,
     },
     {
-        assetText: "Asset Text Test 1",
+        assetText: "Organized node layout.",
         assetMediaLink: CardCMedia02,
         assetStillLink: CardCMedia02,
     },

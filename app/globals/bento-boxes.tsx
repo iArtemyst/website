@@ -7,11 +7,13 @@ import { CardHoverFX } from "./card-hover-fx";
 import * as media from "@/app/globals/media";
 import * as themes from "@/tailwind.config";
 import * as fonts from "./fonts";
-import * as gallery from "@/app/globals/gallery-component"
+import * as gallery from "@/app/globals/project-galleries"
 
 const bentoRounding = "rounded-[12px] sm:rounded-[16px] md:rounded-[24px]";
 const gallerySize = 'min-w-[320px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[720px] xl:min-w-[960px] 2xl:min-w-[1080px]';
 const gridGap = "gap-[12px]";
+const textAssetHoverSize = "text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[18px]"
+const textHoverDist = "mx-[8px] my-[4px] sm:mx-[16px] sm:my-[8px] md:mx-[16px] md:my-[8px] lg:mx-[16px] lg:my-[8px] 2xl:mx-[16px] 2xl:my-[8px]";
 
 export function ProjectDetailText({TitleText="", MoreText=""}:{TitleText:String, MoreText:String}) {
     return (
@@ -72,7 +74,7 @@ export function ParagraphText({text="", textSize=""}:{text:string, textSize:stri
 
 export function CellText({children, cellSpan}: {children:any, cellSpan:string}) {
     return (
-        <div className={`${cellSpan} ${themes.hoverShadow} ${bentoRounding} w-full h-full content-center p-[16px] transition-all duration-200`}>
+        <div className={`${cellSpan} ${themes.hoverShadow} ${bentoRounding} w-full h-full content-center p-[16px] transition-all duration-200 hover:cursor-text`}>
             {children}
         </div> 
     )
@@ -104,6 +106,8 @@ export interface IPopupMedia
 }
 
 function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:string|StaticImageData, mediaText:string, setShowGallery: (x: boolean) => void}) {
+    let [fullscreenMedia, setFullscreenMedia] = useState(false);
+    
     function CloseButton() {
         return (
             <button className={`absolute right-0 top-0 m-[6px] md:m-[16px]`} onClick={() => setShowGallery(false)} >
@@ -126,15 +130,42 @@ function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:stri
     
     function PopupMedia() {
         return (
-            <div className={`w-auto h-auto relative rounded-[8px] md:rounded-[24px] px-[12px] pt-[12px] pb-[6px] md:px-[24px] md:pt-[24px] md:pb-[12px] justify-items-center content-center`}>
+            <div className={`w-auto h-auto relative rounded-[8px] md:rounded-[24px] px-[12px] pt-[12px] pb-[6px] md:px-[24px] md:pt-[24px] md:pb-[12px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
                 <media.GetBentoGalleryMedia mediaLink={mediaLink} mediaText={mediaText} />
             </div>
         )
     }
 
+    function FullScreenMedia() {
+        function FsBgBarrier() {
+            return (
+                <div className={`fixed left-0 right-0 top-0 bottom-0 z-0 bg-black opacity-[75%]`} onClick={() => setFullscreenMedia(false)} />
+            )
+        }
+
+        function FsMediaAsset({mediaLink}:{mediaLink:string|StaticImageData}) {
+            return (
+                <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-full h-full z-10`} onClick={() => setFullscreenMedia(false)}>
+                    {
+                        typeof mediaLink === "string" ?
+                        <media.FullScreenVideo mediaLink={mediaLink}/> : 
+                        <media.FullScreenImg mediaLink={mediaLink}/>
+                    }
+                </div>
+            )
+        }
+
+        return (
+            <div className={`fixed z-[9999] left-0 right-0 top-0 bottom-0 content-center justify-items-center`}>
+                <FsBgBarrier/>
+                <FsMediaAsset mediaLink={mediaLink}/>
+            </div>
+        )
+    }
+
     return (
-        <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-auto h-auto z-[150] justify-items-center py-[12px] content-center`}>
-        {/* <CardHoverFX bufferZone={0} rotateAmount={3000}> */}
+        <>
+            <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-auto h-auto z-[150] justify-items-center py-[12px] content-center`}>
                 <div className={`relative w-fit ${gallerySize}`}>
                     <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor rounded-[16px] md:rounded-[24px]`}/>
                     <div className={`relative`}>
@@ -143,8 +174,12 @@ function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:stri
                         <CloseButton />
                     </div>
                 </div>
-        {/* </CardHoverFX> */}
-        </div>
+            </div>
+
+            {
+                fullscreenMedia && ( <FullScreenMedia /> )   
+            }
+        </>
     )
 }
 
@@ -156,7 +191,7 @@ function BackgroundBarrier({setShowGallery,}:{setShowGallery:any,}) {
     )
 }
 
-export function CellwMedia({cellMedia, mediaText, cellSpan, showGallery, setShowGallery}: {cellMedia: string|StaticImageData, mediaText:string, cellSpan:string, showGallery:boolean, setShowGallery: (x: boolean) => void}) {
+export function CellwMedia({cellMedia, mediaText, cellSpan, hoverTextColor, showGallery, setShowGallery}: {cellMedia: string|StaticImageData, mediaText:string, cellSpan:string, hoverTextColor:string, showGallery:boolean, setShowGallery: (x: boolean) => void}) {
     return (
         <CardHoverFX bufferZone={0} rotateAmount={12}>
             <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} group relative w-full h-fit justify-self-center overflow-hidden self-center transition-all duration-200`} 
@@ -168,19 +203,21 @@ export function CellwMedia({cellMedia, mediaText, cellSpan, showGallery, setShow
                         <media.GetImage imgLink={cellMedia} imgAlt={mediaText}/>
                     }
                 </div>
+
+                <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[32px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}>
+                    <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
+                </div>
             </div>
         </CardHoverFX>
     )
 }
 
-export function CellMediaOnClick({mediaLink, mediaText, cellSpan,}: {mediaLink:string|StaticImageData, mediaText:string, cellSpan:string,}) {
+export function CellMediaOnClick({mediaLink, mediaText, hoverTextColor, cellSpan,}: {mediaLink:string|StaticImageData, mediaText:string, hoverTextColor:string, cellSpan:string,}) {
     let [showGallery, setShowGallery] = useState(false);
     
     return (
-        <div className={`static`}>
-        <div className={`relative`}>
-            <CellwMedia cellMedia={mediaLink} mediaText={mediaText} cellSpan={cellSpan} showGallery={showGallery} setShowGallery={setShowGallery}/>
-        </div>
+        <div className={`relative ${cellSpan} hover:cursor-pointer`}>
+            <CellwMedia cellMedia={mediaLink} mediaText={mediaText} cellSpan={cellSpan} showGallery={showGallery} setShowGallery={setShowGallery} hoverTextColor={hoverTextColor}/>
 
         {
         showGallery && (
