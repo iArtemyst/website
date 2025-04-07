@@ -69,3 +69,54 @@ export function DoubleSidedCardContainer({dataArray}:{dataArray:IDoubleSideCard[
         </div>
     )
 }
+
+export interface IDoubleSideAboutCard
+{
+    cardVideoFront: string,
+    cardVideoBack: string,
+    rotatedAngle: string,
+    cardStyle: string,
+}
+
+export function DoubleSidedAboutCard({backVideo, frontVideo, cardStyle, rotationAngle}: {backVideo:string, frontVideo:string, cardStyle:string, rotationAngle:string}) {
+    function CardSideFront () {
+        return (
+            <div className={`relative h-full w-full backface-hidden transition-all duration-500 rotate-y-180 group-hover:rotate-y-0 group-hover:opacity-100 opacity-0`}>
+                <div className={`absolute left-0 right-0 top-0 bottom-0`}>
+                    <media.GetHoverVideo vidLink={frontVideo}/>
+                </div>
+            </div>
+        )
+    }
+
+    function CardSideBack () {
+        return (
+            <div className={`relative h-full w-full shadow-[0px_0px_12px_rgba(0,0,0,0.4)] backface-hidden transition-all duration-500 rotate-y-0 group-hover:rotate-y-180 opacity-100 group-hover:opacity-0 bg-blue-300`}>
+                <media.GetAutoPlayVideo vidLink={backVideo}/>
+            </div>
+        )
+    }
+
+    return (
+        <div className={`${rotationAngle} group hover:rotate-0 relative h-auto w-auto duration-500 hover:animate-none hover:z-10 animate-wiggle-bounce `}>
+                    <CardHoverFX bufferZone={0} rotateAmount={7}>
+                        <div className={`${cardStyle} relative rounded-[24px] overflow-clip`} >
+                            <CardSideFront />
+                            <CardSideBack />
+                        </div>
+                    </CardHoverFX>
+        </div>
+    )
+}
+
+export function DoubleSidedAboutCardContainer({dataArray}:{dataArray:IDoubleSideAboutCard[]}) {
+    return (
+        <div className={`grid-cols-2 sm:grid-cols-4 absolute left-[50%] -translate-x-[50%] top-[45%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[80%] tablet:w-[60%] h-auto items-center`}>
+            {
+                dataArray.map((data, i) =>{
+                    return <DoubleSidedAboutCard key={i} backVideo={dataArray[i].cardVideoBack} frontVideo={dataArray[i].cardVideoFront} cardStyle={dataArray[i].cardStyle} rotationAngle={dataArray[i].rotatedAngle}/>
+                })
+            }
+        </div>
+    )
+}

@@ -1,7 +1,5 @@
 import "@/app/globals/globals.css";
 
-
-import * as backButtons from "@/app/globals/back-buttons";
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import GroupProjectsMotion from "./grp-page-motion";
 

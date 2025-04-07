@@ -1,9 +1,8 @@
 import React from "react";
-import "../globals/globals.css";
+import "@/app/globals/globals.css";
 
-import NewAboutPage from "./about-design";
-import { AboutMePage } from "./aboutme-pg";
-import { NavUI, BackButtonRSticky } from "../globals/nav-ui";
+import { AboutMePage } from "@/app/about/aboutme-pg";
+import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 
 const linkHome = './';
 

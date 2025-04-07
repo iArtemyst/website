@@ -2,7 +2,7 @@ import "@/app/globals/globals.css";
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 
-import * as SVGComponents from "../assets/svgs/index";
+import * as SVGComponents from "@/app/svgs/index";
 import * as fonts from "./fonts";
 
 const linkAbout = '/about';
@@ -12,7 +12,7 @@ const linkGithub = 'https://github.com/iArtemyst';
 
 function HeaderSVGButton({buttonLink, children}: {buttonLink:Url, children:any}) {
     return (
-            <Link href={buttonLink} rel="noopener noreferrer" target="_blank" className="hover:cursor-pointer justify-self-center content-center col-span-1 opacity-100">
+            <Link href={buttonLink} rel="noopener noreferrer" target="_blank" className="hover:cursor-pointer justify-self-center content-center col-span-1 opacity-50 hover:opacity-100 hover:scale-110">
                 <div className={`relative w-[18px] sm:w-[20px] md:w-[22px] lg:w-[24px] xl:w-[28px] 2xl:w-[32px]`}>
                     {children}
                 </div>
@@ -23,8 +23,8 @@ function HeaderSVGButton({buttonLink, children}: {buttonLink:Url, children:any})
 function HeaderTextButton({buttonText, buttonLink}: {buttonText:String, buttonLink:Url}) {
     return(
         <Link href={buttonLink}>
-            <button className="relative h-fit w-fit justify-self-center flex">
-                <p className={`${fonts.bebasNeue.className} text-[18px] md:text-[24px] lg:text-[32px] text-priColor`}>
+            <button className="group relative h-fit w-fit justify-self-center flex hover:cursor-pointer rounded-full -translate-y-[8px] hover:translate-y-0 transition-all duration-200 px-[.5rem] opacity-50 hover:opacity-100 hover:scale-125 active:scale-110">
+                <p className={`${fonts.bebasNeue.className} text-[18px] sm:text-[20px] md:text-[24px] lg:text-[36px] xl:text-[44px] text-priColor transition-all duration-200`}>
                     {buttonText}
                 </p>
             </button>
@@ -35,9 +35,7 @@ function HeaderTextButton({buttonText, buttonLink}: {buttonText:String, buttonLi
 export function NavUI() {
     return(
         <nav className={`absolute left-0 right-0 top-0 bottom-0 w-full h-full`}>
-            <div className="absolute top-[4px] w-auto h-auto left-[50%] -translate-x-[50%] z-50 rounded-full mt-[8px]
-                flex justify-between gap-[12px] px-[12px] hover:cursor-pointer bg-opacity-[30%] backdrop-blur-[4px]
-                scale-[85%] hover:scale-[125%] -translate-y-[8px] hover:translate-y-0 transition-all duration-200">
+            <div className="relative w-auto h-auto z-50 mt-[8px] flex justify-center">
                     <HeaderTextButton buttonText="HOME" buttonLink={linkHome}/>
                     <HeaderTextButton buttonText="ABOUT" buttonLink={linkAbout}/>
             </div>

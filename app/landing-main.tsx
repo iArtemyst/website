@@ -1,16 +1,16 @@
 'use client'
 
-import "./globals/globals.css";
+import "@/app/globals/globals.css";
 import * as themes from "@/tailwind.config";
 
-import vidBackA from "/app/assets/videos/grp_card_3d_back.mp4";
-import vidFrontA from "/app/assets/videos/grp_card_3d_front.mp4";
-import vidBackB from "/app/assets/videos/grp_card_code_back.mp4";
-import vidFrontB from "/app/assets/videos/grp_card_code_front.mp4";
-import vidBackC from "/app/assets/videos/grp_card_game_back.mp4";
-import vidFrontC from "/app/assets/videos/grp_card_game_front.mp4";
-import vidBackD from "/app/assets/videos/grp_card_motion_back.mp4";
-import vidFrontD from "/app/assets/videos/grp_card_motion_front.mp4";
+import vidBackA from "@/app/assets/videos/grp_card_3d_back.mp4";
+import vidFrontA from "@/app/assets/videos/grp_card_3d_front.mp4";
+import vidBackB from "@/app/assets/videos/grp_card_code_back.mp4";
+import vidFrontB from "@/app/assets/videos/grp_card_code_front.mp4";
+import vidBackC from "@/app/assets/videos/grp_card_game_back.mp4";
+import vidFrontC from "@/app/assets/videos/grp_card_game_front.mp4";
+import vidBackD from "@/app/assets/videos/grp_card_motion_back.mp4";
+import vidFrontD from "@/app/assets/videos/grp_card_motion_front.mp4";
 
 const group3D = './grpProjects3D';
 const groupCode = './grpProjectsCode';
@@ -53,7 +53,7 @@ const cardMedia: IDoubleSideCard[] = [
         cardDescription: "Description",
         cardVideoFront: vidFrontA,
         cardVideoBack: vidBackA,
-        rotatedAngle: "rotate-[15deg]",
+        rotatedAngle: "rotate-[8deg]",
         cardWidth: width,
         hoverWidth: hWidth,
         hoverMargin: hMargin,
@@ -65,7 +65,7 @@ const cardMedia: IDoubleSideCard[] = [
         cardDescription: "Description",
         cardVideoFront: vidFrontC,
         cardVideoBack: vidBackC,
-        rotatedAngle: "rotate-[-15deg]",
+        rotatedAngle: "rotate-[-8deg]",
         cardWidth: width,
         hoverWidth: hWidth,
         hoverMargin: hMargin,
@@ -77,7 +77,7 @@ const cardMedia: IDoubleSideCard[] = [
         cardDescription: "Description",
         cardVideoFront: vidFrontD,
         cardVideoBack: vidBackD,
-        rotatedAngle: "rotate-[15deg]",
+        rotatedAngle: "rotate-[8deg]",
         cardWidth: width,
         hoverWidth: hWidth,
         hoverMargin: hMargin,
@@ -89,7 +89,7 @@ const cardMedia: IDoubleSideCard[] = [
         cardDescription: "Description",
         cardVideoFront: vidFrontB,
         cardVideoBack: vidBackB,
-        rotatedAngle: "rotate-[-15deg]",
+        rotatedAngle: "rotate-[-8deg]",
         cardWidth: width,
         hoverWidth: hWidth,
         hoverMargin: hMargin,
