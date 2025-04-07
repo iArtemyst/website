@@ -3,13 +3,13 @@
 import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard2, ProjectLinkCardsContainer } from "../globals/project-link-cards";
+import { IProjectLinkCard2, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
 
-import vidBankApp from "/app/assets/videos/_motionui/trimmed-loop_bankapp.mp4";
-import vidDDRMelee from "/app/assets/videos/_motionui/trimmed-loop_ddr-melee.mp4";
-import vidInstaLoops from "/app/assets/videos/_motionui/trimmed-loop_insta-loops.mp4";
-import vidMedUI from "/app/assets/videos/_motionui/trimmed-loops_med-ui_001.mp4";
-import vidConsumerMotion from "/app/assets/videos/_motionui/trimmed-loops_mogr-ui_001.mp4";
+import vidBankApp from "@/app/assets/videos/_project-links/trimmed-loop_bankapp.mp4";
+import vidDDRMelee from "@/app/assets/videos/_project-links/trimmed-loop_ddr-melee.mp4";
+import vidInstaLoops from "@/app/assets/videos/_project-links/trimmed-loop_insta-loops.mp4";
+import vidMedUI from "@/app/assets/videos/_project-links/trimmed-loops_med-ui_001.mp4";
+import vidConsumerMotion from "@/app/assets/videos/_project-links/trimmed-loops_mogr-ui_001.mp4";
 
 const linkMedUI = "../indProjects/projMedUI";
 const linkDDRMelee = "../indProjects/projDDRMelee";

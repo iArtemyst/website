@@ -3,11 +3,11 @@
 import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
-import * as cards from "../globals/project-link-cards";
+import * as cards from "@/app/globals/project-link-cards";
 
-import vidBingo from "@/app/assets/videos/_code/sqr-loop_codeBingo.mp4";
-import vidResume from "@/app/assets/videos/_code/sqr-loop_codeResume.mp4";
-import vidWebsite from "@/app/assets/videos/_code/portfolio-proj-link.mp4";
+import vidBingo from "@/app/assets/videos/_project-links/sqr-loop_codeBingo.mp4";
+import vidResume from "@/app/assets/videos/_project-links/sqr-loop_codeResume.mp4";
+import vidWebsite from "@/app/assets/videos/_project-links/portfolio-proj-link.mp4";
 
 const linkWebsite = "../indProjects/projCodeWebsite/";
 const linkResume = 'https://github.com/iArtemyst/resume';
