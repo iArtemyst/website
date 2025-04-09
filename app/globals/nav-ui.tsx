@@ -23,8 +23,8 @@ function HeaderSVGButton({buttonLink, children}: {buttonLink:Url, children:any})
 function HeaderTextButton({buttonText, buttonLink}: {buttonText:String, buttonLink:Url}) {
     return(
         <Link href={buttonLink}>
-            <button className="group relative h-fit w-fit justify-self-center flex hover:cursor-pointer rounded-full -translate-y-[8px] hover:translate-y-0 transition-all duration-200 px-[.5rem] opacity-50 hover:opacity-100 hover:scale-125 active:scale-110">
-                <p className={`${fonts.bebasNeue.className} text-[18px] sm:text-[20px] md:text-[24px] lg:text-[36px] xl:text-[44px] text-priColor transition-all duration-200`}>
+            <button className="group mt-[4px] relative h-auto w-auto justify-self-center flex hover:cursor-pointer rounded-full -translate-y-[8px] hover:translate-y-0 transition-all duration-200 px-[.5rem] opacity-50 hover:opacity-100 hover:scale-125 active:scale-110">
+                <p className={`${fonts.dotoBlack.className} text-[14px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] text-priColor`}>
                     {buttonText}
                 </p>
             </button>
