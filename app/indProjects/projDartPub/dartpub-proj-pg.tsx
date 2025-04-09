@@ -32,7 +32,7 @@ function BentoBoxA() {
                     <bentos.HeaderText text="Game Ready Darts and Pub Assets" textSize={titleTextSize}/>
                 </bentos.CellText>
 
-                <div className="col-span-2 grid grid-cols-3">
+                <div className="col-span-2 grid grid-cols-3 hover:z-20">
                     <bentos.CellMediaOnClick mediaLink={imgPubDart04} mediaText="Pub Scene Render" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     <bentos.CellMediaOnClick mediaLink={imgPubDart05} mediaText="Pub Scene Wireframe" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     <bentos.CellMediaOnClick mediaLink={imgPubDart01} mediaText="Photo from the Pub" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>

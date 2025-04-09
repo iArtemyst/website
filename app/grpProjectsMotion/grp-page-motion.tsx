@@ -3,7 +3,7 @@
 import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard2, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
+import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
 
 import vidBankApp from "@/app/assets/videos/_project-links/trimmed-loop_bankapp.mp4";
 import vidDDRMelee from "@/app/assets/videos/_project-links/trimmed-loop_ddr-melee.mp4";
@@ -19,7 +19,7 @@ const linkConceptApps = "../indProjects/projConceptApps";
 
 const columnAmount = "grid-cols-3"
 
-const groupCardData: IProjectLinkCard2[] = [
+const groupCardData: IProjectLinkCard[] = [
     {
         projectTitle: "DDR Melee Motion Graphics",
         projectDates: "2025",

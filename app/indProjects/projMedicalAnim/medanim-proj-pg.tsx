@@ -43,7 +43,7 @@ function BentoBox() {
                     <bentos.HeaderText text="MEDICAL VISUALIZATION" textSize={titleTextSize}/>
                 </bentos.CellText>
                 
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-2 hover:z-20">
                     <bentos.CellMediaOnClick mediaLink={imgEES04} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor" />
                     <bentos.CellMediaOnClick mediaLink={imgEES06} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaLink={imgEES03} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
@@ -54,21 +54,21 @@ function BentoBox() {
 
                 <bentos.CellMediaOnClick mediaLink={vidEESB03} mediaText="Medical animation clip" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
 
-                <div className={`${bentoGap} grid grid-rows-2 grid-cols-1`}>
+                <div className={`${bentoGap} grid grid-rows-2 grid-cols-1 hover:z-20`}>
                     <bentos.CellText cellSpan="col-span-1">
                         <bentos.ParagraphText text="With over 6 years of experience in medical animation, I have produced over 50+ videos from short warning videos on medical tower screens, to device release marketing, to IFU demonstrations, and more." textSize={paraTextSize}/>
                     </bentos.CellText>
-                    <div className={`${bentoGap} grid grid-cols-2`}>
+                    <div className={`${bentoGap} grid grid-cols-2 hover:z-40`}>
                         <bentos.CellMediaOnClick mediaLink={imgEES07} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                         <bentos.CellMediaOnClick mediaLink={imgEES19} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     </div>
                 </div>
 
-                <div className={`${bentoGap} grid grid-cols-1 col-span-1`}>
+                <div className={`${bentoGap} grid grid-cols-1 col-span-1 hover:z-20`}>
                     <bentos.CellMediaOnClick mediaLink={vidMamm01} mediaText="Medical animation clip" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 </div>
 
-                <div className={`${bentoGap} grid grid-cols-2 col-span-1`}>
+                <div className={`${bentoGap} grid grid-cols-2 col-span-1 hover:z-20`}>
                     <bentos.CellMediaOnClick mediaLink={imgEES14} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaLink={imgEES16} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaLink={imgEES18} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
@@ -82,29 +82,29 @@ function BentoBox() {
 
                 <bentos.CellMediaOnClick mediaLink={vidEESB04} mediaText="Medical animation clip" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
 
-                <div className={`${bentoGap} grid grid-cols-4`}>
-                    <div className={`${bentoGap} col-span-4 grid grid-cols-2`}>
+                <div className={`${bentoGap} grid grid-cols-4 hover:z-20`}>
+                    <div className={`${bentoGap} col-span-4 grid grid-cols-2 hover:z-40`}>
                         <bentos.CellMediaOnClick mediaLink={imgEES02} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                         <bentos.CellMediaOnClick mediaLink={imgEES15} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     </div>                  
 
-                    <div className={`${bentoGap} col-span-4`}>
+                    <div className={`${bentoGap} col-span-4 hover:z-40`}>
                         <bentos.CellMediaOnClick mediaLink={vidMamm02} mediaText="Medical animation clip" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     </div>
                 </div>
 
-                <div className={`${bentoGap} grid grid-cols-4`}>
-                    <div className={`${bentoGap} col-span-4`}>
+                <div className={`${bentoGap} grid grid-cols-4 hover:z-20`}>
+                    <div className={`${bentoGap} col-span-4 hover:z-40`}>
                         <bentos.CellMediaOnClick mediaLink={vidEESC03} mediaText="Medical animation clip" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     </div>
 
-                    <div className={`${bentoGap} col-span-4 grid grid-cols-2`}>
+                    <div className={`${bentoGap} col-span-4 grid grid-cols-2 hover:z-40`}>
                         <bentos.CellMediaOnClick mediaLink={imgEES21} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                         <bentos.CellMediaOnClick mediaLink={imgEES14} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     </div>                  
                 </div>
 
-                <div className={`${bentoGap} col-span-2 grid grid-cols-4`}>
+                <div className={`${bentoGap} col-span-2 grid grid-cols-4 hover:z-20`}>
                     <bentos.CellMediaOnClick mediaLink={imgMamm03} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaLink={imgEES05} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaLink={imgMamm01} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>

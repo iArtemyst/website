@@ -14,7 +14,7 @@ const linkResume = 'https://github.com/iArtemyst/resume';
 const linkBingo = 'https://github.com/iArtemyst/_bingo-board';
 const columnAmount = "grid-cols-3"
 
-const groupCardData: cards.IProjectLinkCard2[] = [
+const groupCardData: cards.IProjectLinkCard[] = [
     {
         projectTitle: "JS + HTML Bingo",
         projectDates: "2025",

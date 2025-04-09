@@ -34,8 +34,8 @@ function BentoBox() {
                 <bentos.HeaderText text="MEDICAL INTERFACE AND MOTION DESIGN" textSize={titleTextSize}/>
             </bentos.CellText>
 
-            <div className={`${bentoGap} grid grid-cols-2`}>
-                <div className={`${bentoGap} grid grid-cols-2`}>
+            <div className={`${bentoGap} grid grid-cols-2 hover:z-20`}>
+                <div className={`${bentoGap} grid grid-cols-2 hover:z-40`}>
                 <bentos.CellMediaOnClick mediaText="Electric Flow in Tissue" mediaLink={imgMedMotionC03} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaText="Enseal Sales Application" mediaLink={imgMedMotionB05} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaText="Tapered Pockets" mediaLink={imgMedMotionD04} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
@@ -51,7 +51,7 @@ function BentoBox() {
 
                 <bentos.CellMediaOnClick mediaLink={vidMedMotionC03} mediaText="Mograph clip medical staple compression" cellSpan="col-span-1"  hoverTextColor="text-textColor"/> 
 
-                <div className={`${bentoGap} grid grid-cols-4 col-span-2`}>
+                <div className={`${bentoGap} grid grid-cols-4 col-span-2 hover:z-20`}>
                     <bentos.CellMediaOnClick mediaText="Staple Comparison" mediaLink={imgMedMotionD02} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaText="Endopath Sales Application" mediaLink={imgMedMotionB03} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaText="Sealing Vessels" mediaLink={imgMedMotionC06} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
@@ -66,7 +66,7 @@ function BentoBox() {
 
                 <bentos.CellMediaOnClick mediaLink={vidMedMotionB02} mediaText="Mograph clip energy devices" cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
 
-                <div className={`${bentoGap} grid grid-cols-2 col-span-1`}>
+                <div className={`${bentoGap} grid grid-cols-2 col-span-1 hover:z-20`}>
                     <bentos.CellMediaOnClick mediaText="Medical Interface Flow" mediaLink={imgMedMotionA01} cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaText="Energy Devices" mediaLink={imgMedMotionC05} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     <bentos.CellMediaOnClick mediaText="Bipolar Energy Timeline" mediaLink={imgMedMotionC08} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>

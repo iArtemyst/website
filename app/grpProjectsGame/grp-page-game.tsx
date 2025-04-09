@@ -19,11 +19,11 @@ const linkProcToonCity = "../indProjects/projProcIslandCity";
 const linkProcMats = "../indProjects/projProcMat";
 const linkHairGenerator = "../indProjects/projHairGenerator";
 
-import { IProjectLinkCard2, ProjectLinkCardsContainer } from "../globals/project-link-cards";
+import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
 
 const columnAmount = "grid-cols-3"
 
-const groupCardData: IProjectLinkCard2[] = [
+const groupCardData: IProjectLinkCard[] = [
     {
         projectTitle: "Stylized Character VFX",
         projectDates: "2024",

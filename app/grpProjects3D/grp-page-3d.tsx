@@ -1,9 +1,12 @@
 'use client'
 
 import "@/app/globals/globals.css";
+import { lazy } from "react";
 
 import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard2, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
+import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
+
+
 
 import vidDartPub from "@/app/assets/videos/_project-links/trimmed-loop_dartspub.mp4";
 import vidHorrorHouse from "@/app/assets/videos/_project-links/trimmed-loop_horrorhouses.mp4";
@@ -26,7 +29,7 @@ const linkInstaLoops = "../indProjects/projLoopAnim3D";
 
 const columnAmount = "grid-cols-3"
 
-const groupCardData: IProjectLinkCard2[] = [
+const groupCardData: IProjectLinkCard[] = [
     {
         projectTitle: "Horror Houses",
         projectDates: "2024",

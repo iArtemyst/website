@@ -4,6 +4,9 @@
 import * as gallery from "@/app/globals/project-galleries";
 import "@/app/globals/globals.css";
 
+import { lazy } from "react";
+
+
 
 import CardA from "@/app/assets/videos/_game/_islandCity/islandCity_clip002.mp4";
 import CardAMedia01a from "@/app/assets/videos/_game/_islandCity/islandCity_card01_00.mp4";
@@ -22,6 +25,8 @@ import CardBMedia01b from "@/app/assets/images/_game/_islandCity/islandCity_card
 import CardC from "@/app/assets/videos/_game/_islandCity/islandCity_clip003.mp4";
 import CardCMedia01 from "@/app/assets/images/_game/_islandCity/islandCity_card03_00.png";
 import CardCMedia02 from "@/app/assets/images/_game/_islandCity/islandCity_card03_01.png";
+
+// const IslandCardAMainMedia = lazy(() => import('@/app/assets/videos/_game/_islandCity/islandCity_clip002.mp4'));
 
 
 const cardStyleWHM = "w-[120px] sm:w-[160px] md:w-[200px] lg:w-[240px] group-hover:w-[160px] sm:group-hover:w-[200px] md:group-hover:w-[240px] lg:group-hover:w-[360px] group-hover:m-[-30px] md:group-hover:m-[-60px]";

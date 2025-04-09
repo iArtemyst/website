@@ -2,18 +2,24 @@
 
 import "@/app/globals/globals.css";
 import { StaticImageData } from "next/image";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { CardHoverFX } from "./card-hover-fx";
-import * as media from "@/app/globals/media";
 import * as themes from "@/tailwind.config";
 import * as fonts from "./fonts";
-import * as gallery from "@/app/globals/project-galleries"
+import Loading from "./loading-text";
+
+const LazyImage = lazy(() => import('@/app/globals/import-image'));
+const LazyHoverVideo = lazy(() => import('@/app/globals/import-hover-video'));
+const LazyVideo = lazy(() => import('@/app/globals/import-nonhover-video'));
+const LazyFSImage = lazy(() => import('@/app/globals/import-fs-image'));
 
 const bentoRounding = "rounded-[12px] sm:rounded-[16px] md:rounded-[24px]";
 const gallerySize = 'min-w-[320px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[720px] xl:min-w-[960px] 2xl:min-w-[1080px]';
 const gridGap = "gap-[12px]";
 const textAssetHoverSize = "text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[18px]"
 const textHoverDist = "mx-[8px] my-[4px] sm:mx-[16px] sm:my-[8px] md:mx-[16px] md:my-[8px] lg:mx-[16px] lg:my-[8px] 2xl:mx-[16px] 2xl:my-[8px]";
+
+
 
 export function ProjectDetailText({TitleText="", MoreText=""}:{TitleText:String, MoreText:String}) {
     return (
@@ -57,7 +63,7 @@ export function ProjectDetailTextTop({TitleText="", MoreText=""}:{TitleText:Stri
 // ----------------------------------------------
 export function HeaderText({text="", textSize=""}:{text:string, textSize:string}) {
     return (
-        <div className={`relative h-auto w-full flex justify-center align-middle`}>
+        <div className={`relative h-full w-full flex justify-center align-middle p-[8px]`}>
             <p className={`${fonts.dotoBlack.className} text-[14px] sm:text-[18px] md:text-[24px] lg:text-[32px] xl:text-[36px] 2xl:text-[40px] text-balance text-center content-center`}>{text}</p>
         </div>
     )
@@ -65,7 +71,7 @@ export function HeaderText({text="", textSize=""}:{text:string, textSize:string}
 
 export function ParagraphText({text="", textSize=""}:{text:string, textSize:string}) {
     return (
-        <div className={`relative h-auto w-auto flex justify-center my-[8px]`}>
+        <div className={`relative h-full w-full content-center p-[16px]`}>
             <p className={`${fonts.dotoBold.className} text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px] text-balance text-center`}>{text}</p>
         </div>
     )
@@ -74,7 +80,7 @@ export function ParagraphText({text="", textSize=""}:{text:string, textSize:stri
 
 export function CellText({children, cellSpan}: {children:any, cellSpan:string}) {
     return (
-        <div className={`${cellSpan} ${themes.hoverShadow} ${bentoRounding} w-full h-full content-center p-[16px] transition-all duration-200 hover:cursor-text`}>
+        <div className={`${cellSpan} ${themes.hoverShadow} ${bentoRounding} w-full h-full self-center flex-grow content-center transition-all duration-200 hover:cursor-text`}>
             {children}
         </div> 
     )
@@ -83,15 +89,21 @@ export function CellText({children, cellSpan}: {children:any, cellSpan:string}) 
 export function CellVideo({cellVidLink, cellSpan=""}: {cellVidLink:string, cellSpan:string}) {
     return (
         <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} relative w-full h-fit justify-self-center overflow-hidden self-center border-2 border-green-300 transition-all duration-200`} >
-            <media.GetHoverVideo vidLink={cellVidLink}/>
+            <LazyHoverVideo 
+                src={cellVidLink}
+                autoplay={false}
+                controls={false}
+                muted={true}
+                loop={true}
+                />
         </div>
     )
 }
 
-export function CellImage({cellImgLink, cellImgAlt, cellSpan=""}: {cellImgLink:StaticImageData, cellImgAlt:string, cellSpan:string}) {
+export function CellImage({cellImgLink, cellImgAlt, cellSpan=""}: {cellImgLink:StaticImageData, cellImgAlt:string, cellSpan:string}) {    
     return (
         <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} group relative w-full h-full justify-self-center  overflow-hidden`}>
-            <media.GetImage imgLink={cellImgLink} imgAlt={cellImgAlt}/>
+            <LazyImage imgLink={cellImgLink} imgAlt={cellImgAlt}/>
             <p className={`absolute left-[16px] bottom-[8px] text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px] opacity-0 group-hover:opacity-100 group-hover:translate-y-[0px] -translate-y-[12px] transition-all duration-400 drop-shadow-[0px_0px_4px_#000000] ${fonts.dotoBlack.className}`}>{cellImgAlt}</p>
         </div>
     )
@@ -108,6 +120,32 @@ export interface IPopupMedia
 function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:string|StaticImageData, mediaText:string, setShowGallery: (x: boolean) => void}) {
     let [fullscreenMedia, setFullscreenMedia] = useState(false);
     
+    function GetBentoGalleryMedia({mediaLink, mediaText}:{mediaLink:string|StaticImageData, mediaText:string}) {
+        return (
+            <div className={`rounded-[12px] overflow-clip shadow-[inset_0px_0px_24px_#00000090]`}>
+                {
+                    typeof mediaLink === "string" ?
+                    <Suspense fallback={<Loading />}>
+                        <LazyVideo 
+                            src={mediaLink}
+                            autoplay={true}
+                            controls={true}
+                            muted={true}
+                            loop={true}
+                            />
+                    </Suspense>
+                    :
+                    <Suspense fallback={<Loading />}>
+                        <LazyImage
+                            imgLink={mediaLink}
+                            imgAlt={mediaText}
+                            />
+                    </Suspense>
+                }
+            </div>
+        )
+    }
+
     function CloseButton() {
         return (
             <button className={`absolute right-0 top-0 m-[6px] md:m-[16px]`} onClick={() => setShowGallery(false)} >
@@ -131,12 +169,12 @@ function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:stri
     function PopupMedia() {
         return (
             <div className={`w-auto h-auto relative rounded-[8px] md:rounded-[24px] px-[12px] pt-[12px] pb-[6px] md:px-[24px] md:pt-[24px] md:pb-[12px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
-                <media.GetBentoGalleryMedia mediaLink={mediaLink} mediaText={mediaText} />
+                <GetBentoGalleryMedia mediaLink={mediaLink} mediaText={mediaText} />
             </div>
         )
     }
 
-    function FullScreenMedia() {
+        
         function FsBgBarrier() {
             return (
                 <div className={`fixed left-0 right-0 top-0 bottom-0 z-0 bg-black opacity-[75%]`} onClick={() => setFullscreenMedia(false)} />
@@ -148,20 +186,39 @@ function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:stri
                 <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-full h-full z-10`} onClick={() => setFullscreenMedia(false)}>
                     {
                         typeof mediaLink === "string" ?
-                        <media.FullScreenVideo mediaLink={mediaLink}/> : 
-                        <media.FullScreenImg mediaLink={mediaLink}/>
+                            <div className={`w-full h-full relative content-center`}>
+                                <Suspense fallback={<Loading />}>
+                                    <LazyVideo 
+                                        src={mediaLink}
+                                        autoplay={true}
+                                        controls={true}
+                                        muted={true}
+                                        loop={true}
+                                        />
+                                </Suspense>
+                            </div> 
+                            : 
+                            <div className={`relative w-full h-full content-center`}>
+                                <Suspense fallback={<Loading />}>
+                                    <LazyFSImage
+                                        imgLink={mediaLink}
+                                        imgAlt=""
+                                        />
+                                </Suspense>
+                            </div>
                     }
                 </div>
             )
         }
 
-        return (
-            <div className={`fixed z-[9999] left-0 right-0 top-0 bottom-0 content-center justify-items-center`}>
-                <FsBgBarrier/>
-                <FsMediaAsset mediaLink={mediaLink}/>
-            </div>
-        )
-    }
+        function FullScreenMedia() {
+            return (
+                <div className={`fixed z-[9999] left-0 right-0 top-0 bottom-0 content-center justify-items-center`}>
+                    <FsBgBarrier/>
+                    <FsMediaAsset mediaLink={mediaLink}/>
+                </div>
+            )
+        }
 
     return (
         <>
@@ -175,7 +232,6 @@ function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:stri
                     </div>
                 </div>
             </div>
-
             {
                 fullscreenMedia && ( <FullScreenMedia /> )   
             }
@@ -194,13 +250,20 @@ function BackgroundBarrier({setShowGallery,}:{setShowGallery:any,}) {
 export function CellwMedia({cellMedia, mediaText, cellSpan, hoverTextColor, showGallery, setShowGallery}: {cellMedia: string|StaticImageData, mediaText:string, cellSpan:string, hoverTextColor:string, showGallery:boolean, setShowGallery: (x: boolean) => void}) {
     return (
         <CardHoverFX bufferZone={0} rotateAmount={12}>
-            <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} group relative w-full h-fit justify-self-center overflow-hidden self-center transition-all duration-200`} 
+            <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} group relative w-full h-fit justify-self-center overflow-hidden self-center transition-all duration-200 z-auto`} 
                 onClick={(e) => { setShowGallery(!showGallery); }}>
                 <div>
                     {
                         typeof cellMedia === 'string' ?
-                        <media.GetHoverVideo vidLink={cellMedia}/> :
-                        <media.GetImage imgLink={cellMedia} imgAlt={mediaText}/>
+                        <LazyHoverVideo 
+                            src={cellMedia}
+                            autoplay={false}
+                            controls={false}
+                            muted={true}
+                            loop={true}
+                            /> 
+                            :
+                        <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
                     }
                 </div>
 
@@ -211,6 +274,8 @@ export function CellwMedia({cellMedia, mediaText, cellSpan, hoverTextColor, show
         </CardHoverFX>
     )
 }
+
+
 
 export function CellMediaOnClick({mediaLink, mediaText, hoverTextColor, cellSpan,}: {mediaLink:string|StaticImageData, mediaText:string, hoverTextColor:string, cellSpan:string,}) {
     let [showGallery, setShowGallery] = useState(false);

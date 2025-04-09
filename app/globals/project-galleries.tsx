@@ -1,12 +1,11 @@
 'use client'
 
 import "@/app/globals/globals.css";
-import * as media from "@/app/globals/media";
-import * as themes from "@/tailwind.config";
 import { StaticImageData } from "next/image";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { CardHoverFX } from "./card-hover-fx";
 import * as fonts from "./fonts";
+import Loading from "./loading-text";
 
 const galleryBarImageSize = 'w-[24px] sm:w-[32px] md:w-[48px] lg:w-[64px]';
 const gallerySize = 'min-w-[360px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[640px] xl:min-w-[720px] 2xl:min-w-[960px]';
@@ -14,6 +13,12 @@ const gridGap = "gap-[12px]";
 const projectTextPadding = 'px-[2px] py-[2px] md:px-[4px] md:py-[4px] lg:px-[8px] lg:py-[8px]';
 const hoverTextSize = "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] 2xl:text-[18px]";
 const hoverTextDist = "group-hover:-translate-y-[12px] sm:group-hover:-translate-y-[14px] md:group-hover:-translate-y-[18px] lg:group-hover:-translate-y-[20px] 2xlgroup-hover:-translate-y-[24px] px-[6px] sm:px-[8px] md:px-[10px] lg:px-[12px] 2xl:px-[16px]";
+
+const LazyFSImage = lazy(() => import('@/app/globals/import-fs-image'));
+const LazyImage = lazy(() => import('@/app/globals/import-image'));
+const LazyHoverVideo = lazy(() => import('@/app/globals/import-hover-video'));
+const LazyVideo = lazy(() => import('@/app/globals/import-nonhover-video'));
+
 
 //--------------------------------------
 // INTERFACES FOR INDIVIDUAL PROJECT CARDS AND ASSOCIATED GALLERIES
@@ -57,8 +62,22 @@ function ProjDetailMediaCard({mediaSrc, mediaText,}:{mediaSrc:string | StaticIma
         <div className="cursor-pointer overflow-clip rounded-[8px]">
                     {
                         typeof mediaSrc === "string" ?
-                        <media.GetHoverVideo vidLink={mediaSrc} /> : 
-                        <media.GetImage imgLink={mediaSrc} imgAlt={mediaText} />
+                            <Suspense fallback={<Loading />} > 
+                                <LazyHoverVideo 
+                                    src={mediaSrc}
+                                    autoplay={false}
+                                    controls={false}
+                                    muted={true}
+                                    loop={true}
+                                    />
+                            </Suspense>
+                        :
+                            <Suspense fallback={<Loading />} > 
+                                <LazyImage
+                                    imgLink={mediaSrc}
+                                    imgAlt={mediaText}
+                                    />
+                            </Suspense>
                     }
         </div>
     )
@@ -77,15 +96,15 @@ function ProjectDetailHoverText({card}:{card:ICardWithGalleryArrays}) {
 function ProjectDetailCard({card, showGallery, setShowGallery} : { card:ICardWithGalleryArrays,  showGallery:boolean,  setShowGallery: (x: boolean) => void }) 
 {              
     return (
-        <div className={`${card.cardData.cardContainerMargin} group relative w-fit h-full hover:animate-none hover:z-10 self-center animate-wiggle-bounce transition-all duration-300 flex-grow`} 
-                onClick={(e) => { setShowGallery(!showGallery); }}>
-            <CardHoverFX bufferZone={0} rotateAmount={7}>
-                <div className={`${card.cardData.cardStyleWHM} relative h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`}>
-                    <ProjDetailMediaCard mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText}/>
-                    <ProjectDetailHoverText card={card}/> 
-                </div>
-            </CardHoverFX>
-        </div>
+            <div className={`${card.cardData.cardContainerMargin} group relative w-fit h-full hover:animate-none hover:z-10 self-center animate-wiggle-bounce transition-all duration-300 flex-grow`} 
+                    onClick={(e) => { setShowGallery(!showGallery); }}>
+                <CardHoverFX bufferZone={0} rotateAmount={7}>
+                    <div className={`${card.cardData.cardStyleWHM} relative h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`}>
+                        <ProjDetailMediaCard mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText}/>
+                        <ProjectDetailHoverText card={card}/> 
+                    </div>
+                </CardHoverFX>
+            </div>
     )
 }
 
@@ -93,17 +112,17 @@ function ProjectCardNoGallery({card} : { card:ICardWithGalleryArrays}) {
     const [effect, setEffect] = useState(false);
 
     return (
-        <div className={`place-items-center group`}>
-            <div className={`${card.cardData.cardContainerMargin} relative w-fit h-full hover:animate-none hover:z-10 self-center animate-wiggle-bounce transition-all duration-300 flex-grow`} >
-                <CardHoverFX bufferZone={0} rotateAmount={7}>
-                    <div className={`${effect && "animate-error-wiggle"} ${card.cardData.cardStyleWHM} relative h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`} 
-                        onClick={() => { setEffect(true)}} onAnimationEnd={() => { setEffect(false)}}>
-                        <ProjDetailMediaCard mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText}/> 
-                        <ProjectDetailHoverText card={card}/>
-                    </div>
-                </CardHoverFX>
+            <div className={`place-items-center group`}>
+                <div className={`${card.cardData.cardContainerMargin} relative w-fit h-full hover:animate-none hover:z-10 self-center animate-wiggle-bounce transition-all duration-300 flex-grow`} >
+                    <CardHoverFX bufferZone={0} rotateAmount={7}>
+                        <div className={`${effect && "animate-error-wiggle"} ${card.cardData.cardStyleWHM} relative h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`} 
+                            onClick={() => { setEffect(true)}} onAnimationEnd={() => { setEffect(false)}}>
+                            <ProjDetailMediaCard mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText}/> 
+                            <ProjectDetailHoverText card={card}/>
+                        </div>
+                    </CardHoverFX>
+                </div>
             </div>
-        </div>
     )
 }
 
@@ -129,38 +148,59 @@ function ProjectCardWithGallery({card}: {card:ICardWithGalleryArrays}) {
     )
 }
 
-// CLIKC INTO GALLERY COMPONENTS
+// CLICK INTO GALLERY COMPONENTS
 
 function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}:{galleryMedia:IGalleryMedia[], galleryLength:number, setShowGallery: (x: boolean) => void}) {        
     let [selectedIndex, setSelectedIndex] = useState(0);
     let [fullscreenMedia, setFullscreenMedia] = useState(false);
 
-    //LARGE MEDIA IN GALLERY
     function GalleryMainMedia({mediaLink, mediaAbout}:{mediaLink:string|StaticImageData, mediaAbout:string}) {
         return (
-            <div className={`w-auto h-auto relative rounded-[24px] p-[24px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
-                <div className={`w-auto h-auto`}>
-                        <media.GetGalleryLrgMedia mediaLink={mediaLink} mediaText={mediaAbout} />
-                </div>
+            <div className={`w-auto h-auto relative m-[24px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
+                    <div className={`rounded-[24px] overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
+                        {
+                            typeof mediaLink === "string" ?
+                                <Suspense fallback={<Loading />}>
+                                    <LazyVideo 
+                                        src={mediaLink}
+                                        autoplay={true}
+                                        controls={false}
+                                        muted={true}
+                                        loop={true}
+                                        />
+                                </Suspense>
+                            :
+                                <Suspense fallback={<Loading />}>
+                                    <LazyImage
+                                        imgLink={mediaLink}
+                                        imgAlt={mediaAbout}
+                                        />
+                                </Suspense>
+                        }
+                    </div>
+                    {/* <GetGalleryLrgMedia mediaLink={mediaLink} mediaText={mediaAbout} /> */}
             </div>
+            
         )
     }
 
     function GalleryImageNavBar({galleryImages, galleryLength} : {galleryImages: IGalleryMedia[], galleryLength:number}) {
         return (
-            <div className={`grid-cols-${galleryLength} relative w-fit h-fit grid ${gridGap} justify-self-center content-center`}>
+            <div className={`grid-cols-${galleryLength} ${gridGap} relative w-fit h-fit grid justify-self-center content-center py-[12px]`}>
                 {
                     galleryImages.map((data, i) =>{
                         return (
-                            <div className={`py-[12px] group object-cover place-self-center content-center transition-all duration-200 hover:scale-110`} key={i}>
-                                <CardHoverFX bufferZone={0} rotateAmount={2}>
-                                    <div onClick={() => setSelectedIndex(i)}>
-                                        <div className={`${galleryBarImageSize} aspect-square transition-all duration-200 ${selectedIndex == i ? "opacity-100" : "opacity-60"}`}>   
-                                            <media.GetGallerySmlImage imgLink={data.assetStillLink} imgAlt={data.assetText}/>
-                                        </div>
-                                    </div>
-                                </CardHoverFX>
-                            </div>
+                            <CardHoverFX bufferZone={0} rotateAmount={2} key={i}>
+                                <div className={`${selectedIndex == i ? "border-teal-400 border-[2px] opacity-100" : "border-none opacity-60"} ${galleryBarImageSize} 
+                                                group rounded-[8px] aspect-square overflow-clip place-self-center content-center transition-all duration-200 hover:scale-110`} onClick={() => setSelectedIndex(i)}> 
+                                    <Suspense fallback={<Loading />}>
+                                        <LazyImage
+                                            imgLink={data.assetStillLink}
+                                            imgAlt={data.assetText}
+                                            />
+                                    </Suspense>
+                                </div>
+                            </CardHoverFX>
                         )
                     })
                 }
@@ -200,8 +240,22 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}:{gallery
                 <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-full h-full z-10 content-center`} onClick={() => setFullscreenMedia(false)}>
                     {
                         typeof mediaLink === "string" ?
-                        <media.FullScreenVideo mediaLink={mediaLink}/> : 
-                        <media.FullScreenImg mediaLink={mediaLink}/>
+                        <Suspense fallback={<Loading />}>
+                            <LazyVideo 
+                                src={mediaLink}
+                                autoplay={true}
+                                controls={true}
+                                muted={true}
+                                loop={true}
+                                />
+                        </Suspense>
+                        :
+                        <Suspense fallback={<Loading />}>
+                            <LazyFSImage
+                                imgLink={mediaLink}
+                                imgAlt=""
+                                />
+                        </Suspense>
                     }
                 </div>
             )
@@ -217,14 +271,12 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}:{gallery
 
     return (
         <>
-            <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] ${gridGap} w-fit h-fit z-[150] justify-items-center py-[12px]`}>
-                <div className={`relative ${gallerySize}`}>
-                    <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor rounded-[24px]`}/>
-                    <GalleryMainMedia mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText}/>
-                    <GalleryMediaText galleryMediaText={galleryMedia[selectedIndex].assetText} />
-                    <GalleryImageNavBar galleryImages={galleryMedia} galleryLength={galleryLength}/>
-                    <CloseButton />
-                </div>
+            <div className={`${gallerySize} fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] bg-cardBGColor rounded-[24px] w-auto max-h-[calc(90%)] h-auto flex-row z-[150] justify-items-center py-[12px]`}>
+                {/* <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor rounded-[24px]`}/> */}
+                <GalleryMainMedia mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText}/>
+                <GalleryMediaText galleryMediaText={galleryMedia[selectedIndex].assetText} />
+                <GalleryImageNavBar galleryImages={galleryMedia} galleryLength={galleryLength}/>
+                <CloseButton />
             </div>
         {
             fullscreenMedia && ( <FullScreenMedia /> )          

@@ -43,8 +43,8 @@ function BentoBox() {
                 <bentos.HeaderText text="CONSUMER MOTION DESIGN" textSize={titleTextSize}/>
             </div>
 
-            <div className={`${bentoGap} grid grid-cols-2 gap-[12px]`}>
-                <div className={`${bentoGap} grid grid-cols-2 gap-[12px]`}>
+            <div className={`${bentoGap} grid grid-cols-2 gap-[12px] hover:z-20`}>
+                <div className={`${bentoGap} grid grid-cols-2 gap-[12px] hover:z-40`}>
                 <bentos.CellMediaOnClick mediaText="Derisking through trial" mediaLink={imgConMotionC01} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Dental Map" mediaLink={imgConMotionA04} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Shared Intelligence" mediaLink={imgConMotionD03} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
@@ -55,11 +55,11 @@ function BentoBox() {
 
                 <bentos.CellMediaOnClick mediaLink={vidConMotionB02} mediaText="Mograph clip simplifying search" cellSpan="col-span-1"  hoverTextColor="text-textColor"/> 
 
-                <div className="w-full h-full rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
+                <div className="w-full h-full rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200 hover:z-20">
                     <bentos.ParagraphText text="In my years of professional design, I have had the great oppurtunity to work on numerous motion design videos for great companies. Storytelling through 2D assets and animations, creating emphasis and focus to engage or assist a user, and create a better experience through motion." textSize={paraTextSize}/>
                 </div>
 
-                <div className={`${bentoGap} grid grid-cols-2 col-span-1 gap-[12px]`}>
+                <div className={`${bentoGap} grid grid-cols-2 col-span-1 gap-[12px] hover:z-20`}>
                     <bentos.CellMediaOnClick mediaText="Internal Research" mediaLink={imgConMotionB01} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     <bentos.CellMediaOnClick mediaText="Connected Software" mediaLink={imgConMotionA03} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     <bentos.CellMediaOnClick mediaText="Discovery" mediaLink={imgConMotionB02} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
@@ -72,14 +72,14 @@ function BentoBox() {
 
                 <bentos.CellMediaOnClick mediaLink={vidConMotionD01} mediaText="Mograph clip shared intelligence" cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
 
-                <div className={`${bentoGap} grid grid-cols-4 col-span-2 gap-[12px]`}>
+                <div className={`${bentoGap} grid grid-cols-4 col-span-2 gap-[12px] hover:z-20`}>
                     <bentos.CellMediaOnClick mediaText="Branding Refresh" mediaLink={imgConMotionC11} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     <bentos.CellMediaOnClick mediaText="Human Intelligence" mediaLink={imgConMotionD02} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     <bentos.CellMediaOnClick mediaText="Virtual Graphics" mediaLink={imgConMotionC12} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     <bentos.CellMediaOnClick mediaText="Generating Interest" mediaLink={imgConMotionC03} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 </div>
 
-                <div className="w-full h-full rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
+                <div className="w-full h-full hover:z-20 rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
                     <bentos.ParagraphText text="With over 8 years of experience in After Effects, and over 15 years of experience with 3D Design and the Adobe Creative Suite, I excel at producing high quality motion graphics work for any scenario." textSize={paraTextSize}/>
                 </div>
 

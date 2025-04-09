@@ -51,7 +51,7 @@ function BentoBoxA() {
                     <bentos.HeaderText text="FLOWSERVE INDUSTRIAL PUMPS" textSize={titleTextSize}/>
                     </bentos.CellText>
 
-                <div className={`${bentoGap} grid grid-cols-2`}>
+                <div className={`${bentoGap} grid grid-cols-2 hover:z-20`}>
                 <bentos.CellMediaOnClick mediaLink={imgFlowserve05} mediaText="Flowserve pump still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaLink={imgFlowserve04} mediaText="Flowserve pump still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaLink={imgFlowserve06} mediaText="Flowserve pump still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
@@ -67,7 +67,7 @@ function BentoBoxA() {
                         These projects are a bit more unique due to the hard surface topology that comes from working with CAD models, and creates a fun challenge for animation." textSize={paraTextSize}/>
                 </bentos.CellText>
 
-                <div className={`${bentoGap} grid grid-cols-2 col-span-1`}>
+                <div className={`${bentoGap} grid grid-cols-2 col-span-1 hover:z-20`}>
                     <bentos.CellMediaOnClick mediaLink={imgFlowserve09} mediaText="Flowserve pump still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaLink={imgFlowserve02} mediaText="Flowserve pump still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaLink={imgFlowserve01} mediaText="Flowserve pump still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
@@ -86,13 +86,13 @@ function BentoBoxB() {
                 <bentos.HeaderText text="INDUSTRIAL MACHINERY" textSize={titleTextSize}/>
             </bentos.CellText>
 
-            <div className={`${bentoGap} grid grid-cols-2 col-span-1`}>
+            <div className={`${bentoGap} grid grid-cols-2 col-span-1 hover:z-20`}>
                 <bentos.CellMediaOnClick mediaLink={vidMakino04} mediaText="Machinery feature highlight clip" cellSpan="col-span-2" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaLink={imgMakino05} mediaText="Machinery animation still" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaLink={imgMakino03} mediaText="Machinery animation still" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             </div>
 
-            <div className={`${bentoGap} grid grid-cols-2 col-span-1`}>
+            <div className={`${bentoGap} grid grid-cols-2 col-span-1 hover:z-20`}>
                 <bentos.CellMediaOnClick mediaLink={imgMakino02} mediaText="Machinery animation still" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaLink={imgMakino04} mediaText="Machinery animation still" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaLink={vidMakino01} mediaText="Machinery feature highlight clip" cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
@@ -117,7 +117,7 @@ function BentoBoxC() {
 
                 <bentos.CellMediaOnClick mediaLink={vidJnJ04} mediaText="Consumer product animation clip" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
 
-                <div className={`${bentoGap} grid grid-cols-2 col-span-1`}>
+                <div className={`${bentoGap} grid grid-cols-2 col-span-1 hover:z-20`}>
                     <bentos.CellMediaOnClick mediaLink={imgProd03} mediaText="Makeup and beauty render" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                     <bentos.CellMediaOnClick mediaLink={imgJnJ05} mediaText="Consumer products render" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                     <bentos.CellMediaOnClick mediaLink={imgJnJ03} mediaText="Consumer products still" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
