@@ -12,6 +12,7 @@ import vidFrontC from "@/app/assets/videos/_landing/grp_card_game_front.mp4";
 import vidBackD from "@/app/assets/videos/_landing/grp_card_motion_back.mp4";
 import vidFrontD from "@/app/assets/videos/_landing/grp_card_motion_front.mp4";
 
+
 const group3D = './grpProjects3D';
 const groupCode = './grpProjectsCode';
 const groupGame = './grpProjectsGame';
