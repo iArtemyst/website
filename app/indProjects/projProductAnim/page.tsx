@@ -4,7 +4,7 @@ import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import ProjectProdAnimPage from "./prodanim-proj-pg";
 const linkGrp3D = '../grpProjects3D';
 
-function RenderProjMedAnim() {
+export default function RenderProjMedAnim() {
   return (
     <>
         <NavUI />
@@ -13,5 +13,3 @@ function RenderProjMedAnim() {
     </>
   )
 }
-
-export default RenderProjMedAnim;

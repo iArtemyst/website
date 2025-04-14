@@ -4,28 +4,29 @@ import "@/app/globals/globals.css";
 
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
+import { MediaType } from "@/app/globals/project-galleries";
 
-import vidAnimLoop007 from "@/app/assets/_motionui/_loops/anim-loop_06.mp4";
-import vidAnimLoop009 from "@/app/assets/_motionui/_loops/anim-loop_08.mp4";
-import vidAnimLoop010 from "@/app/assets/_motionui/_loops/anim-loop_09.mp4";
-import vidAnimLoop012 from "@/app/assets/_motionui/_loops/anim-loop_11.mp4";
-import vidAnimLoop013 from "@/app/assets/_motionui/_loops/anim-loop_12.mp4";
-import vidAnimLoop014 from "@/app/assets/_motionui/_loops/anim-loop_13.mp4";
-import vidAnimLoop015 from "@/app/assets/_motionui/_loops/anim-loop_14.mp4";
-import vidAnimLoop018 from "@/app/assets/_motionui/_loops/anim-loop_17.mp4";
-import vidAnimLoop022 from "@/app/assets/_motionui/_loops/anim-loop_21.mp4";
-import vidAnimLoop025 from "@/app/assets/_motionui/_loops/anim-loop_24.mp4";
-import vidAnimLoop027 from "@/app/assets/_motionui/_loops/anim-loop_26.mp4";
-import vidAnimLoop028 from "@/app/assets/_motionui/_loops/anim-loop_27.mp4";
-import vidAnimLoop031 from "@/app/assets/_motionui/_loops/anim-loop_30.mp4";
-import vidAnimLoop032 from "@/app/assets/_motionui/_loops/anim-loop_31.mp4";
-import vidAnimLoop033 from "@/app/assets/_motionui/_loops/anim-loop_32.mp4";
-import vidAnimLoop034 from "@/app/assets/_motionui/_loops/anim-loop_33.mp4";
-import vidAnimLoop035 from "@/app/assets/_motionui/_loops/anim-loop_34.mp4";
-import vidAnimLoop037 from "@/app/assets/_motionui/_loops/anim-loop_36.mp4";
-import vidAnimLoop039 from "@/app/assets/_motionui/_loops/anim-loop_38.mp4";
-import vidAnimLoop041 from "@/app/assets/_motionui/_loops/anim-loop_40.mp4";
-import vidAnimLoop042 from "@/app/assets/_motionui/_loops/anim-loop_41.mp4";
+const vidAnimLoop007 = "_motionui/_loops/anim-loop_06.mp4";
+const vidAnimLoop009 = "_motionui/_loops/anim-loop_08.mp4";
+const vidAnimLoop010 = "_motionui/_loops/anim-loop_09.mp4";
+const vidAnimLoop012 = "_motionui/_loops/anim-loop_11.mp4";
+const vidAnimLoop013 = "_motionui/_loops/anim-loop_12.mp4";
+const vidAnimLoop014 = "_motionui/_loops/anim-loop_13.mp4";
+const vidAnimLoop015 = "_motionui/_loops/anim-loop_14.mp4";
+const vidAnimLoop018 = "_motionui/_loops/anim-loop_17.mp4";
+const vidAnimLoop022 = "_motionui/_loops/anim-loop_21.mp4";
+const vidAnimLoop025 = "_motionui/_loops/anim-loop_24.mp4";
+const vidAnimLoop027 = "_motionui/_loops/anim-loop_26.mp4";
+const vidAnimLoop028 = "_motionui/_loops/anim-loop_27.mp4";
+const vidAnimLoop031 = "_motionui/_loops/anim-loop_30.mp4";
+const vidAnimLoop032 = "_motionui/_loops/anim-loop_31.mp4";
+const vidAnimLoop033 = "_motionui/_loops/anim-loop_32.mp4";
+const vidAnimLoop034 = "_motionui/_loops/anim-loop_33.mp4";
+const vidAnimLoop035 = "_motionui/_loops/anim-loop_34.mp4";
+const vidAnimLoop037 = "_motionui/_loops/anim-loop_36.mp4";
+const vidAnimLoop039 = "_motionui/_loops/anim-loop_38.mp4";
+const vidAnimLoop041 = "_motionui/_loops/anim-loop_40.mp4";
+const vidAnimLoop042 = "_motionui/_loops/anim-loop_41.mp4";
 
 export interface IVideoData {
     vidLink: string,
@@ -58,16 +59,14 @@ function BentoBoxA() {
 
     function VideoCell({link}:{link:string}){
         return (
-            <bentos.CellMediaOnClick mediaLink={link} mediaText="" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
+            <bentos.CellMediaOnClick mediaLink={link} mediaType={MediaType.Video} mediaText="" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
         )
     }
 
     return (
         <div className="relative z-0 grid grid-cols-2 md:grid-cols-3 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] my-[24px] hover:z-20 text-white hover:cursor-pointer">
             {
-            cellData.map((data, i) => {
-                return <VideoCell link={data} key={i}/>
-            })
+                cellData.map((data, i) => <VideoCell link={data} key={i}/>)
             }
         </div>
     )

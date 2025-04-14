@@ -1,7 +1,6 @@
 import * as React from "react"
 import "@/app/globals/globals.css";
 
-
 import { priColor } from "@/tailwind.config";
 
 export function ArtstationSVG({fill="#CACACA"}) {

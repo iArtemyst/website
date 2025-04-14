@@ -5,8 +5,6 @@ import { DDRMeleePage } from "./ddrmelee-proj-pg";
 
 const linkGrpMotion = '../grpProjectsMotion';
 
-
-
 function RenderProjDDRMelee() {
   return (
     <>

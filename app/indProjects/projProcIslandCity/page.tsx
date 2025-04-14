@@ -5,7 +5,7 @@ import { IslandCityPage } from "./islandcity-proj-pg";
 
 const linkGrpGame = '../grpProjectsGame';
 
-function RenderProjIslandCity() {
+export default function RenderProjIslandCity() {
   return (
     <>
         <NavUI />
@@ -14,5 +14,3 @@ function RenderProjIslandCity() {
     </>
   )
 }
-
-export default RenderProjIslandCity;

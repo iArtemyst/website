@@ -4,14 +4,14 @@ import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
 
-import vidDartPub from "@/app/assets/_project-links/trimmed-loop_dartspub.mp4";
-import vidHorrorHouse from "@/app/assets/_project-links/trimmed-loop_horrorhouses.mp4";
-import vidMedAnim from "@/app/assets/_project-links/trimmed-loop_medanim1.mp4";
-import vidMonsoonVermut from "@/app/assets/_project-links/trimmed-loop_monsoonvermut.mp4";
-import vidProcMats from "@/app/assets/_project-links/trimmed-loop_procMat.mp4";
-import vidProdAnim from "@/app/assets/_project-links/trimmed-loop_productanim.mp4";
-import vidStylizedVFX from "@/app/assets/_project-links/trimmed-loop_stylizedvfx.mp4";
-import vidInstaLoops from "@/app/assets/_project-links/trimmed-loop_insta-loops.mp4";
+const vidDartPub = "_project-links/trimmed-loop_dartspub.mp4";
+const vidHorrorHouse = "_project-links/trimmed-loop_horrorhouses.mp4";
+const vidMedAnim = "_project-links/trimmed-loop_medanim1.mp4";
+const vidMonsoonVermut = "_project-links/trimmed-loop_monsoonvermut.mp4";
+const vidProcMats = "_project-links/trimmed-loop_procMat.mp4";
+const vidProdAnim = "_project-links/trimmed-loop_productanim.mp4";
+const vidStylizedVFX = "_project-links/trimmed-loop_stylizedvfx.mp4";
+const vidInstaLoops = "_project-links/trimmed-loop_insta-loops.mp4";
 
 const linkHorrorHouse = "../indProjects/projHorrorHouse";
 const linkStylizedVFX = "../indProjects/projVFX3D";

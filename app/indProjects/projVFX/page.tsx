@@ -5,7 +5,7 @@ import ProjectVFXPage from "./vfx-proj-pg";
 
 const linkGrpGame = '../grpProjectsGame';
 
-function RenderProjVFX() {
+export default function RenderProjVFX() {
   return (
     <>
         <NavUI />
@@ -14,5 +14,3 @@ function RenderProjVFX() {
     </>
   )
 }
-
-export default RenderProjVFX;

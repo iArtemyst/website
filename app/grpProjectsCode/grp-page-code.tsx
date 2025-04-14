@@ -5,9 +5,9 @@ import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 import * as cards from "@/app/globals/project-link-cards";
 
-import vidBingo from "@/app/assets/_project-links/sqr-loop_codeBingo.mp4";
-import vidResume from "@/app/assets/_project-links/sqr-loop_codeResume.mp4";
-import vidWebsite from "@/app/assets/_project-links/portfolio-proj-link.mp4";
+const vidBingo = "_project-links/sqr-loop_codeBingo.mp4";
+const vidResume = "_project-links/sqr-loop_codeResume.mp4";
+const vidWebsite = "_project-links/portfolio-proj-link.mp4";
 
 const linkWebsite = "../indProjects/projCodeWebsite/";
 const linkResume = 'https://github.com/iArtemyst/resume';
@@ -41,7 +41,7 @@ const groupCardData: cards.IProjectLinkCard[] = [
 export default function GroupProjectsCode() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <cards.ProjectLinkCardsContainer  dataArray={groupCardData}/>
+            <cards.ProjectLinkCardsContainer dataArray={groupCardData}/>
         </pages.GroupProjectPage>
     )
 }

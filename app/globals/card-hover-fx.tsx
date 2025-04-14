@@ -5,21 +5,19 @@ import { MouseEvent, useCallback, useState } from "react";
 
 
 export function CardHoverFX({children, bufferZone, rotateAmount}:{children:any, bufferZone:number, rotateAmount:number}) {
-    
-    function throttle<T extends (...args: any[]) => any>(
-        func: T,
-        delay: number
-        ): (...args: Parameters<T>) => void {
+    function throttle<T extends (...args: any[]) => any>(func: T, delay: number): (...args: Parameters<T>) => void {
         let lastCall = 0;
+
         return (...args: Parameters<T>) => {
             const now = new Date().getTime();
             if (now - lastCall < delay) {
-            return;
+                return;
             }
+
             lastCall = now;
-        return func(...args);
+            return func(...args);
         };
-        }
+    }
 
     const [rotate, setRotate] = useState({ x: 0, y: 0, });
 

@@ -2,24 +2,23 @@
 
 import "@/app/globals/globals.css";
 import * as themes from "@/tailwind.config";
+import { DoubleSidedCardContainer, IDoubleSideCard } from "@/app/globals/double-sided-cards";
+import * as fonts from "@/app/globals/fonts";
+import * as pages from "@/app/globals/pages-main";
 
-import vidBackA from "@/app/assets/_landing/grp_card_3d_back.mp4";
-import vidFrontA from "@/app/assets/_landing/grp_card_3d_front.mp4";
-import vidBackB from "@/app/assets/_landing/grp_card_code_back.mp4";
-import vidFrontB from "@/app/assets/_landing/grp_card_code_front.mp4";
-import vidBackC from "@/app/assets/_landing/grp_card_game_back.mp4";
-import vidFrontC from "@/app/assets/_landing/grp_card_game_front.mp4";
-import vidBackD from "@/app/assets/_landing/grp_card_motion_back.mp4";
-import vidFrontD from "@/app/assets/_landing/grp_card_motion_front.mp4";
+const vidBackA = "_landing/grp_card_3d_back.mp4";
+const vidFrontA = "_landing/grp_card_3d_front.mp4";
+const vidBackB = "_landing/grp_card_code_back.mp4";
+const vidFrontB = "_landing/grp_card_code_front.mp4";
+const vidBackC = "_landing/grp_card_game_back.mp4";
+const vidFrontC = "_landing/grp_card_game_front.mp4";
+const vidBackD = "_landing/grp_card_motion_back.mp4";
+const vidFrontD = "_landing/grp_card_motion_front.mp4";
 
 const group3D = './grpProjects3D';
 const groupCode = './grpProjectsCode';
 const groupGame = './grpProjectsGame';
 const groupMotion = './grpProjectsMotion';
-
-import { DoubleSidedCardContainer, IDoubleSideCard } from "@/app/globals/double-sided-cards";
-import * as fonts from "@/app/globals/fonts";
-import * as pages from "@/app/globals/pages-main";
 
 const width = "w-[160px] md:w-[240px] lg:w-[275px] xl:w-[320px] 2xl:w-[360px]";
 const hWidth = "group-hover:w-[200px] md:group-hover:w-[320px] lg:group-hover:w-[400px] xl:group-hover:w-[440px] 2xl:group-hover:w-[540px]";
@@ -34,7 +33,7 @@ function LandingPageText() {
     return (
         <div className={`relative w-full h-full flex px-[36px] md:px-[64px] xl:px-[256px] place-items-end justify-self-center`}>
             <div className={`relative w-[40%] h-fit flex-inline justify-self-start text-nowrap`}>
-                <p className={`${titleSmlTextStyle}`}>Hello, I'm Eevee, and I am a </p>
+                <p className={`${titleSmlTextStyle}`}>Hello, I&apos;m Eevee, and I am a </p>
                 <p className={`${titleTextStyle}`}>CREATIVE</p>
                 <p className={`${titleTextStyle}`}>DESIGNER</p>
             </div>
@@ -103,6 +102,5 @@ export default function LandingMain() {
             <LandingPageText />
             <DoubleSidedCardContainer dataArray={cardMedia} />
         </pages.GroupProjectPage>
-
     )
 }

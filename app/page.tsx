@@ -5,9 +5,9 @@ import LandingMain from "./landing-main";
 
 export default function RenderLandingPage() {
   return (
-    <div>
+    <>
       <NavUI />
       <LandingMain />
-    </div>
+    </>
   )
 }

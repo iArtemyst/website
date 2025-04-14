@@ -10,10 +10,10 @@ const linkHome = './';
 
 export default function RenderGroupGame() {
   return (
-    <div>
-    <NavUI />
-    <GroupProjectsGame />
-    <BackButtonRSticky backLink={linkHome} buttonText="Head Back Home"/>
-    </div>
+    <>
+      <NavUI />
+      <GroupProjectsGame />
+      <BackButtonRSticky backLink={linkHome} buttonText="Head Back Home"/>
+    </>
   )
 }

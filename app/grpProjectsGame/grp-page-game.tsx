@@ -4,13 +4,12 @@ import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
 
-
-import vidProcToonCity from "@/app/assets/_project-links/IslandCity_LoopingCard.mp4";
-import vidDartPub from "@/app/assets/_project-links/trimmed-loop_dartspub.mp4";
-import vidProcMats from "@/app/assets/_project-links/trimmed-loop_procMat.mp4";
-import vidStylizedVFX from "@/app/assets/_project-links/trimmed-loop_stylizedvfx.mp4";
-import vidUtopaea from "@/app/assets/_project-links/trimmed-loop_utopaea.mp4";
-import vidHairGenerator from "@/app/assets/_project-links/ShavingGenerator_LoopingCard.mp4";
+const vidProcToonCity = "_project-links/IslandCity_LoopingCard.mp4";
+const vidDartPub = "_project-links/trimmed-loop_dartspub.mp4";
+const vidProcMats = "_project-links/trimmed-loop_procMat.mp4";
+const vidStylizedVFX = "_project-links/trimmed-loop_stylizedvfx.mp4";
+const vidUtopaea = "_project-links/trimmed-loop_utopaea.mp4";
+const vidHairGenerator = "_project-links/ShavingGenerator_LoopingCard.mp4";
 
 const linkStylizedVFX = "../indProjects/projVFX";
 const linkDartPub = "../indProjects/projDartPub";

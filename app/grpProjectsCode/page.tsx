@@ -7,10 +7,10 @@ const linkHome = './';
 
 export default function RenderGroupCode() {
   return (
-    <div>
-    <NavUI />
-    <GroupProjectsCode />
-    <BackButtonRSticky backLink={linkHome} buttonText="Head Back Home"/>
-    </div>
+    <>
+      <NavUI />
+      <GroupProjectsCode />
+      <BackButtonRSticky backLink={linkHome} buttonText="Head Back Home"/>
+    </>
   )
 }

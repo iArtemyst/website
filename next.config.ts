@@ -3,7 +3,8 @@ import type { NextConfig } from "next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: process.env.NODE_ENV === "development" ? undefined : "export",
+  distDir: process.env.NODE_ENV === "development" ? undefined : "docs"
 };
 
 export default {
@@ -24,5 +25,7 @@ export default {
     return config;
   },
 }
+
+module.exports = nextConfig;
 
 // module.exports = withNextVideo()

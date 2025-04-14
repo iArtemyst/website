@@ -2,10 +2,10 @@ import "@/app/globals/globals.css";
 
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import { ProjectMonsoonVermutPage } from "./monver-proj-pg";
+
 const linkGrp3D = '../grpProjects3D';
 
-
-function RenderProjMonsoonVermut() {
+export default function RenderProjMonsoonVermut() {
   return (
     <>
         <NavUI />
@@ -14,5 +14,3 @@ function RenderProjMonsoonVermut() {
     </>
   )
 }
-
-export default RenderProjMonsoonVermut;

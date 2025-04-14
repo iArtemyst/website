@@ -5,9 +5,7 @@ import ProjectProcMatPage from "./proc-mats-proj-pg";
 
 const linkGrpGame = '../grpProjectsGame';
 
-
-
-function RenderProjProcMat() {
+export default function RenderProjProcMat() {
   return (
     <>
         <NavUI />
@@ -16,5 +14,3 @@ function RenderProjProcMat() {
     </>
   )
 }
-
-export default RenderProjProcMat;

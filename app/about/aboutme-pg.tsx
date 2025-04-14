@@ -3,14 +3,14 @@
 import "@/app/globals/globals.css";
 import * as themes from "@/tailwind.config";
 
-import vidBackA from "@/app/assets/_aboutme/aboutme_a_back.mp4";
-import vidFrontA from "@/app/assets/_aboutme/aboutme_a_front.mp4";
-import vidBackB from "@/app/assets/_aboutme/aboutme_b_back.mp4";
-import vidFrontB from "@/app/assets/_aboutme/aboutme_b_front.mp4";
-import vidBackC from "@/app/assets/_aboutme/aboutme_c_back.mp4";
-import vidFrontC from "@/app/assets/_aboutme/aboutme_c_front.mp4";
-import vidBackD from "@/app/assets/_aboutme/aboutme_d_back.mp4";
-import vidFrontD from "@/app/assets/_aboutme/aboutme_d_front.mp4";
+const vidBackA  = "_aboutme/aboutme_a_back.mp4";
+const vidFrontA = "_aboutme/aboutme_a_front.mp4";
+const vidBackB  = "_aboutme/aboutme_b_back.mp4";
+const vidFrontB = "_aboutme/aboutme_b_front.mp4";
+const vidBackC  = "_aboutme/aboutme_c_back.mp4";
+const vidFrontC = "_aboutme/aboutme_c_front.mp4";
+const vidBackD  = "_aboutme/aboutme_d_back.mp4";
+const vidFrontD = "_aboutme/aboutme_d_front.mp4";
 
 import { DoubleSidedAboutCardContainer, IDoubleSideAboutCard } from "@/app/globals/double-sided-cards";
 import * as fonts from "@/app/globals/fonts";
@@ -25,7 +25,7 @@ function LandingPageText() {
         <div className={`relative w-full h-full flex px-[24px] sm:px-[30px] md:px-[36px] lg:px-[42px] xl:px-[48px] place-items-end justify-self-center`}>
             <div className={`relative w-full h-fit flex-inline justify-self-start text-nowrap tracking-tighter`}>
                 <p className={`${titleSmlTextStyle}`}>Get to know me</p>
-                <p className={`${titleTextStyle}`}>EVELYN "EEVEE" YOUNGBLOOD</p>
+                <p className={`${titleTextStyle}`}>EVELYN &quot;EEVEE&quot; YOUNGBLOOD</p>
             </div>
         </div>
     )

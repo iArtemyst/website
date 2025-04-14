@@ -5,7 +5,7 @@ import ProjectProcMatPage from "../projProcMat/proc-mats-proj-pg";
 
 const linkGrp3D = '../grpProjects3D';
 
-function RenderProjProcMat() {
+export default function RenderProjProcMat() {
   return (
     <>
         <NavUI />
@@ -14,5 +14,3 @@ function RenderProjProcMat() {
     </>
   )
 }
-
-export default RenderProjProcMat;

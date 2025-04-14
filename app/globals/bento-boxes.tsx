@@ -1,17 +1,13 @@
 'use client'
 
 import "@/app/globals/globals.css";
-import { StaticImageData } from "next/image";
 import { useState, lazy, Suspense } from "react";
 import { CardHoverFX } from "./card-hover-fx";
 import * as themes from "@/tailwind.config";
 import * as fonts from "./fonts";
-import Loading from "./loading-text";
-
-const LazyImage = lazy(() => import('@/app/globals/import-image'));
-const LazyHoverVideo = lazy(() => import('@/app/globals/import-hover-video'));
-const LazyVideo = lazy(() => import('@/app/globals/import-nonhover-video'));
-const LazyFSImage = lazy(() => import('@/app/globals/import-fs-image'));
+import { LazyFSImage, LazyImage } from "./lazy-image";
+import { MediaType } from "./project-galleries";
+import { LazyHoverVideo, LazyNonHoverVideo, LazyVideo } from "./lazy-video";
 
 const bentoRounding = "rounded-[12px] sm:rounded-[16px] md:rounded-[24px]";
 const gallerySize = 'min-w-[320px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[720px] xl:min-w-[960px] 2xl:min-w-[1080px]';
@@ -19,12 +15,9 @@ const gridGap = "gap-[12px]";
 const textAssetHoverSize = "text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[18px]"
 const textHoverDist = "mx-[8px] my-[4px] sm:mx-[16px] sm:my-[8px] md:mx-[16px] md:my-[8px] lg:mx-[16px] lg:my-[8px] 2xl:mx-[16px] 2xl:my-[8px]";
 
-
-
-export function ProjectDetailText({TitleText="", MoreText=""}:{TitleText:String, MoreText:String}) {
+export function ProjectDetailText({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
     return (
         <div className="absolute z-0 left-[50%] -translate-x-[50%] bottom-[36px] w-[80%] grid grid-rows-auto h-fit justify-self-center border-white border-[1px] gap-[8px] px-[16px] py-[8px] mb-[24px]">
-
             <div className={`${fonts.dotoBlack.className} text-priColor w-full text-[18px] sm:text-[24px] md:text-[32px] lg:text-[56px] 2xl:text-[72px] text-left text-nowrap leading-none relative h-auto content-center`}>
                 <p>{TitleText}</p>
             </div>
@@ -36,7 +29,7 @@ export function ProjectDetailText({TitleText="", MoreText=""}:{TitleText:String,
     )
 }
 
-export function ProjectDetailRelativeText({TitleText="", MoreText=""}:{TitleText:String, MoreText:String}) {
+export function ProjectDetailRelativeText({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
     return (
         <div className="relative z-0 w-[80%] grid grid-rows-auto h-fit justify-self-center self-end border-white border-[1px] gap-[8px] px-[16px] py-[8px] mb-[24px] bg-red-300">
             <p className={`${fonts.dotoBlack.className} text-priColor w-full text-[18px] sm:text-[24px] md:text-[32px] lg:text-[56px] 2xl:text-[72px] text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
@@ -45,10 +38,9 @@ export function ProjectDetailRelativeText({TitleText="", MoreText=""}:{TitleText
     )
 }
 
-export function ProjectDetailTextTop({TitleText="", MoreText=""}:{TitleText:String, MoreText:String}) {
+export function ProjectDetailTextTop({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
     return (
         <div className="relative w-[80%] grid grid-rows-auto h-fit justify-self-center border-white border-[1px] gap-[8px] px-[8px] md:px-[16px] py-[4px] md:py-[8px]">
-
             <div className={`${fonts.dotoBlack.className} text-priColor w-full text-[18px] sm:text-[24px] md:text-[32px] lg:text-[56px] 2xl:text-[72px] text-left text-nowrap leading-none relative h-auto content-center`}>
                 <p>{TitleText}</p>
             </div>
@@ -61,7 +53,7 @@ export function ProjectDetailTextTop({TitleText="", MoreText=""}:{TitleText:Stri
 }
 
 // ----------------------------------------------
-export function HeaderText({text="", textSize=""}:{text:string, textSize:string}) {
+export function HeaderText({text="", textSize=""}: {text: string, textSize: string}) {
     return (
         <div className={`relative h-full w-full flex justify-center align-middle p-[8px]`}>
             <p className={`${fonts.dotoBlack.className} text-[14px] sm:text-[18px] md:text-[24px] lg:text-[32px] xl:text-[36px] 2xl:text-[40px] text-balance text-center content-center`}>{text}</p>
@@ -69,7 +61,7 @@ export function HeaderText({text="", textSize=""}:{text:string, textSize:string}
     )
 }
 
-export function ParagraphText({text="", textSize=""}:{text:string, textSize:string}) {
+export function ParagraphText({text="", textSize=""}: {text: string, textSize: string}) {
     return (
         <div className={`relative h-full w-full content-center p-[16px]`}>
             <p className={`${fonts.dotoBold.className} text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px] text-balance text-center`}>{text}</p>
@@ -78,7 +70,7 @@ export function ParagraphText({text="", textSize=""}:{text:string, textSize:stri
 }
 // ----------------------------------------------
 
-export function CellText({children, cellSpan}: {children:any, cellSpan:string}) {
+export function CellText({children, cellSpan}: {children: any, cellSpan: string}) {
     return (
         <div className={`${cellSpan} ${themes.hoverShadow} ${bentoRounding} w-full h-full self-center flex-grow content-center transition-all duration-200 hover:cursor-text`}>
             {children}
@@ -86,7 +78,7 @@ export function CellText({children, cellSpan}: {children:any, cellSpan:string}) 
     )
 }
 
-export function CellVideo({cellVidLink, cellSpan=""}: {cellVidLink:string, cellSpan:string}) {
+export function CellVideo({cellVidLink, cellSpan=""}: {cellVidLink: string, cellSpan: string}) {
     return (
         <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} relative w-full h-fit justify-self-center overflow-hidden self-center border-2 border-green-300 transition-all duration-200`} >
             <LazyHoverVideo 
@@ -100,7 +92,7 @@ export function CellVideo({cellVidLink, cellSpan=""}: {cellVidLink:string, cellS
     )
 }
 
-export function CellImage({cellImgLink, cellImgAlt, cellSpan=""}: {cellImgLink:StaticImageData, cellImgAlt:string, cellSpan:string}) {    
+export function CellImage({cellImgLink, cellImgAlt, cellSpan=""}: {cellImgLink: string, cellImgAlt: string, cellSpan: string}) {    
     return (
         <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} group relative w-full h-full justify-self-center  overflow-hidden`}>
             <LazyImage imgLink={cellImgLink} imgAlt={cellImgAlt}/>
@@ -113,34 +105,30 @@ export function CellImage({cellImgLink, cellImgAlt, cellSpan=""}: {cellImgLink:S
 
 export interface IPopupMedia
 {
-    assetMediaLink: string|StaticImageData,
+    assetMediaLink: string,
     assetText: string,
 }
 
-function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:string|StaticImageData, mediaText:string, setShowGallery: (x: boolean) => void}) {
+function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {mediaLink: string, mediaText: string, mediaType: MediaType, setShowGallery: (x: boolean) => void}) {
     let [fullscreenMedia, setFullscreenMedia] = useState(false);
     
-    function GetBentoGalleryMedia({mediaLink, mediaText}:{mediaLink:string|StaticImageData, mediaText:string}) {
+    function GetBentoGalleryMedia({mediaLink, mediaText, mediaType}:{mediaLink: string, mediaText: string, mediaType: MediaType}) {
         return (
             <div className={`rounded-[12px] overflow-clip shadow-[inset_0px_0px_24px_#00000090]`}>
                 {
-                    typeof mediaLink === "string" ?
-                    <Suspense fallback={<Loading />}>
-                        <LazyVideo 
+                    mediaType === MediaType.Video ?
+                        <LazyNonHoverVideo
                             src={mediaLink}
                             autoplay={true}
                             controls={true}
                             muted={true}
                             loop={true}
                             />
-                    </Suspense>
                     :
-                    <Suspense fallback={<Loading />}>
                         <LazyImage
                             imgLink={mediaLink}
                             imgAlt={mediaText}
                             />
-                    </Suspense>
                 }
             </div>
         )
@@ -169,56 +157,51 @@ function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:stri
     function PopupMedia() {
         return (
             <div className={`w-auto h-auto relative rounded-[8px] md:rounded-[24px] px-[12px] pt-[12px] pb-[6px] md:px-[24px] md:pt-[24px] md:pb-[12px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
-                <GetBentoGalleryMedia mediaLink={mediaLink} mediaText={mediaText} />
+                <GetBentoGalleryMedia mediaLink={mediaLink} mediaText={mediaText} mediaType={mediaType}/>
+            </div>
+        )
+    }
+        
+    function FsBgBarrier() {
+        return (
+            <div className={`fixed left-0 right-0 top-0 bottom-0 z-0 bg-black opacity-[75%]`} onClick={() => setFullscreenMedia(false)} />
+        )
+    }
+
+    function FsMediaAsset({mediaLink, mediaType}: {mediaLink: string, mediaType: MediaType}) {
+        return (
+            <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-full h-full z-10`} onClick={() => setFullscreenMedia(false)}>
+                {
+                    mediaType === MediaType.Video ?
+                        <div className={`w-full h-full relative content-center`}>
+                            <LazyNonHoverVideo 
+                                src={mediaLink}
+                                autoplay={true}
+                                controls={true}
+                                muted={true}
+                                loop={true}
+                                />
+                        </div> 
+                    : 
+                        <div className={`relative w-full h-full content-center`}>
+                            <LazyFSImage
+                                imgLink={mediaLink}
+                                imgAlt=""
+                                />
+                        </div>
+                }
             </div>
         )
     }
 
-        
-        function FsBgBarrier() {
-            return (
-                <div className={`fixed left-0 right-0 top-0 bottom-0 z-0 bg-black opacity-[75%]`} onClick={() => setFullscreenMedia(false)} />
-            )
-        }
-
-        function FsMediaAsset({mediaLink}:{mediaLink:string|StaticImageData}) {
-            return (
-                <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-full h-full z-10`} onClick={() => setFullscreenMedia(false)}>
-                    {
-                        typeof mediaLink === "string" ?
-                            <div className={`w-full h-full relative content-center`}>
-                                <Suspense fallback={<Loading />}>
-                                    <LazyVideo 
-                                        src={mediaLink}
-                                        autoplay={true}
-                                        controls={true}
-                                        muted={true}
-                                        loop={true}
-                                        />
-                                </Suspense>
-                            </div> 
-                            : 
-                            <div className={`relative w-full h-full content-center`}>
-                                <Suspense fallback={<Loading />}>
-                                    <LazyFSImage
-                                        imgLink={mediaLink}
-                                        imgAlt=""
-                                        />
-                                </Suspense>
-                            </div>
-                    }
-                </div>
-            )
-        }
-
-        function FullScreenMedia() {
-            return (
-                <div className={`fixed z-[9999] left-0 right-0 top-0 bottom-0 content-center justify-items-center`}>
-                    <FsBgBarrier/>
-                    <FsMediaAsset mediaLink={mediaLink}/>
-                </div>
-            )
-        }
+    function FullScreenMedia() {
+        return (
+            <div className={`fixed z-[9999] left-0 right-0 top-0 bottom-0 content-center justify-items-center`}>
+                <FsBgBarrier/>
+                <FsMediaAsset mediaLink={mediaLink} mediaType={mediaType}/>
+            </div>
+        )
+    }
 
     return (
         <>
@@ -239,7 +222,7 @@ function PopUpMediaViewer({mediaLink, mediaText, setShowGallery}:{mediaLink:stri
     )
 }
 
-function BackgroundBarrier({setShowGallery,}:{setShowGallery:any,}) {
+function BackgroundBarrier({setShowGallery,}: {setShowGallery: any,}) {
     return (
         <div className={`fixed left-0 right-0 top-0 bottom-0 z-[100]`} onClick={() => setShowGallery(false)}>
             <div className={`w-[100vw] h-[100vh] bg-black opacity-[75%] `}/>
@@ -247,23 +230,23 @@ function BackgroundBarrier({setShowGallery,}:{setShowGallery:any,}) {
     )
 }
 
-export function CellwMedia({cellMedia, mediaText, cellSpan, hoverTextColor, showGallery, setShowGallery}: {cellMedia: string|StaticImageData, mediaText:string, cellSpan:string, hoverTextColor:string, showGallery:boolean, setShowGallery: (x: boolean) => void}) {
+export function CellMedia({cellMedia, cellMediaType, mediaText, cellSpan, hoverTextColor, showGallery, setShowGallery}: {cellMedia: string, cellMediaType: MediaType, mediaText: string, cellSpan: string, hoverTextColor: string, showGallery: boolean, setShowGallery: (x: boolean) => void}) {
     return (
         <CardHoverFX bufferZone={0} rotateAmount={12}>
             <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} group relative w-full h-fit justify-self-center overflow-hidden self-center transition-all duration-200 z-auto`} 
                 onClick={(e) => { setShowGallery(!showGallery); }}>
                 <div>
                     {
-                        typeof cellMedia === 'string' ?
-                        <LazyHoverVideo 
-                            src={cellMedia}
-                            autoplay={false}
-                            controls={false}
-                            muted={true}
-                            loop={true}
-                            /> 
-                            :
-                        <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
+                        cellMediaType === MediaType.Video ?
+                            <LazyHoverVideo 
+                                src={cellMedia}
+                                autoplay={false}
+                                controls={false}
+                                muted={true}
+                                loop={true}
+                                /> 
+                        :
+                            <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
                     }
                 </div>
 
@@ -277,21 +260,20 @@ export function CellwMedia({cellMedia, mediaText, cellSpan, hoverTextColor, show
 
 
 
-export function CellMediaOnClick({mediaLink, mediaText, hoverTextColor, cellSpan,}: {mediaLink:string|StaticImageData, mediaText:string, hoverTextColor:string, cellSpan:string,}) {
+export function CellMediaOnClick({mediaLink, mediaType, mediaText, hoverTextColor, cellSpan,}: {mediaLink: string, mediaType: MediaType, mediaText: string, hoverTextColor: string, cellSpan: string,}) {
     let [showGallery, setShowGallery] = useState(false);
     
     return (
         <div className={`relative ${cellSpan} hover:cursor-pointer`}>
-            <CellwMedia cellMedia={mediaLink} mediaText={mediaText} cellSpan={cellSpan} showGallery={showGallery} setShowGallery={setShowGallery} hoverTextColor={hoverTextColor}/>
-
-        {
-        showGallery && (
-            <div className={`fixed z-[500]`}>
-                <PopUpMediaViewer mediaLink={mediaLink} mediaText={mediaText} setShowGallery={setShowGallery}/>
-                <BackgroundBarrier setShowGallery={setShowGallery}/>
-            </div>
-        )
-        }
+            <CellMedia cellMedia={mediaLink} cellMediaType={mediaType} mediaText={mediaText} cellSpan={cellSpan} showGallery={showGallery} setShowGallery={setShowGallery} hoverTextColor={hoverTextColor}/>
+            {
+                showGallery && (
+                    <div className={`fixed z-[500]`}>
+                        <PopUpMediaViewer mediaLink={mediaLink} mediaText={mediaText} mediaType={mediaType} setShowGallery={setShowGallery}/>
+                        <BackgroundBarrier setShowGallery={setShowGallery}/>
+                    </div>
+                )
+            }
         </div>
     )
 }

@@ -5,7 +5,6 @@ import HorrorHousesPage from "./horrorhouses-proj-pg";
 
 const linkGrp3D = '../grpProjects3D';
 
-
 function RenderProjHorrorHouse() {
   return (
     <>
