@@ -5,16 +5,15 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 
-import imgDDRMelee01 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_00.png";
-import imgDDRMelee03 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_02.png";
-import imgDDRMelee05 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_04.png";
-import imgDDRMelee06 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_05.png";
-import imgDDRMelee08 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_07.png";
-import imgDDRMelee09 from "@/app/assets/images/_motionui/_ddrmelee/ddr-melee_stills_08.png";
-import vidDDRMelee01 from "@/app/assets/videos/_motionui/_ddrmelee/ddr-melee-intro_collat-edit_compressed.mp4";
-import vidDDRMelee02 from "@/app/assets/videos/_motionui/_ddrmelee/ddr-melee_outro_collat-edit_compressed.mp4";
+import imgDDRMelee01 from "@/app/assets/_motionui/_ddrmelee/ddr-melee_stills_00.png";
+import imgDDRMelee03 from "@/app/assets/_motionui/_ddrmelee/ddr-melee_stills_02.png";
+import imgDDRMelee05 from "@/app/assets/_motionui/_ddrmelee/ddr-melee_stills_04.png";
+import imgDDRMelee06 from "@/app/assets/_motionui/_ddrmelee/ddr-melee_stills_05.png";
+import imgDDRMelee08 from "@/app/assets/_motionui/_ddrmelee/ddr-melee_stills_07.png";
+import imgDDRMelee09 from "@/app/assets/_motionui/_ddrmelee/ddr-melee_stills_08.png";
+import vidDDRMelee01 from "@/app/assets/_motionui/_ddrmelee/ddr-melee-intro_collat-edit_compressed.mp4";
+import vidDDRMelee02 from "@/app/assets/_motionui/_ddrmelee/ddr-melee_outro_collat-edit_compressed.mp4";
 
-const ddrMeleeYTLink = "https://youtu.be/IljUm6WHTXE?si=CqcDqtQnCYTAc_Q4";
 const bentoGap = "gap-[12px]";
 const titleTextSize= "text-[24px]";
 const paraTextSize = "text-[12px]";
@@ -60,7 +59,8 @@ function BentoBoxB() {
         <div className="relative z-auto flex w-[70%] h-auto justify-self-center grid-cols-1 gap-[12px] rounded-3xl place-content-center text-white hover:cursor-pointer">
             <div className="justify-self-center rounded-xl overflow-clip w-full">
                 <bentos.ParagraphText text="View the full video on Youtube!" textSize="text-[10px]" />
-                <iframe width="800" height="600" src="https://www.youtube.com/embed/IljUm6WHTXE?si=O7ujp9CXz2Yt9O0X" title="DDR Melee Combo Video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/IljUm6WHTXE?si=NMhkVw9fur8fMhqi" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                {/* <iframe width="800" height="600" src="https://www.youtube.com/embed/IljUm6WHTXE?si=NMhkVw9fur8fMhqi" title="DDR Melee Combo Video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /> */}
             </div>
         </div>
     )

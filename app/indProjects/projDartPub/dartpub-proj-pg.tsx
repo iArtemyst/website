@@ -7,14 +7,14 @@ import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import * as pages from "@/app/globals/pages-main";
 import * as gallery from "@/app/globals/project-galleries";
 
-import imgPubDart01 from "@/app/assets/images/_3d/_pubDart/pubDart_img_05.jpg";
-import imgPubDart04 from "@/app/assets/images/_3d/_pubDart/pubDart_img_03.png";
-import imgPubDart05 from "@/app/assets/images/_3d/_pubDart/pubDart_img_04.png";
-import vidPubDart01 from "@/app/assets/videos/_3d/_pubDart/pubDart_vid_00.mp4";
-import vidPubDart02 from "@/app/assets/videos/_3d/_pubDart/pubDart_vid_01.mp4";
-import vidPubDart03 from "@/app/assets/videos/_3d/_pubDart/pubDart_vid_02.mp4";
-import vidPubDart04 from "@/app/assets/videos/_3d/_pubDart/pubDart_vid_03.mp4";
-import vidPubDart05 from "@/app/assets/videos/_3d/_pubDart/pubDart_vid_04.mp4";
+import imgPubDart01 from "@/app/assets/_3d/_pubDart/pubDart_img_05.jpg";
+import imgPubDart04 from "@/app/assets/_3d/_pubDart/pubDart_img_03.png";
+import imgPubDart05 from "@/app/assets/_3d/_pubDart/pubDart_img_04.png";
+import vidPubDart01 from "@/app/assets/_3d/_pubDart/pubDart_vid_00.mp4";
+import vidPubDart02 from "@/app/assets/_3d/_pubDart/pubDart_vid_01.mp4";
+import vidPubDart03 from "@/app/assets/_3d/_pubDart/pubDart_vid_02.mp4";
+import vidPubDart04 from "@/app/assets/_3d/_pubDart/pubDart_vid_03.mp4";
+import vidPubDart05 from "@/app/assets/_3d/_pubDart/pubDart_vid_04.mp4";
 
 const bentoGap = "gap-[12px]";
 const titleTextSize= "text-[24px]";

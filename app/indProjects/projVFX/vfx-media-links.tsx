@@ -3,48 +3,41 @@
 
 import "@/app/globals/globals.css";
 
-import CardA from "@/app/assets/videos/_game/_vfx/vfx_fireball_clip.mp4";
-import vfxStillA from "@/app/assets/images/_game/_vfx/vfx_stills_01.png";
-import vfxGalleryVidA from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_00.mp4";
-import vfxNodeA01 from "@/app/assets/images/_game/_vfx/vfx_nodes_001.png";
-import vfxNodeA02 from "@/app/assets/images/_game/_vfx/vfx_nodes_002.png";
-import vfxNodeA03 from "@/app/assets/images/_game/_vfx/vfx_nodes_013.png";
-import vfxNodeA04 from "@/app/assets/images/_game/_vfx/vfx_nodes_014.png";
-import vfxNodeA05 from "@/app/assets/images/_game/_vfx/vfx_nodes_015.png";
-import vfxNodeA06 from "@/app/assets/images/_game/_vfx/vfx_nodes_016.png";
+import vfxNodeA01 from "@/app/assets/_game/_vfx/vfx_nodes_001.png";
+import vfxNodeA02 from "@/app/assets/_game/_vfx/vfx_nodes_002.png";
+import vfxNodeA06 from "@/app/assets/_game/_vfx/vfx_nodes_016.png";
+import vfxStillA from "@/app/assets/_game/_vfx/vfx_stills_01.png";
+import CardA from "@/app/assets/_game/_vfx/vfx_fireball_clip.mp4";
+import vfxGalleryVidA from "@/app/assets/_game/_vfx/vfx_galleryVids_00.mp4";
 
-import CardB from "@/app/assets/videos/_game/_vfx/vfx_magicshield_clip.mp4";
-import vfxStillB from "@/app/assets/images/_game/_vfx/vfx_stills_00.png";
-import vfxGalleryVidB from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_02.mp4";
-import vfxNodeB01 from "@/app/assets/images/_game/_vfx/vfx_nodes_004.png";
-import vfxNodeB02 from "@/app/assets/images/_game/_vfx/vfx_nodes_005.png";
+import vfxNodeB01 from "@/app/assets/_game/_vfx/vfx_nodes_004.png";
+import vfxNodeB02 from "@/app/assets/_game/_vfx/vfx_nodes_005.png";
+import vfxStillB from "@/app/assets/_game/_vfx/vfx_stills_00.png";
+import vfxGalleryVidB from "@/app/assets/_game/_vfx/vfx_galleryVids_02.mp4";
+import CardB from "@/app/assets/_game/_vfx/vfx_magicshield_clip.mp4";
 
+import vfxNodeC01 from "@/app/assets/_game/_vfx/vfx_nodes_006.png";
+import vfxNodeC02 from "@/app/assets/_game/_vfx/vfx_nodes_007.png";
+import vfxStillC from "@/app/assets/_game/_vfx/vfx_stills_02.png";
+import vfxGalleryVidC from "@/app/assets/_game/_vfx/vfx_galleryVids_01.mp4";
+import CardC from "@/app/assets/_game/_vfx/vfx_laserbeam_clip.mp4";
 
+import vfxNodeD01 from "@/app/assets/_game/_vfx/vfx_nodes_011.png";
+import vfxNodeD02 from "@/app/assets/_game/_vfx/vfx_nodes_012.png";
+import vfxStillD from "@/app/assets/_game/_vfx/vfx_stills_03.png";
+import vfxGalleryVidD from "@/app/assets/_game/_vfx/vfx_galleryVids_03.mp4";
+import CardD from "@/app/assets/_game/_vfx/vfx_power-sphere_clip.mp4";
 
-import CardC from "@/app/assets/videos/_game/_vfx/vfx_laserbeam_clip.mp4";
-import vfxStillC from "@/app/assets/images/_game/_vfx/vfx_stills_02.png";
-import vfxGalleryVidC from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_01.mp4";
-import vfxNodeC01 from "@/app/assets/images/_game/_vfx/vfx_nodes_006.png";
-import vfxNodeC02 from "@/app/assets/images/_game/_vfx/vfx_nodes_007.png";
-import vfxNodeC03 from "@/app/assets/images/_game/_vfx/vfx_nodes_008.png";
-
-import CardD from "@/app/assets/videos/_game/_vfx/vfx_power-sphere_clip.mp4";
-import vfxStillD from "@/app/assets/images/_game/_vfx/vfx_stills_03.png";
-import vfxGalleryVidD from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_03.mp4";
-import vfxNodeD01 from "@/app/assets/images/_game/_vfx/vfx_nodes_011.png";
-import vfxNodeD02 from "@/app/assets/images/_game/_vfx/vfx_nodes_012.png";
-
-import CardE from "@/app/assets/videos/_game/_vfx/vfx_powerup_clip.mp4";
-import vfxStillE from "@/app/assets/images/_game/_vfx/vfx_stills_04.png";
-import vfxGalleryVidE from "@/app/assets/videos/_game/_vfx/vfx_galleryVids_04.mp4";
-import vfxNodeE01 from "@/app/assets/images/_game/_vfx/vfx_nodes_009.png";
-import vfxNodeE02 from "@/app/assets/images/_game/_vfx/vfx_nodes_010.png";
+import vfxNodeE01 from "@/app/assets/_game/_vfx/vfx_nodes_009.png";
+import vfxNodeE02 from "@/app/assets/_game/_vfx/vfx_nodes_010.png";
+import vfxStillE from "@/app/assets/_game/_vfx/vfx_stills_04.png";
+import vfxGalleryVidE from "@/app/assets/_game/_vfx/vfx_galleryVids_04.mp4";
+import CardE from "@/app/assets/_game/_vfx/vfx_powerup_clip.mp4";
 
 
 
 
 import * as gallery from "@/app/globals/project-galleries";
-import * as mediaData from "@/app/globals/media";
 
 const cardStyleWHM = "w-[120px] md:w-[240px] lg:w-[360px] group-hover:w-[180px] md:group-hover:w-[360px] lg:group-hover:w-[480px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
 const cardContainerMargin = "mx-64px";

@@ -3,14 +3,14 @@
 import "@/app/globals/globals.css";
 import * as themes from "@/tailwind.config";
 
-import vidBackA from "@/app/assets/videos/_aboutme/aboutme_a_back.mp4";
-import vidFrontA from "@/app/assets/videos/_aboutme/aboutme_a_front.mp4";
-import vidBackB from "@/app/assets/videos/_aboutme/aboutme_b_back.mp4";
-import vidFrontB from "@/app/assets/videos/_aboutme/aboutme_b_front.mp4";
-import vidBackC from "@/app/assets/videos/_aboutme/aboutme_c_back.mp4";
-import vidFrontC from "@/app/assets/videos/_aboutme/aboutme_c_front.mp4";
-import vidBackD from "@/app/assets/videos/_aboutme/aboutme_d_back.mp4";
-import vidFrontD from "@/app/assets/videos/_aboutme/aboutme_d_front.mp4";
+import vidBackA from "@/app/assets/_aboutme/aboutme_a_back.mp4";
+import vidFrontA from "@/app/assets/_aboutme/aboutme_a_front.mp4";
+import vidBackB from "@/app/assets/_aboutme/aboutme_b_back.mp4";
+import vidFrontB from "@/app/assets/_aboutme/aboutme_b_front.mp4";
+import vidBackC from "@/app/assets/_aboutme/aboutme_c_back.mp4";
+import vidFrontC from "@/app/assets/_aboutme/aboutme_c_front.mp4";
+import vidBackD from "@/app/assets/_aboutme/aboutme_d_back.mp4";
+import vidFrontD from "@/app/assets/_aboutme/aboutme_d_front.mp4";
 
 import { DoubleSidedAboutCardContainer, IDoubleSideAboutCard } from "@/app/globals/double-sided-cards";
 import * as fonts from "@/app/globals/fonts";

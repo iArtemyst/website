@@ -5,21 +5,21 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 
-import imgConceptAppA01 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Bank_00.jpg";
-import imgConceptAppA02 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Bank_01.jpg";
-import imgConceptAppA03 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Bank_02.jpg";
-import imgConceptAppA04 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Bank_03.jpg";
-import imgConceptAppA05 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Bank_04.jpg";
-import imgConceptAppB01 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Podcast_00.jpg";
-import imgConceptAppB02 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Podcast_01.jpg";
-import imgConceptAppB03 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Podcast_02.jpg";
-import imgConceptAppB04 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Podcast_03.jpg";
-import imgConceptAppB05 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Podcast_04.jpg";
-import imgConceptAppC01 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_05.jpg";
-import imgConceptAppC02 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_01.jpg";
-import imgConceptAppC03 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_02.jpg";
-import imgConceptAppC04 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_03.jpg";
-import imgConceptAppC05 from "@/app/assets/images/_motionui/_concept-apps/conceptApp_Steam_04.jpg";
+import imgConceptAppA01 from "@/app/assets/_motionui/_concept-apps/conceptApp_Bank_00.jpg";
+import imgConceptAppA02 from "@/app/assets/_motionui/_concept-apps/conceptApp_Bank_01.jpg";
+import imgConceptAppA03 from "@/app/assets/_motionui/_concept-apps/conceptApp_Bank_02.jpg";
+import imgConceptAppA04 from "@/app/assets/_motionui/_concept-apps/conceptApp_Bank_03.jpg";
+import imgConceptAppA05 from "@/app/assets/_motionui/_concept-apps/conceptApp_Bank_04.jpg";
+import imgConceptAppB01 from "@/app/assets/_motionui/_concept-apps/conceptApp_Podcast_00.jpg";
+import imgConceptAppB02 from "@/app/assets/_motionui/_concept-apps/conceptApp_Podcast_01.jpg";
+import imgConceptAppB03 from "@/app/assets/_motionui/_concept-apps/conceptApp_Podcast_02.jpg";
+import imgConceptAppB04 from "@/app/assets/_motionui/_concept-apps/conceptApp_Podcast_03.jpg";
+import imgConceptAppB05 from "@/app/assets/_motionui/_concept-apps/conceptApp_Podcast_04.jpg";
+import imgConceptAppC01 from "@/app/assets/_motionui/_concept-apps/conceptApp_Steam_05.jpg";
+import imgConceptAppC02 from "@/app/assets/_motionui/_concept-apps/conceptApp_Steam_01.jpg";
+import imgConceptAppC03 from "@/app/assets/_motionui/_concept-apps/conceptApp_Steam_02.jpg";
+import imgConceptAppC04 from "@/app/assets/_motionui/_concept-apps/conceptApp_Steam_03.jpg";
+import imgConceptAppC05 from "@/app/assets/_motionui/_concept-apps/conceptApp_Steam_04.jpg";
 
 function BentoBoxA() {
     return (

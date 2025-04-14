@@ -1,23 +1,21 @@
 'use client'
 
-import React from "react";
 import "@/app/globals/globals.css";
 
 import * as bentos from "@/app/globals/bento-boxes";
-import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import * as fonts from "@/app/globals/fonts";
 import * as pages from "@/app/globals/pages-main";
 
-import vidProcMat01 from "@/app/assets/videos/_game/_procmats/procmats_loop_00.mp4";
-import vidProcMat02 from "@/app/assets/videos/_game/_procmats/procmats_loop_01.mp4";
-import vidProcMat03 from "@/app/assets/videos/_game/_procmats/procmats_loop_02.mp4";
-import vidProcMat04 from "@/app/assets/videos/_game/_procmats/procmats_loop_03.mp4";
-import vidProcMat05 from "@/app/assets/videos/_game/_procmats/procmats_loop_04.mp4";
-import vidProcMat06 from "@/app/assets/videos/_game/_procmats/procmats_loop_05.mp4";
-import vidProcMat07 from "@/app/assets/videos/_game/_procmats/procmats_loop_06.mp4";
-import vidProcMat08 from "@/app/assets/videos/_game/_procmats/procmats_loop_07.mp4";
-import vidProcMat09 from "@/app/assets/videos/_game/_procmats/procmats_loop_08.mp4";
-import vidProcMat10 from "@/app/assets/videos/_game/_procmats/procmats_loop_09.mp4";
+import vidProcMat01 from "@/app/assets/_game/_procmats/procmats_loop_00.mp4";
+import vidProcMat02 from "@/app/assets/_game/_procmats/procmats_loop_01.mp4";
+import vidProcMat03 from "@/app/assets/_game/_procmats/procmats_loop_02.mp4";
+import vidProcMat04 from "@/app/assets/_game/_procmats/procmats_loop_03.mp4";
+import vidProcMat05 from "@/app/assets/_game/_procmats/procmats_loop_04.mp4";
+import vidProcMat06 from "@/app/assets/_game/_procmats/procmats_loop_05.mp4";
+import vidProcMat07 from "@/app/assets/_game/_procmats/procmats_loop_06.mp4";
+import vidProcMat08 from "@/app/assets/_game/_procmats/procmats_loop_07.mp4";
+import vidProcMat09 from "@/app/assets/_game/_procmats/procmats_loop_08.mp4";
+import vidProcMat10 from "@/app/assets/_game/_procmats/procmats_loop_09.mp4";
 
 interface IVideoWithTitle {
     vidLink: string,

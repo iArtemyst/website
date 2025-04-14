@@ -5,12 +5,11 @@ import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 //---------------------
-import vidMonsoonVermut from "@/app/assets/videos/_3d/_monsoonVermut/monsoonVermut_Clip01.mp4";
-//---------------------
-import MVimg01 from "@/app/assets/images/_3d/_monsoonVermut/monsoonvermut_stills_00.png";
-import MVimg02 from "@/app/assets/images/_3d/_monsoonVermut/monsoonvermut_stills_01.png";
-import MVimg03 from "@/app/assets/images/_3d/_monsoonVermut/monsoonvermut_stills_02.png";
-import MVimg04 from "@/app/assets/images/_3d/_monsoonVermut/monsoonvermut_stills_03.png";
+import vidMonsoonVermut from "@/app/assets/_3d/_monsoonVermut/monsoonVermut_Clip01.mp4";
+import MVimg01 from "@/app/assets/_3d/_monsoonVermut/monsoonvermut_stills_00.png";
+import MVimg02 from "@/app/assets/_3d/_monsoonVermut/monsoonvermut_stills_01.png";
+import MVimg03 from "@/app/assets/_3d/_monsoonVermut/monsoonvermut_stills_02.png";
+import MVimg04 from "@/app/assets/_3d/_monsoonVermut/monsoonvermut_stills_03.png";
 //---------------------
 
 const bentoGap = "gap-[12px]";
@@ -42,13 +41,13 @@ function BentoBox() {
                 </bentos.CellText>
             </div>
 
-                <bentos.CellMediaOnClick mediaLink={MVimg01} mediaText="Monsoon Vermut wine glass render" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={MVimg01} mediaText="Monsoon Vermut wine glass render" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
-                <bentos.CellMediaOnClick mediaLink={MVimg02} mediaText="Monsoon Vermut desert render" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={MVimg02} mediaText="Monsoon Vermut desert render" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
-                <bentos.CellMediaOnClick mediaLink={MVimg03} mediaText="Monsoon Vermut with cactus render" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={MVimg03} mediaText="Monsoon Vermut with cactus render" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
-                <bentos.CellMediaOnClick mediaLink={MVimg04} mediaText="Monsoon Vermut group sand render" cellSpan="col-span-1"/>
+                <bentos.CellMediaOnClick mediaLink={MVimg04} mediaText="Monsoon Vermut group sand render" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
         </div>
     )

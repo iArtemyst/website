@@ -5,26 +5,18 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 
-import imgPortfolioSite01 from "@/app/assets/images/_code/portfolioSite_stills_00.png";
-import imgPortfolioSite02 from "@/app/assets/images/_code/portfolioSite_stills_01.png";
-import imgPortfolioSite03 from "@/app/assets/images/_code/portfolioSite_stills_02.png";
-import imgPortfolioSite04 from "@/app/assets/images/_code/portfolioSite_stills_03.png";
-import imgPortfolioSite05 from "@/app/assets/images/_code/portfolioSite_stills_04.png";
-import imgPortfolioSite06 from "@/app/assets/images/_code/portfolioSite_stills_05.png";
-import imgPortfolioSite07 from "@/app/assets/images/_code/portfolioSite_stills_06.png";
-import imgPortfolioSite08 from "@/app/assets/images/_code/portfolioSite_stills_07.png";
-import imgPortfolioSite09 from "@/app/assets/images/_code/portfolioSite_stills_08.png";
-import imgPortfolioSite10 from "@/app/assets/images/_code/portfolioSite_stills_09.png";
-import imgPortfolioSite11 from "@/app/assets/images/_code/portfolioSite_stills_10.png";
-import imgPortfolioSite12 from "@/app/assets/images/_code/portfolioSite_stills_11.png";
-import imgPortfolioSite13 from "@/app/assets/images/_code/portfolioSite_stills_12.png";
+import imgPortfolioSite01 from "@/app/assets/_code/portfolioSite_stills_00.png";
+import imgPortfolioSite04 from "@/app/assets/_code/portfolioSite_stills_03.png";
+import imgPortfolioSite06 from "@/app/assets/_code/portfolioSite_stills_05.png";
+import imgPortfolioSite07 from "@/app/assets/_code/portfolioSite_stills_06.png";
+import imgPortfolioSite10 from "@/app/assets/_code/portfolioSite_stills_09.png";
+import imgPortfolioSite11 from "@/app/assets/_code/portfolioSite_stills_10.png";
 
-import imgPortfolioCode01 from "@/app/assets/images/_code/portfolio-screenshots_001.jpg";
-import imgPortfolioCode02 from "@/app/assets/images/_code/portfolio-screenshots_002.jpg";
-import imgPortfolioCode03 from "@/app/assets/images/_code/portfolio-screenshots_003.jpg";
-import imgPortfolioCode04 from "@/app/assets/images/_code/portfolio-screenshots_004.jpg";
-import imgPortfolioCode05 from "@/app/assets/images/_code/portfolio-screenshots_005.jpg";
-import imgPortfolioCode06 from "@/app/assets/images/_code/portfolio-screenshots_006.jpg";
+import imgPortfolioCode01 from "@/app/assets/_code/portfolio-screenshots_001.jpg";
+import imgPortfolioCode02 from "@/app/assets/_code/portfolio-screenshots_002.jpg";
+import imgPortfolioCode03 from "@/app/assets/_code/portfolio-screenshots_003.jpg";
+import imgPortfolioCode04 from "@/app/assets/_code/portfolio-screenshots_004.jpg";
+import imgPortfolioCode06 from "@/app/assets/_code/portfolio-screenshots_006.jpg";
 
 function BentoBox() {
     return (
