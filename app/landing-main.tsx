@@ -1,9 +1,8 @@
 'use client'
 
-import "@/app/globals/globals.css";
-import * as themes from "@/tailwind.config";
 import { DoubleSidedCardContainer, IDoubleSideCard } from "@/app/globals/double-sided-cards";
 import * as fonts from "@/app/globals/fonts";
+import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 
 const vidBackA = "_landing/grp_card_3d_back.mp4";
@@ -20,19 +19,18 @@ const groupCode = './grpProjectsCode';
 const groupGame = './grpProjectsGame';
 const groupMotion = './grpProjectsMotion';
 
-const width = "w-[160px] md:w-[240px] lg:w-[275px] xl:w-[320px] 2xl:w-[360px]";
+const width = "w-[120px] md:w-[240px] lg:w-[275px] xl:w-[320px] 2xl:w-[360px]";
 const hWidth = "group-hover:w-[200px] md:group-hover:w-[320px] lg:group-hover:w-[400px] xl:group-hover:w-[440px] 2xl:group-hover:w-[540px]";
 const hMargin = "group-hover:m-[-20px] md:group-hover:m-[-40px] 2xl:group-hover:m-[-60px]";
 const cMargin = "mx-[24px]";
-const columnAmount = 'grid-cols-2';
-const paraTextStyle = `${fonts.dotoBlack.className} text-balance text-[8px] sm:text-[10px] md:text-[14px] lg:text-[16px] 2xl:text-[20px]`;
-const titleSmlTextStyle= `${fonts.dotoBold.className} h-fit w-fit text-[9px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-secColor leading-none tracking-tighter self-end my-[8px] laptop:my-[16px]`;
-const titleTextStyle = `${fonts.dotoBlack.className} text-priColor text-[28px] sm:text-[40px] md:text-[48px] lg:text-[64px] 2xl:text-[72px] text-left text-balance leading-none -my-[2px] laptop:-my-[12px]`;
+const paraTextStyle = `${fonts.dotoBlack.className} text-balance text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] 2xl:text-[18px]`;
+const titleSmlTextStyle= `${fonts.dotoBlack.className} h-fit w-fit text-[9px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-secColor leading-none tracking-tighter self-end my-[4px] sm:my-[10px] md:my-[16px]`;
+const titleTextStyle = `${fonts.dotoBlack.className} text-priColor text-[28px] sm:text-[40px] md:text-[48px] lg:text-[64px] 2xl:text-[72px] text-left text-balance leading-none -my-[2px] sm:-my-[6px] md:-my-[12px]`;
 
 function LandingPageText() {
     return (
-        <div className={`relative w-full h-full flex px-[36px] md:px-[64px] xl:px-[256px] place-items-end justify-self-center`}>
-            <div className={`relative w-[40%] h-fit flex-inline justify-self-start text-nowrap`}>
+        <div className={`absolute w-[90%] sm:w-[80%] h-full flex p-[36px] md:p-[64px] xl:p-[72px] place-items-end justify-self-center`}>
+            <div className={`relative w-fit h-fit flex-inline justify-self-start text-nowrap`}>
                 <p className={`${titleSmlTextStyle}`}>Hello, I&apos;m Eevee, and I am a </p>
                 <p className={`${titleTextStyle}`}>CREATIVE</p>
                 <p className={`${titleTextStyle}`}>DESIGNER</p>

@@ -80,7 +80,7 @@ function BentoBoxA() {
 
     function VideoCell({link, vidTitle="", hoverColor}: {link: string, vidTitle: string, hoverColor: string}) {
         return (
-            <div>
+            <div className="relative">
                 <bentos.CellMediaOnClick mediaLink={link} mediaType={MediaType.Video} mediaText={vidTitle} cellSpan="col-span-1" hoverTextColor={hoverColor}/>
                 <p className={`absolute left-[50%] -translate-x-[50%] w-[80%] bottom-0 my-[4px] md:my-[12px] text-[10px] opacity-0 group-hover:opacity-100 group-hover:translate-y-[0px] -translate-y-[12px] text-balance text-center text-white transition-all duration-400 drop-shadow-[0px_0px_8px_#000000] ${fonts.dotoBlack.className}`}>
                     {vidTitle}
@@ -90,7 +90,7 @@ function BentoBoxA() {
     }
 
     return (
-        <div className="relative z-0 grid grid-cols-2 xl:grid-cols-3 w-[80%] h-auto justify-self-center rounded-3xl place-content-center hover:z-20 gap-[12px] text-white hover:cursor-pointer">
+        <div className="relative z-0 grid grid-cols-2 xl:grid-cols-3 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] text-white hover:cursor-pointer">
             {
                 cellData.map((data, i) => <VideoCell link={data.vidLink} vidTitle={data.vidTitle} hoverColor={data.hoverColor} key={i}/>)
             }

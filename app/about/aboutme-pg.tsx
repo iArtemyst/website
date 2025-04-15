@@ -1,7 +1,6 @@
 'use client'
 
 import "@/app/globals/globals.css";
-import * as themes from "@/tailwind.config";
 
 const vidBackA  = "_aboutme/aboutme_a_back.mp4";
 const vidFrontA = "_aboutme/aboutme_a_front.mp4";
@@ -17,7 +16,7 @@ import * as fonts from "@/app/globals/fonts";
 import * as pages from "@/app/globals/pages-main";
 
 const cardStyle = "group-hover:m-[-20px] md:group-hover:m-[-40px] 2xl:group-hover:m-[-60px] group-hover:w-[200px] md:group-hover:w-[320px] lg:group-hover:w-[400px] xl:group-hover:w-[440px] 2xl:group-hover:w-[540px] w-[160px] md:w-[240px] lg:w-[275px] xl:w-[320px] 2xl:w-[360px]"
-const titleSmlTextStyle= `${fonts.dotoBold.className} h-fit w-fit text-[9px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-secColor leading-none tracking-tighter self-end my-[8px] laptop:my-[16px]`;
+const titleSmlTextStyle= `${fonts.dotoBlack.className} h-fit w-fit text-[9px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-secColor leading-none tracking-tighter self-end my-[8px] laptop:my-[16px]`;
 const titleTextStyle = `${fonts.dotoBlack.className} text-priColor text-[28px] sm:text-[40px] md:text-[48px] lg:text-[64px] 2xl:text-[72px] text-left text-balance leading-none -my-[2px] laptop:-my-[12px]`;
 
 function LandingPageText() {

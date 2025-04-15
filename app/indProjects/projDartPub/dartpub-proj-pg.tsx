@@ -57,11 +57,9 @@ function BentoBoxA() {
 function MainVideoBox({videoLink}: {videoLink: string}) {
     return (
         <div className="group">
-            <CardHoverFX bufferZone={0} rotateAmount={24}>
-                <div className="relative w-[80%] h-[auto] justify-self-center rounded-[24px] overflow-hidden shadow-[0px_0px_8px_#FFFFFF90] group-hover:shadow-[0px_0px_16px_#FFFFFF45] z-0 group-hover:z-10">
-                    <LazyVideo src={videoLink} controls={true} autoplay={true} muted={true} loop={true} className={"self-center"} />
-                </div>
-            </CardHoverFX>
+            <div className="relative w-[80%] h-[auto] justify-self-center rounded-[24px] overflow-hidden shadow-[0px_0px_8px_#FFFFFF90] group-hover:shadow-[0px_0px_16px_#FFFFFF45] z-0 group-hover:z-10">
+                <LazyVideo src={videoLink} controls={true} autoplay={true} muted={true} loop={true} className={"self-center"} />
+            </div>
         </div>
     )
 }

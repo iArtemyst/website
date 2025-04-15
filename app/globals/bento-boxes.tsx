@@ -64,7 +64,7 @@ export function HeaderText({text="", textSize=""}: {text: string, textSize: stri
 export function ParagraphText({text="", textSize=""}: {text: string, textSize: string}) {
     return (
         <div className={`relative h-full w-full content-center p-[16px]`}>
-            <p className={`${fonts.dotoBold.className} text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px] text-balance text-center`}>{text}</p>
+            <p className={`${fonts.dotoBlack.className} text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px] text-balance text-center`}>{text}</p>
         </div>
     )
 }
