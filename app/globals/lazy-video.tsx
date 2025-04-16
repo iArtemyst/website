@@ -13,8 +13,6 @@ export function LazyVideo({src, autoplay, controls, muted, loop, className} : {
     return <LazyVideoCore src={src} autoplay={autoplay} controls={controls} muted={muted} loop={loop} className={className} onEnter={() => {}} onLeave={() => {}}/>
 }
 
-
-
 export function LazyHoverVideo({src, autoplay, controls, muted, loop}: {src: string, autoplay: boolean, controls: boolean, muted: boolean, loop: boolean}) {
     const handleMouseEnterVideo = (e: React.MouseEvent<HTMLVideoElement>) => {
         if (e.target instanceof HTMLVideoElement) {
@@ -39,17 +37,6 @@ export function LazyNonHoverVideo({src, autoplay, controls, muted, loop}:{src:st
 }
 
 
-export function LazyNonHoverVideo2({src, autoplay, controls, muted, loop}:{src:string, autoplay:boolean, controls:boolean, muted:boolean, loop:boolean}) {
-    return (
-        <div className={`w-full h-full relative content-center`}>
-            <LazyVideo src={src} autoplay={autoplay} controls={controls} muted={muted} loop={loop} className={`w-full h-full object-contain`} />
-        </div>
-    )
-}
-
-
-
-
 function LazyVideoCore({src, autoplay, controls, muted, loop, className, onEnter, onLeave} : { 
     src:string, 
     autoplay:boolean, 
@@ -64,7 +51,7 @@ function LazyVideoCore({src, autoplay, controls, muted, loop, className, onEnter
     const [loadedSrc, setLoadedSrc] = useState('');
 
     useEffect(() => {
-        async function loadVideo() { 
+        async function loadVideo() {
             const source = await LoadAsset(src);
             setLoadedSrc(source);
         }
@@ -74,5 +61,5 @@ function LazyVideoCore({src, autoplay, controls, muted, loop, className, onEnter
 
     return loadedSrc === '' ?
         <Loading/> :
-        <video onMouseEnter={onEnter} onMouseLeave={onLeave} width="100%" height="100%" autoPlay={autoplay} playsInline={true} controls={controls} muted={muted} loop={loop} className={className}><source src={loadedSrc} type="video/mp4"/></video>
+        <video onMouseEnter={onEnter} onMouseLeave={onLeave} preload="auto" width="100%" height="100%" src={loadedSrc+`#t=0.001`} autoPlay={autoplay} playsInline={true} controls={controls} muted={muted} loop={loop} className={className}/>
 }

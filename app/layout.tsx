@@ -3,7 +3,7 @@ import "./globals/globals.css";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Eevee's Portfolio",
+  title: "Eevee Creative Designer",
   description: "Designed and Coded by Eevee Y",
 };
 

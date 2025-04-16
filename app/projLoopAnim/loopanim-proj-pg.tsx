@@ -5,6 +5,7 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
+import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
 
 const vidAnimLoop007 = "_motionui/_loops/anim-loop_06.mp4";
 const vidAnimLoop009 = "_motionui/_loops/anim-loop_08.mp4";
@@ -64,7 +65,7 @@ function BentoBoxA() {
     }
 
     return (
-        <div className="relative z-0 grid grid-cols-2 md:grid-cols-3 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] my-[24px] text-white hover:cursor-pointer">
+        <div className={`${CheckIfMobileBrowser() ? "grid-cols-2 my-[4px]" : "grid-cols-3 my-[24px]"} relative z-0 grid w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] text-white`}>
             {
                 cellData.map((data, i) => <VideoCell link={data} key={i}/>)
             }

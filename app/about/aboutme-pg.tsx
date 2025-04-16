@@ -11,17 +11,17 @@ const vidFrontC = "_aboutme/aboutme_c_front.mp4";
 const vidBackD  = "_aboutme/aboutme_d_back.mp4";
 const vidFrontD = "_aboutme/aboutme_d_front.mp4";
 
-import { DoubleSidedAboutCardContainer, IDoubleSideAboutCard } from "@/app/globals/double-sided-cards";
+import { IDoubleSideAboutCard, AboutCardContainer } from "@/app/globals/double-sided-cards";
 import * as fonts from "@/app/globals/fonts";
 import * as pages from "@/app/globals/pages-main";
 
 const cardStyle = "group-hover:m-[-20px] md:group-hover:m-[-40px] 2xl:group-hover:m-[-60px] group-hover:w-[200px] md:group-hover:w-[320px] lg:group-hover:w-[400px] xl:group-hover:w-[440px] 2xl:group-hover:w-[540px] w-[160px] md:w-[240px] lg:w-[275px] xl:w-[320px] 2xl:w-[360px]"
-const titleSmlTextStyle= `${fonts.dotoBlack.className} h-fit w-fit text-[9px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-secColor leading-none tracking-tighter self-end my-[8px] laptop:my-[16px]`;
-const titleTextStyle = `${fonts.dotoBlack.className} text-priColor text-[28px] sm:text-[40px] md:text-[48px] lg:text-[64px] 2xl:text-[72px] text-left text-balance leading-none -my-[2px] laptop:-my-[12px]`;
+const titleSmlTextStyle= `${fonts.dotoBlack.className} h-fit w-fit text-[8px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-secColor leading-none tracking-tighter self-end my-[8px] laptop:my-[16px]`;
+const titleTextStyle = `${fonts.dotoBlack.className} text-priColor text-[16px] sm:text-[36px] md:text-[44px] lg:text-[56px] 2xl:text-[64px] text-left text-balance leading-none -my-[2px] laptop:-my-[12px]`;
 
-function LandingPageText() {
+function DoubleSidedCardPageText() {
     return (
-        <div className={`relative w-full h-full flex px-[24px] sm:px-[30px] md:px-[36px] lg:px-[42px] xl:px-[48px] place-items-end justify-self-center`}>
+        <div className={`absolute left-0 bottom-0 w-full h-fit flex p-[24px] sm:p-[30px] md:p-[36px] lg:p-[42px] xl:p-[48px] place-items-end justify-self-center`}>
             <div className={`relative w-full h-fit flex-inline justify-self-start text-nowrap tracking-tighter`}>
                 <p className={`${titleSmlTextStyle}`}>Get to know me</p>
                 <p className={`${titleTextStyle}`}>EVELYN &quot;EEVEE&quot; YOUNGBLOOD</p>
@@ -30,7 +30,7 @@ function LandingPageText() {
     )
 }
 
-const cardMedia: IDoubleSideAboutCard[] = [
+const cardMedia2: IDoubleSideAboutCard[] = [
     {
         cardVideoFront: vidFrontA,
         cardVideoBack: vidBackA,
@@ -60,8 +60,8 @@ const cardMedia: IDoubleSideAboutCard[] = [
 export function AboutMePage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-hidden">
-            <LandingPageText />
-            <DoubleSidedAboutCardContainer dataArray={cardMedia} />
+            <AboutCardContainer dataArray={cardMedia2} />
+            <DoubleSidedCardPageText />
         </pages.GroupProjectPage>
 
     )

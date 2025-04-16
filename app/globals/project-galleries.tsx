@@ -6,6 +6,7 @@ import { CardHoverFX } from "./card-hover-fx";
 import * as fonts from "./fonts";
 import { LazyFSImage, LazyImage } from "./lazy-image";
 import { LazyHoverVideo, LazyNonHoverVideo } from "./lazy-video";
+import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
 
 const galleryBarImageSize = 'w-[24px] sm:w-[32px] md:w-[48px] lg:w-[64px]';
 const gallerySize = 'min-w-[360px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[640px] xl:min-w-[720px] 2xl:min-w-[960px]';
@@ -50,9 +51,9 @@ export interface ICardWithGalleryArrays
 
 export function ProjectDetailRelativeText({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
     return (
-        <div className={`${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px] mb-[24px] flex-grow-0 bg-bgColor`}>
-            <p className={`${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full text-[18px] sm:text-[24px] md:text-[32px] lg:text-[48px] xl:text-[64px] 2xl:text-[92px] text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
-            <p className={`${fonts.dotoBlack.className} ${projectTextPadding} text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
+        <div className={`${CheckIfMobileBrowser() ? "mb-[4px]" : "mb-[24px]"} ${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px]  flex-grow-0 bg-bgColor`}>
+            <p className={`${CheckIfMobileBrowser() ? "text-[12px]" : "text-[32px] lg:text-[48px] xl:text-[64px] 2xl:text-[92px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
+            <p className={`${CheckIfMobileBrowser() ? "text-[6px]" : "text-[12px] lg:text-[14px] xl:text-[16px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
         </div>
     )
 }
@@ -155,7 +156,7 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
     function GalleryMainMedia({mediaLink, mediaType, mediaAbout}: {mediaLink: string, mediaType: MediaType, mediaAbout: string}) {
         return (
             <div className={`w-auto h-auto relative m-[24px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
-                    <div className={`rounded-[24px] overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
+                    <div className={`${CheckIfMobileBrowser() ? "rounded-[8px]" : "rounded-[24px]"} overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
                         {
                             mediaType === MediaType.Video ?
                                 <LazyNonHoverVideo 
@@ -180,13 +181,13 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
 
     function GalleryImageNavBar({galleryImages, galleryLength}: {galleryImages: IGalleryMedia[], galleryLength: number}) {
         return (
-            <div className={`grid-cols-${galleryLength} ${gridGap} relative w-fit h-fit grid justify-self-center content-center py-[12px]`}>
+            <div className={`grid-cols-${galleryLength} ${gridGap} relative w-fit place-items-center mx-auto h-fit grid content-center py-[12px]`}>
                 {
                     galleryImages.map((data, i) => {
                         return (
                             <CardHoverFX bufferZone={0} rotateAmount={2} key={i}>
-                                <div className={`${selectedIndex == i ? "border-teal-400 border-[2px] opacity-100" : "border-none opacity-60"} ${galleryBarImageSize} 
-                                                group rounded-[8px] aspect-square overflow-clip place-self-center content-center transition-all duration-200 hover:scale-110`} onClick={() => setSelectedIndex(i)}> 
+                                <div className={`${selectedIndex == i ? `${CheckIfMobileBrowser() ? "border-[1px]" : "border-[2px]"} border-teal-400  opacity-100` : "border-none opacity-60"} ${galleryBarImageSize} 
+                                                ${CheckIfMobileBrowser() ? "rounded-[4px]" : "rounded-[8px]"} group  aspect-square overflow-clip place-self-center content-center transition-all duration-200 hover:scale-110`} onClick={() => setSelectedIndex(i)}> 
                                     <LazyImage
                                         imgLink={data.assetStillLink}
                                         imgAlt={data.assetText}
@@ -202,7 +203,7 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
 
     function GalleryMediaText({galleryMediaText}: {galleryMediaText: string}) {
         return (
-            <div className={`w-[90%] h-auto relative justify-self-center content-start`}>
+            <div className={`w-[85%] h-auto relative justify-self-center content-start mx-auto`}>
                 <p className={`${fonts.poppins.className} text-textColor text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-pretty`}>
                     {galleryMediaText}
                 </p>
@@ -259,8 +260,7 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
 
     return (
         <>
-            <div className={`${gallerySize} fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] bg-cardBGColor rounded-[24px] w-auto max-h-[calc(90%)] h-auto flex-row z-[150] justify-items-center py-[12px]`}>
-                {/* <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor rounded-[24px]`}/> */}
+            <div className={`${CheckIfMobileBrowser() ? "rounded-[8px] py-[4px]" : "rounded-[24px] py-[12px]"} ${gallerySize} fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] bg-cardBGColor w-fit max-h-[calc(90%)] h-fit flex-row z-[150] justify-items-center`}>
                 <GalleryMainMedia mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText} mediaType={galleryMedia[selectedIndex].assetMediaType}/>
                 <GalleryMediaText galleryMediaText={galleryMedia[selectedIndex].assetText} />
                 <GalleryImageNavBar galleryImages={galleryMedia} galleryLength={galleryLength}/>
@@ -286,7 +286,7 @@ function BackgroundBarrier({setShowGallery}: {setShowGallery: any}) {
 export function ProjectCardsWithGalleryContainer({cardArray, columnAmount}: {cardArray: ICardWithGalleryArrays[], columnAmount: string}) {
     
     return (
-        <div className={`grid ${columnAmount} absolute justify-self-center place-items-center w-[75%] my-[16px] h-[70%] md:h-[80%]`}>
+        <div className={`grid ${CheckIfMobileBrowser() ? "grid-cols-2" : `${columnAmount}`} absolute justify-self-center place-items-center w-[75%] my-[16px] h-[70%] md:h-[80%]`}>
         {
             cardArray.map((data, i) => {
                 return (
@@ -303,7 +303,7 @@ export function ProjectCardsNoGalleryContainer({cardArray, columnAmount}: {cardA
     
 
     return (
-        <div className={`grid ${columnAmount} absolute justify-self-center place-items-center w-[75%] my-[16px] h-[70%] md:h-[80%]`}>
+        <div className={`grid ${CheckIfMobileBrowser() ? "grid-cols-2" : `${columnAmount}`} absolute justify-self-center place-items-center w-[75%] my-[16px] h-[70%] md:h-[80%]`}>
         {
             cardArray.map((data, i) => {
                 return (

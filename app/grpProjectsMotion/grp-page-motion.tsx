@@ -11,11 +11,11 @@ const vidInstaLoops = "_project-links/trimmed-loop_insta-loops.mp4";
 const vidMedUI = "_project-links/trimmed-loops_med-ui_001.mp4";
 const vidConsumerMotion = "_project-links/trimmed-loops_mogr-ui_001.mp4";
 
-const linkMedUI = "../indProjects/projMedUI";
-const linkDDRMelee = "../indProjects/projDDRMelee";
-const linkInstaLoops = "../indProjects/projLoopAnim";
-const linkConsumerMotion = "../indProjects/projConsumerMotion";
-const linkConceptApps = "../indProjects/projConceptApps";
+const linkMedUI = "../projMedUI";
+const linkDDRMelee = "../projDDRMelee";
+const linkInstaLoops = "../projLoopAnim";
+const linkConsumerMotion = "../projConsumerMotion";
+const linkConceptApps = "../projConceptApps";
 
 const columnAmount = "grid-cols-3"
 

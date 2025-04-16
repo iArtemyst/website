@@ -6,7 +6,7 @@ import * as gallery from "@/app/globals/project-galleries";
 
 import * as hairGenMedia from "./hairgen-media-links";
 
-export default function StubbleGenPage() {
+export function StubbleGenPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <gallery.ProjectCardsNoGalleryContainer cardArray={hairGenMedia.HairGenProjectCardArrays} columnAmount="grid-cols-2 sm:grid-cols-4"/>

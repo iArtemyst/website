@@ -8,6 +8,7 @@ import * as fonts from "./fonts";
 import { LazyFSImage, LazyImage } from "./lazy-image";
 import { MediaType } from "./project-galleries";
 import { LazyHoverVideo, LazyNonHoverVideo, LazyVideo } from "./lazy-video";
+import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
 
 const bentoRounding = "rounded-[12px] sm:rounded-[16px] md:rounded-[24px]";
 const gallerySize = 'min-w-[320px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[720px] xl:min-w-[960px] 2xl:min-w-[1080px]';
@@ -40,12 +41,12 @@ export function ProjectDetailRelativeText({TitleText="", MoreText=""}: {TitleTex
 
 export function ProjectDetailTextTop({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
     return (
-        <div className="relative w-[80%] grid grid-rows-auto h-fit justify-self-center border-white border-[1px] gap-[8px] px-[8px] md:px-[16px] py-[4px] md:py-[8px]">
-            <div className={`${fonts.dotoBlack.className} text-priColor w-full text-[18px] sm:text-[24px] md:text-[32px] lg:text-[56px] 2xl:text-[72px] text-left text-nowrap leading-none relative h-auto content-center`}>
+        <div className={`${CheckIfMobileBrowser() ? "px-[8px] py-[4px]" : "px-[16px] py-[8px]"} relative w-[80%] grid grid-rows-auto h-fit justify-self-center border-white border-[1px] gap-[8px]`}>
+            <div className={`${CheckIfMobileBrowser() ? "text-[14px]" : "text-[32px] lg:text-[56px] 2xl:text-[72px]"} ${fonts.dotoBlack.className} text-priColor w-full text-left text-nowrap leading-none relative h-auto content-center`}>
                 <p>{TitleText}</p>
             </div>
 
-            <div className={`${fonts.dotoBlack.className} text-[10px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[24px] relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>
+            <div className={`${CheckIfMobileBrowser() ? "text-[6px]" : "text-[16px] lg:text-[18px] 2xl:text-[24px]"} ${fonts.dotoBlack.className} relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>
                 <p>{MoreText}</p>
             </div>
         </div>
@@ -72,31 +73,75 @@ export function ParagraphText({text="", textSize=""}: {text: string, textSize: s
 
 export function CellText({children, cellSpan}: {children: any, cellSpan: string}) {
     return (
-        <div className={`${cellSpan} ${themes.hoverShadow} ${bentoRounding} w-full h-full self-center flex-grow content-center transition-all duration-200 hover:cursor-text`}>
+        <div className={`${cellSpan} ${bentoRounding} relative w-full h-full self-center flex-grow content-center transition-all duration-200 hover:cursor-text`}>
             {children}
         </div> 
     )
 }
 
-export function CellVideo({cellVidLink, cellSpan=""}: {cellVidLink: string, cellSpan: string}) {
-    return (
-        <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} relative w-full h-fit justify-self-center overflow-hidden self-center border-2 border-green-300 transition-all duration-200`} >
-            <LazyHoverVideo 
-                src={cellVidLink}
-                autoplay={false}
-                controls={false}
-                muted={true}
-                loop={true}
-                />
-        </div>
-    )
-}
+export function CellMedia({cellMedia, cellMediaType, mediaText, cellSpan, hoverTextColor, showGallery, setShowGallery}: {cellMedia: string, cellMediaType: MediaType, mediaText: string, cellSpan: string, hoverTextColor: string, showGallery: boolean, setShowGallery: (x: boolean) => void}) {
+    function FillCellMedia() {
+        return (
+            <CardHoverFX bufferZone={0} rotateAmount={120}>
+                <div className={` ${cellSpan} ${bentoRounding} group relative w-full h-fit justify-self-center overflow-hidden self-center transition-all duration-200 z-auto shadow-[0px_0px_6px_#FFFFFF20] hover:shadow-[0px_0px_0px_#FFFFFF10]`} 
+                    onClick={(e) => { setShowGallery(!showGallery); }}>
+                    <div>
+                        {
+                            cellMediaType === MediaType.Video ?
+                                <LazyHoverVideo 
+                                    src={cellMedia}
+                                    autoplay={false}
+                                    controls={false}
+                                    muted={true}
+                                    loop={true}
+                                    /> 
+                            :
+                                <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
+                        }
+                    </div>
 
-export function CellImage({cellImgLink, cellImgAlt, cellSpan=""}: {cellImgLink: string, cellImgAlt: string, cellSpan: string}) {    
+                    <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[32px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}>
+                        <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
+                    </div>
+                </div>
+            </CardHoverFX>
+        )
+    }
+
+    function FillCellMediaMobile() {
+        return (
+            <div className={` ${cellSpan} shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] ${bentoRounding} group relative w-full h-fit justify-self-center overflow-hidden self-center transition-all duration-200 z-auto`} 
+                onClick={(e) => { setShowGallery(!showGallery); }}>
+                <div>
+                    {
+                        cellMediaType === MediaType.Video ?
+                            <LazyHoverVideo 
+                                src={cellMedia}
+                                autoplay={true}
+                                controls={false}
+                                muted={true}
+                                loop={true}
+                                /> 
+                        :
+                            <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
+                    }
+                </div>
+
+                <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[32px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}>
+                    <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
+                </div>
+            </div>
+        )
+    }
+    
     return (
-        <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} group relative w-full h-full justify-self-center  overflow-hidden`}>
-            <LazyImage imgLink={cellImgLink} imgAlt={cellImgAlt}/>
-            <p className={`absolute left-[16px] bottom-[8px] text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px] opacity-0 group-hover:opacity-100 group-hover:translate-y-[0px] -translate-y-[12px] transition-all duration-400 drop-shadow-[0px_0px_4px_#000000] ${fonts.dotoBlack.className}`}>{cellImgAlt}</p>
+        <div>
+            {
+                CheckIfMobileBrowser() === false ?
+                <FillCellMedia />
+                :
+                <FillCellMediaMobile />
+            }
         </div>
     )
 }
@@ -146,8 +191,8 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
 
     function PopupText() {
         return (
-            <div className={`w-[85%] h-auto relative justify-self-center text-left align-middle pb-[.75rem]`}>
-                <p className={`${fonts.poppins.className} text-textColor text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-pretty`}>
+            <div className={`w-full h-auto relative justify-self-center align-middle pb-[.5rem] sm:pb-[.75rem]`}>
+                <p className={`${fonts.poppins.className} text-textColor text-left text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-pretty px-[16px] sm:px-[24px]`}>
                     {mediaText}
                 </p>
             </div>
@@ -230,34 +275,8 @@ function BackgroundBarrier({setShowGallery,}: {setShowGallery: any,}) {
     )
 }
 
-export function CellMedia({cellMedia, cellMediaType, mediaText, cellSpan, hoverTextColor, showGallery, setShowGallery}: {cellMedia: string, cellMediaType: MediaType, mediaText: string, cellSpan: string, hoverTextColor: string, showGallery: boolean, setShowGallery: (x: boolean) => void}) {
-    return (
-        <CardHoverFX bufferZone={0} rotateAmount={12}>
-            <div className={` ${cellSpan} ${themes.hoverShadow} ${bentoRounding} group relative w-full h-fit justify-self-center overflow-hidden self-center transition-all duration-200 z-auto`} 
-                onClick={(e) => { setShowGallery(!showGallery); }}>
-                <div>
-                    {
-                        cellMediaType === MediaType.Video ?
-                            <LazyHoverVideo 
-                                src={cellMedia}
-                                autoplay={false}
-                                controls={false}
-                                muted={true}
-                                loop={true}
-                                /> 
-                        :
-                            <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
-                    }
-                </div>
 
-                <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[32px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}>
-                    <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
-                </div>
-            </div>
-        </CardHoverFX>
-    )
-}
-
+//---------------------------------
 
 
 export function CellMediaOnClick({mediaLink, mediaType, mediaText, hoverTextColor, cellSpan,}: {mediaLink: string, mediaType: MediaType, mediaText: string, hoverTextColor: string, cellSpan: string,}) {

@@ -13,14 +13,14 @@ const vidProdAnim = "_project-links/trimmed-loop_productanim.mp4";
 const vidStylizedVFX = "_project-links/trimmed-loop_stylizedvfx.mp4";
 const vidInstaLoops = "_project-links/trimmed-loop_insta-loops.mp4";
 
-const linkHorrorHouse = "../indProjects/projHorrorHouse";
-const linkStylizedVFX = "../indProjects/projVFX3D";
-const linkDartPub = "../indProjects/projDartPub3D";
-const linkMedAnim = "../indProjects/projMedicalAnim";
-const linkMonsoonVermut = "../indProjects/projMonsoon";
-const linkProdAnim = "../indProjects/projProductAnim";
-const linkProcMats = "../indProjects/projProcMat3D";
-const linkInstaLoops = "../indProjects/projLoopAnim3D";
+const linkHorrorHouse = "../projHorrorHouse";
+const linkStylizedVFX = "../projVFX3D";
+const linkDartPub = "../projDartPub3D";
+const linkMedAnim = "../projMedicalAnim";
+const linkMonsoonVermut = "../projMonsoon";
+const linkProdAnim = "../projProductAnim";
+const linkProcMats = "../projProcMat3D";
+const linkInstaLoops = "../projLoopAnim3D";
 
 const columnAmount = "grid-cols-3"
 

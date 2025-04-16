@@ -1,7 +1,7 @@
 import "@/app/globals/globals.css";
 
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
-import StubbleGenPage from "@/app/indProjects/projHairGenerator/hairgen-proj-pg";
+import { StubbleGenPage } from "./hairgen-proj-pg";
 
 const linkGrpGame = '../grpProjectsGame';
 

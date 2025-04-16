@@ -11,12 +11,12 @@ const vidStylizedVFX = "_project-links/trimmed-loop_stylizedvfx.mp4";
 const vidUtopaea = "_project-links/trimmed-loop_utopaea.mp4";
 const vidHairGenerator = "_project-links/ShavingGenerator_LoopingCard.mp4";
 
-const linkStylizedVFX = "../indProjects/projVFX";
-const linkDartPub = "../indProjects/projDartPub";
-const linkUtopaea = "../indProjects/projUtopaea";
-const linkProcToonCity = "../indProjects/projProcIslandCity";
-const linkProcMats = "../indProjects/projProcMat";
-const linkHairGenerator = "../indProjects/projHairGenerator";
+const linkStylizedVFX = "../projVFX";
+const linkDartPub = "../projDartPub";
+const linkUtopaea = "../projUtopaea";
+const linkProcToonCity = "../projProcIslandCity";
+const linkProcMats = "../projProcMat";
+const linkHairGenerator = "../projHairGenerator";
 
 import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
 

@@ -9,7 +9,7 @@ const vidBingo = "_project-links/sqr-loop_codeBingo.mp4";
 const vidResume = "_project-links/sqr-loop_codeResume.mp4";
 const vidWebsite = "_project-links/portfolio-proj-link.mp4";
 
-const linkWebsite = "../indProjects/projCodeWebsite/";
+const linkWebsite = "../projCodeWebsite/";
 const linkResume = 'https://github.com/iArtemyst/resume';
 const linkBingo = 'https://github.com/iArtemyst/_bingo-board';
 const columnAmount = "grid-cols-3"

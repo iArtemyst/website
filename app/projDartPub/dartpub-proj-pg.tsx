@@ -8,6 +8,7 @@ import * as pages from "@/app/globals/pages-main";
 import * as gallery from "@/app/globals/project-galleries";
 import { MediaType } from "@/app/globals/project-galleries";
 import { LazyVideo } from "@/app/globals/lazy-video";
+import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
 
 const imgPubDart01 = "_3d/_pubDart/pubDart_img_05.jpg";
 const imgPubDart04 = "_3d/_pubDart/pubDart_img_03.png";
@@ -30,6 +31,8 @@ const cell01Media: bentos.IPopupMedia = {
 function BentoBoxA() {
     return (
         <div className={`${bentoGap} grid grid-cols-2 w-[80%] justify-self-center text-textVariant`}>
+                <bentos.CellMediaOnClick mediaLink={vidPubDart02} mediaType={MediaType.Video} mediaText="Showcase Animation" cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
+                
                 <bentos.CellText cellSpan="col-span-2">
                     <bentos.HeaderText text="Game Ready Darts and Pub Assets" textSize={titleTextSize}/>
                 </bentos.CellText>
@@ -54,21 +57,10 @@ function BentoBoxA() {
     )
 }
 
-function MainVideoBox({videoLink}: {videoLink: string}) {
-    return (
-        <div className="group">
-            <div className="relative w-[80%] h-[auto] justify-self-center rounded-[24px] overflow-hidden shadow-[0px_0px_8px_#FFFFFF90] group-hover:shadow-[0px_0px_16px_#FFFFFF45] z-0 group-hover:z-10">
-                <LazyVideo src={videoLink} controls={true} autoplay={true} muted={true} loop={true} className={"self-center"} />
-            </div>
-        </div>
-    )
-}
-
 export default function ProjectDartPubPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <div className="grid grid-cols-1 gap-[24px]">
-                <MainVideoBox videoLink={vidPubDart02}/>
                 <BentoBoxA />
             </div>
         </pages.GroupProjectPage>
