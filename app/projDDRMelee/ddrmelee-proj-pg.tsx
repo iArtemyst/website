@@ -33,7 +33,7 @@ function BentoBoxA() {
             </bentos.CellText>
 
             <div className={`${CheckIfMobileBrowser() ? "grid-cols-1" : "grid-cols-3"} h-fit gap-[12px] grid`}>
-                <bentos.CellMediaOnClick mediaLink={vidDDRMelee01} mediaType={MediaType.Image} mediaText="DDR Melee Intro Video" cellSpan={`${CheckIfMobileBrowser() ? "col-span-1" : "col-span-2"}`} hoverTextColor="text-textVariant" />
+                <bentos.CellMediaOnClick mediaLink={vidDDRMelee01} mediaType={MediaType.Video} mediaText="DDR Melee Intro Video" cellSpan={`${CheckIfMobileBrowser() ? "col-span-1" : "col-span-2"}`} hoverTextColor="text-textVariant" />
                 <bentos.CellText cellSpan={`col-span-1`}>
                     <bentos.ParagraphText textSize={paraTextSize} text="When my partner came to me with the idea for a Super Smash Bros Melee combo video, I was immediately on board. The idea they had developed was a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
                 </bentos.CellText>

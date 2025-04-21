@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import * as SVGComponents from "@/app/svgs/index";
 import * as fonts from "./fonts";
+import StyledLink from "./styled-link";
 
 const linkAbout = '/about';
 const linkHome = '/'
@@ -23,13 +24,13 @@ export function NavUI() {
     
     function HeaderTextButton({buttonText, buttonLink}: {buttonText: string, buttonLink: Url}) {
         return (
-            <Link href={buttonLink}>
+            <StyledLink href={buttonLink}>
                 <button className="static h-fit w-fit justify-self-center hover:cursor-pointer  transition-all duration-200 px-[.25rem] sm:px-[.5rem] opacity-50 hover:opacity-100 hover:scale-125 active:scale-110">
                     <p className={`${fonts.dotoBlack.className} text-[14px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] text-priColor`}>
                         {buttonText}
                     </p>
                 </button>
-            </Link>
+            </StyledLink>
         )
     }
     
@@ -50,12 +51,12 @@ export function NavUI() {
 
 export function BackButtonRSticky({backLink="", buttonText=""}: {backLink: string, buttonText: string}) {
     return (
-        <Link href={backLink}>
+        <StyledLink href={backLink}>
             <div className="fixed z-[9999] right-0 bottom-0 w-auto h-auto m-[24px]">
                 <div className={`${fonts.dotoBlack.className} text-[7px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[14px] relative text-center w-auto h-auto px-[.5rem] sm:px-[1rem] py-[.25rem] rounded-full backdrop-blur-[8px] bg-[#FFFFFF40] hover:bg-[#FFFFFF] hover:scale-[110%] transition-all duration-[200ms]`}>
                     <p>{buttonText}</p>
                 </div>
             </div>
-        </Link>
+        </StyledLink>
     )
 }

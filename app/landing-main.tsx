@@ -5,6 +5,7 @@ import * as fonts from "@/app/globals/fonts";
 import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 import { CheckIfMobileBrowser } from "./globals/mobile-check";
+import { NoSelect } from "./globals/styles";
 
 const vidBackA = "_landing/grp_card_3d_back.mp4";
 const vidFrontA = "_landing/grp_card_3d_front.mp4";
@@ -27,7 +28,8 @@ const titleTextStyle = `${fonts.dotoBlack.className} text-priColor text-[28px] s
 
 function LandingPageText() {
     return (
-        <div className={`${CheckIfMobileBrowser() ? "flex-inline" : "flex"} absolute w-full h-fit bottom-0 left-[50%] -translate-x-[50%] z-10 p-[36px] sm:p-[48px] md:p-[64px] xl:p-[72px] place-items-end justify-self-center`}>
+        <div className={`${CheckIfMobileBrowser() ? "flex-inline" : "flex"} absolute w-full h-fit bottom-0 left-[50%] -translate-x-[50%] z-10 p-[36px] sm:p-[48px] md:p-[64px] xl:p-[72px] place-items-end justify-self-center`}
+                style={NoSelect}>
             <div className={`${CheckIfMobileBrowser() ? "" : ""} relative w-fit h-fit flex-inline text-nowrap shrink`}>
                 <p className={`${titleSmlTextStyle} text-left `}>Hello, I&apos;m Eevee, and I am a </p>
                 {

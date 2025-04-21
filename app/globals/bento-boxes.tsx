@@ -9,6 +9,7 @@ import { LazyFSImage, LazyImage } from "./lazy-image";
 import { MediaType } from "./project-galleries";
 import { LazyHoverVideo, LazyNonHoverVideo, LazyVideo } from "./lazy-video";
 import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
+import { NoSelect } from "./styles";
 
 const bentoRounding = "rounded-[12px] sm:rounded-[16px] md:rounded-[24px]";
 const gallerySize = 'min-w-[320px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[720px] xl:min-w-[960px] 2xl:min-w-[1080px]';
@@ -115,7 +116,7 @@ export function CellMedia({cellMedia, cellMediaType, mediaText, cellSpan, hoverT
                 <div>
                     {
                         cellMediaType === MediaType.Video ?
-                            <LazyHoverVideo 
+                            <LazyNonHoverVideo 
                                 src={cellMedia}
                                 autoplay={true}
                                 controls={false}
@@ -127,7 +128,8 @@ export function CellMedia({cellMedia, cellMediaType, mediaText, cellSpan, hoverT
                     }
                 </div>
 
-                <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[32px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}>
+                <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[32px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}
+                        style={NoSelect}>
                     <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
                 </div>
             </div>
