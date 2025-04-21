@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && type NUL > .\\docs\\.nojekyll && echo eevee-feywild.com > .\\docs\\CNAME",
     "start": "next start",
     "lint": "next lint"
   },
