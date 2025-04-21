@@ -19,21 +19,8 @@ const nextConfig: NextConfig = {
       }],
     });
 
-    if (process.env.NODE_ENV === "development")
-    {
-      config.plugins.push(
-        new CopyPlugin({
-          patterns: [
-            { from: "./app/assets", to: `static/media/` },
-          ],
-        })
-      );
-    }
-
     return config;
   },
 };
 
 module.exports = nextConfig;
-
-// module.exports = withNextVideo()

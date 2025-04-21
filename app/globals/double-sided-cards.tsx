@@ -6,6 +6,8 @@ import { CardHoverFX } from "./card-hover-fx";
 import * as fonts from "./fonts";
 import { LazyHoverVideo, LazyNonHoverVideo } from "./lazy-video";
 import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
+import StyledLink from "./styled-link";
+import { NoSelect } from "./styles";
 
 //-----------------------------------
 // INTERFACES FOR DOUBLE SIDED CARDS
@@ -75,7 +77,7 @@ function CardInitialSide ({src}: {src:string,}) {
 
 function DoubleSidedLandingCard({card}: {card: IDoubleSideLandingCard}) {
     return (
-        <Link href={card.cardLink} className="group">
+        <StyledLink href={card.cardLink} className="group">
             <div className={`${card.rotatedAngle} relative group-hover:rotate-0 backface-visible h-fit w-fit duration-300 group-hover:animate-none group-hover:z-10 animate-wiggle-bounce transition-all`}>
                 <CardHoverFX bufferZone={0} rotateAmount={7}>
                     <div className={`${card.cardStyle} relative`} >
@@ -84,7 +86,7 @@ function DoubleSidedLandingCard({card}: {card: IDoubleSideLandingCard}) {
                     </div>
                 </CardHoverFX>
             </div>
-        </Link>
+        </StyledLink>
     )
 }
 
@@ -104,19 +106,19 @@ function DoubleSidedAboutCard({card}: {card: IDoubleSideAboutCard}) {
 //------------------------------
 // MOBILE CARD COMPONENTS
 
-function MobileDoubleSidedCardWithLink ({card}: {card:IDoubleSideLandingCard}) {
+function MobileDoubleSidedCardWithLink({card}: {card:IDoubleSideLandingCard}) {
     return (
         <div>
-            <Link href={card.cardLink}>
+            <StyledLink href={card.cardLink}>
                 <MobileDoubleSidedCardBase src={card.cardVideoBack} rotateAngle={card.rotatedAngle}/>
-            </Link>
+            </StyledLink>
         </div>
     )
 }
 
-function MobileDoubleSidedCardBase ({src, rotateAngle}: {src:string, rotateAngle:string,}) {
+function MobileDoubleSidedCardBase({src, rotateAngle}: {src:string, rotateAngle:string,}) {
     return (
-        <div className={`${rotateAngle} animate-wiggle-bounce h-fit w-fit duration-0 z-10 active:z-20 active:animate-none hover:scale-110 active:scale-110  `}>
+        <div className={`${rotateAngle} animate-wiggle-bounce h-fit w-fit duration-0 z-10 active:z-20 active:animate-none hover:scale-110 active:scale-110  `} style={NoSelect}>
             <CardVideoBG src={src}/>
         </div>
     )
