@@ -6,8 +6,9 @@ import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
 import { CheckIfMobileBrowser } from "../globals/mobile-check";
-import Link from "next/link";
-import { absoluteCenter, hoverShadow } from "@/tailwind.config";
+import StyledLink from "../globals/styled-link";
+import { NoSelect } from "../globals/styles";
+import { hoverShadow } from "@/tailwind.config";
 
 const imgDDRMelee01 = "_motionui/_ddrmelee/ddr-melee_stills_00.png";
 const imgDDRMelee03 = "_motionui/_ddrmelee/ddr-melee_stills_02.png";
@@ -68,12 +69,12 @@ function BentoBoxB() {
             <div className="">
                 {
                     CheckIfMobileBrowser() ?
-                        <div className={`${hoverShadow} w-fit h-fit rounded-xl`}>
-                            <Link href={youtubeLink}>
+                        <div className={`${hoverShadow} w-fit h-fit rounded-xl`} style={NoSelect}>
+                            <StyledLink href={youtubeLink}>
                                 <bentos.CellText cellSpan="col-span-1">
                                     <bentos.ParagraphText text="View the full video on Youtube!" textSize="text-[10px]" />
                                 </bentos.CellText>
-                            </Link>
+                            </StyledLink>
                         </div>
                         :
                         <div className={`justify-self-center rounded-xl overflow-clip w-full h-auto place-items-center`}>
