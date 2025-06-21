@@ -3,13 +3,15 @@
 import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
+import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
+import { shuffle_project_list } from "@/app/globals/shuffle-functions";
 
-const vidProcToonCity = "_project-links/IslandCity_LoopingCard.mp4";
-const vidDartPub = "_project-links/trimmed-loop_dartspub.mp4";
-const vidProcMats = "_project-links/trimmed-loop_procMat.mp4";
-const vidStylizedVFX = "_project-links/trimmed-loop_stylizedvfx.mp4";
-const vidUtopaea = "_project-links/trimmed-loop_utopaea.mp4";
-const vidHairGenerator = "_project-links/ShavingGenerator_LoopingCard.mp4";
+const vidProcToonCity = "_project-links/prjLink_islandGen_400px.mp4";
+const vidDartPub = "_project-links/prjLink_dartspub_400px.mp4";
+const vidProcMats = "_project-links/prjLink_procMat_400px.mp4";
+const vidStylizedVFX = "_project-links/prjLink_stylizedvfx_400px.mp4";
+const vidUtopaea = "_project-links/prjLink_utopaea_400px.mp4";
+const vidHairGenerator = "_project-links/prjLink_hairgen_400px.mp4";
 
 const linkStylizedVFX = "../projVFX";
 const linkDartPub = "../projDartPub";
@@ -18,9 +20,6 @@ const linkProcToonCity = "../projProcIslandCity";
 const linkProcMats = "../projProcMat";
 const linkHairGenerator = "../projHairGenerator";
 
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
-
-const columnAmount = "grid-cols-3"
 
 const groupCardData: IProjectLinkCard[] = [
     {
@@ -69,9 +68,11 @@ const groupCardData: IProjectLinkCard[] = [
 
 
 export default function GroupProjectsGame() {
+    let shuffled_list = shuffle_project_list(groupCardData)
+
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <ProjectLinkCardsContainer dataArray={groupCardData} />
+            <ProjectLinkCardsContainer dataArray={shuffled_list} />
         </pages.GroupProjectPage>
     )
 }

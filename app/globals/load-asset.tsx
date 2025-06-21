@@ -1,3 +1,4 @@
+'use client'
 
 export default async function LoadAsset(path: string): Promise<string>
 {

@@ -78,7 +78,7 @@ function CardInitialSide ({src}: {src:string,}) {
 function DoubleSidedLandingCard({card}: {card: IDoubleSideLandingCard}) {
     return (
         <StyledLink href={card.cardLink} className="group">
-            <div className={`${card.rotatedAngle} relative group-hover:rotate-0 backface-visible h-fit w-fit duration-300 group-hover:animate-none group-hover:z-10 animate-wiggle-bounce transition-all`}>
+            <div className={`${card.rotatedAngle} relative hover:rotate-0 backface-visible h-fit w-fit duration-300 hover:animate-none hover:z-10 animate-wiggle-bounce transition-all`}>
                 <CardHoverFX bufferZone={0} rotateAmount={7}>
                     <div className={`${card.cardStyle} relative`} >
                         <CardReverseSide src={card.cardVideoFront} text={card.cardDescription}/>
@@ -92,7 +92,7 @@ function DoubleSidedLandingCard({card}: {card: IDoubleSideLandingCard}) {
 
 function DoubleSidedAboutCard({card}: {card: IDoubleSideAboutCard}) {
     return (
-        <div className={`${card.rotatedAngle} group relative group-hover:rotate-0 backface-visible h-fit w-fit duration-300 group-hover:animate-none group-hover:z-10 animate-wiggle-bounce transition-all`}>
+        <div className={`${card.rotatedAngle} group relative hover:rotate-0 backface-visible h-fit w-fit duration-300 hover:animate-none hover:z-10 animate-wiggle-bounce transition-all`}>
             <CardHoverFX bufferZone={0} rotateAmount={7}>
                 <div className={`${card.cardStyle} relative`} >
                     <CardReverseSide src={card.cardVideoFront} text={null}/>

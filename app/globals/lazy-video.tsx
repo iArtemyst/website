@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from "react";
 import LoadAsset from "./load-asset";
 import Loading from "./loading-text";

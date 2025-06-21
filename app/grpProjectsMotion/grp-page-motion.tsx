@@ -4,12 +4,13 @@ import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
 import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
+import { shuffle_project_list } from "@/app/globals/shuffle-functions";
 
-const vidBankApp = "_project-links/trimmed-loop_bankapp.mp4";
-const vidDDRMelee = "_project-links/trimmed-loop_ddr-melee.mp4";
-const vidInstaLoops = "_project-links/trimmed-loop_insta-loops.mp4";
-const vidMedUI = "_project-links/trimmed-loops_med-ui_001.mp4";
-const vidConsumerMotion = "_project-links/trimmed-loops_mogr-ui_001.mp4";
+const vidBankApp = "_project-links/prjLink_bankapp_400px.mp4";
+const vidDDRMelee = "_project-links/prjLink_ddr-melee_400px.mp4";
+const vidInstaLoops = "_project-links/prjLink_insta-loops_400px.mp4";
+const vidMedUI = "_project-links/prjLink_med-ui_400px.mp4";
+const vidConsumerMotion = "_project-links/prjLink_mogr-ui_400px.mp4";
 
 const linkMedUI = "../projMedUI";
 const linkDDRMelee = "../projDDRMelee";
@@ -17,7 +18,6 @@ const linkInstaLoops = "../projLoopAnim";
 const linkConsumerMotion = "../projConsumerMotion";
 const linkConceptApps = "../projConceptApps";
 
-const columnAmount = "grid-cols-3"
 
 const groupCardData: IProjectLinkCard[] = [
     {
@@ -58,9 +58,11 @@ const groupCardData: IProjectLinkCard[] = [
 ]
 
 export default function GroupProjectsMotion() {
+    let shuffled_list = shuffle_project_list(groupCardData)
+
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <ProjectLinkCardsContainer dataArray={groupCardData} />
+            <ProjectLinkCardsContainer dataArray={shuffled_list} />
         </pages.GroupProjectPage>
     )
 }

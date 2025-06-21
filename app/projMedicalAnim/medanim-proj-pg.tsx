@@ -86,9 +86,9 @@ function BentoBox() {
                 <bentos.CellMediaOnClick mediaLink={imgEES15} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
             </div>                  
 
-            <bentos.CellMediaOnClick mediaLink={vidMamm02} mediaType={MediaType.Image} mediaText="Medical animation clip" cellSpan="col-span-2" hoverTextColor="text-textColor"/>
+            <bentos.CellMediaOnClick mediaLink={vidMamm02} mediaType={MediaType.Video} mediaText="Medical animation clip" cellSpan="col-span-2" hoverTextColor="text-textColor"/>
 
-            <bentos.CellMediaOnClick mediaLink={vidEESC03} mediaType={MediaType.Image} mediaText="Medical animation clip" cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClick mediaLink={vidEESC03} mediaType={MediaType.Video} mediaText="Medical animation clip" cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
 
             <div className={`${bentoGap} col-span-2 grid grid-cols-2 hover:z-40`}>
                 <bentos.CellMediaOnClick mediaLink={imgEES21} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>

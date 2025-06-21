@@ -8,6 +8,7 @@ import { LazyHoverVideo } from "./lazy-video";
 import StyledLink from "./styled-link";
 import { NoSelect } from "./styles";
 
+
 //--------------------------------------
 //INTERFACE FOR PROJECT LINK CARDS
 
@@ -50,7 +51,7 @@ function LazyCardInternals({dataArray}: {dataArray: IProjectLinkCard}) {
 
     return (
         <div className={`group relative grid hover:gap-[8px] hover:lg:gap-[10px] w-fit h-auto p-[8px] lg:p-[12px] transition-all duration-300 rounded-md place-items-center overflow-clip`}>
-            <div className="relative content-center w-[200px] lg:w-[240px] xl:w-[280px] 2xl:w-[320px] h-[90%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090] transition-all duration-300">
+            <div className="relative content-center md:w-[220px] lg:w-[280px] xl:w-[320px] 2xl:w-[360px] h-[100%] group-hover:h-[90%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090] transition-all duration-300">
                 <ProjectVideo src={dataArray.mediaLink} />
             </div>
             <div className={`absolute left-0 bottom-0 p-[6px] md:p-[8px] w-full h-auto group-hover:opacity-100 opacity-0 transition-all duration-300`}>
@@ -62,9 +63,9 @@ function LazyCardInternals({dataArray}: {dataArray: IProjectLinkCard}) {
 
 function GroupProjectCards({dataArray}: {dataArray: IProjectLinkCard}) {
     return (
-        <div className={`w-full h-full place-items-center place-content-center`}>
+        <div className={`w-fit h-full place-items-center place-content-center`}>
             <CardHoverFX bufferZone={0} rotateAmount={7}>
-                <div className={`bg-cardBGInactiveColor hover:bg-cardBGColor group w-fit h-fit cursor-pointer rounded-[8px] opacity-80 hover:opacity-100 hover:scale-[112%] active:scale-[105%] transition-all duration-200`} >
+                <div className={`bg-cardBGInactiveColor hover:bg-cardBGColor group w-fit h-fit cursor-pointer rounded-[8px] opacity-80 hover:opacity-100 hover:scale-[108%] active:scale-[95%] transition-all duration-200`} >
                     <StyledLink href={dataArray.cardLink}>
                         <LazyCardInternals dataArray={dataArray}/>
                         {
@@ -112,7 +113,7 @@ function MobileLazyCardInternal({card}: {card: IProjectLinkCard}) {
 
     return (
         <div className={`relative grid w-fit h-auto p-[8px] transition-all duration-300 rounded-md place-items-center overflow-clip`}>
-            <div className="relative content-center w-[120px] h-[90%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090]">
+            <div className="relative content-center w-[140px] sm:w-[200px] h-[90%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090]">
                 <MobileProjectVideo src={card.mediaLink} />
             </div>
             <div className={`absolute left-0 bottom-0 p-[6px] w-full h-auto opacity-100`}>
@@ -145,12 +146,12 @@ function MobileGroupProjectCard({card}: {card: IProjectLinkCard}) {
 //--------------------------------------
 // PROJECT LINK CARD CONTAINER
 
-export function ProjectLinkCardsContainer({dataArray}: {dataArray: IProjectLinkCard[]}) {
+export function ProjectLinkCardsContainer({dataArray}: {dataArray: IProjectLinkCard[]}) {    
     return (
         <div className="">
             {
                 CheckIfMobileBrowser() === false ?
-                    <div className={`grid grid-cols-3 w-[90%] justify-self-center gap-[24px] h-full content-center place-content-center`}>
+                    <div className={`grid grid-cols-3 w-[90%] justify-self-center gap-[24px] h-full justify-items-center content-center place-content-center`}>
                         {
                             dataArray.map((data, i) => <GroupProjectCards key={i} dataArray={data}/> )
                         }

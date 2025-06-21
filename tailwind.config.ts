@@ -66,9 +66,9 @@ export default {
       },
       keyframes: {
         wiggle: {
-          '0%': { transform: 'rotate(-5.0deg) translateY(-12px)' },
-          '50%': { transform: 'rotate(5.0deg) translateY(12px)' },
-          '100%': { transform: 'rotate(-5.0deg) translateY(-12px)' },
+          '0%': { transform: 'rotate(-8.0deg) translateY(-12px)' },
+          '50%': { transform: 'rotate(8.0deg) translateY(12px)' },
+          '100%': { transform: 'rotate(-8.0deg) translateY(-12px)' },
         },
         error: {
           '0%': { transform: 'rotate(0.0deg)' },

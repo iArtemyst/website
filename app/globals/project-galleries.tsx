@@ -52,7 +52,7 @@ export interface ICardWithGalleryArrays
 export function ProjectDetailRelativeText({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
     return (
         <div className={`${CheckIfMobileBrowser() ? "mb-[4px]" : "mb-[24px]"} ${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px]  flex-grow-0 bg-bgColor`}>
-            <p className={`${CheckIfMobileBrowser() ? "text-[12px]" : "text-[32px] lg:text-[48px] xl:text-[64px] 2xl:text-[92px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
+            <p className={`${CheckIfMobileBrowser() ? "text-[12px]" : "text-[32px] lg:text-[48px] xl:text-[56px] 2xl:text-[72px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
             <p className={`${CheckIfMobileBrowser() ? "text-[6px]" : "text-[12px] lg:text-[14px] xl:text-[16px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
         </div>
     )

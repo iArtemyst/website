@@ -3,15 +3,16 @@
 import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
+import { shuffle_project_list } from "@/app/globals/shuffle-functions";
 
-const vidDartPub = "_project-links/trimmed-loop_dartspub.mp4";
-const vidHorrorHouse = "_project-links/trimmed-loop_horrorhouses.mp4";
-const vidMedAnim = "_project-links/trimmed-loop_medanim1.mp4";
-const vidMonsoonVermut = "_project-links/trimmed-loop_monsoonvermut.mp4";
-const vidProcMats = "_project-links/trimmed-loop_procMat.mp4";
-const vidProdAnim = "_project-links/trimmed-loop_productanim.mp4";
-const vidStylizedVFX = "_project-links/trimmed-loop_stylizedvfx.mp4";
-const vidInstaLoops = "_project-links/trimmed-loop_insta-loops.mp4";
+const vidDartPub = "_project-links/prjLink_dartspub_400px.mp4";
+const vidHorrorHouse = "_project-links/prjLink_horrorhouses_400px.mp4";
+const vidMedAnim = "_project-links/prjLink_medanim_400px.mp4";
+const vidMonsoonVermut = "_project-links/prjLink_monsoonvermut_400px.mp4";
+const vidProcMats = "_project-links/prjLink_procMat_400px.mp4";
+const vidProdAnim = "_project-links/prjLink_productanim_400px.mp4";
+const vidStylizedVFX = "_project-links/prjLink_stylizedvfx_400px.mp4";
+const vidInstaLoops = "_project-links/prjLink_insta-loops_400px.mp4";
 
 const linkHorrorHouse = "../projHorrorHouse";
 const linkStylizedVFX = "../projVFX3D";
@@ -84,9 +85,11 @@ const groupCardData: IProjectLinkCard[] = [
 ]
 
 export default function GroupProjects3D() {
+    let shuffled_list = shuffle_project_list(groupCardData)
+
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <ProjectLinkCardsContainer dataArray={groupCardData} />
+            <ProjectLinkCardsContainer dataArray={shuffled_list} />
         </pages.GroupProjectPage>
     )
 }

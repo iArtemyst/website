@@ -6,9 +6,10 @@ import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 import { CheckIfMobileBrowser } from "./globals/mobile-check";
 import { NoSelect } from "./globals/styles";
+import { shuffle_landing_cards } from "./globals/shuffle-functions";
 
 const vidBackA = "_landing/grp_card_3d_back.mp4";
-const vidFrontA = "_landing/grp_card_3d_front.mp4";
+const vidFrontA = "_landing/grp_card_3d_front_v3.mp4";
 const vidBackB = "_landing/grp_card_code_back.mp4";
 const vidFrontB = "_landing/grp_card_code_front.mp4";
 const vidBackC = "_landing/grp_card_game_back.mp4";
@@ -31,71 +32,116 @@ function LandingPageText() {
         <div className={`${CheckIfMobileBrowser() ? "flex-inline" : "flex"} absolute w-full h-fit bottom-0 left-[50%] -translate-x-[50%] z-10 p-[36px] sm:p-[48px] md:p-[64px] xl:p-[72px] place-items-end justify-self-center`}
                 style={NoSelect}>
             <div className={`${CheckIfMobileBrowser() ? "" : ""} relative w-fit h-fit flex-inline text-nowrap shrink`}>
-                <p className={`${titleSmlTextStyle} text-left `}>Hello, I&apos;m Eevee, and I am a </p>
-                {
-                    CheckIfMobileBrowser() ?
+                <p className={`${titleSmlTextStyle} ${CheckIfMobileBrowser() ? "justify-self-end" : "justify-self-start"}`}>Hello, I&apos;m Eevee, and I am a </p>
                     <div>
-                        <p className={`${titleTextStyle}`}>CREATIVE DESIGNER</p>
+                        <p className={`${titleTextStyle} text-nowrap`}>CREATIVE DESIGNER</p>
                     </div>
-                    :
-                    <div>
-                        <p className={`${titleTextStyle}`}>CREATIVE</p>
-                        <p className={`${titleTextStyle}`}>DESIGNER</p>
-                    </div>
-                }
             </div>
             
-            <div className={`${CheckIfMobileBrowser() ? "text-left mt-[4px]" : "text-right"} relative justify-self-end w-full text-secColor grow`}>
+            <div className={`${CheckIfMobileBrowser() ? "text-right mt-[4px] w-[80%] text-pretty" : " w-full text-balance"} text-right relative justify-self-end  text-secColor`}>
                 <p className={`${paraTextStyle} text-balance`}>I make things, all sorts of things. <br/> I like to model stuff, animate things, generate procedural systems, create better experiences, and make things beautiful. Welcome to my portfolio.</p>
             </div>
         </div>
     )
 }
 
+function randomgenerate() {
+    const max = 20;
+    let random = (max * -1) + Math.floor(((Math.random() * max)));
+
+    if (random >= 0 || random <= 5 ) {
+        random += 5;
+    }
+    if (random < 0 || random >= -5) {
+        random -= 5;
+    }
+
+    return random
+}
+
+const card3dVideos : string[] = [
+    "_landing/grp_card_3d_front_v1.mp4",
+    "_landing/grp_card_3d_front_v2.mp4",
+    "_landing/grp_card_3d_front_v3.mp4",
+    "_landing/grp_card_3d_front_v4.mp4",
+    "_landing/grp_card_3d_front_v5.mp4",
+    "_landing/grp_card_3d_front_v6.mp4",
+]
+
+const cardCodeVideos : string[] = [
+    "_landing/grp_card_code_front_v1.mp4",
+    "_landing/grp_card_code_front_v2.mp4",
+]
+
+const cardMotionVideos : string[] = [
+    "_landing/grp_card_motion_front_v1.mp4",
+    "_landing/grp_card_motion_front_v2.mp4",
+    "_landing/grp_card_motion_front_v3.mp4",
+    "_landing/grp_card_motion_front_v4.mp4",
+    "_landing/grp_card_motion_front_v5.mp4",
+    "_landing/grp_card_motion_front_v6.mp4",
+]
+
+const cardGameVideos : string[] = [
+    "_landing/grp_card_game_front_v1.mp4",
+    "_landing/grp_card_game_front_v2.mp4",
+    "_landing/grp_card_game_front_v3.mp4",
+    "_landing/grp_card_game_front_v4.mp4",
+    "_landing/grp_card_game_front_v5.mp4",
+]
+
+
+let rotdegrees1 = randomgenerate()
+let rotdegrees2 = randomgenerate()
+let rotdegrees3 = randomgenerate()
+let rotdegrees4 = randomgenerate()
+
 const cardMedia: IDoubleSideLandingCard[] = [
     {
         cardLink: group3D,
         cardTitle: "3D",
         cardDescription: "Description",
-        cardVideoFront: vidFrontA,
+        cardVideoFront: card3dVideos[Math.floor(Math.random() * (card3dVideos.length))],
         cardVideoBack: vidBackA,
-        rotatedAngle: "rotate-[8deg]",
+        rotatedAngle: `rotate-[${rotdegrees1}deg]`,
         cardStyle: cardStyle,
     },
     {
         cardLink: groupGame,
         cardTitle: "Game Design and Tech Art",
         cardDescription: "Description",
-        cardVideoFront: vidFrontC,
+        cardVideoFront: cardGameVideos[Math.floor(Math.random() * (cardGameVideos.length))],
         cardVideoBack: vidBackC,
-        rotatedAngle: "rotate-[-8deg]",
+        rotatedAngle: `rotate-[${rotdegrees2}deg]`,
         cardStyle: cardStyle,
     },
     {
         cardLink: groupMotion,
         cardTitle: "Motion Design and UI/UX",
         cardDescription: "Description",
-        cardVideoFront: vidFrontD,
+        cardVideoFront: cardMotionVideos[Math.floor(Math.random() * (cardMotionVideos.length))],
         cardVideoBack: vidBackD,
-        rotatedAngle: "rotate-[8deg]",
+        rotatedAngle: `rotate-[${rotdegrees3}deg]`,
         cardStyle: cardStyle,
     },
     {
         cardLink: groupCode,
         cardTitle: "Web Design and Code Playground",
         cardDescription: "Description",
-        cardVideoFront: vidFrontB,
+        cardVideoFront: cardCodeVideos[Math.floor(Math.random() * (cardCodeVideos.length))],
         cardVideoBack: vidBackB,
-        rotatedAngle: "rotate-[-8deg]",
+        rotatedAngle: `rotate-[${rotdegrees4}deg]`,
         cardStyle: cardStyle,
     },
 ]
 
 export default function LandingMain() {
+    let shuffled_cards = shuffle_landing_cards(cardMedia)
+    
     return (
         <pages.GroupProjectPage overflowStyle="overflow-hidden">
             <LandingPageText />
-            <LandingCardContainer dataArray={cardMedia} />
+            <LandingCardContainer dataArray={shuffled_cards} />
         </pages.GroupProjectPage>
     )
 }

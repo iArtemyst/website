@@ -4,15 +4,15 @@ import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
 import * as cards from "@/app/globals/project-link-cards";
+import { shuffle_project_list } from "@/app/globals/shuffle-functions";
 
-const vidBingo = "_project-links/sqr-loop_codeBingo.mp4";
-const vidResume = "_project-links/sqr-loop_codeResume.mp4";
-const vidWebsite = "_project-links/portfolio-proj-link.mp4";
+const vidBingo = "_project-links/prjLink_codeBingo_400px.mp4";
+const vidResume = "_project-links/prjLink_codeResume_400px.mp4";
+const vidWebsite = "_project-links/prjLink_codePortfolio_400px.mp4";
 
 const linkWebsite = "../projCodeWebsite/";
 const linkResume = 'https://github.com/iArtemyst/resume';
 const linkBingo = 'https://github.com/iArtemyst/_bingo-board';
-const columnAmount = "grid-cols-3"
 
 const groupCardData: cards.IProjectLinkCard[] = [
     {
@@ -39,9 +39,11 @@ const groupCardData: cards.IProjectLinkCard[] = [
 ]
 
 export default function GroupProjectsCode() {
+    let shuffled_list = shuffle_project_list(groupCardData)
+
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <cards.ProjectLinkCardsContainer dataArray={groupCardData}/>
+            <cards.ProjectLinkCardsContainer dataArray={shuffled_list}/>
         </pages.GroupProjectPage>
     )
 }
