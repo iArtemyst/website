@@ -39,21 +39,22 @@ const paraTextSize = "text-[12px]";
 const hoverTextColor = "text-slate-900";
 
 function BentoBox() {
+    let isMobile = CheckIfMobileBrowser()
     return (
-        <div className={`${CheckIfMobileBrowser() ? "grid-cols-2" : "grid-cols-2"} ${bentoGap} relative z-0 grid grid-cols-2 w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white hover:cursor-pointer`}>
-            <bentos.CellText cellSpan={`${CheckIfMobileBrowser() ? "col-span-2" : "col-span-2"}`}>
+        <div className={`${isMobile ? "grid-cols-2" : "grid-cols-2"} ${bentoGap} relative z-0 grid grid-cols-2 w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white hover:cursor-pointer`}>
+            <bentos.CellText cellSpan={`${isMobile ? "col-span-2" : "col-span-2"}`}>
                 <bentos.HeaderText text="MEDICAL VISUALIZATION" textSize={titleTextSize}/>
             </bentos.CellText>
             
-            <bentos.CellMediaOnClick mediaLink={vidEESA04} mediaType={MediaType.Video} mediaText="Medical animation clip" cellSpan={`${CheckIfMobileBrowser() ? "col-span-2" : "col-span-1"}`}  hoverTextColor="text-textColor"/>
+            <bentos.CellMediaOnClick mediaLink={vidEESA04} mediaType={MediaType.Video} mediaText="Medical animation clip" cellSpan={`${isMobile ? "col-span-2" : "col-span-1"}`}  hoverTextColor="text-textColor"/>
 
-            <bentos.CellMediaOnClick mediaLink={vidEESB03} mediaType={MediaType.Video} mediaText="Medical animation clip" cellSpan={`${CheckIfMobileBrowser() ? "col-span-2" : "col-span-1"}`} hoverTextColor="text-textColor"/>
+            <bentos.CellMediaOnClick mediaLink={vidEESB03} mediaType={MediaType.Video} mediaText="Medical animation clip" cellSpan={`${isMobile ? "col-span-2" : "col-span-1"}`} hoverTextColor="text-textColor"/>
 
             <bentos.CellText cellSpan={`col-span-2`}>
                     <bentos.ParagraphText textSize={paraTextSize} text="With over 6 years of experience in medical animation, I have produced over 50+ videos from short warning videos on medical tower screens, to device release marketing, to IFU demonstrations, and more." />
             </bentos.CellText>
 
-            <div className={`${CheckIfMobileBrowser() ? "col-span-2 grid-cols-2" : "col-span-2 grid-cols-4"} grid  gap-2 hover:z-20`}>
+            <div className={`${isMobile ? "col-span-2 grid-cols-2" : "col-span-2 grid-cols-4"} grid  gap-2 hover:z-20`}>
                 <bentos.CellMediaOnClick mediaLink={imgEES04} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor" />
                 <bentos.CellMediaOnClick mediaLink={imgEES06} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaLink={imgEES03} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
@@ -67,14 +68,14 @@ function BentoBox() {
 
             <bentos.CellMediaOnClick mediaLink={vidMamm01} mediaType={MediaType.Video} mediaText="Medical animation clip" cellSpan={`col-span-2`} hoverTextColor="text-textColor"/>
 
-            <div className={`${CheckIfMobileBrowser() ? "col-span-2 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid hover:z-20`}>
+            <div className={`${isMobile ? "col-span-2 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid hover:z-20`}>
                 <bentos.CellMediaOnClick mediaLink={imgEES14} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaLink={imgEES16} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaLink={imgEES18} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaLink={imgEES20} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
             </div>
 
-            <bentos.CellText cellSpan={`${CheckIfMobileBrowser() ? "col-span-2" : "col-span-1"}`}>
+            <bentos.CellText cellSpan={`${isMobile ? "col-span-2" : "col-span-1"}`}>
                 <bentos.ParagraphText textSize={paraTextSize} text="The technical precision required on these projects has helped me hone my craft and develop a strong eye for details. 
                     And the scope of the projects has given me oppurtunities to expand my toolbox with skills such as sculpting, soft body manipulation, character animation, simulations, and more." />
             </bentos.CellText>
@@ -95,7 +96,7 @@ function BentoBox() {
                 <bentos.CellMediaOnClick mediaLink={imgEES14} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
             </div>                  
 
-            <div className={`${CheckIfMobileBrowser() ? "grid-cols-2" : "grid-cols-4"} ${bentoGap} col-span-2 grid hover:z-20`}>
+            <div className={`${isMobile ? "grid-cols-2" : "grid-cols-4"} ${bentoGap} col-span-2 grid hover:z-20`}>
                 <bentos.CellMediaOnClick mediaLink={imgMamm03} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaLink={imgEES05} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellMediaOnClick mediaLink={imgMamm01} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
