@@ -6,7 +6,10 @@ import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 import { CheckIfMobileBrowser } from "./globals/mobile-check";
 import { NoSelect } from "./globals/styles";
-import { shuffle_landing_cards } from "./globals/shuffle-functions";
+import { useState, useEffect } from "react";
+// import { shuffle_landing_cards } from "./globals/shuffle-functions";
+import { Suspense } from "react";
+import Loading from "./globals/loading-text";
 
 const vidBackA = "_landing/grp_card_3d_back.mp4";
 const vidFrontA = "_landing/grp_card_3d_front_v3.mp4";
@@ -38,26 +41,21 @@ function LandingPageText() {
                     </div>
             </div>
             
-            <div className={`${CheckIfMobileBrowser() ? "text-right mt-[4px] w-[80%] text-pretty" : " w-full text-balance"} text-right relative justify-self-end  text-secColor`}>
+            <div className={`${CheckIfMobileBrowser() ? " text-left mt-[4px] w-full text-pretty" : " text-right w-full text-balance"}  relative justify-self-end  text-secColor`}>
                 <p className={`${paraTextStyle} text-balance`}>I make things, all sorts of things. <br/> I like to model stuff, animate things, generate procedural systems, create better experiences, and make things beautiful. Welcome to my portfolio.</p>
             </div>
         </div>
     )
 }
 
-function randomgenerate() {
-    const max = 20;
-    let random = (max * -1) + Math.floor(((Math.random() * max)));
-
-    if (random >= 0 || random <= 5 ) {
-        random += 5;
-    }
-    if (random < 0 || random >= -5) {
-        random -= 5;
-    }
-
-    return random
-}
+// function random_number() {
+//     const [randomNum, setRandomNum] = useState(0.5);
+//     useEffect(() => {
+//         const random = (Math.random());
+//         setRandomNum(randoam);
+//     });
+//     return randomNum
+// }
 
 const card3dVideos : string[] = [
     "_landing/grp_card_3d_front_v1.mp4",
@@ -91,10 +89,10 @@ const cardGameVideos : string[] = [
 ]
 
 
-let rotdegrees1 = randomgenerate()
-let rotdegrees2 = randomgenerate()
-let rotdegrees3 = randomgenerate()
-let rotdegrees4 = randomgenerate()
+// let rotdegrees1 = randomgenerate()
+// let rotdegrees2 = randomgenerate()
+// let rotdegrees3 = randomgenerate()
+// let rotdegrees4 = randomgenerate()
 
 const cardMedia: IDoubleSideLandingCard[] = [
     {
@@ -103,7 +101,7 @@ const cardMedia: IDoubleSideLandingCard[] = [
         cardDescription: "Description",
         cardVideoFront: card3dVideos[Math.floor(Math.random() * (card3dVideos.length))],
         cardVideoBack: vidBackA,
-        rotatedAngle: `rotate-[${rotdegrees1}deg]`,
+        rotatedAngle: `rotate-[0deg]`,
         cardStyle: cardStyle,
     },
     {
@@ -112,7 +110,7 @@ const cardMedia: IDoubleSideLandingCard[] = [
         cardDescription: "Description",
         cardVideoFront: cardGameVideos[Math.floor(Math.random() * (cardGameVideos.length))],
         cardVideoBack: vidBackC,
-        rotatedAngle: `rotate-[${rotdegrees2}deg]`,
+        rotatedAngle: `rotate-[0deg]`,
         cardStyle: cardStyle,
     },
     {
@@ -121,7 +119,7 @@ const cardMedia: IDoubleSideLandingCard[] = [
         cardDescription: "Description",
         cardVideoFront: cardMotionVideos[Math.floor(Math.random() * (cardMotionVideos.length))],
         cardVideoBack: vidBackD,
-        rotatedAngle: `rotate-[${rotdegrees3}deg]`,
+        rotatedAngle: `rotate-[0deg]`,
         cardStyle: cardStyle,
     },
     {
@@ -130,18 +128,48 @@ const cardMedia: IDoubleSideLandingCard[] = [
         cardDescription: "Description",
         cardVideoFront: cardCodeVideos[Math.floor(Math.random() * (cardCodeVideos.length))],
         cardVideoBack: vidBackB,
-        rotatedAngle: `rotate-[${rotdegrees4}deg]`,
+        rotatedAngle: `rotate-[0deg]`,
         cardStyle: cardStyle,
     },
 ]
 
+// let shuffled_cards = shuffle_landing_cards(cardMedia)
+
+// function shuffle_landing_cards(new_cards:any) {
+//     const shuffled_array: IDoubleSideLandingCard[] = structuredClone(new_cards);
+//     for (let i = shuffled_array.length -1; i > 0; i--) {
+//         let j = Math.floor(random_number() * (i - 1));
+//         [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
+//     };
+
+//     return shuffled_array;
+// }
+
+
 export default function LandingMain() {
-    let shuffled_cards = shuffle_landing_cards(cardMedia)
+    // let shuffled_cards = 
+    const [shuffledCards, setArray] = useState<IDoubleSideLandingCard[]>([])
+    useEffect(() => {
+        setArray(shuffle_landing_cards(cardMedia))
+    }, []);
+
+    function shuffle_landing_cards(new_cards: IDoubleSideLandingCard[]) 
+    {
+        let shuffled_array = structuredClone(new_cards);
+
+        for (let i = new_cards.length -1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i - 1));
+            [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
+        }
+
+        return shuffled_array;
+    }
     
-    return (
+    return shuffledCards.length != 0 ? 
         <pages.GroupProjectPage overflowStyle="overflow-hidden">
             <LandingPageText />
-            <LandingCardContainer dataArray={shuffled_cards} />
+            <LandingCardContainer dataArray={shuffledCards} />
         </pages.GroupProjectPage>
-    )
+        :
+        <Loading/>
 }

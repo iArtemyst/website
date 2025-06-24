@@ -9,6 +9,11 @@ import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
 import StyledLink from "./styled-link";
 import { NoSelect } from "./styles";
 
+
+
+
+
+
 //-----------------------------------
 // INTERFACES FOR DOUBLE SIDED CARDS
 
@@ -128,10 +133,11 @@ function MobileDoubleSidedCardBase({src, rotateAngle}: {src:string, rotateAngle:
 // CARD CONTAINER FUNCTIONS
 
 export function LandingCardContainer({dataArray}:{dataArray:IDoubleSideLandingCard[]}) {
+    let isMobile = CheckIfMobileBrowser()
     return (
         <div className="">
         {
-            CheckIfMobileBrowser() === false ?
+            isMobile === false ?
             <div className={`grid-cols-4 absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[90%] h-[70%] items-center`}>
                 {
                     dataArray.map((data, i) => <DoubleSidedLandingCard key={i} card={data}/>)
@@ -149,10 +155,11 @@ export function LandingCardContainer({dataArray}:{dataArray:IDoubleSideLandingCa
 }
 
 export function AboutCardContainer({dataArray}:{dataArray:IDoubleSideAboutCard[]}) {
+    let isMobile = CheckIfMobileBrowser()
     return (
         <div className="">
         {
-            CheckIfMobileBrowser() === false ?
+            isMobile === false ?
             <div className={`grid-cols-4 absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[90%] h-[70%] items-center`}>
                 {
                     dataArray.map((data, i) => <DoubleSidedAboutCard key={i} card={data}/>)

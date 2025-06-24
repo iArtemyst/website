@@ -12,7 +12,7 @@ import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
 import { NoSelect } from "./styles";
 
 const bentoRounding = "rounded-[12px] sm:rounded-[16px] md:rounded-[24px]";
-const gallerySize = 'min-w-[320px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[720px] xl:min-w-[960px] 2xl:min-w-[1080px]';
+const gallerySize = 'min-h-[320px] sm:min-h-[360px] md:min-h-[400px] lg:min-h-[480px] xl:min-h-[540px] 2xl:min-h-[600px]';
 const gridGap = "gap-[12px]";
 const textAssetHoverSize = "text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[18px]"
 const textHoverDist = "mx-[8px] my-[4px] sm:mx-[16px] sm:my-[8px] md:mx-[16px] md:my-[8px] lg:mx-[16px] lg:my-[8px] 2xl:mx-[16px] 2xl:my-[8px]";
@@ -84,9 +84,8 @@ export function CellMedia({cellMedia, cellMediaType, mediaText, cellSpan, hoverT
     function FillCellMedia() {
         return (
             <CardHoverFX bufferZone={0} rotateAmount={120}>
-                <div className={` ${cellSpan} ${bentoRounding} group relative w-full h-fit justify-self-center overflow-hidden self-center transition-all duration-200 z-auto shadow-[0px_0px_6px_#FFFFFF20] hover:shadow-[0px_0px_0px_#FFFFFF10]`} 
+                <div className={` ${cellSpan} ${bentoRounding} group relative w-full h-fit min-w-[240px] min-h-[120px] min justify-self-center overflow-hidden self-center transition-all duration-200 z-auto shadow-[0px_0px_6px_#FFFFFF20] hover:shadow-[0px_0px_0px_#FFFFFF10]`} 
                     onClick={(e) => { setShowGallery(!showGallery); }}>
-                    <div>
                         {
                             cellMediaType === MediaType.Video ?
                                 <LazyHoverVideo 
@@ -99,9 +98,7 @@ export function CellMedia({cellMedia, cellMediaType, mediaText, cellSpan, hoverT
                             :
                                 <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
                         }
-                    </div>
-
-                    <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[32px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}>
+                    <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[40px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}>
                         <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
                     </div>
                 </div>
@@ -253,7 +250,7 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
     return (
         <>
             <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-auto h-auto z-[150] justify-items-center py-[12px] content-center`}>
-                <div className={`relative w-fit ${gallerySize}`}>
+                <div className={`relative w-fit md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1080px] 2xl:max-w-[1440px] h-fit`}>
                     <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor rounded-[16px] md:rounded-[24px]`}/>
                     <div className={`relative`}>
                         <PopupMedia />

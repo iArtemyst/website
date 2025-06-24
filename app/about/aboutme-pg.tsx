@@ -15,7 +15,9 @@ import { IDoubleSideAboutCard, AboutCardContainer } from "@/app/globals/double-s
 import * as fonts from "@/app/globals/fonts";
 import * as pages from "@/app/globals/pages-main";
 import { NoSelect } from "../globals/styles";
-import { shuffle_aboutme_cards } from "../globals/shuffle-functions";
+import { useState, useEffect } from "react";
+import Loading from "../globals/loading-text";
+// import { shuffle_aboutme_cards } from "../globals/shuffle-functions";
 
 const cardStyle = "group-hover:m-[-20px] md:group-hover:m-[-40px] 2xl:group-hover:m-[-60px] group-hover:w-[200px] md:group-hover:w-[320px] lg:group-hover:w-[400px] xl:group-hover:w-[440px] 2xl:group-hover:w-[540px] w-[160px] md:w-[240px] lg:w-[275px] xl:w-[320px] 2xl:w-[360px]"
 const titleSmlTextStyle= `${fonts.dotoBlack.className} h-fit w-fit text-[8px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-secColor leading-none tracking-tighter self-end my-[8px] laptop:my-[16px]`;
@@ -33,60 +35,94 @@ function DoubleSidedCardPageText() {
 }
 
 
-function randomgenerate() {
-    const max = 20;
-    let random = (max * -1) + Math.floor(((Math.random() * max)));
+// function random_number() {
+//     const [randomNum, setRandomNum] = useState(0.5);
+//     const createRandomNumber = () => {
+//         const random = (Math.random());
+//         setRandomNum(random);
+//     };
+//     return randomNum
+// }
 
-    if (random >= 0 || random <= 5 ) {
-        random += 5;
-    }
-    if (random < 0 || random >= -5) {
-        random -= 5;
-    }
+// function shuffle_aboutme_cards(new_cards:any) {
+//     let shuffled_array: IDoubleSideAboutCard[] = structuredClone(new_cards);
+//     for (let i = shuffled_array.length -1; i > 0; i--) {
+//         let j = Math.floor(random_number() * (i - 1));
+//         [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
+//     };
+//     return shuffled_array;
+// }
 
-    return random
-}
 
-let rotdegrees1 = randomgenerate()
-let rotdegrees2 = randomgenerate()
-let rotdegrees3 = randomgenerate()
-let rotdegrees4 = randomgenerate()
+// function randomgenerate() {
+//     const max = 20;
+//     let random = (max * -1) + Math.floor(((Math.random() * max)));
 
-const cardMedia2: IDoubleSideAboutCard[] = [
+//     if (random >= 0 || random <= 5 ) {
+//         random += 5;
+//     }
+//     if (random < 0 || random >= -5) {
+//         random -= 5;
+//     }
+
+//     return random
+// }
+
+// let rotdegrees1 = randomgenerate()
+// let rotdegrees2 = randomgenerate()
+// let rotdegrees3 = randomgenerate()
+// let rotdegrees4 = randomgenerate()
+
+const cardMedia: IDoubleSideAboutCard[] = [
     {
         cardVideoFront: vidFrontA,
         cardVideoBack: vidBackA,
         cardStyle: cardStyle,
-        rotatedAngle: `rotate-[${rotdegrees1}deg]`,
+        rotatedAngle: `rotate-[0deg]`,
     },
     {
         cardVideoFront: vidFrontB,
         cardVideoBack: vidBackB,
         cardStyle: cardStyle,
-        rotatedAngle: `rotate-[${rotdegrees2}deg]`,
+        rotatedAngle: `rotate-[0deg]`,
     },
     {
         cardVideoFront: vidFrontC,
         cardVideoBack: vidBackC,
         cardStyle: cardStyle,
-        rotatedAngle: `rotate-[${rotdegrees3}deg]`,
+        rotatedAngle: `rotate-[0deg]`,
     },
     {
         cardVideoFront: vidFrontD,
         cardVideoBack: vidBackD,
         cardStyle: cardStyle,
-        rotatedAngle: `rotate-[${rotdegrees4}deg]`,
+        rotatedAngle: `rotate-[0deg]`,
     },
 ]
 
 export function AboutMePage() {
-    let shuffled_cards = shuffle_aboutme_cards(cardMedia2)
+    const [shuffledCards, setArray] = useState<IDoubleSideAboutCard[]>([])
+    useEffect(() => {
+        setArray(shuffle_about_cards(cardMedia))
+    }, []);
     
-    return (
+    function shuffle_about_cards(new_cards: IDoubleSideAboutCard[]) 
+    {
+        let shuffled_array = structuredClone(new_cards);
+
+        for (let i = new_cards.length -1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i - 1));
+            [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
+        }
+
+        return shuffled_array;
+    }
+
+    return shuffledCards.length != 0 ?
         <pages.GroupProjectPage overflowStyle="overflow-hidden">
-            <AboutCardContainer dataArray={shuffled_cards} />
+            <AboutCardContainer dataArray={shuffledCards} />
             <DoubleSidedCardPageText />
         </pages.GroupProjectPage>
-
-    )
+        :
+        <Loading />
 }

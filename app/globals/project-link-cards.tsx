@@ -113,7 +113,7 @@ function MobileLazyCardInternal({card}: {card: IProjectLinkCard}) {
 
     return (
         <div className={`relative grid w-fit h-auto p-[8px] transition-all duration-300 rounded-md place-items-center overflow-clip`}>
-            <div className="relative content-center w-[140px] sm:w-[200px] h-[90%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090]">
+            <div className="relative content-center w-[120px] sm:w-[160px] h-[90%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090]">
                 <MobileProjectVideo src={card.mediaLink} />
             </div>
             <div className={`absolute left-0 bottom-0 p-[6px] w-full h-auto opacity-100`}>
@@ -147,10 +147,11 @@ function MobileGroupProjectCard({card}: {card: IProjectLinkCard}) {
 // PROJECT LINK CARD CONTAINER
 
 export function ProjectLinkCardsContainer({dataArray}: {dataArray: IProjectLinkCard[]}) {    
+    let isMobile = CheckIfMobileBrowser()
     return (
         <div className="">
             {
-                CheckIfMobileBrowser() === false ?
+                isMobile === false ?
                     <div className={`grid grid-cols-3 w-[90%] justify-self-center gap-[24px] h-full justify-items-center content-center place-content-center`}>
                         {
                             dataArray.map((data, i) => <GroupProjectCards key={i} dataArray={data}/> )

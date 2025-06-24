@@ -6,57 +6,65 @@ import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
 import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
+import { useEffect, useState } from "react";
+import Loading from "../globals/loading-text";
 
-const vidAnimLoop007 = "_motionui/_loops/anim-loop_06.mp4";
-const vidAnimLoop009 = "_motionui/_loops/anim-loop_08.mp4";
-const vidAnimLoop010 = "_motionui/_loops/anim-loop_09.mp4";
-const vidAnimLoop012 = "_motionui/_loops/anim-loop_11.mp4";
-const vidAnimLoop013 = "_motionui/_loops/anim-loop_12.mp4";
-const vidAnimLoop014 = "_motionui/_loops/anim-loop_13.mp4";
-const vidAnimLoop015 = "_motionui/_loops/anim-loop_14.mp4";
-const vidAnimLoop018 = "_motionui/_loops/anim-loop_17.mp4";
-const vidAnimLoop022 = "_motionui/_loops/anim-loop_21.mp4";
-const vidAnimLoop025 = "_motionui/_loops/anim-loop_24.mp4";
-const vidAnimLoop027 = "_motionui/_loops/anim-loop_26.mp4";
-const vidAnimLoop028 = "_motionui/_loops/anim-loop_27.mp4";
-const vidAnimLoop031 = "_motionui/_loops/anim-loop_30.mp4";
-const vidAnimLoop032 = "_motionui/_loops/anim-loop_31.mp4";
-const vidAnimLoop033 = "_motionui/_loops/anim-loop_32.mp4";
-const vidAnimLoop034 = "_motionui/_loops/anim-loop_33.mp4";
-const vidAnimLoop035 = "_motionui/_loops/anim-loop_34.mp4";
-const vidAnimLoop037 = "_motionui/_loops/anim-loop_36.mp4";
-const vidAnimLoop039 = "_motionui/_loops/anim-loop_38.mp4";
-const vidAnimLoop041 = "_motionui/_loops/anim-loop_40.mp4";
-const vidAnimLoop042 = "_motionui/_loops/anim-loop_41.mp4";
+const vidAnimLoop001 = "_motionui/_loops/anim-loop_001_540px.mp4";
+const vidAnimLoop002 = "_motionui/_loops/anim-loop_002_540px.mp4";
+const vidAnimLoop003 = "_motionui/_loops/anim-loop_003_540px.mp4";
+const vidAnimLoop004 = "_motionui/_loops/anim-loop_004_540px.mp4";
+const vidAnimLoop005 = "_motionui/_loops/anim-loop_005_540px.mp4";
+const vidAnimLoop006 = "_motionui/_loops/anim-loop_006_540px.mp4";
+const vidAnimLoop007 = "_motionui/_loops/anim-loop_007_540px.mp4";
+const vidAnimLoop008 = "_motionui/_loops/anim-loop_008_540px.mp4";
+const vidAnimLoop009 = "_motionui/_loops/anim-loop_009_540px.mp4";
+const vidAnimLoop010 = "_motionui/_loops/anim-loop_010_540px.mp4";
+const vidAnimLoop011 = "_motionui/_loops/anim-loop_011_540px.mp4";
+const vidAnimLoop012 = "_motionui/_loops/anim-loop_012_540px.mp4";
+const vidAnimLoop013 = "_motionui/_loops/anim-loop_013_540px.mp4";
+const vidAnimLoop014 = "_motionui/_loops/anim-loop_014_540px.mp4";
+const vidAnimLoop015 = "_motionui/_loops/anim-loop_015_540px.mp4";
+const vidAnimLoop016 = "_motionui/_loops/anim-loop_016_540px.mp4";
+const vidAnimLoop017 = "_motionui/_loops/anim-loop_017_540px.mp4";
+const vidAnimLoop018 = "_motionui/_loops/anim-loop_018_540px.mp4";
+const vidAnimLoop019 = "_motionui/_loops/anim-loop_019_540px.mp4";
+const vidAnimLoop020 = "_motionui/_loops/anim-loop_020_540px.mp4";
+const vidAnimLoop021 = "_motionui/_loops/anim-loop_021_540px.mp4";
 
 export interface IVideoData {
     vidLink: string,
 }
 
+const cellData: string[] = [
+    vidAnimLoop017,
+    vidAnimLoop019,
+    vidAnimLoop005,
+    vidAnimLoop001,
+    vidAnimLoop002,
+    vidAnimLoop003,
+    vidAnimLoop004,
+    vidAnimLoop006,
+    vidAnimLoop007,
+    vidAnimLoop008,
+    vidAnimLoop018,
+    vidAnimLoop009,
+    vidAnimLoop010,
+    vidAnimLoop011,
+    vidAnimLoop012,
+    vidAnimLoop013,
+    vidAnimLoop014,
+    vidAnimLoop015,
+    vidAnimLoop016,
+    vidAnimLoop020,
+    vidAnimLoop021,
+];
+
 function BentoBoxA() {
-    const cellData: string[] = [
-        vidAnimLoop035,
-        vidAnimLoop039,
-        vidAnimLoop013,
-        vidAnimLoop007,
-        vidAnimLoop009,
-        vidAnimLoop010,
-        vidAnimLoop012,
-        vidAnimLoop014,
-        vidAnimLoop015,
-        vidAnimLoop018,
-        vidAnimLoop037,
-        vidAnimLoop022,
-        vidAnimLoop025,
-        vidAnimLoop027,
-        vidAnimLoop028,
-        vidAnimLoop031,
-        vidAnimLoop032,
-        vidAnimLoop033,
-        vidAnimLoop034,
-        vidAnimLoop041,
-        vidAnimLoop042,
-    ];
+    let isMobile = CheckIfMobileBrowser()
+    const [shuffledCards, setArray] = useState<string[]>([])
+    useEffect(() => {
+        setArray(shuffle_about_cards(cellData))
+    }, []);
 
     function VideoCell({link}:{link:string}){
         return (
@@ -64,13 +72,25 @@ function BentoBoxA() {
         )
     }
 
-    return (
-        <div className={`${CheckIfMobileBrowser() ? "grid-cols-2 my-[4px]" : "grid-cols-3 my-[24px]"} relative z-0 grid w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] text-white`}>
+    function shuffle_about_cards(new_cards: string[]) 
+    {
+        let shuffled_array = structuredClone(new_cards);
+
+        for (let i = new_cards.length -1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i - 1));
+            [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
+        }
+        return shuffled_array;
+    }
+
+    return shuffledCards.length != 0 ?
+        <div className={`${isMobile ? "grid-cols-2 my-[4px]" : "grid-cols-3 my-[24px]"} relative z-0 grid w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] text-white`}>
             {
-                cellData.map((data, i) => <VideoCell link={data} key={i}/>)
+                shuffledCards.map((data, i) => <VideoCell link={data} key={i}/>)
             }
         </div>
-    )
+        :
+        <Loading />
 }
 
 export default function ProjectLoopAnims() {

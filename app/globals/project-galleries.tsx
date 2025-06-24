@@ -50,10 +50,11 @@ export interface ICardWithGalleryArrays
 // MAIN PROJECT DESCTIPTION TEXT COMPONENTS
 
 export function ProjectDetailRelativeText({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
+    let isMobile = CheckIfMobileBrowser();
     return (
-        <div className={`${CheckIfMobileBrowser() ? "mb-[4px]" : "mb-[24px]"} ${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px]  flex-grow-0 bg-bgColor`}>
-            <p className={`${CheckIfMobileBrowser() ? "text-[12px]" : "text-[32px] lg:text-[48px] xl:text-[56px] 2xl:text-[72px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
-            <p className={`${CheckIfMobileBrowser() ? "text-[6px]" : "text-[12px] lg:text-[14px] xl:text-[16px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
+        <div className={`${isMobile ? "mb-[4px]" : "mb-[24px]"} ${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px]  flex-grow-0 bg-bgColor`}>
+            <p className={`${isMobile ? "text-[12px]" : "text-[32px] lg:text-[48px] xl:text-[56px] 2xl:text-[72px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
+            <p className={`${isMobile ? "text-[6px]" : "text-[12px] lg:text-[14px] xl:text-[16px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
         </div>
     )
 }
@@ -149,14 +150,15 @@ function ProjectCardWithGallery({card}: {card: ICardWithGalleryArrays}) {
 
 // CLICK INTO GALLERY COMPONENTS
 
-function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galleryMedia: IGalleryMedia[], galleryLength: number, setShowGallery: (x: boolean) => void}) {        
+function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galleryMedia: IGalleryMedia[], galleryLength: number, setShowGallery: (x: boolean) => void}) {
+    let isMobile = CheckIfMobileBrowser();       
     let [selectedIndex, setSelectedIndex] = useState(0);
     let [fullscreenMedia, setFullscreenMedia] = useState(false);
 
     function GalleryMainMedia({mediaLink, mediaType, mediaAbout}: {mediaLink: string, mediaType: MediaType, mediaAbout: string}) {
         return (
             <div className={`w-auto h-auto relative m-[24px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
-                    <div className={`${CheckIfMobileBrowser() ? "rounded-[8px]" : "rounded-[24px]"} overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
+                    <div className={`${isMobile ? "rounded-[8px]" : "rounded-[24px]"} overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
                         {
                             mediaType === MediaType.Video ?
                                 <LazyNonHoverVideo 
@@ -186,8 +188,8 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
                     galleryImages.map((data, i) => {
                         return (
                             <CardHoverFX bufferZone={0} rotateAmount={2} key={i}>
-                                <div className={`${selectedIndex == i ? `${CheckIfMobileBrowser() ? "border-[1px]" : "border-[2px]"} border-teal-400  opacity-100` : "border-none opacity-60"} ${galleryBarImageSize} 
-                                                ${CheckIfMobileBrowser() ? "rounded-[4px]" : "rounded-[8px]"} group  aspect-square overflow-clip place-self-center content-center transition-all duration-200 hover:scale-110`} onClick={() => setSelectedIndex(i)}> 
+                                <div className={`${selectedIndex == i ? `${isMobile ? "border-[1px]" : "border-[2px]"} border-teal-400  opacity-100` : "border-none opacity-60"} ${galleryBarImageSize} 
+                                                ${isMobile ? "rounded-[4px]" : "rounded-[8px]"} group  aspect-square overflow-clip place-self-center content-center transition-all duration-200 hover:scale-110`} onClick={() => setSelectedIndex(i)}> 
                                     <LazyImage
                                         imgLink={data.assetStillLink}
                                         imgAlt={data.assetText}
@@ -260,7 +262,7 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
 
     return (
         <>
-            <div className={`${CheckIfMobileBrowser() ? "rounded-[8px] py-[4px]" : "rounded-[24px] py-[12px]"} ${gallerySize} fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] bg-cardBGColor w-fit max-h-[calc(90%)] h-fit flex-row z-[150] justify-items-center`}>
+            <div className={`${isMobile ? "rounded-[8px] py-[4px]" : "rounded-[24px] py-[12px]"} ${gallerySize} fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] bg-cardBGColor w-fit max-h-[calc(90%)] h-fit flex-row z-[150] justify-items-center`}>
                 <GalleryMainMedia mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText} mediaType={galleryMedia[selectedIndex].assetMediaType}/>
                 <GalleryMediaText galleryMediaText={galleryMedia[selectedIndex].assetText} />
                 <GalleryImageNavBar galleryImages={galleryMedia} galleryLength={galleryLength}/>
@@ -284,9 +286,9 @@ function BackgroundBarrier({setShowGallery}: {setShowGallery: any}) {
 // MAIN CONTAINER FOR PROJECT DETAIL CARDS
 
 export function ProjectCardsWithGalleryContainer({cardArray, columnAmount}: {cardArray: ICardWithGalleryArrays[], columnAmount: string}) {
-    
+    let isMobile = CheckIfMobileBrowser()
     return (
-        <div className={`grid ${CheckIfMobileBrowser() ? "grid-cols-2" : `${columnAmount}`} absolute justify-self-center place-items-center w-[75%] my-[16px] h-[70%] md:h-[80%]`}>
+        <div className={`grid ${isMobile ? "grid-cols-2" : `${columnAmount}`} absolute justify-self-center place-items-center w-[75%] my-[16px] h-[70%] md:h-[80%]`}>
         {
             cardArray.map((data, i) => {
                 return (
@@ -300,10 +302,9 @@ export function ProjectCardsWithGalleryContainer({cardArray, columnAmount}: {car
 
 
 export function ProjectCardsNoGalleryContainer({cardArray, columnAmount}: {cardArray: ICardWithGalleryArrays[], columnAmount: string}) {
-    
-
+    let isMobile = CheckIfMobileBrowser()
     return (
-        <div className={`grid ${CheckIfMobileBrowser() ? "grid-cols-2" : `${columnAmount}`} absolute justify-self-center place-items-center w-[75%] my-[16px] h-[70%] md:h-[80%]`}>
+        <div className={`grid ${isMobile ? "grid-cols-2" : `${columnAmount}`} absolute justify-self-center place-items-center w-[75%] my-[16px] h-[70%] md:h-[80%]`}>
         {
             cardArray.map((data, i) => {
                 return (
