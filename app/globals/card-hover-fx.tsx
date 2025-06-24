@@ -4,7 +4,7 @@ import "@/app/globals/globals.css";
 import { MouseEvent, useCallback, useState } from "react";
 
 
-export function CardHoverFX({children, bufferZone, rotateAmount}:{children:any, bufferZone:number, rotateAmount:number}) {
+export function CardHoverFX({children, bufferZone, rotateAmount}: {children: any, bufferZone: number, rotateAmount: number}) {
     function throttle<T extends (...args: any[]) => any>(func: T, delay: number): (...args: Parameters<T>) => void {
         let lastCall = 0;
 
@@ -19,7 +19,7 @@ export function CardHoverFX({children, bufferZone, rotateAmount}:{children:any, 
         };
     }
 
-    const [rotate, setRotate] = useState({ x: 0, y: 0, });
+    const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
     const onMouseMove = useCallback(
         throttle((e: MouseEvent<HTMLDivElement>) => {

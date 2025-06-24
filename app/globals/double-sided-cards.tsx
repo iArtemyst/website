@@ -8,6 +8,7 @@ import { LazyHoverVideo, LazyNonHoverVideo } from "./lazy-video";
 import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
 import StyledLink from "./styled-link";
 import { NoSelect } from "./styles";
+import { useState } from "react";
 
 
 
@@ -80,10 +81,10 @@ function CardInitialSide ({src}: {src:string,}) {
 //------------------------------
 // MAIN DOUBLE SIDED COMPONENTS
 
-function DoubleSidedLandingCard({card}: {card: IDoubleSideLandingCard}) {
+function DoubleSidedLandingCard({card, index}: {card: IDoubleSideLandingCard, index: number}) {
     return (
         <StyledLink href={card.cardLink} className="group">
-            <div className={`${card.rotatedAngle} relative hover:rotate-0 backface-visible h-fit w-fit duration-300 hover:animate-none hover:z-10 animate-wiggle-bounce transition-all`}>
+            <div className={`${index % 2 === 0 ? `animate-wiggle-bounceA` : `animate-wiggle-bounceB`} relative hover:rotate-0 backface-visible h-fit w-fit duration-300 hover:animate-none hover:z-10 transition-all`}>
                 <CardHoverFX bufferZone={0} rotateAmount={7}>
                     <div className={`${card.cardStyle} relative`} >
                         <CardReverseSide src={card.cardVideoFront} text={card.cardDescription}/>
@@ -92,12 +93,12 @@ function DoubleSidedLandingCard({card}: {card: IDoubleSideLandingCard}) {
                 </CardHoverFX>
             </div>
         </StyledLink>
-    )
+        )
 }
 
-function DoubleSidedAboutCard({card}: {card: IDoubleSideAboutCard}) {
+function DoubleSidedAboutCard({card, index}: {card: IDoubleSideAboutCard, index: number}) {
     return (
-        <div className={`${card.rotatedAngle} group relative hover:rotate-0 backface-visible h-fit w-fit duration-300 hover:animate-none hover:z-10 animate-wiggle-bounce transition-all`}>
+        <div className={`${index % 2 === 0 ? `animate-wiggle-bounceA` : `animate-wiggle-bounceB`} group relative hover:rotate-0 backface-visible h-fit w-fit duration-300 hover:animate-none hover:z-10 animate-wiggle-bounce transition-all`}>
             <CardHoverFX bufferZone={0} rotateAmount={7}>
                 <div className={`${card.cardStyle} relative`} >
                     <CardReverseSide src={card.cardVideoFront} text={null}/>
@@ -111,19 +112,22 @@ function DoubleSidedAboutCard({card}: {card: IDoubleSideAboutCard}) {
 //------------------------------
 // MOBILE CARD COMPONENTS
 
-function MobileDoubleSidedCardWithLink({card}: {card:IDoubleSideLandingCard}) {
+function MobileDoubleSidedCardWithLink({card, index}: {card:IDoubleSideLandingCard, index:number}) {
     return (
         <div>
             <StyledLink href={card.cardLink}>
-                <MobileDoubleSidedCardBase src={card.cardVideoBack} rotateAngle={card.rotatedAngle}/>
+                <MobileDoubleSidedCardBase src={card.cardVideoBack} index={index} />
             </StyledLink>
         </div>
     )
 }
 
-function MobileDoubleSidedCardBase({src, rotateAngle}: {src:string, rotateAngle:string,}) {
+function MobileDoubleSidedCardBase({src, index}: {src:string, index:number}) {
+    let rotation_angle: number[] = [-1, 1, -1, 1]
+    let pick_rotation = rotation_angle[index]
+
     return (
-        <div className={`${rotateAngle} animate-wiggle-bounce h-fit w-fit duration-0 z-10 active:z-20 active:animate-none hover:scale-110 active:scale-110  `} style={NoSelect}>
+        <div className={`rotate-[${pick_rotation * 10}deg] animate-wiggle-bounce h-fit w-fit duration-0 z-10 active:z-20 active:animate-none hover:scale-110 active:scale-110  `} style={NoSelect}>
             <CardVideoBG src={src}/>
         </div>
     )
@@ -140,13 +144,13 @@ export function LandingCardContainer({dataArray}:{dataArray:IDoubleSideLandingCa
             isMobile === false ?
             <div className={`grid-cols-4 absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[90%] h-[70%] items-center`}>
                 {
-                    dataArray.map((data, i) => <DoubleSidedLandingCard key={i} card={data}/>)
+                    dataArray.map((data, i) => <DoubleSidedLandingCard key={i} card={data} index={i}/>)
                 }
             </div>
             :
             <div className={`grid-cols-2 gap-[12px] absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[80%] h-[70%] items-center`}>
                 {
-                    dataArray.map((data, i) => <MobileDoubleSidedCardWithLink key={i} card={data}/>)
+                    dataArray.map((data, i) => <MobileDoubleSidedCardWithLink key={i} card={data} index={i}/>)
                 }
             </div>
         }
@@ -162,13 +166,13 @@ export function AboutCardContainer({dataArray}:{dataArray:IDoubleSideAboutCard[]
             isMobile === false ?
             <div className={`grid-cols-4 absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[90%] h-[70%] items-center`}>
                 {
-                    dataArray.map((data, i) => <DoubleSidedAboutCard key={i} card={data}/>)
+                    dataArray.map((data, i) => <DoubleSidedAboutCard key={i} card={data} index={i}/>)
                 }
             </div>
             :
             <div className={`grid-cols-2 gap-[12px] absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[80%] h-[70%] items-center`}>
                 {
-                    dataArray.map((data, i) => <MobileDoubleSidedCardBase key={i} src={data.cardVideoFront} rotateAngle={data.rotatedAngle}/>)
+                    dataArray.map((data, i) => <MobileDoubleSidedCardBase key={i} src={data.cardVideoFront} index={i}/>)
                 }
             </div>
         }

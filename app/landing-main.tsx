@@ -101,7 +101,7 @@ const cardMedia: IDoubleSideLandingCard[] = [
         cardDescription: "Description",
         cardVideoFront: card3dVideos[Math.floor(Math.random() * (card3dVideos.length))],
         cardVideoBack: vidBackA,
-        rotatedAngle: `rotate-[0deg]`,
+        rotatedAngle: `rotate-[${(-10) + (Math.floor(Math.random() * 10))}deg]`,
         cardStyle: cardStyle,
     },
     {
@@ -110,7 +110,7 @@ const cardMedia: IDoubleSideLandingCard[] = [
         cardDescription: "Description",
         cardVideoFront: cardGameVideos[Math.floor(Math.random() * (cardGameVideos.length))],
         cardVideoBack: vidBackC,
-        rotatedAngle: `rotate-[0deg]`,
+        rotatedAngle: `rotate-[${(-20) + (Math.floor(Math.random() * 20))}deg]`,
         cardStyle: cardStyle,
     },
     {
@@ -119,7 +119,7 @@ const cardMedia: IDoubleSideLandingCard[] = [
         cardDescription: "Description",
         cardVideoFront: cardMotionVideos[Math.floor(Math.random() * (cardMotionVideos.length))],
         cardVideoBack: vidBackD,
-        rotatedAngle: `rotate-[0deg]`,
+        rotatedAngle: `rotate-[${(10) - (Math.floor(Math.random() * 10))}deg]`,
         cardStyle: cardStyle,
     },
     {
@@ -128,7 +128,7 @@ const cardMedia: IDoubleSideLandingCard[] = [
         cardDescription: "Description",
         cardVideoFront: cardCodeVideos[Math.floor(Math.random() * (cardCodeVideos.length))],
         cardVideoBack: vidBackB,
-        rotatedAngle: `rotate-[0deg]`,
+        rotatedAngle: `rotate-[${(20) - (Math.floor(Math.random() * 20))}deg]`,
         cardStyle: cardStyle,
     },
 ]

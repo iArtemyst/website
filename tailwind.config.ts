@@ -70,6 +70,16 @@ export default {
           '50%': { transform: 'rotate(8.0deg) translateY(12px)' },
           '100%': { transform: 'rotate(-8.0deg) translateY(-12px)' },
         },
+        wiggleA: {
+          '0%': { transform: 'rotate(-8.0deg) translateY(-12px)' },
+          '50%': { transform: 'rotate(8.0deg) translateY(12px)' },
+          '100%': { transform: 'rotate(-8.0deg) translateY(-12px)' },
+        },
+        wiggleB: {
+          '0%': { transform: 'rotate(8.0deg) translateY(12px)' },
+          '50%': { transform: 'rotate(-8.0deg) translateY(-12px)' },
+          '100%': { transform: 'rotate(8.0deg) translateY(12px)' },
+        },
         error: {
           '0%': { transform: 'rotate(0.0deg)' },
           '33%': { transform: 'rotate(3.0deg)' },
@@ -85,6 +95,8 @@ export default {
       },
       animation: {
         'wiggle-bounce': 'wiggle 4s linear infinite',
+        'wiggle-bounceA': 'wiggleA 4s linear infinite',
+        'wiggle-bounceB': 'wiggleB 4s linear infinite',
         'error-wiggle' : 'error 250ms ease-in-out' ,
         'text-error' : 'textError 3s ease-in-out',
       },
