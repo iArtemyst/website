@@ -32,41 +32,42 @@ const titleTextSize= "text-[24px]";
 const paraTextSize = "text-[12px]";
 
 function BentoBox() {
+    let isMobile = CheckIfMobileBrowser()
     return (
-        <div className={`${CheckIfMobileBrowser() ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid w-[80%] h-fit justify-self-center rounded-3xl place-content-center gap-[12px] text-textVariant hover:cursor-pointer`}>
-            <bentos.CellText cellSpan={`${CheckIfMobileBrowser() ? "col-span-1" : "col-span-2"}`}>
+        <div className={`${isMobile ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid w-[80%] h-fit justify-self-center rounded-3xl place-content-center gap-[12px] text-textVariant hover:cursor-pointer`}>
+            <bentos.CellText cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`}>
                 <bentos.HeaderText text="CONSUMER MOTION DESIGN" textSize={titleTextSize}/>
             </bentos.CellText>
 
-            <div className={`${CheckIfMobileBrowser() ? "col-span-1 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid gap-[12px] hover:z-40`}>
+            <div className={`${isMobile ? "col-span-1 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid gap-[12px] hover:z-40`}>
                 <bentos.CellMediaOnClick mediaText="Derisking through trial" mediaLink={imgConMotionC01} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Dental Map" mediaLink={imgConMotionA04} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Shared Intelligence" mediaLink={imgConMotionD03} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Reduced lead times" mediaLink={imgConMotionC06} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             </div>
 
-            <bentos.CellMediaOnClick mediaLink={vidConMotionA01} mediaType={MediaType.Video} mediaText="Mograph clip connected technology" cellSpan={`${CheckIfMobileBrowser() ? "col-span-1" : "col-span-1"}`}  hoverTextColor="text-textColor"/>
+            <bentos.CellMediaOnClick mediaLink={vidConMotionA01} mediaType={MediaType.Video} mediaText="Mograph clip connected technology" cellSpan={`${isMobile ? "col-span-1" : "col-span-1"}`}  hoverTextColor="text-textColor"/>
 
-            <bentos.CellMediaOnClick mediaLink={vidConMotionB02} mediaType={MediaType.Video} mediaText="Mograph clip simplifying search" cellSpan={`${CheckIfMobileBrowser() ? "col-span-1" : "col-span-1"}`}  hoverTextColor="text-textColor"/> 
+            <bentos.CellMediaOnClick mediaLink={vidConMotionB02} mediaType={MediaType.Video} mediaText="Mograph clip simplifying search" cellSpan={`${isMobile ? "col-span-1" : "col-span-1"}`}  hoverTextColor="text-textColor"/> 
 
-            <bentos.CellText cellSpan={`${CheckIfMobileBrowser() ? "col-span-1" : "col-span-2"}`}>
+            <bentos.CellText cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`}>
                 <bentos.ParagraphText text="In my years of professional design, I have had the great oppurtunity to work on numerous motion design videos for great companies. Storytelling through 2D assets and animations, creating emphasis and focus to engage or assist a user, and create a better experience through motion." textSize={paraTextSize}/>
             </bentos.CellText>
 
-            <div className={`${CheckIfMobileBrowser() ? "col-span-1 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid gap-[12px] hover:z-20`}>
+            <div className={`${isMobile ? "col-span-1 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid gap-[12px] hover:z-20`}>
                 <bentos.CellMediaOnClick mediaText="Internal Research" mediaLink={imgConMotionB01} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Connected Software" mediaLink={imgConMotionA03} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Discovery" mediaLink={imgConMotionB02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Connected Alerts" mediaLink={imgConMotionA05} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             </div>
 
-            <bentos.CellMediaOnClick mediaLink={vidConMotionA03} mediaType={MediaType.Video} mediaText="Mograph clip connected devices" cellSpan={`${CheckIfMobileBrowser() ? "col-span-1" : "col-span-1"}`}  hoverTextColor="text-textColor"/>
+            <bentos.CellMediaOnClick mediaLink={vidConMotionA03} mediaType={MediaType.Video} mediaText="Mograph clip connected devices" cellSpan={`${isMobile ? "col-span-1" : "col-span-1"}`}  hoverTextColor="text-textColor"/>
 
-            <bentos.CellMediaOnClick mediaLink={vidConMotionD02} mediaType={MediaType.Video} mediaText="Mograph clip worldwide information" cellSpan={`${CheckIfMobileBrowser() ? "col-span-1" : "col-span-1"}`}  hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClick mediaLink={vidConMotionD02} mediaType={MediaType.Video} mediaText="Mograph clip worldwide information" cellSpan={`${isMobile ? "col-span-1" : "col-span-1"}`}  hoverTextColor="text-textVariant"/>
 
-            <bentos.CellMediaOnClick mediaLink={vidConMotionD01} mediaType={MediaType.Video} mediaText="Mograph clip shared intelligence" cellSpan={`${CheckIfMobileBrowser() ? "col-span-1" : "col-span-2"}`}  hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClick mediaLink={vidConMotionD01} mediaType={MediaType.Video} mediaText="Mograph clip shared intelligence" cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`}  hoverTextColor="text-textVariant"/>
 
-            <div className={`${CheckIfMobileBrowser() ? "col-span-1 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid gap-[12px] hover:z-20`}>
+            <div className={`${isMobile ? "col-span-1 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid gap-[12px] hover:z-20`}>
                 <bentos.CellMediaOnClick mediaText="Branding Refresh" mediaLink={imgConMotionC11} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Human Intelligence" mediaLink={imgConMotionD02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="Virtual Graphics" mediaLink={imgConMotionC12} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>

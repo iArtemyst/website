@@ -6,6 +6,8 @@ import * as bentos from "@/app/globals/bento-boxes";
 import * as fonts from "@/app/globals/fonts";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
+import { useEffect, useState } from "react";
+import Loading from "../globals/loading-text";
 
 const vidProcMat01 = "_game/_procmats/procmats_loop_00.mp4";
 const vidProcMat02 = "_game/_procmats/procmats_loop_01.mp4";
@@ -24,59 +26,64 @@ interface IVideoWithTitle {
     hoverColor: string,
 }
 
+const cellData: IVideoWithTitle[] = [
+    { 
+        vidLink: vidProcMat01,
+        vidTitle: "Asphalt Material",
+        hoverColor: "text-textColor",
+    },
+    { 
+        vidLink: vidProcMat02,
+        vidTitle: "Green Bark and Wood Material",
+        hoverColor: "text-textVariant",
+    },
+    { 
+        vidLink: vidProcMat03,
+        vidTitle: "White Bark and Wood Material",
+        hoverColor: "text-textVariant",
+    },
+    { 
+        vidLink: vidProcMat04,
+        vidTitle: "Brick Material",
+        hoverColor: "text-textVariant",
+    },
+    { 
+        vidLink: vidProcMat05,
+        vidTitle: "Refractive Glass Material",
+        hoverColor: "text-textVariant",
+    },
+    { 
+        vidLink: vidProcMat06,
+        vidTitle: "Snow and Ice Material",
+        hoverColor: "text-textColor",
+    },
+    { 
+        vidLink: vidProcMat07,
+        vidTitle: "Lava Material",
+        hoverColor: "text-textColor",
+    },
+    { 
+        vidLink: vidProcMat08,
+        vidTitle: "Worn Metal Material",
+        hoverColor: "text-textColor",
+    },
+    { 
+        vidLink: vidProcMat09,
+        vidTitle: "Quartz Rock Material",
+        hoverColor: "text-textVariant",
+    },
+    { 
+        vidLink: vidProcMat10,
+        vidTitle: "Sand Dunes Material",
+        hoverColor: "text-textVariant",
+    },
+]
+
 function BentoBoxA() {
-    const cellData: IVideoWithTitle[] = [
-        { 
-            vidLink: vidProcMat01,
-            vidTitle: "Asphalt Material",
-            hoverColor: "text-textColor",
-        },
-        { 
-            vidLink: vidProcMat02,
-            vidTitle: "Green Bark and Wood Material",
-            hoverColor: "text-textVariant",
-        },
-        { 
-            vidLink: vidProcMat03,
-            vidTitle: "White Bark and Wood Material",
-            hoverColor: "text-textVariant",
-        },
-        { 
-            vidLink: vidProcMat04,
-            vidTitle: "Brick Material",
-            hoverColor: "text-textVariant",
-        },
-        { 
-            vidLink: vidProcMat05,
-            vidTitle: "Refractive Glass Material",
-            hoverColor: "text-textVariant",
-        },
-        { 
-            vidLink: vidProcMat06,
-            vidTitle: "Snow and Ice Material",
-            hoverColor: "text-textColor",
-        },
-        { 
-            vidLink: vidProcMat07,
-            vidTitle: "Lava Material",
-            hoverColor: "text-textColor",
-        },
-        { 
-            vidLink: vidProcMat08,
-            vidTitle: "Worn Metal Material",
-            hoverColor: "text-textColor",
-        },
-        { 
-            vidLink: vidProcMat09,
-            vidTitle: "Quartz Rock Material",
-            hoverColor: "text-textVariant",
-        },
-        { 
-            vidLink: vidProcMat10,
-            vidTitle: "Sand Dunes Material",
-            hoverColor: "text-textVariant",
-        },
-    ]
+    const [shuffledCards, setArray] = useState<IVideoWithTitle[]>([])
+        useEffect(() => {
+            setArray(shuffle_about_cards(cellData))
+        }, []);
 
     function VideoCell({link, vidTitle="", hoverColor}: {link: string, vidTitle: string, hoverColor: string}) {
         return (
@@ -89,13 +96,25 @@ function BentoBoxA() {
         )
     }
 
-    return (
+    function shuffle_about_cards(new_cards: IVideoWithTitle[]) 
+    {
+        let shuffled_array = structuredClone(new_cards);
+
+        for (let i = new_cards.length -1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i - 1));
+            [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
+        }
+        return shuffled_array;
+    }
+
+    return shuffledCards.length != 0 ?
         <div className="relative z-0 grid grid-cols-2 xl:grid-cols-3 w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] text-white hover:cursor-pointer">
             {
-                cellData.map((data, i) => <VideoCell link={data.vidLink} vidTitle={data.vidTitle} hoverColor={data.hoverColor} key={i}/>)
+                shuffledCards.map((data, i) => <VideoCell link={data.vidLink} vidTitle={data.vidTitle} hoverColor={data.hoverColor} key={i}/>)
             }
         </div>
-    )
+        :
+        <Loading />
 }
 
 export default function ProjectProcMatPage() {

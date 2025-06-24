@@ -36,7 +36,6 @@ const vidMamm02 = "_3d/_medAnim/Mammotome_Clip_002.mp4";
 const bentoGap = "gap-[12px]";
 const titleTextSize= "text-[24px]";
 const paraTextSize = "text-[12px]";
-const hoverTextColor = "text-slate-900";
 
 function BentoBox() {
     let isMobile = CheckIfMobileBrowser()

@@ -43,8 +43,9 @@ const titleTextSize= "text-[24px]";
 const paraTextSize = "text-[12px]";
 
 function BentoBoxA() {
+    let isMobile = CheckIfMobileBrowser()
     return (
-        <div className={`${CheckIfMobileBrowser() ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid  w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white border-white border-[1px] p-2 hover:cursor-pointer`}>
+        <div className={`${isMobile ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid  w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white border-white border-[1px] p-2 hover:cursor-pointer`}>
             <bentos.CellText cellSpan="col-span-full row-span-full">
                 <bentos.HeaderText text="FLOWSERVE INDUSTRIAL PUMPS" textSize={titleTextSize}/>
             </bentos.CellText>
@@ -78,8 +79,9 @@ function BentoBoxA() {
 }
 
 function BentoBoxB() {
+    let isMobile = CheckIfMobileBrowser()
     return (
-        <div className={`${CheckIfMobileBrowser() ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white border-white border-[1px] p-4 hover:cursor-pointer`} >
+        <div className={`${isMobile ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white border-white border-[1px] p-4 hover:cursor-pointer`} >
             <bentos.CellText cellSpan="col-span-full row-span-full">
                 <bentos.HeaderText text="INDUSTRIAL MACHINERY" textSize={titleTextSize}/>
             </bentos.CellText>
@@ -107,8 +109,9 @@ function BentoBoxB() {
 }
 
 function BentoBoxC() {
+    let isMobile = CheckIfMobileBrowser()
     return (
-        <div className={`${CheckIfMobileBrowser() ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] my-[24px]  text-white border-white border-[1px] p-4 hover:cursor-pointer`}>
+        <div className={`${isMobile ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] my-[24px]  text-white border-white border-[1px] p-4 hover:cursor-pointer`}>
             <bentos.CellText cellSpan="col-span-full row-span-full">
                 <bentos.HeaderText text="CONSUMER PRODUCTS AND RESEARCH" textSize={titleTextSize}/>
             </bentos.CellText>

@@ -7,18 +7,12 @@ import * as pages from "@/app/globals/pages-main";
 import { CheckIfMobileBrowser } from "./globals/mobile-check";
 import { NoSelect } from "./globals/styles";
 import { useState, useEffect } from "react";
-// import { shuffle_landing_cards } from "./globals/shuffle-functions";
-import { Suspense } from "react";
 import Loading from "./globals/loading-text";
 
 const vidBackA = "_landing/grp_card_3d_back.mp4";
-const vidFrontA = "_landing/grp_card_3d_front_v3.mp4";
 const vidBackB = "_landing/grp_card_code_back.mp4";
-const vidFrontB = "_landing/grp_card_code_front.mp4";
 const vidBackC = "_landing/grp_card_game_back.mp4";
-const vidFrontC = "_landing/grp_card_game_front.mp4";
 const vidBackD = "_landing/grp_card_motion_back.mp4";
-const vidFrontD = "_landing/grp_card_motion_front.mp4";
 
 const group3D = './grpProjects3D';
 const groupCode = './grpProjectsCode';
@@ -48,14 +42,6 @@ function LandingPageText() {
     )
 }
 
-// function random_number() {
-//     const [randomNum, setRandomNum] = useState(0.5);
-//     useEffect(() => {
-//         const random = (Math.random());
-//         setRandomNum(randoam);
-//     });
-//     return randomNum
-// }
 
 const card3dVideos : string[] = [
     "_landing/grp_card_3d_front_v1.mp4",
@@ -88,11 +74,6 @@ const cardGameVideos : string[] = [
     "_landing/grp_card_game_front_v5.mp4",
 ]
 
-
-// let rotdegrees1 = randomgenerate()
-// let rotdegrees2 = randomgenerate()
-// let rotdegrees3 = randomgenerate()
-// let rotdegrees4 = randomgenerate()
 
 const cardMedia: IDoubleSideLandingCard[] = [
     {
@@ -132,18 +113,6 @@ const cardMedia: IDoubleSideLandingCard[] = [
         cardStyle: cardStyle,
     },
 ]
-
-// let shuffled_cards = shuffle_landing_cards(cardMedia)
-
-// function shuffle_landing_cards(new_cards:any) {
-//     const shuffled_array: IDoubleSideLandingCard[] = structuredClone(new_cards);
-//     for (let i = shuffled_array.length -1; i > 0; i--) {
-//         let j = Math.floor(random_number() * (i - 1));
-//         [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
-//     };
-
-//     return shuffled_array;
-// }
 
 
 export default function LandingMain() {

@@ -5,12 +5,6 @@ import * as pages from "@/app/globals/pages-main";
 import * as gallery from "@/app/globals/project-galleries";
 import * as hhmedia from "./hh-media-links";
 
-const width = "w-[240px]";
-const hWidth = "group-hover:w-[360px]";
-const hMargin = "group-hover:m-[-60px]";
-const conMargin = "mx-[24px]";
-const columnAmount = "grid-cols-3";
-
 export default function HorrorHousesPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">

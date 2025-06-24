@@ -4,7 +4,6 @@ import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
 import { IProjectLinkCard, ProjectLinkCardsContainer } from "../globals/project-link-cards";
-// import { shuffle_project_list } from "@/app/globals/shuffle-functions";
 import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
 

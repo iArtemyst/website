@@ -3,7 +3,6 @@
 import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
-// import { shuffle_project_list } from "@/app/globals/shuffle-functions";
 import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
 
@@ -24,8 +23,6 @@ const linkMonsoonVermut = "../projMonsoon";
 const linkProdAnim = "../projProductAnim";
 const linkProcMats = "../projProcMat3D";
 const linkInstaLoops = "../projLoopAnim3D";
-
-const columnAmount = "grid-cols-3"
 
 const groupCardData: IProjectLinkCard[] = [
     {

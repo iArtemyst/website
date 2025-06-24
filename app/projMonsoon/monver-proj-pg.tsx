@@ -1,9 +1,7 @@
 'use client'
 //---------------------
 import * as bentos from "@/app/globals/bento-boxes";
-import { CardHoverFX } from "@/app/globals/card-hover-fx";
 import "@/app/globals/globals.css";
-import { LazyVideo } from "@/app/globals/lazy-video";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
 import { CheckIfMobileBrowser } from "../globals/mobile-check";
@@ -22,15 +20,16 @@ const titleTextSize= "text-[16px] sm:text-[20px] md:text-[24px] lg:text-[32px] x
 const paraTextSize = "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px]";
 
 function BentoBox() {
+    let isMobile = CheckIfMobileBrowser()
     return (
-        <div className={`${CheckIfMobileBrowser() ? "grid-cols-2" : "grid-cols-2"} ${bentoGap} relative z-0 grid  w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-x-[12px] my-[8px] sm:my-[12px] md:my-[18px] lg:my-[24px] text-white`}>
-            <bentos.CellMediaOnClick mediaLink={vidMonsoonVermut} mediaType={MediaType.Video} mediaText="Monsoon Vermut Release Animation" cellSpan={`${CheckIfMobileBrowser() ? "col-span-2" : "col-span-2"}`} hoverTextColor="text-textVariant"/>
+        <div className={`${isMobile ? "grid-cols-2" : "grid-cols-2"} ${bentoGap} relative z-0 grid  w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-x-[12px] my-[8px] sm:my-[12px] md:my-[18px] lg:my-[24px] text-white`}>
+            <bentos.CellMediaOnClick mediaLink={vidMonsoonVermut} mediaType={MediaType.Video} mediaText="Monsoon Vermut Release Animation" cellSpan={`${isMobile ? "col-span-2" : "col-span-2"}`} hoverTextColor="text-textVariant"/>
             
-            <bentos.CellText cellSpan={`${CheckIfMobileBrowser() ? "col-span-2" : "col-span-2"}`}>
+            <bentos.CellText cellSpan={`${isMobile ? "col-span-2" : "col-span-2"}`}>
                 <bentos.HeaderText text="Monsoon Vermut" textSize={titleTextSize}/>
             </bentos.CellText>
 
-            <bentos.CellText cellSpan={`${CheckIfMobileBrowser() ? "col-span-2" : "col-span-2"}`}>
+            <bentos.CellText cellSpan={`${isMobile ? "col-span-2" : "col-span-2"}`}>
                 <bentos.ParagraphText textSize={paraTextSize} text="For the release of a small batch Vermuth company based out of Arizona, I assisted in producing marketing collateral in the form of several social media images and a release video.
                         For this client I was given the freedom to develop a creative direction and art direct myself to produce the final assets.
                         I was responsible for modeling the assets, developing the textures and shaders, creating the environment and lighting." />
