@@ -148,6 +148,29 @@ function ProjectCardWithGallery({card}: {card: ICardWithGalleryArrays}) {
     )
 }
 
+function ProjectCardWithGalleryMobile({card}: {card: ICardWithGalleryArrays}) {
+    let [showGallery, setShowGallery] = useState(false);
+
+    return (
+        <div className={`place-items-center`}>
+            <ProjectDetailCard 
+                card={card}
+                showGallery={showGallery}
+                setShowGallery={setShowGallery}
+            />
+            {
+                showGallery && (
+                    <div>
+                        <ClickIntoGalleryMobile galleryMedia={card.galleryData} setShowGallery={setShowGallery} galleryLength={card.galleryData.length}/>
+                        <BackgroundBarrier setShowGallery={setShowGallery}/>
+                    </div>
+                )
+            }
+        </div>
+    )
+}
+
+
 // CLICK INTO GALLERY COMPONENTS
 
 function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galleryMedia: IGalleryMedia[], galleryLength: number, setShowGallery: (x: boolean) => void}) {
@@ -157,27 +180,84 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
 
     function GalleryMainMedia({mediaLink, mediaType, mediaAbout}: {mediaLink: string, mediaType: MediaType, mediaAbout: string}) {
         return (
-            <div className={`w-auto h-auto relative m-[24px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
-                    <div className={`${isMobile ? "rounded-[8px]" : "rounded-[24px]"} overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
-                        {
-                            mediaType === MediaType.Video ?
-                                <LazyNonHoverVideo 
-                                    src={mediaLink}
-                                    autoplay={true}
-                                    controls={false}
-                                    muted={true}
-                                    loop={true}
-                                    />
-                            :
-                                <LazyImage
-                                    imgLink={mediaLink}
-                                    imgAlt={mediaAbout}
-                                    />
-                        }
-                    </div>
-                    {/* <GetGalleryLrgMedia mediaLink={mediaLink} mediaText={mediaAbout} /> */}
+            <div>
+                {
+                    CheckIfMobileBrowser() === false ?
+                        <div className={`w-auto h-auto relative m-[24px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
+                                <div className={`rounded-[24px] overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
+                                    {
+                                        mediaType === MediaType.Video ?
+                                            <LazyNonHoverVideo 
+                                                src={mediaLink}
+                                                autoplay={true}
+                                                controls={false}
+                                                muted={true}
+                                                loop={true}
+                                                />
+                                        :
+                                            <LazyImage
+                                                imgLink={mediaLink}
+                                                imgAlt={mediaAbout}
+                                                />
+                                    }
+                                </div>
+                        </div>
+                    :
+                        <div className={`w-auto h-auto relative m-[24px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
+                                <div className={`rounded-[8px] overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
+                                    {
+                                        mediaType === MediaType.Video ?
+                                            <LazyNonHoverVideo 
+                                                src={mediaLink}
+                                                autoplay={true}
+                                                controls={false}
+                                                muted={true}
+                                                loop={true}
+                                                />
+                                        :
+                                            <LazyImage
+                                                imgLink={mediaLink}
+                                                imgAlt={mediaAbout}
+                                                />
+                                    }
+                                </div>
+                        </div>
+                }
             </div>
-            
+        )
+
+            // return (
+            //     <div>
+            //         {
+            //             CheckIfMobileBrowser() === false ?
+            //             <FillCellMedia />
+            //             :
+            //             <FillCellMediaMobile />
+            //         }
+            //     </div>
+            // )
+
+    }
+
+    function GalleryImageNavBar({galleryImages, galleryLength}: {galleryImages: IGalleryMedia[], galleryLength: number}) {
+        return (
+            <div className={`grid-cols-${galleryLength} ${gridGap} relative w-fit place-items-center mx-auto h-fit grid content-center py-[12px]`}>
+                {
+                    galleryImages.map((data, i) => {
+                        return (
+                            <CardHoverFX bufferZone={0} rotateAmount={2} key={i}>
+                                <div className={`${selectedIndex == i ? `${isMobile ? "border-[1px]" : "border-[2px]"} border-teal-400  opacity-100` : "border-none opacity-60"} ${galleryBarImageSize} 
+                                                ${isMobile ? "rounded-[4px]" : "rounded-[8px]"} group  aspect-square overflow-clip place-self-center content-center transition-all duration-200 hover:scale-110`} onClick={() => setSelectedIndex(i)}> 
+                                    <LazyImage
+                                        imgLink={data.assetStillLink}
+                                        imgAlt={data.assetText}
+                                        />
+                                </div>
+                            </CardHoverFX>
+                        )
+                    })
+                }
+            </div>
         )
     }
 
@@ -261,17 +341,159 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
     }
 
     return (
-        <>
-            <div className={`${isMobile ? "rounded-[8px] py-[4px]" : "rounded-[24px] py-[12px]"} ${gallerySize} fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] bg-cardBGColor w-fit max-h-[calc(90%)] h-fit flex-row z-[150] justify-items-center`}>
-                <GalleryMainMedia mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText} mediaType={galleryMedia[selectedIndex].assetMediaType}/>
-                <GalleryMediaText galleryMediaText={galleryMedia[selectedIndex].assetText} />
-                <GalleryImageNavBar galleryImages={galleryMedia} galleryLength={galleryLength}/>
-                <CloseButton />
+        <div>
+        {
+            CheckIfMobileBrowser() === false ?
+            <div>
+                <div className={`${isMobile ? "rounded-[8px] py-[4px]" : "rounded-[24px] py-[12px]"} ${gallerySize} fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] bg-cardBGColor w-fit max-h-[calc(90%)] h-fit flex-row z-[150] justify-items-center`}>
+                    <GalleryMainMedia mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText} mediaType={galleryMedia[selectedIndex].assetMediaType}/>
+                    <GalleryMediaText galleryMediaText={galleryMedia[selectedIndex].assetText} />
+                    <GalleryImageNavBar galleryImages={galleryMedia} galleryLength={galleryLength}/>
+                    <CloseButton />
+                </div>
+                {
+                    fullscreenMedia && ( <FullScreenMedia /> )          
+                }
             </div>
-            {
-                fullscreenMedia && ( <FullScreenMedia /> )          
-            }
-        </>
+            :
+            <div>
+                <div className={`rounded-[8px] py-[4px] ${gallerySize} fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] bg-cardBGColor w-fit max-h-[calc(90%)] h-fit flex-row z-[150] justify-items-center`}>
+                    <GalleryMainMedia mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText} mediaType={galleryMedia[selectedIndex].assetMediaType}/>
+                    <GalleryMediaText galleryMediaText={galleryMedia[selectedIndex].assetText} />
+                    <GalleryImageNavBar galleryImages={galleryMedia} galleryLength={galleryLength}/>
+                    <CloseButton />
+                </div>
+                {
+                    fullscreenMedia && ( <FullScreenMedia /> )          
+                }
+            </div>
+        }
+        </div>
+    )
+}
+
+
+
+
+function ClickIntoGalleryMobile({galleryMedia, galleryLength, setShowGallery}: {galleryMedia: IGalleryMedia[], galleryLength: number, setShowGallery: (x: boolean) => void}) {
+    let isMobile = CheckIfMobileBrowser();       
+    let [selectedIndex, setSelectedIndex] = useState(0);
+    let [fullscreenMedia, setFullscreenMedia] = useState(false);
+    let isMobilePortrait = window.innerHeight > window.innerWidth;
+
+    function GalleryMainMediaMobile({mediaLink, mediaType, mediaAbout}: {mediaLink: string, mediaType: MediaType, mediaAbout: string}) {
+        return (
+                <div className={`${isMobilePortrait ? `w-auto h-auto` : `w-auto h-auto max-h-[50dvh]`} justify-self-center rounded-[8px] overflow-clip place-content-center` }>
+                    {
+                        mediaType === MediaType.Video ?
+                            <LazyNonHoverVideo 
+                                src={mediaLink}
+                                autoplay={true}
+                                controls={true}
+                                muted={true}
+                                loop={true}
+                                />
+                        :
+                            <LazyImage
+                                imgLink={mediaLink}
+                                imgAlt={mediaAbout}
+                                />
+                    }
+                </div>
+        )
+    }
+
+    function GalleryImageNavBarMobile({galleryImages, galleryLength}: {galleryImages: IGalleryMedia[], galleryLength: number}) {
+        return (
+            <div className={`${isMobilePortrait ? `py-[12px]` : `py-[3px]` } grid-cols-${galleryLength} ${gridGap} relative w-fit place-items-center mx-auto h-fit grid content-center`}>
+                {
+                    galleryImages.map((data, i) => {
+                        return (
+                            <CardHoverFX bufferZone={0} rotateAmount={2} key={i}>
+                                <div className={`${selectedIndex == i ? `border-[1px] border-teal-400  opacity-100` : "border-none opacity-60"} ${isMobilePortrait ? `w-[48px]` : `w-[24px]` }  
+                                                rounded-[4px] group  aspect-square overflow-clip place-self-center content-center transition-all duration-200 hover:scale-110`} onClick={() => setSelectedIndex(i)}> 
+                                    <LazyImage
+                                        imgLink={data.assetStillLink}
+                                        imgAlt={data.assetText}
+                                        />
+                                </div>
+                            </CardHoverFX>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
+
+    function GalleryMediaTextMobile({galleryMediaText}: {galleryMediaText: string}) {
+        return (
+            <div className={`w-[95%] h-fit relative justify-self-center content-start my-[6px] mx-auto`}>
+                <p className={`${fonts.poppins.className} ${isMobilePortrait ? `text-[10px] ` : `text-[7px] `} text-textColor text-pretty`}>
+                    {galleryMediaText}
+                </p>
+            </div>
+        )
+    }
+
+    function CloseButtonMobile() {
+        return (
+            <button className={`absolute right-0 top-0`} onClick={() => setShowGallery(false)} >
+                <div className={`bg-cardBGColor w-fit h-fit rounded-[8px] p-[4px]`}>
+                    <p className={`px-[8px] py-[1px] translate-x-[0px] align-text-top rounded-full self-center text-[12px] text-textColor ${fonts.dotoBlack.className}`}>X</p>
+                </div>
+            </button>
+        )
+    }
+
+    function FullScreenMedia() {
+        function FsBgBarrier() {
+            return (
+                <div className={`fixed left-0 right-0 top-0 bottom-0 z-0 bg-black opacity-[75%]`} onClick={() => setFullscreenMedia(false)} />
+            )
+        }
+
+        function FsMediaAsset({mediaLink, mediaType}: {mediaLink: string, mediaType: MediaType}) {
+            return (
+                <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-full h-full z-10 content-center`} onClick={() => setFullscreenMedia(false)}>
+                    {
+                        mediaType === MediaType.Video ?
+                            <LazyNonHoverVideo 
+                                    src={mediaLink}
+                                    autoplay={true}
+                                    controls={true}
+                                    muted={true}
+                                    loop={true}
+                                    />
+                        :
+                            <LazyFSImage
+                                imgLink={mediaLink}
+                                imgAlt=""
+                                />
+                    }
+                </div>
+            )
+        }
+
+        return (
+            <div className={`fixed z-[9999] left-0 right-0 top-0 bottom-0 content-center justify-items-center`}>
+                <FsBgBarrier/>
+                <FsMediaAsset mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaType={galleryMedia[selectedIndex].assetMediaType}/>
+            </div>
+        )
+    }
+
+    return (
+            <div>
+                <div className={`${isMobilePortrait ? `w-[90%] max-h-[calc(90%)] h-fit` : `w-fit max-w-[calc(40%)] h-fit max-h-[calc(90%)]`} rounded-[8px] fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] bg-cardBGColor flex-row content-center z-[150] justify-items-center p-[12px]`}>
+                    <GalleryMainMediaMobile mediaLink={galleryMedia[selectedIndex].assetMediaLink} mediaAbout={galleryMedia[selectedIndex].assetText} mediaType={galleryMedia[selectedIndex].assetMediaType}/>
+                    <GalleryMediaTextMobile galleryMediaText={galleryMedia[selectedIndex].assetText} />
+                    <GalleryImageNavBarMobile galleryImages={galleryMedia} galleryLength={galleryLength}/>
+                    <CloseButtonMobile />
+                </div>
+                {/* {
+                    fullscreenMedia && ( <FullScreenMedia /> )          
+                } */}
+            </div>
     )
 }
 
@@ -287,16 +509,33 @@ function BackgroundBarrier({setShowGallery}: {setShowGallery: any}) {
 
 export function ProjectCardsWithGalleryContainer({cardArray, columnAmount}: {cardArray: ICardWithGalleryArrays[], columnAmount: string}) {
     let isMobile = CheckIfMobileBrowser()
+    
     return (
-        <div className={`grid ${isMobile ? "grid-cols-2" : `${columnAmount}`} absolute justify-self-center place-items-center w-[75%] my-[16px] h-[70%] md:h-[80%]`}>
-        {
-            cardArray.map((data, i) => {
-                return (
-                    <ProjectCardWithGallery card={data} key={i} />
-                )
-            })
-        }
+        <div className={`absolute grid w-full h-[80%] mt-[24px]`}>
+            {
+                isMobile === false ?
+                    <div className={`grid ${columnAmount} relative justify-self-center place-items-center w-[75%] h-full`}>
+                        {
+                            cardArray.map((data, i) => {
+                                return (
+                                    <ProjectCardWithGallery card={data} key={i} />
+                                )
+                            })
+                        }
+                    </div>
+                :
+                    <div className={`grid grid-cols-3 relative justify-self-center place-items-center w-[85%] content-center h-full`}>
+                        {
+                            cardArray.map((data, i) => {
+                                return (
+                                    <ProjectCardWithGalleryMobile card={data} key={i} />
+                                )
+                            })
+                        }
+                    </div>
+            }
         </div>
+
     )
 }
 

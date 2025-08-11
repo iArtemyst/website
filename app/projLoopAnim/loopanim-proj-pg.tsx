@@ -68,7 +68,15 @@ function BentoBoxA() {
 
     function VideoCell({link}:{link:string}){
         return (
-            <bentos.CellMediaOnClick mediaLink={link} mediaType={MediaType.Video} mediaText="" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
+            <div>
+                {
+                    isMobile === false ?
+                    <bentos.CellMediaOnClick mediaLink={link} mediaType={MediaType.Video} mediaText="" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
+                    :
+                    <bentos.CellMediaOnClickMobile mediaLink={link} mediaType={MediaType.Video} mediaText="" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
+                }
+            </div>
+
         )
     }
 

@@ -155,6 +155,8 @@ export interface IPopupMedia
 
 function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {mediaLink: string, mediaText: string, mediaType: MediaType, setShowGallery: (x: boolean) => void}) {
     let [fullscreenMedia, setFullscreenMedia] = useState(false);
+    let isMobile = CheckIfMobileBrowser();
+    let isMobilePortrait = window.innerHeight > window.innerWidth;
     
     function GetBentoGalleryMedia({mediaLink, mediaText, mediaType}:{mediaLink: string, mediaText: string, mediaType: MediaType}) {
         return (
@@ -178,11 +180,43 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
         )
     }
 
+    function GetBentoGalleryMediaMobile({mediaLink, mediaText, mediaType}:{mediaLink: string, mediaText: string, mediaType: MediaType}) {
+        return (
+            <div className={`rounded-[8px] w-auto h-auto justify-self-center overflow-clip shadow-[inset_0px_0px_24px_#00000090]`}>
+                {
+                    mediaType === MediaType.Video ?
+                        <LazyNonHoverVideo
+                            src={mediaLink}
+                            autoplay={true}
+                            controls={false}
+                            muted={true}
+                            loop={true}
+                            />
+                    :
+                        <LazyImage
+                            imgLink={mediaLink}
+                            imgAlt={mediaText}
+                            />
+                }
+            </div>
+        )
+    }
+
     function CloseButton() {
         return (
             <button className={`absolute right-0 top-0 m-[6px] md:m-[16px]`} onClick={() => setShowGallery(false)} >
                 <div className={`bg-cardBGColor w-fit h-fit rounded-[8px] p-[2px] md:p-[4px]`}>
-                    <p className={`px-[6px] py-[2px] md:px-[12px] md:py-[4px] translate-x-[1px] md:translate-x-[2px] align-text-top rounded-full self-center text-[10px] sm:text-[12px] md:text-[14px]  text-textColor ${fonts.dotoBlack.className} hover:scale-110`}>X</p>
+                    <p className={`px-[6px] py-[2px] md:px-[12px] md:py-[4px] translate-x-[1px] md:translate-x-[2px] align-text-top rounded-full self-center text-[12px] md:text-[14px]  text-textColor ${fonts.dotoBlack.className} hover:scale-110`}>X</p>
+                </div>
+            </button>
+        )
+    }
+
+    function CloseButtonMobile() {
+        return (
+            <button className={`absolute right-0 top-0 m-[2px]`} onClick={() => setShowGallery(false)} >
+                <div className={`bg-cardBGColor w-fit h-fit rounded-[8px] p-[2px]`}>
+                    <p className={`px-[6px] py-[2px] translate-x-[1px] align-text-top rounded-full self-center text-[10px] text-textColor ${fonts.dotoBlack.className} hover:scale-110`}>X</p>
                 </div>
             </button>
         )
@@ -190,8 +224,8 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
 
     function PopupText() {
         return (
-            <div className={`w-full h-auto relative justify-self-center align-middle pb-[.5rem] sm:pb-[.75rem]`}>
-                <p className={`${fonts.poppins.className} text-textColor text-left text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-pretty px-[16px] sm:px-[24px]`}>
+            <div className={`${isMobile ? `pb-[4px]` : `pb-[.75rem]`} w-full h-auto relative justify-self-center align-middle`}>
+                <p className={`${fonts.poppins.className} ${isMobile ? "text-[6px] px-[8px]" : "sm:text-[10px] md:text-[12px] lg:text-[14px] px-[24px]"} text-textColor text-left text-pretty `}>
                     {mediaText}
                 </p>
             </div>
@@ -202,6 +236,14 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
         return (
             <div className={`w-auto h-auto relative rounded-[8px] md:rounded-[24px] px-[12px] pt-[12px] pb-[6px] md:px-[24px] md:pt-[24px] md:pb-[12px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
                 <GetBentoGalleryMedia mediaLink={mediaLink} mediaText={mediaText} mediaType={mediaType}/>
+            </div>
+        )
+    }
+
+    function PopupMediaMobile() {
+        return (
+            <div className={`${isMobilePortrait ? `w-full h-auto` : `w-auto h-auto` } relative grid rounded-[8px] p-[8px] justify-items-center content-center`}>
+                <GetBentoGalleryMediaMobile mediaLink={mediaLink} mediaText={mediaText} mediaType={mediaType}/>
             </div>
         )
     }
@@ -248,21 +290,42 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
     }
 
     return (
-        <>
-            <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-auto h-auto z-[150] justify-items-center py-[12px] content-center`}>
-                <div className={`relative w-fit md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1080px] 2xl:max-w-[1440px] h-fit`}>
-                    <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor rounded-[16px] md:rounded-[24px]`}/>
-                    <div className={`relative`}>
-                        <PopupMedia />
-                        <PopupText />
-                        <CloseButton />
-                    </div>
-                </div>
-            </div>
+        <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] h-auto z-[150] justify-items-center content-center w-full`}>
             {
-                fullscreenMedia && ( <FullScreenMedia /> )   
+                isMobile === false ?
+                    <>
+                        <div className={`content-center mx-[24px] my-auto justify-items-center`}>
+                            <div className={`relative w-[80%] md:max-w-[960px] lg:max-w-[1080px] xl:max-w-[1260px] 2xl:max-w-[1440px] h-fit`}>
+                                <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor md:rounded-[18px]`}/>
+                                <div className={`relative`}>
+                                    <PopupMedia />
+                                    <PopupText />
+                                    <CloseButton />
+                                </div>
+                            </div>
+                        </div>
+                        {
+                            fullscreenMedia && ( <FullScreenMedia /> )   
+                        }
+                    </>
+                    :
+                    <>
+                        <div className={`content-center grid my-auto justify-items-center`}>
+                            <div className={`${isMobilePortrait ? 'w-fit h-fit' : 'w-[50%] h-auto'} relative`}>
+                                <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor rounded-[8px]`}/>
+                                    <div className={`relative`}>
+                                        <PopupMediaMobile />
+                                        <PopupText />
+                                        <CloseButtonMobile />
+                                    </div>
+                                </div>
+                        </div>
+                        {
+                            fullscreenMedia && ( <FullScreenMedia /> )   
+                        }
+                    </>
             }
-        </>
+        </div>
     )
 }
 
@@ -279,6 +342,24 @@ function BackgroundBarrier({setShowGallery,}: {setShowGallery: any,}) {
 
 
 export function CellMediaOnClick({mediaLink, mediaType, mediaText, hoverTextColor, cellSpan,}: {mediaLink: string, mediaType: MediaType, mediaText: string, hoverTextColor: string, cellSpan: string,}) {
+    let [showGallery, setShowGallery] = useState(false);
+    
+    return (
+        <div className={`relative ${cellSpan} hover:cursor-pointer`}>
+            <CellMedia cellMedia={mediaLink} cellMediaType={mediaType} mediaText={mediaText} cellSpan={cellSpan} showGallery={showGallery} setShowGallery={setShowGallery} hoverTextColor={hoverTextColor}/>
+            {
+                showGallery && (
+                    <div className={`fixed z-[500]`}>
+                        <PopUpMediaViewer mediaLink={mediaLink} mediaText={mediaText} mediaType={mediaType} setShowGallery={setShowGallery}/>
+                        <BackgroundBarrier setShowGallery={setShowGallery}/>
+                    </div>
+                )
+            }
+        </div>
+    )
+}
+
+export function CellMediaOnClickMobile({mediaLink, mediaType, mediaText, hoverTextColor, cellSpan,}: {mediaLink: string, mediaType: MediaType, mediaText: string, hoverTextColor: string, cellSpan: string,}) {
     let [showGallery, setShowGallery] = useState(false);
     
     return (
