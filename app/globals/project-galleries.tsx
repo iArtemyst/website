@@ -261,28 +261,6 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
         )
     }
 
-    function GalleryImageNavBar({galleryImages, galleryLength}: {galleryImages: IGalleryMedia[], galleryLength: number}) {
-        return (
-            <div className={`grid-cols-${galleryLength} ${gridGap} relative w-fit place-items-center mx-auto h-fit grid content-center py-[12px]`}>
-                {
-                    galleryImages.map((data, i) => {
-                        return (
-                            <CardHoverFX bufferZone={0} rotateAmount={2} key={i}>
-                                <div className={`${selectedIndex == i ? `${isMobile ? "border-[1px]" : "border-[2px]"} border-teal-400  opacity-100` : "border-none opacity-60"} ${galleryBarImageSize} 
-                                                ${isMobile ? "rounded-[4px]" : "rounded-[8px]"} group  aspect-square overflow-clip place-self-center content-center transition-all duration-200 hover:scale-110`} onClick={() => setSelectedIndex(i)}> 
-                                    <LazyImage
-                                        imgLink={data.assetStillLink}
-                                        imgAlt={data.assetText}
-                                        />
-                                </div>
-                            </CardHoverFX>
-                        )
-                    })
-                }
-            </div>
-        )
-    }
-
     function GalleryMediaText({galleryMediaText}: {galleryMediaText: string}) {
         return (
             <div className={`w-[85%] h-auto relative justify-self-center content-start mx-auto`}>
