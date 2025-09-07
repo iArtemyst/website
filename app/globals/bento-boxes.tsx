@@ -58,7 +58,16 @@ export function ProjectDetailTextTop({TitleText="", MoreText=""}: {TitleText: st
 export function HeaderText({text="", textSize=""}: {text: string, textSize: string}) {
     return (
         <div className={`relative h-full w-full flex justify-center align-middle p-[8px]`}>
-            <p className={`${fonts.dotoBlack.className} text-[14px] sm:text-[18px] md:text-[24px] lg:text-[32px] xl:text-[36px] 2xl:text-[40px] text-balance text-center content-center`}>{text}</p>
+            <p className={`${fonts.dotoBlack.className} text-[14px] sm:text-[18px] md:text-[24px] lg:text-[32px] xl:text-[36px] 2xl:text-[40px] text-balance text-center`}>{text}</p>
+        </div>
+    )
+}
+
+export function HeaderSubtitleText({htext="", stext="",}: {htext: string, stext: string}) {
+    return (
+        <div className={`relative h-full w-full flex flex-col justify-center align-middle p-[8px]`}>
+            <p className={`${fonts.dotoBlack.className} text-[14px] sm:text-[18px] md:text-[24px] lg:text-[32px] xl:text-[36px] 2xl:text-[40px] text-balance text-center`}>{htext}</p>
+            <p className={`${fonts.dotoBlack.className} text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px] text-balance text-center`}>{stext}</p>
         </div>
     )
 }

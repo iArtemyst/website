@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
         loader: 'file-loader',
         options: {
           publicPath: `${prefix}/_next/static/media/`,
+          // publicPath: `${prefix}/app/assets/`,
           outputPath: `${isServer ? '../' : ''}static/media/`,
           name: '[name].[hash:8].[ext]',
         },

@@ -152,7 +152,7 @@ export function ProjectLinkCardsContainer({dataArray}: {dataArray: IProjectLinkC
         <div className="">
             {
                 isMobile === false ?
-                    <div className={`grid grid-cols-3 w-[90%] justify-self-center gap-[24px] h-full justify-items-center content-center place-content-center`}>
+                    <div className={`grid grid-cols-3 w-[90%] justify-self-center gap-y-[54px] h-full justify-items-center content-center place-content-center mt-[24px]`}>
                         {
                             dataArray.map((data, i) => <GroupProjectCards key={i} dataArray={data}/> )
                         }
