@@ -7,35 +7,39 @@ import {IProjectLinkCard, ProjectLinkCardsContainer} from "@/app/globals/project
 import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
 
-const vidBingo = "_project-links/prjLink_codeBingo_400px.mp4";
+const imgBingo = "_project-links/prjLink_bingo_400px.mp4";
 const vidResume = "_project-links/prjLink_codeResume_400px.mp4";
 const vidWebsite = "_project-links/prjLink_codePortfolio_400px.mp4";
+const imgSlippiTV = "_project-links/prjLink_slippiTV_400px.mp4";
 
 const linkWebsite = "../projCodeWebsite/";
-const linkResume = 'https://github.com/iArtemyst/resume';
-const linkBingo = 'https://github.com/iArtemyst/_bingo-board';
+const linkResume = '../projResume';
+const linkBingo = '../projBingoBoard';
+const linkSlippiTV = '../projSlippiTV';
+const linkResume2 = 'https://github.com/iArtemyst/resume';
+const linkBingo2 = 'https://github.com/iArtemyst/_bingo-board';
 
 const groupCardData: IProjectLinkCard[] = [
     {
-        projectTitle: "JS + HTML Bingo",
+        projectTitle: "Bingo Board Website",
         projectDates: "2025",
-        mediaLink: vidBingo,
+        mediaLink: imgBingo,
         cardLink: linkBingo,
-        errorText: "link to my github!",
+        errorText: "HTML + CSS + JavaScript",
     },
     {
-        projectTitle: "ReactJS Resume",
-        projectDates: "2025",
-        mediaLink: vidResume,
-        cardLink: linkResume,
-        errorText: "link to my github!",
-    },
-    {
-        projectTitle: "ReactJS Portfolio Site",
+        projectTitle: "My Portfolio Website",
         projectDates: "2025",
         mediaLink: vidWebsite,
         cardLink: linkWebsite,
-        errorText: undefined,
+        errorText: "React + NextJS",
+    },
+    {
+        projectTitle: "SlippiTV App & Website",
+        projectDates: "2025",
+        mediaLink: imgSlippiTV,
+        cardLink: linkSlippiTV,
+        errorText: ".NET Maui + HTML",
     },
 ]
 

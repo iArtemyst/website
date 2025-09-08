@@ -36,7 +36,7 @@ function LandingPageText() {
             </div>
             
             <div className={`${CheckIfMobileBrowser() ? " text-left mt-[4px] w-full text-pretty" : " text-right w-full text-balance"}  relative justify-self-end  text-secColor`}>
-                <p className={`${paraTextStyle} text-balance`}>I make things, all sorts of things. <br/> I like to model stuff, animate things, generate procedural systems, create better experiences, and make things beautiful. Welcome to my portfolio.</p>
+                <p className={`${paraTextStyle} text-balance`}>I have over 12 years of experience designing logos and print graphics, storyboarding and editing videos, modeling and animating 3D characters, using data to visualize and render digital products, developing augmented and virtual reality interactives, and utilizing consumer research to improve user experiences.<br/>Let me be the creative for your next project.</p>
             </div>
         </div>
     )

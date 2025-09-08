@@ -37,3 +37,36 @@ function LazyImageCore({imgLink, imgAlt = "Default Image", fullscreen}: {imgLink
         />
     )
 }
+
+
+
+
+
+
+
+export function LazyImage2({imgLink, imgAlt="Default Image"}: {imgLink: string, imgAlt: string})
+{
+    return <LazyImageCore2 imgLink={imgLink} imgAlt={imgAlt} fullscreen={false} />
+}
+
+function LazyImageCore2({imgLink, imgAlt = "Default Image", fullscreen}: {imgLink: string, imgAlt: string, fullscreen: boolean}) {
+    const [loadedSrc, setLoadedSrc] = useState('');
+    
+    useEffect(() => {
+        async function loadImage() { 
+            const source = await LoadAsset(imgLink);
+            setLoadedSrc(source);
+        }
+
+        loadImage();
+    }, [imgLink]);
+
+    return (
+        loadedSrc === '' ?
+        <Loading/> :
+        <img src={loadedSrc}
+            alt={imgAlt}
+            className={`w-fit max-h-[960px] place-self-center ${fullscreen ? "object-cover" : "object-scale-down"}`}
+        />
+    )
+}
