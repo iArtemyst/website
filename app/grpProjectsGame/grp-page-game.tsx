@@ -28,7 +28,7 @@ const groupCardData: IProjectLinkCard[] = [
         projectDates: "2024",
         mediaLink: vidStylizedVFX,
         cardLink: linkStylizedVFX,
-        errorText: "Blender 3D, Unreal Engine",
+        errorText: "Blender 3D + Unreal Engine",
     },
     {
         projectTitle: "Darts and Pub Assets",
@@ -42,14 +42,14 @@ const groupCardData: IProjectLinkCard[] = [
         projectDates: "2019 & 2024",
         mediaLink: vidUtopaea,
         cardLink: linkUtopaea,
-        errorText: "Blender 3D, 3DS Max, Unreal Engine",
+        errorText: "Blender 3D + 3DS Max, Unreal Engine",
     },
     {
         projectTitle: "Procedural Materials",
         projectDates: "2023",
         mediaLink: vidProcMats,
         cardLink: linkProcMats,
-        errorText: "Blender 3D, Substance Designer",
+        errorText: "Blender 3D + Substance Designer",
     },
     {
         projectTitle: "Island City Generator",

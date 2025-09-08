@@ -7,10 +7,10 @@ import {IProjectLinkCard, ProjectLinkCardsContainer} from "@/app/globals/project
 import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
 
-const imgBingo = "_project-links/projLinkVideo_Sq_BingoBoard_400px.mp4";
+const imgBingo = "_project-links/prjLink_bingo_400px.mp4";
 const vidResume = "_project-links/prjLink_codeResume_400px.mp4";
 const vidWebsite = "_project-links/prjLink_codePortfolio_400px.mp4";
-const imgSlippiTV = "_project-links/projLinkVideo_Sq_SlippiTV_400px.mp4";
+const imgSlippiTV = "_project-links/prjLink_slippiTV_400px.mp4";
 
 const linkWebsite = "../projCodeWebsite/";
 const linkResume = '../projResume';

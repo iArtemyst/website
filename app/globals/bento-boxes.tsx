@@ -33,7 +33,7 @@ export function ProjectDetailText({TitleText="", MoreText=""}: {TitleText: strin
 
 export function ProjectDetailRelativeText({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
     return (
-        <div className="relative z-0 w-[80%] grid grid-rows-auto h-fit justify-self-center self-end border-white border-[1px] gap-[8px] px-[16px] py-[8px] mb-[24px] bg-red-300">
+        <div className="relative z-0 w-[80%] grid grid-rows-auto h-fit justify-self-center self-end border-white border-[1px] gap-[8px] px-[16px] py-[8px] mb-[24px]">
             <p className={`${fonts.dotoBlack.className} text-priColor w-full text-[18px] sm:text-[24px] md:text-[32px] lg:text-[56px] 2xl:text-[72px] text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
             <p className={`${fonts.dotoBlack.className} text-[10px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[24px] text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
         </div>
