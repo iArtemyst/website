@@ -12,8 +12,7 @@ const galleryBarImageSize = 'w-[24px] sm:w-[32px] md:w-[48px] lg:w-[64px]';
 const gallerySize = 'min-w-[360px] sm:min-w-[480px] md:min-w-[540px] lg:min-w-[640px] xl:min-w-[720px] 2xl:min-w-[960px]';
 const gridGap = "gap-[12px]";
 const projectTextPadding = 'px-[2px] py-[2px] md:px-[4px] md:py-[4px] lg:px-[8px] lg:py-[8px]';
-const hoverTextSize = "text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] 2xl:text-[18px]";
-const hoverTextDist = "group-hover:-translate-y-[12px] sm:group-hover:-translate-y-[14px] md:group-hover:-translate-y-[18px] lg:group-hover:-translate-y-[20px] 2xlgroup-hover:-translate-y-[24px] px-[6px] sm:px-[8px] md:px-[10px] lg:px-[12px] 2xl:px-[16px]";
+const hoverTextSize = "text-[8px] md:text-[14px] 2xl:text-[16px]";
 
 //--------------------------------------
 // INTERFACES FOR INDIVIDUAL PROJECT CARDS AND ASSOCIATED GALLERIES
@@ -85,7 +84,7 @@ function ProjDetailMediaCard({mediaSrc, mediaText, mediaType,}: {mediaSrc: strin
 
 function ProjectDetailHoverText({card}: {card: ICardWithGalleryArrays}) {
     return (
-        <div className={` ${hoverTextDist} absolute left-0 top-0 w-full h-auto px-[16px] opacity-0 group-hover:opacity-100 -z-10 transition-all duration-300 `}>
+        <div className={`group-hover:-translate-y-[1.5em] absolute left-0 top-0 w-full h-auto px-[16px] opacity-0 group-hover:opacity-100 -z-10 transition-all duration-300 `}>
             <p className={`${fonts.dotoBlack.className} ${hoverTextSize} text-priColor`}>
                 {card.cardData.cardText}
             </p>
