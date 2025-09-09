@@ -62,7 +62,7 @@ function GalleryV2InfoDiv({projSummary="", projOtherDetails=""}:{projSummary: st
 
 export function GalleryV2InfoWithLinks({projTitle="", projSummary="", outLink1="", buttonText1="", outLink2="", buttonText2="", projOtherDetails=""}:{projTitle: string, projSummary: string, outLink1: string, buttonText1: string, outLink2: string, buttonText2: string, projOtherDetails: string}) {
     return (
-        <div className={`flex flex-col md:flex-row w-full h-fit max-w-[1080px] min-w-[240px] md:min-w-[540px] gap-[12px] md:gap-[36px] place-self-center place-items-center justify-between mb-[0px] md:mb-[24px]`}>
+        <div className={`flex flex-col md:flex-row w-full h-fit max-w-[1080px] min-w-[240px] md:min-w-[540px] gap-[12px] md:gap-[36px] place-self-center place-items-center justify-between mb-[12px] md:mb-[24px]`}>
             <GalleryV2LinkButtonStack outLink1={outLink1} outLink2={outLink2} buttonText1={buttonText1} buttonText2={buttonText2} />
             <div className="flex flex-col md:flex-col w-full md:w-fit place-items-center md:place-items-end gap-[4px] md:gap-[0px] order-1 md:order-2">
                 <GalleryV2TitleDiv projTitle={projTitle} />
@@ -170,7 +170,7 @@ export function GalleryV2({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
         return (
             <div className={`flex flex-col self-end mt-[1rem] md:mt-0 gap-[12px] place-self-center w-full md:w-[30%] min-w-[240px] h-fit md:h-full max-h-[720px]`}>
                 <div className={`w-full h-auto flex order-2 md:order-1`}>
-                    <p className={`${fonts.poppins.className} w-full h-auto text-center md:text-right px-[.25rem] md:px-[2rem] text-[12px] md:text-[14px] text-textVariant text-pretty`}>{selectedMediaText}</p>
+                    <p className={`${fonts.poppins.className} w-full h-auto text-center px-[.25rem] md:px-[2rem] text-[12px] md:text-[14px] text-textVariant text-balance`}>{selectedMediaText}</p>
                 </div>
                 <div className="flex flex-row place-self-center justify-center h-[20%] place-items-center w-full gap-[1rem] order-1 md:order-2">
                     <GalleryButtonPrevious/>

@@ -18,7 +18,7 @@ const linkSlippiTVGithub = 'https://github.com/asundheim/SlippiTV';
 
 const SlippiTVMedia: gallery.IGalleryMedia[] = [
     {
-        assetText: "SlippiTV Windows App Screens, coded with .NET Maui framework",
+        assetText: "SlippiTV Windows Application, built with C# and .NET Maui",
         assetMediaLink: imgSlippiTV01,
         assetMediaType: gallery.MediaType.Image,
         assetStillLink: imgSlippiTV01,
@@ -61,7 +61,7 @@ export function ProjectCodeSlippiTV() {
             <div className={`place-self-center self-start place-items-center w-full flex flex-col h-fit md:h-auto gap-0 md:gap-[12px]`}>
                 <GalleryV2InfoWithLinks 
                     projTitle="SlippiTV" 
-                    projSummary="SlippiTV is a Windows Application coded with C# and .NET Maui that builds upon and adds features to a video game emulation software, offering an easy and intuitive design for building a friends list and watch live streams of your friend's games. I was brought into the project within days of the concept's first publication to lead the User Interface Design and respond to user feedback to build an intuitive and simple User Experience that didn't interfere with the products main features. In addition to production assistance with the Windows Application, I was tasked with designing and building a Website for SlippiTV." 
+                    projSummary={`SlippiTV is a Windows Application coded with C# and .NET Maui that builds upon and adds features to a video game emulation software known as Slippi. It offers an easy and intuitive design for building a friends list and watch live streams of your friend's games. I was brought onto the project early in development to lead the User Interface Design and respond to user feedback to build an intuitive and simple User Experience that didn't interfere with the products main features. In addition to production assistance with the Windows Application, I was tasked with designing and building a Website for SlippiTV.`} 
                     outLink1={linkSlippiTVSite} 
                     buttonText1="Slippi.TV" 
                     outLink2={linkSlippiTVGithub} 
