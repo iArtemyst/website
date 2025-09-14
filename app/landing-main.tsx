@@ -29,7 +29,7 @@ function LandingPageText() {
         <div className={`${CheckIfMobileBrowser() ? "flex-inline" : "flex"} absolute w-full h-fit bottom-0 left-[50%] -translate-x-[50%] z-10 p-[36px] sm:p-[48px] md:p-[64px] xl:p-[72px] place-items-center md:place-items-end justify-self-center`}
                 style={NoSelect}>
             <div className={`relative w-fit h-fit flex-inline text-nowrap shrink justify-self-center md:justify-self-start place-items-center md:place-items-start`}>
-                <p className={`${titleSmlTextStyle}`}>Hello, I&apos;m Eevee, and I am a </p>
+                <p className={`${titleSmlTextStyle}`}>Hi! I&apos;m Evelyn Youngblood, </p>
                 <p className={`${titleTextStyle} text-nowrap`}>CREATIVE DESIGNER</p>
             </div>
             

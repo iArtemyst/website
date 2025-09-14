@@ -82,7 +82,7 @@ function BentoBoxB() {
     )
 }
 
-export function FoxsukePage() {
+export function SasukeModelPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <div className="relative grid grid-cols-1 gap-[24px]">

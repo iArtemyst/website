@@ -1,15 +1,15 @@
 import "@/app/globals/globals.css";
 
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
-import { FoxsukePage } from "./foxsuke-proj-pg";
+import { SasukeModelPage } from "./sasukemodel-proj-pg";
 
 const linkGrpMotion = '../grpProjectsMotion';
 
-export default function RenderProjFoxsuke() {
+export default function RenderProjSasukeModel() {
   return (
     <>
         <NavUI />
-        <FoxsukePage />
+        <SasukeModelPage />
         <BackButtonRSticky backLink={linkGrpMotion} buttonText="Back to Motion UI"/>
     </>
   )
