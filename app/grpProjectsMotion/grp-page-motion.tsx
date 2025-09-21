@@ -13,11 +13,13 @@ const vidInstaLoops = "_project-links/prjLink_insta-loops_400px.mp4";
 const vidMedUI = "_project-links/prjLink_med-ui_400px.mp4";
 const vidConsumerMotion = "_project-links/prjLink_mogr-ui_400px.mp4";
 
+
 const linkMedUI = "../projMedUI";
 const linkDDRMelee = "../projDDRMelee";
 const linkInstaLoops = "../projLoopAnim";
 const linkConsumerMotion = "../projConsumerMotion";
 const linkConceptApps = "../projConceptApps";
+
 
 
 const groupCardData: IProjectLinkCard[] = [

@@ -18,7 +18,11 @@ const imgDDRMelee04 = "_motionui/_ddrmelee/ddr-melee_stills_13.png";
 const vidDDRMelee01 = "_motionui/_ddrmelee/ddr-melee-intro_1440px.mp4";
 const vidDDRMelee02 = "_motionui/_ddrmelee/ddr_melee_liveAE_v1.mp4";
 
-const youtubeLink = "https://youtu.be/IljUm6WHTXE?si=hxR6P6yWpDYSHC0l";
+const youtubeLinkDirectorsCut = "https://youtu.be/9VLD13rxklg?si=zpLJPsunRDPg0nF0";
+const youtubeLinkComboVidCut = "https://youtu.be/jUBAnyPrEME?si=1xVMObw4t9Uu1sea";
+
+const ytEmbedLinkDirectorsCut = "https://www.youtube.com/embed/9VLD13rxklg?si=jPAAkzJmku6cvdIo-IXMZTYM&amp;start=1";
+const ytEmbedLinkComboVidCut = "https://www.youtube.com/embed/jUBAnyPrEME?si=YI8Ps4vV5b3r7xfr-IXMZTYM&amp;start=1";
 
 const titleTextSize= "text-[24px]";
 const paraTextSize = "text-[12px]";
@@ -29,10 +33,10 @@ function BentoBoxA() {
         <div className="relative z-10 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
             
             <bentos.CellText cellSpan="col-span-1 w-full">
-                <bentos.HeaderText text="DDR Melee Motion Graphics" textSize={titleTextSize}/>
+                <bentos.HeaderText text="Sasuke SSBM Model (WIP)" textSize={titleTextSize}/>
             </bentos.CellText>
 
-            <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} h-fit gap-[12px] grid`}>
+            {/* <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} h-fit gap-[12px] grid`}>
                 <bentos.CellMediaOnClick mediaLink={vidDDRMelee01} mediaType={MediaType.Video} mediaText="DDR Melee Intro Video" cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`} hoverTextColor="text-textVariant" />
                 <bentos.CellText cellSpan={`col-span-1`}>
                     <bentos.ParagraphText textSize={paraTextSize} text="When my partner came to me with the idea for a Super Smash Bros Melee combo video, I was immediately on board. The idea they had developed was a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
@@ -52,7 +56,7 @@ function BentoBoxA() {
                 <bentos.CellText cellSpan="col-span-1">
                     <bentos.ParagraphText textSize={paraTextSize} text="While he took the helm on programming the functionality of coordinating button presses from controller to on screen assets in time, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM. Each asset (except for the landing screen 3d text) was hand made in After Effects with vectors and shapes, and all scenes were animated and edited in Adobe After Effects" />
                 </bentos.CellText>
-            </div>
+            </div> */}
         </div>
     )
 }
@@ -65,16 +69,16 @@ function BentoBoxB() {
                 {
                     isMobile ?
                         <div className={`${hoverShadow} w-fit h-fit rounded-xl`} style={NoSelect}>
-                            <StyledLink href={youtubeLink}>
+                            <StyledLink href={youtubeLinkDirectorsCut}>
                                 <bentos.CellText cellSpan="col-span-1">
-                                    <bentos.ParagraphText text="View the full video on Youtube!" textSize="text-[10px]" />
+                                    <bentos.ParagraphText text="View the follow up project!" textSize="text-[10px]" />
                                 </bentos.CellText>
                             </StyledLink>
                         </div>
                         :
                         <div className={`justify-self-center rounded-xl overflow-clip w-full h-auto place-items-center`}>
-                            <bentos.ParagraphText text="View the full video on Youtube!" textSize="text-[10px]" />
-                            <iframe width="800" height="600" src={`https://www.youtube.com/embed/IljUm6WHTXE?si=4s3xr9SH-IXMZTYM&amp;start=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                            <bentos.ParagraphText text="View the follow up project!" textSize="text-[10px]" />
+                            <iframe width="800" height="600" src={ytEmbedLinkDirectorsCut} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
                 }
             </div>

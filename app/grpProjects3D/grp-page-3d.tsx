@@ -14,6 +14,7 @@ const vidProcMats = "_project-links/prjLink_procMat_400px.mp4";
 const vidProdAnim = "_project-links/prjLink_productanim_400px.mp4";
 const vidStylizedVFX = "_project-links/prjLink_stylizedvfx_400px.mp4";
 const vidInstaLoops = "_project-links/prjLink_insta-loops_400px.mp4";
+const vidSasukeModel = "_project-links/prjLink_SasukeSSBM_400px.mp4";
 
 const linkHorrorHouse = "../projHorrorHouse";
 const linkStylizedVFX = "../projVFX3D";
@@ -23,6 +24,19 @@ const linkMonsoonVermut = "../projMonsoon";
 const linkProdAnim = "../projProductAnim";
 const linkProcMats = "../projProcMat3D";
 const linkInstaLoops = "../projLoopAnim3D";
+const linkSasukeModel = "../projSasukeModel";
+
+const vidFoxsukeVideo = "_project-links/prjLink_FoxsukeCV_400px.mp4";
+const linkFoxsukeVideo = "../projFoxsukeVideo";
+
+
+const vidProcToonCity = "_project-links/prjLink_islandGen_400px.mp4";
+const vidUtopaea = "_project-links/prjLink_utopaea_400px.mp4";
+const vidHairGenerator = "_project-links/prjLink_hairgen_400px.mp4";
+
+const linkUtopaea = "../projUtopaea";
+const linkProcToonCity = "../projProcIslandCity";
+const linkHairGenerator = "../projHairGenerator";
 
 const groupCardData: IProjectLinkCard[] = [
     {
@@ -80,6 +94,34 @@ const groupCardData: IProjectLinkCard[] = [
         mediaLink: vidProcMats,
         cardLink: linkProcMats,
         errorText: "Blender 3D + Substance Designer",
+    },
+    {
+        projectTitle: "Sasuke SSBM Model",
+        projectDates: "2025",
+        mediaLink: vidSasukeModel,
+        cardLink: linkSasukeModel,
+        errorText: "Blender 3D + Mod Tooling",
+    },
+    {
+        projectTitle: "Foxsuke Shippuden Opening (SSBM)",
+        projectDates: "2025",
+        mediaLink: vidFoxsukeVideo,
+        cardLink: linkFoxsukeVideo,
+        errorText: "Blender 3D + After Effects",
+    },
+    {
+        projectTitle: '"Utopaea" Game Level',
+        projectDates: "2019 & 2024",
+        mediaLink: vidUtopaea,
+        cardLink: linkUtopaea,
+        errorText: "Blender 3D + 3DS Max, Unreal Engine",
+    },
+    {
+        projectTitle: "Island City Generator",
+        projectDates: "2023",
+        mediaLink: vidProcToonCity,
+        cardLink: linkProcToonCity,
+        errorText: "Blender 3D",
     },
 ]
 

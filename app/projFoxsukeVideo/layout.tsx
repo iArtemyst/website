@@ -3,7 +3,7 @@ import React from "react";
 import "@/app/globals/globals.css";
 
 export const metadata: Metadata = {
-  title: "Sasuke SSBM Model",
+  title: "Foxsuke Combo Video",
   description: "Eevee Youngblood Project",
 };
 

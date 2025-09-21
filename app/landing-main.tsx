@@ -9,10 +9,10 @@ import { NoSelect } from "./globals/styles";
 import { useState, useEffect } from "react";
 import Loading from "./globals/loading-text";
 
-const vidBackA = "_landing/grp_card_3d_back.mp4";
-const vidBackB = "_landing/grp_card_code_back.mp4";
+const vidBackA = "_landing/_grp_card_3d_back_new.mp4";
+const vidBackB = "_landing/_grp_card_dev_back_new.mp4";
 const vidBackC = "_landing/grp_card_game_back.mp4";
-const vidBackD = "_landing/grp_card_motion_back.mp4";
+const vidBackD = "_landing/_grp_card_2d_back_new.mp4";
 
 const group3D = './grpProjects3D';
 const groupCode = './grpProjectsCode';
@@ -84,15 +84,15 @@ const cardMedia: IDoubleSideLandingCard[] = [
         rotatedAngle: `rotate-[${(-10) + (Math.floor(Math.random() * 10))}deg]`,
         cardStyle: cardStyle,
     },
-    {
-        cardLink: groupGame,
-        cardTitle: "Game Design and Tech Art",
-        cardDescription: "Description",
-        cardVideoFront: cardGameVideos[Math.floor(Math.random() * (cardGameVideos.length))],
-        cardVideoBack: vidBackC,
-        rotatedAngle: `rotate-[${(-20) + (Math.floor(Math.random() * 20))}deg]`,
-        cardStyle: cardStyle,
-    },
+    // {
+    //     cardLink: groupGame,
+    //     cardTitle: "Game Design and Tech Art",
+    //     cardDescription: "Description",
+    //     cardVideoFront: cardGameVideos[Math.floor(Math.random() * (cardGameVideos.length))],
+    //     cardVideoBack: vidBackC,
+    //     rotatedAngle: `rotate-[${(-20) + (Math.floor(Math.random() * 20))}deg]`,
+    //     cardStyle: cardStyle,
+    // },
     {
         cardLink: groupMotion,
         cardTitle: "Motion Design and UI/UX",

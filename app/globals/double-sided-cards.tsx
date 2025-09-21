@@ -142,13 +142,13 @@ export function LandingCardContainer({dataArray}:{dataArray:IDoubleSideLandingCa
         <div className="">
         {
             isMobile === false ?
-            <div className={`grid-cols-4 absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[90%] h-[70%] items-center`}>
+            <div className={`grid-cols-3 absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center place-items-center grid gap-[240px] h-[70%] items-center`}>
                 {
                     dataArray.map((data, i) => <DoubleSidedLandingCard key={i} card={data} index={i}/>)
                 }
             </div>
             :
-            <div className={`grid-cols-2 gap-[12px] absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[80%] h-[70%] items-center`}>
+            <div className={`grid-cols-3 gap-[12px] absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[80%] h-[70%] items-center`}>
                 {
                     dataArray.map((data, i) => <MobileDoubleSidedCardWithLink key={i} card={data} index={i}/>)
                 }

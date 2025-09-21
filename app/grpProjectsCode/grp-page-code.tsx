@@ -19,6 +19,15 @@ const linkSlippiTV = '../projSlippiTV';
 const linkResume2 = 'https://github.com/iArtemyst/resume';
 const linkBingo2 = 'https://github.com/iArtemyst/_bingo-board';
 
+
+const vidProcToonCity = "_project-links/prjLink_islandGen_400px.mp4";
+const vidUtopaea = "_project-links/prjLink_utopaea_400px.mp4";
+const vidHairGenerator = "_project-links/prjLink_hairgen_400px.mp4";
+
+const linkUtopaea = "../projUtopaea";
+const linkProcToonCity = "../projProcIslandCity";
+const linkHairGenerator = "../projHairGenerator";
+
 const groupCardData: IProjectLinkCard[] = [
     {
         projectTitle: "Bingo Board Website",
@@ -40,6 +49,13 @@ const groupCardData: IProjectLinkCard[] = [
         mediaLink: imgSlippiTV,
         cardLink: linkSlippiTV,
         errorText: ".NET Maui + HTML",
+    },
+    {
+        projectTitle: "Stubble Hair Generator",
+        projectDates: "2024",
+        mediaLink: vidHairGenerator,
+        cardLink: linkHairGenerator,
+        errorText: "Substance Designer",
     },
 ]
 
