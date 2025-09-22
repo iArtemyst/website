@@ -10,13 +10,23 @@ import StyledLink from "../globals/styled-link";
 import { NoSelect } from "../globals/styles";
 import { hoverShadow } from "@/tailwind.config";
 
-const imgDDRMelee01 = "_motionui/_ddrmelee/ddr-melee_stills_10.png";
-const imgDDRMelee02 = "_motionui/_ddrmelee/ddr-melee_stills_11.png";
-const imgDDRMelee03 = "_motionui/_ddrmelee/ddr-melee_stills_12.png";
-const imgDDRMelee04 = "_motionui/_ddrmelee/ddr-melee_stills_13.png";
-
-const vidDDRMelee01 = "_motionui/_ddrmelee/ddr-melee-intro_1440px.mp4";
-const vidDDRMelee02 = "_motionui/_ddrmelee/ddr_melee_liveAE_v1.mp4";
+const mediaFxskVid01 = "_3d/fxsk-comboVid/cv_character-turnarounds.mp4";
+const mediaFxskVid02 = "_3d/fxsk-comboVid/cv_foxsuke-fullIntro_still.png";
+const mediaFxskVid03 = "_3d/fxsk-comboVid/cv_shipIntro_clip001";
+const mediaFxskVid04 = "_3d/fxsk-comboVid/cv_shipIntro_clip002";
+const mediaFxskVid05 = "_3d/fxsk-comboVid/cv_shipIntro_clip003";
+const mediaFxskVid06 = "_3d/fxsk-comboVid/cv_shipIntro_clip004";
+const mediaFxskVid07 = "_3d/fxsk-comboVid/cv_shipIntro_clip005";
+const mediaFxskVid08 = "_3d/fxsk-comboVid/cv_wip_arenaBuild_still.png";
+const mediaFxskVid09 = "_3d/fxsk-comboVid/cv_arena-build-collat_001.mp4";
+const mediaFxskVid10 = "_3d/fxsk-comboVid/cv_character-turnarounds.mp4";
+const mediaFxskVid11 = "_3d/fxsk-comboVid/cv_wip_charColor_still.png";
+const mediaFxskVid12 = "_3d/fxsk-comboVid/cv_wip-face-rigs.mp4";
+const mediaFxskVid13 = "_3d/fxsk-comboVid/cv_sakura-eye_collat.mp4";
+const mediaFxskVid14 = "_3d/fxsk-comboVid/cv_wip_lighting_still.png";
+const mediaFxskVid15 = "_3d/fxsk-comboVid/cv_wip_keyframes_still.png";
+const mediaFxskVid16 = "_3d/fxsk-comboVid/cv_wip_audioEditing_still.png";
+const mediaFxskVid17 = "_3d/fxsk-comboVid/cv_comboVid_stills.png";
 
 const youtubeLinkDirectorsCut = "https://youtu.be/9VLD13rxklg?si=zpLJPsunRDPg0nF0";
 const youtubeLinkComboVidCut = "https://youtu.be/jUBAnyPrEME?si=1xVMObw4t9Uu1sea";
