@@ -15,9 +15,9 @@ const vidBackC = "_landing/grp_card_game_back.mp4";
 const vidBackD = "_landing/_grp_card_2d_back_new.mp4";
 
 const group3D = './grpProjects3D';
-const groupCode = './grpProjectsCode';
+const groupCode = './grpProjectsDev';
 const groupGame = './grpProjectsGame';
-const groupMotion = './grpProjectsMotion';
+const groupMotion = './grpProjects2D';
 
 const cardStyle = "w-[120px] md:w-[240px] lg:w-[275px] xl:w-[320px] 2xl:w-[360px] group-hover:w-[200px] md:group-hover:w-[320px] lg:group-hover:w-[400px] xl:group-hover:w-[440px] 2xl:group-hover:w-[540px] group-hover:m-[-20px] md:group-hover:m-[-40px] 2xl:group-hover:m-[-60px]";
 const paraTextStyle = `${fonts.dotoBlack.className} text-balance text-[7px] sm:text-[10px] md:text-[12px] lg:text-[14px] 2xl:text-[16px]`;

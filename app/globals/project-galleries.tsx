@@ -58,6 +58,17 @@ export function ProjectDetailRelativeText({TitleText="", MoreText=""}: {TitleTex
     )
 }
 
+export function ProjectDetailRelativeTextNDA({TitleText="", MoreText="", NDAText=""}: {TitleText: string, MoreText: string, NDAText:string}) {
+    let isMobile = CheckIfMobileBrowser();
+    return (
+        <div className={`${isMobile ? "mb-[4px]" : "mb-[24px]"} ${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px]  flex-grow-0 bg-bgColor`}>
+            <p className={`text-[12px] sm:text-[32px] lg:text-[48px] xl:text-[56px] 2xl:text-[72px] ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
+            <p className={`text-[6px] sm:text-[12px] lg:text-[14px] xl:text-[16px] ${fonts.dotoBlack.className} ${projectTextPadding} text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
+            <p className={`text-[4px] sm:text-[8px] lg:text-[10px] xl:text-[12px] ${fonts.dotoBlack.className} ${projectTextPadding} text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-center`}>{NDAText}</p>
+        </div>
+    )
+}
+
 // PROJECT DETAIL CARDS (THE ONES THAT APPEAR FIRST ON SCREEN, AND HOLD THE GALLERY WITHIN THEMSELVES)
 
 function ProjDetailMediaCard({mediaSrc, mediaText, mediaType,}: {mediaSrc: string, mediaType: MediaType, mediaText: string,}) {
@@ -87,6 +98,16 @@ function ProjectDetailHoverText({card}: {card: ICardWithGalleryArrays}) {
         <div className={`group-hover:-translate-y-[1.5em] absolute left-0 top-0 w-full h-auto px-[16px] opacity-0 group-hover:opacity-100 -z-10 transition-all duration-300 `}>
             <p className={`${fonts.dotoBlack.className} ${hoverTextSize} text-priColor`}>
                 {card.cardData.cardText}
+            </p>
+        </div>
+    )
+}
+
+function ProjectErrorHoverText({errorText}: {errorText:string}) {
+    return (
+        <div className={`group-hover:translate-y-[1.5em] absolute left-0 bottom-0 w-full h-auto px-[16px] opacity-0 group-hover:opacity-100 -z-10 transition-all duration-300 `}>
+            <p className={`${fonts.dotoBlack.className} ${hoverTextSize} text-priColor`}>
+                {errorText}
             </p>
         </div>
     )

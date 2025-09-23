@@ -9,91 +9,144 @@ import { CheckIfMobileBrowser } from "../globals/mobile-check";
 import StyledLink from "../globals/styled-link";
 import { NoSelect } from "../globals/styles";
 import { hoverShadow } from "@/tailwind.config";
+import { GalleryV2b } from "../globals/gallery-v2";
+import * as gallery from "@/app/globals/project-galleries";
+import { ViewAnotherProjectCard, ViewAnotherProjectDiv } from "../globals/view-another-project";
 
-const mediaFxskVid01 = "_3d/fxsk-comboVid/cv_character-turnarounds.mp4";
-const mediaFxskVid02 = "_3d/fxsk-comboVid/cv_foxsuke-fullIntro_still.png";
-const mediaFxskVid03 = "_3d/fxsk-comboVid/cv_shipIntro_clip001";
-const mediaFxskVid04 = "_3d/fxsk-comboVid/cv_shipIntro_clip002";
-const mediaFxskVid05 = "_3d/fxsk-comboVid/cv_shipIntro_clip003";
-const mediaFxskVid06 = "_3d/fxsk-comboVid/cv_shipIntro_clip004";
-const mediaFxskVid07 = "_3d/fxsk-comboVid/cv_shipIntro_clip005";
-const mediaFxskVid08 = "_3d/fxsk-comboVid/cv_wip_arenaBuild_still.png";
-const mediaFxskVid09 = "_3d/fxsk-comboVid/cv_arena-build-collat_001.mp4";
-const mediaFxskVid10 = "_3d/fxsk-comboVid/cv_character-turnarounds.mp4";
-const mediaFxskVid11 = "_3d/fxsk-comboVid/cv_wip_charColor_still.png";
-const mediaFxskVid12 = "_3d/fxsk-comboVid/cv_wip-face-rigs.mp4";
-const mediaFxskVid13 = "_3d/fxsk-comboVid/cv_sakura-eye_collat.mp4";
-const mediaFxskVid14 = "_3d/fxsk-comboVid/cv_wip_lighting_still.png";
-const mediaFxskVid15 = "_3d/fxsk-comboVid/cv_wip_keyframes_still.png";
-const mediaFxskVid16 = "_3d/fxsk-comboVid/cv_wip_audioEditing_still.png";
-const mediaFxskVid17 = "_3d/fxsk-comboVid/cv_comboVid_stills.png";
+const mediaFxskVid01 = "_3d/_fxsk-comboVid/cv_character-turnarounds.mp4";
+const mediaFxskVid02 = "_3d/_fxsk-comboVid/cv_foxsuke_fullIntro_still.png";
+const mediaFxskVid03 = "_3d/_fxsk-comboVid/cv_shipIntro_clip001.mp4";
+const mediaFxskVid04 = "_3d/_fxsk-comboVid/cv_shipIntro_clip002.mp4";
+const mediaFxskVid05 = "_3d/_fxsk-comboVid/cv_shipIntro_clip003.mp4";
+const mediaFxskVid06 = "_3d/_fxsk-comboVid/cv_shipIntro_clip004.mp4";
+const mediaFxskVid07 = "_3d/_fxsk-comboVid/cv_shipIntro_clip005.mp4";
+const mediaFxskVid08 = "_3d/_fxsk-comboVid/cv_wip_arenaBuild_still.png";
+const mediaFxskVid09 = "_3d/_fxsk-comboVid/cv_arena-build-collat_001.mp4";
+const mediaFxskVid11 = "_3d/_fxsk-comboVid/cv_wip_charColor_still.png";
+const mediaFxskVid12 = "_3d/_fxsk-comboVid/cv_wip-face-rigs.mp4";
+const mediaFxskVid13 = "_3d/_fxsk-comboVid/cv_sakura-eye_collat.mp4";
+const mediaFxskVid14 = "_3d/_fxsk-comboVid/cv_wip_lighting_still.png";
+const mediaFxskVid15 = "_3d/_fxsk-comboVid/cv_wip_keyframes_still.png";
+const mediaFxskVid16 = "_3d/_fxsk-comboVid/cv_wip_audioEditing_still.png";
+const mediaFxskVid17 = "_3d/_fxsk-comboVid/cv_comboVid_stills.png";
 
-const youtubeLinkDirectorsCut = "https://youtu.be/9VLD13rxklg?si=zpLJPsunRDPg0nF0";
-const youtubeLinkComboVidCut = "https://youtu.be/jUBAnyPrEME?si=1xVMObw4t9Uu1sea";
 
 const ytEmbedLinkDirectorsCut = "https://www.youtube.com/embed/9VLD13rxklg?si=jPAAkzJmku6cvdIo-IXMZTYM&amp;start=1";
 const ytEmbedLinkComboVidCut = "https://www.youtube.com/embed/jUBAnyPrEME?si=YI8Ps4vV5b3r7xfr-IXMZTYM&amp;start=1";
 
+const otherProjectLinkMedia = "_3d/_fxsk-model/fxsk_model-in-game.png";
+const linkFoxsukeComboVideo = "../projSasukeModel";
+
 const titleTextSize= "text-[24px]";
 const paraTextSize = "text-[12px]";
 
+const FoxsukeComboVidMedia: gallery.IGalleryMedia[] = [
+    {
+        assetText: "Sakura catches up to Sai in the arena",
+        assetMediaLink: mediaFxskVid07,
+        assetMediaType: gallery.MediaType.Video,
+        assetStillLink: "",
+    },
+    {
+        assetText: "Naruto enters the arena",
+        assetMediaLink: mediaFxskVid06,
+        assetMediaType: gallery.MediaType.Video,
+        assetStillLink: "",
+    },
+    {
+        assetText: "Sasuke's reveal",
+        assetMediaLink: mediaFxskVid03,
+        assetMediaType: gallery.MediaType.Video,
+        assetStillLink: "",
+    },
+    {
+        assetText: "Naruto questions Sasuke's reasoning",
+        assetMediaLink: mediaFxskVid04,
+        assetMediaType: gallery.MediaType.Video,
+        assetStillLink: "",
+    },
+    {
+        assetText: "Sasuke descends upon Naruto",
+        assetMediaLink: mediaFxskVid05,
+        assetMediaType: gallery.MediaType.Video,
+        assetStillLink: "",
+    },
+]
+
+
 function BentoBoxA() {
-    let isMobile = CheckIfMobileBrowser();
     return (
-        <div className="relative z-10 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
-            
+        <div className="relative z-0 w-full h-auto justify-self-center flex flex-col gap-[12px] rounded-3xl place-content-center text-white hover:cursor-pointer">
             <bentos.CellText cellSpan="col-span-1 w-full">
-                <bentos.HeaderText text="Foxsuke Shippuden Opening (SSBM Version) (WIP)" textSize={titleTextSize}/>
+                <bentos.HeaderText text="Foxsuke SSBM Combo Video and Shippuden Opening" textSize={titleTextSize}/>
             </bentos.CellText>
-
-            {/* <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} h-fit gap-[12px] grid`}>
-                <bentos.CellMediaOnClick mediaLink={vidDDRMelee01} mediaType={MediaType.Video} mediaText="DDR Melee Intro Video" cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`} hoverTextColor="text-textVariant" />
-                <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={paraTextSize} text="When my partner came to me with the idea for a Super Smash Bros Melee combo video, I was immediately on board. The idea they had developed was a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
-                </bentos.CellText>
+            <div className="col-span-1 w-full">
+                <div className="w-full justify-center flex">
+                    <iframe className="w-[90%] max-w-[1280px] h-[320px] sm:h-[480px] md:h-[540px] lg:h-[720px] rounded-xl" src={ytEmbedLinkDirectorsCut} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                </div>
             </div>
-
-            <div className={`${isMobile ? "grid-cols-2" : "grid-cols-4"} grid h-fit gap-[12px] hover:z-20`}>
-                <bentos.CellMediaOnClick mediaText="AE Select Game Screen" mediaLink={imgDDRMelee01} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                <bentos.CellMediaOnClick mediaText="AE Select Song Screen" mediaLink={imgDDRMelee02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                <bentos.CellMediaOnClick mediaText="AE Stage Clear Screen" mediaLink={imgDDRMelee03} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                <bentos.CellMediaOnClick mediaText="AE Stage Clear Screen" mediaLink={imgDDRMelee04} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-            </div>
-
-            <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} w-full justify-self-center grid  gap-[12px] hover:z-20`}>
-                <bentos.CellMediaOnClick mediaLink={vidDDRMelee02} mediaType={MediaType.Video} mediaText="DDR Melee Outro Video" cellSpan="col-span-2"  hoverTextColor="text-textVariant"/>
-
-                <bentos.CellText cellSpan="col-span-1">
-                    <bentos.ParagraphText textSize={paraTextSize} text="While he took the helm on programming the functionality of coordinating button presses from controller to on screen assets in time, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM. Each asset (except for the landing screen 3d text) was hand made in After Effects with vectors and shapes, and all scenes were animated and edited in Adobe After Effects" />
-                </bentos.CellText>
-            </div> */}
         </div>
     )
 }
 
+
 function BentoBoxB() {
-    let isMobile = CheckIfMobileBrowser();
     return (
-        <div className="relative z-0 flex w-[70%] h-auto justify-self-center grid-cols-1 gap-[12px] rounded-3xl place-content-center text-white hover:cursor-pointer">
-            <div className="">
-                {
-                    isMobile ?
-                        <div className={`${hoverShadow} w-fit h-fit rounded-xl`} style={NoSelect}>
-                            <StyledLink href={youtubeLinkComboVidCut}>
-                                <bentos.CellText cellSpan="col-span-1">
-                                    <bentos.ParagraphText text="View the full video on Youtube!" textSize="text-[10px]" />
-                                </bentos.CellText>
-                            </StyledLink>
-                        </div>
-                        :
-                        <div className={`justify-self-center rounded-xl overflow-clip w-full h-auto place-items-center`}>
-                            <bentos.ParagraphText text="View the full videos on Youtube!" textSize="text-[10px]" />
-                            <div className="w-full justify-center flex flex-row gap-[12px]">
-                                <iframe width="400" height="300" src={ytEmbedLinkDirectorsCut} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                                <iframe width="400" height="300" src={ytEmbedLinkComboVidCut} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                            </div>
-                        </div>
-                }
+        <div className="relative z-10 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
+
+            <bentos.CellMediaOnClickNoShadow mediaText="Featuring SSBM Characters as the Naruto Cast" mediaLink={mediaFxskVid01} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant" />
+
+            <div className="col-span-1 h-fit">
+                <bentos.CellText cellSpan="col-span-1">
+                    <bentos.HeaderText text="| some clips from the video |" textSize="text-[24px]"/>
+                </bentos.CellText>
+                <GalleryV2b mediaGallery={FoxsukeComboVidMedia} />
+            </div>
+
+            <bentos.CellMediaOnClickNoShadow mediaText="Still frames from the animation" mediaLink={mediaFxskVid02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+
+            <bentos.CellText cellSpan={`col-span-1`}>
+                <bentos.ParagraphText textSize={paraTextSize} 
+                    text="Every character needed at least one change, but the main characters needed a lot more. The game engine rigs were sturdy, but lacking some of the finesse I needed to capture with my animation. So in addition to creating new colors and updated textures for the chracters, I also built additional character rig support for facial and hair features." />
+            </bentos.CellText>
+
+            <bentos.CellMediaOnClickNoShadow mediaText="Character model texture updates" mediaLink={mediaFxskVid11} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="Custom face and eye rigs for Falco and Sasuke" mediaLink={mediaFxskVid12} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="Custom animated eye maps for Sheik" mediaLink={mediaFxskVid13} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="WIP Detail: Creating the environment" mediaLink={mediaFxskVid08} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+
+            <div className="col-span-1 grid grid-cols-3">
+                <bentos.CellText cellSpan={`col-span-1`}>
+                    <bentos.ParagraphText textSize={paraTextSize} 
+                        text="After making the necessary character adjustments, I set to work modeling and texturing the environment for the animation. To improve my efficiency and realism, I used techniques like physics simulations, procedural texture mapping, and digital sculpting to craft the environment." />
+                </bentos.CellText>
+                <bentos.CellMediaOnClickNoShadow mediaText="Some of the final environment assets" mediaLink={mediaFxskVid09} mediaType={MediaType.Video} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
+            </div>
+
+            <bentos.CellMediaOnClickNoShadow mediaText="Designing and testing the scene lighting" mediaLink={mediaFxskVid14} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="Animating all the characters and scene elements" mediaLink={mediaFxskVid15} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellText cellSpan={`col-span-1`}>
+                <bentos.ParagraphText textSize={paraTextSize} 
+                    text="Final rendering, compositing, and editing were up to me as well. I utilized Adobe After Effects to cut and edit together my rendered frames, and spliced the original audio from the Anime together with an edited version of the backing music to match the new timings of my scene." />
+            </bentos.CellText>
+            <bentos.CellMediaOnClickNoShadow mediaText="Video and Audio editing for music, sfx, and final animation" mediaLink={mediaFxskVid16} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="Additional editing and visual fx for SSBM Combo Video" mediaLink={mediaFxskVid17} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+        </div>
+    )
+}
+
+
+function BentoBoxC() {
+    return (
+        <div className="relative z-0 w-[80%] h-[240px] sm:h-[360px] md:h-[480px] xl:h-[640px] 2xl:[960px] justify-self-center flex flex-col gap-[12px] place-content-center text-white hover:cursor-pointer">
+            <div className={`justify-self-center rounded-xl overflow-clip w-full h-full place-items-center grid grid-cols-3`}>
+                <div className="w-full h-full justify-items-center gap-[12px] col-span-2 place-content-center">
+                    <iframe className="w-full h-full rounded-[1em]" src={ytEmbedLinkComboVidCut} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                </div>
+                <bentos.CellText cellSpan={`col-span-1`}>
+                    <bentos.ParagraphText textSize={paraTextSize} 
+                    text={`This project started as a request to build an intro for a Super Smash Bros. Melee Combo video, featuring the new "Foxsuke" 3D Model in place of Fox. It developed into a full 3D recreation of the Naruto Shippuden Opening. While the opening would have to be cut down for the clients video edit, I was asked to continue developing the full scene animation in 3D as a second version. Over the course of a couple months, I worked on this animation project solo, delivering updates and implementing feedback from my Client.`} />
+                </bentos.CellText>
             </div>
         </div>
     )
@@ -104,7 +157,19 @@ export function FoxsukeVideoPage() {
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <div className="relative grid grid-cols-1 gap-[24px]">
                 <BentoBoxA />
+                <BentoBoxC />
                 <BentoBoxB />
+
+                <ViewAnotherProjectDiv text="Check out this related project!">
+                    <ViewAnotherProjectCard 
+                        projTitle="Custom 3D Sasuke Model" 
+                        projDesc={`Original Character Model mod for Fox in the game Super Smash Bros. Melee. Created and rigged with Blender 3D, and modded to a custom version of SSBM.`}
+                        projMedia={otherProjectLinkMedia}
+                        projMediaAltText="alt text" 
+                        projLink={linkFoxsukeComboVideo}
+                        projLinkMediaType={MediaType.Image}
+                        cardColor={`bg-[#AACCFF]`}/>
+                </ViewAnotherProjectDiv>
             </div>
         </pages.GroupProjectPage>
     )

@@ -9,6 +9,9 @@ import { CheckIfMobileBrowser } from "../globals/mobile-check";
 import StyledLink from "../globals/styled-link";
 import { NoSelect } from "../globals/styles";
 import { hoverShadow } from "@/tailwind.config";
+import { LazyImageSizer } from "../globals/lazy-image";
+import * as fonts from "@/app/globals/fonts";
+import { ViewAnotherProjectCard, ViewAnotherProjectDiv } from "@/app/globals/view-another-project";
 
 const mediaFoxsukeModel01 = "_3d/_fxsk-model/fxsk_media_hero.mp4";
 const mediaFoxsukeModel02 = "_3d/_fxsk-model/fxsk_sasuke-ref-img-001.png";
@@ -23,14 +26,17 @@ const mediaFoxsukeModel10 = "_3d/_fxsk-model/fxsk_wip_001.png";
 const mediaFoxsukeModel11 = "_3d/_fxsk-model/fxsk_wip_002.png";
 const mediaFoxsukeModel12 = "_3d/_fxsk-model/fxsk_wip_003.png";
 
-const youtubeLinkDirectorsCut = "https://youtu.be/9VLD13rxklg?si=zpLJPsunRDPg0nF0";
-const youtubeLinkComboVidCut = "https://youtu.be/jUBAnyPrEME?si=1xVMObw4t9Uu1sea";
+const otherProjectLinkMedia = "_3d/_fxsk-comboVid/cv_comboVid_stills.png";
+const linkFoxsukeComboVideo = "../projFoxsukeVideo";
 
-const ytEmbedLinkDirectorsCut = "https://www.youtube.com/embed/9VLD13rxklg?si=jPAAkzJmku6cvdIo-IXMZTYM&amp;start=1";
-const ytEmbedLinkComboVidCut = "https://www.youtube.com/embed/jUBAnyPrEME?si=YI8Ps4vV5b3r7xfr-IXMZTYM&amp;start=1";
+const titleTextSize= "text-[18px] md:text-[24px] lg:text-[32px]";
+const paraTextSize = "text-[12px] md:text-[14px] lg:text-[14px]";
+const sasukeRefImgSizeL = `w-auto h-[360px] absolute left-0 self-center`;
+const sasukeRefImgSizeR = `w-auto h-[360px] absolute right-0 self-center`;
+const sasukeRefImgSizeMobileL = `w-auto h-[180px] absolute left-0 self-center`;
+const sasukeRefImgSizeMobileR = `w-auto h-[180px] absolute right-0 self-center`;
 
-const titleTextSize= "text-[24px]";
-const paraTextSize = "text-[12px]";
+const projectDescriptionText = `When first approached by this client, they had a very clear goal, make a custom 3D model to replace the current character model they play Super Smash Bros. Melee with, Fox. This character model needed to be responsive, and not delay or disturb the player as they performed actions, and it needed to achieve a visual style that merged well within the existing game environment, and blended the Anime style from the show. I worked directly with the client over several weeks to perform quality tests, and check for performance issues, as well as develop the look and style of the model before reaching a version that accomplished everything the client asked for.`;
 
 function BentoBoxA() {
     let isMobile = CheckIfMobileBrowser();
@@ -38,53 +44,60 @@ function BentoBoxA() {
         <div className="relative z-10 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
             
             <bentos.CellText cellSpan="col-span-1 w-full">
-                <bentos.HeaderText text="Sasuke SSBM Model (WIP)" textSize={titleTextSize}/>
+                <bentos.HeaderText text={`"Foxsuke" SSBM Model`} textSize={titleTextSize}/>
             </bentos.CellText>
 
-            <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} h-fit gap-[12px] grid`}>
-                <bentos.CellMediaOnClick mediaLink={mediaFoxsukeModel01} mediaType={MediaType.Video} mediaText="DDR Melee Intro Video" cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`} hoverTextColor="text-textVariant" />
+            <bentos.CellMediaOnClick mediaText="Custom Sasuke 3D Model" mediaLink={mediaFoxsukeModel01} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant" />
+
+            {
+                isMobile === false ?
+                    <div className={`relative w-[70%] max-w-[1080px] h-[360px] grid grid-cols-1 justify-between justify-self-center place-items-center hover:cursor-default`}>
+                        <LazyImageSizer imgAlt="ref" imgLink={mediaFoxsukeModel02} imgSize={sasukeRefImgSizeL} />
+                        <div className="w-[70%] h-fit items-center col-span-1 self-center flex flex-col text-pretty z-10 drop-shadow-lg text-center">
+                            <p className={`${fonts.dotoBlack.className} ${titleTextSize}`}>MAKING SASUKE UCHIHA</p>
+                            <p className={`${fonts.dotoBlack.className} ${paraTextSize}`}>{projectDescriptionText}</p>
+                        </div>
+                        <LazyImageSizer imgAlt="ref2" imgLink={mediaFoxsukeModel03} imgSize={sasukeRefImgSizeR} />
+                    </div>
+
+                    :
+
+                    <div className={`w-[90%] h-[320px] grid grid-cols-1 justify-between justify-self-center place-items-center hover:cursor-default`}>
+                        <LazyImageSizer imgAlt="ref" imgLink={mediaFoxsukeModel02} imgSize={sasukeRefImgSizeMobileL} />
+                        <div className="w-[70%] h-fit items-center self-center flex flex-col text-pretty z-10 drop-shadow-lg text-center">
+                            <p className={`${fonts.dotoBlack.className} ${titleTextSize}`}>MAKING SASUKE UCHIHA</p>
+                            <p className={`${fonts.dotoBlack.className} ${paraTextSize}`}>{projectDescriptionText}</p>
+                        </div>
+                        <LazyImageSizer imgAlt="ref2" imgLink={mediaFoxsukeModel03} imgSize={sasukeRefImgSizeMobileR} />
+                    </div>
+            }
+
+            <bentos.CellMediaOnClickNoShadow mediaText="Foxsuke Model Progression" mediaLink={mediaFoxsukeModel04} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="Final Foxsuke 3D Model" mediaLink={mediaFoxsukeModel05} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="Final Foxsuke Model Details" mediaLink={mediaFoxsukeModel06} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+
+            <div className="col-span-1 grid grid-cols-3">
+                <bentos.CellMediaOnClickNoShadow mediaText="Fox and Sasuke Low Poly Comparison" mediaLink={mediaFoxsukeModel07} mediaType={MediaType.Video} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={paraTextSize} text="When my partner came to me with the idea for a Super Smash Bros Melee combo video, I was immediately on board. The idea they had developed was a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
+                    <bentos.ParagraphText textSize={paraTextSize} 
+                        text={`This game ready 3D model took many variations and tests to nail down. After finalizing the character rigging, I discovered a Low Poly model is required for calculating certain in game information like shadows, and used in the off screen visual bubble. And after fixing that, I had to figure out the backface culling for a toon style outline.`} />
                 </bentos.CellText>
             </div>
 
-                <bentos.CellMediaOnClick mediaText="AE Select Game Screen" mediaLink={mediaFoxsukeModel04} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                <bentos.CellMediaOnClick mediaText="AE Select Song Screen" mediaLink={mediaFoxsukeModel05} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                <bentos.CellMediaOnClick mediaText="AE Stage Clear Screen" mediaLink={mediaFoxsukeModel06} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                <bentos.CellMediaOnClick mediaText="AE Stage Clear Screen" mediaLink={mediaFoxsukeModel07} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
-            <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} w-full justify-self-center grid  gap-[12px] hover:z-20`}>
-                <bentos.CellMediaOnClick mediaLink={mediaFoxsukeModel08} mediaType={MediaType.Image} mediaText="DDR Melee Outro Video" cellSpan="col-span-2"  hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="Sasuke Model in Game" mediaLink={mediaFoxsukeModel08} mediaType={MediaType.Image} cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
 
-                <bentos.CellText cellSpan="col-span-1">
-                    <bentos.ParagraphText textSize={paraTextSize} text="While he took the helm on programming the functionality of coordinating button presses from controller to on screen assets in time, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM. Each asset (except for the landing screen 3d text) was hand made in After Effects with vectors and shapes, and all scenes were animated and edited in Adobe After Effects" />
+            <div className="col-span-1 grid grid-cols-3">
+                <bentos.CellText cellSpan={`col-span-1`}>
+                    <bentos.ParagraphText textSize={paraTextSize} 
+                        text={`In addition to the modded 3D model, I also designed a matching Stock Icon that displays above the character information during game. The game engine requires that this image be only 24x24px, so the challenge was to create a recognizable small pixel version of the Sasuke 3D model I had been creating.`} />
                 </bentos.CellText>
+                <bentos.CellMediaOnClickNoShadow mediaText="Custom Sasuke Stock Icon" mediaLink={mediaFoxsukeModel09} mediaType={MediaType.Image} cellSpan="col-span-2"  hoverTextColor="text-textVariant"/>
             </div>
-        </div>
-    )
-}
-
-function BentoBoxB() {
-    let isMobile = CheckIfMobileBrowser();
-    return (
-        <div className="relative z-0 flex w-[70%] h-auto justify-self-center grid-cols-1 gap-[12px] rounded-3xl place-content-center text-white hover:cursor-pointer">
-            <div className="">
-                {
-                    isMobile ?
-                        <div className={`${hoverShadow} w-fit h-fit rounded-xl`} style={NoSelect}>
-                            <StyledLink href={youtubeLinkDirectorsCut}>
-                                <bentos.CellText cellSpan="col-span-1">
-                                    <bentos.ParagraphText text="View the follow up project!" textSize="text-[10px]" />
-                                </bentos.CellText>
-                            </StyledLink>
-                        </div>
-                        :
-                        <div className={`justify-self-center rounded-xl overflow-clip w-full h-auto place-items-center`}>
-                            <bentos.ParagraphText text="View the follow up project!" textSize="text-[10px]" />
-                            <iframe width="800" height="600" src={ytEmbedLinkDirectorsCut} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                        </div>
-                }
-            </div>
+            
+            <bentos.CellMediaOnClickNoShadow mediaText="WIP Details: Modeling Sasuke" mediaLink={mediaFoxsukeModel10} mediaType={MediaType.Image} cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="WIP Details: Modifying UVs" mediaLink={mediaFoxsukeModel11} mediaType={MediaType.Image} cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClickNoShadow mediaText="WIP Details: Weight Painting and Rigging" mediaLink={mediaFoxsukeModel12} mediaType={MediaType.Image} cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
         </div>
     )
 }
@@ -92,10 +105,17 @@ function BentoBoxB() {
 export function SasukeModelPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <div className="relative grid grid-cols-1 gap-[24px]">
                 <BentoBoxA />
-                <BentoBoxB />
-            </div>
+                <ViewAnotherProjectDiv text="Check out this related project!">
+                    <ViewAnotherProjectCard
+                        projTitle="Foxsuke Combo Video" 
+                        projDesc={`3D Animation of the Naruto Shippuden Opening, recreated with characters from Super Smash Bros Melee, including a custom Fox "Sasuke" 3D model. With additional motion graphics, video, and audio editing for a full SSBM Combo Video.`}
+                        projMedia={otherProjectLinkMedia}
+                        projMediaAltText="alt text" 
+                        projLink={linkFoxsukeComboVideo}
+                        projLinkMediaType={MediaType.Image}
+                        cardColor={`bg-[#FFCCAA]`}/>
+                </ViewAnotherProjectDiv>
         </pages.GroupProjectPage>
     )
 }

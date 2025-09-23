@@ -18,7 +18,7 @@ const vidSasukeModel = "_project-links/prjLink_SasukeSSBM_400px.mp4";
 
 const linkHorrorHouse = "../projHorrorHouse";
 const linkStylizedVFX = "../projVFX3D";
-const linkDartPub = "../projDartPub3D";
+const linkDartPub = "../projDartPub";
 const linkMedAnim = "../projMedicalAnim";
 const linkMonsoonVermut = "../projMonsoon";
 const linkProdAnim = "../projProductAnim";

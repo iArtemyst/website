@@ -11,7 +11,7 @@ import { CardHoverFX } from "./card-hover-fx";
 import { LazyImage2 } from "./lazy-image";
 
 const bentoRounding = "rounded-[12px] sm:rounded-[16px] md:rounded-[24px]";
-const galleryButtonStyle = "w-[72px] h-[36px] md:w-[96px] md:h-[48px] flex justify-center place-content-center rounded-[8px] hover:cursor-pointer bg-cardBGColor";
+const galleryButtonStyle = "w-[72px] h-[36px] md:w-[96px] md:h-[48px] flex justify-center place-content-center rounded-[8px] hover:cursor-pointer bg-[#343434] hover:bg-[#565656] hover:scale-[95%]";
 
 
 //----------------------------------------------------------------------------------
@@ -182,6 +182,73 @@ export function GalleryV2({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
 
     return (
         <div className="flex flex-col md:flex-row px-[24px] justify-self-center relative w-[95%] max-w-[1440px] min-h-[360px] h-full justify-center gap-[0px] md:gap-[24px]">
+            <MainMediaCentered />
+            <GalleryV2DetailDiv selectedMediaText={mediaGallery[selectedIndex].assetText}/>
+        </div>
+    )
+}
+
+
+export function GalleryV2b({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
+    let [selectedIndex, setSelectedIndex] = useState(0);
+
+    function MainMediaCentered() {
+        return (
+            <div className={`place-content-center place-self-center w-fit h-fit md:h-full`}>
+                <CardHoverFX bufferZone={100} rotateAmount={120}>
+                    <div className={`${bentoRounding} group relative w-fit h-fit min-w-[240px] min-h-[120px] max-w-[1280px] max-h-[840px] min justify-self-center overflow-hidden 
+                                        self-center transition-all duration-200 z-auto shadow-[0px_0px_12px_#FFFFFF10] hover:shadow-[0px_0px_3px_#FFFFFF10]`} >
+                    {
+                        mediaGallery[selectedIndex].assetMediaType === MediaType.Video ?
+                            <LazyNonHoverVideo 
+                                    src={mediaGallery[selectedIndex].assetMediaLink}
+                                    autoplay={true}
+                                    controls={true}
+                                    muted={true}
+                                    loop={true}
+                                    />
+                        :
+                            <LazyImage2 imgLink={mediaGallery[selectedIndex].assetMediaLink} imgAlt={mediaGallery[selectedIndex].assetText}/>
+                        }
+                    </div>
+                </CardHoverFX>
+            </div>
+        )
+    }
+
+
+    function GalleryV2DetailDiv({selectedMediaText}:{selectedMediaText:string}){
+        function GalleryButtonForward() {
+            return (
+                <div className={`${galleryButtonStyle} ${fonts.dotoBlack.className} order-3`} onClick={() => selectedIndex < (mediaGallery.length - 1) ? setSelectedIndex(selectedIndex += 1) : setSelectedIndex(0)}>
+                    <p className="align-middle self-center">
+                        next
+                    </p>
+                </div>
+            )
+        }
+
+        function GalleryButtonPrevious() {
+            return (
+                <div className={`${galleryButtonStyle} ${fonts.dotoBlack.className} order-1`} onClick={() => selectedIndex > 0 ? setSelectedIndex(selectedIndex -= 1) : setSelectedIndex(mediaGallery.length - 1)}>
+                    <p className="align-middle self-center">
+                        prev
+                    </p>
+                </div>
+            )
+        }
+
+        return (
+            <div className={`flex flex-row self-end mt-[1rem] md:mt-0 gap-[12px] place-self-center w-full min-w-[240px] h-fit md:h-full max-h-[720px]`}>
+                <GalleryButtonPrevious/>
+                <p className={`${fonts.poppins.className} order-2 w-full h-full place-self-center text-center px-[.25rem] md:px-[2rem] text-[12px] md:text-[14px] text-textVariant text-balance`}>{selectedMediaText}</p>
+                <GalleryButtonForward/>
+            </div>
+        )
+    }
+
+    return (
+        <div className="flex flex-col md:flex-col px-[24px] justify-self-center relative w-[95%] max-w-[1440px] min-h-[360px] h-full justify-center gap-[0px] md:gap-[24px]">
             <MainMediaCentered />
             <GalleryV2DetailDiv selectedMediaText={mediaGallery[selectedIndex].assetText}/>
         </div>

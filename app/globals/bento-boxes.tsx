@@ -154,6 +154,71 @@ export function CellMedia({cellMedia, cellMediaType, mediaText, cellSpan, hoverT
     )
 }
 
+export function CellMediaNoShadow({cellMedia, cellMediaType, mediaText, cellSpan, hoverTextColor, showGallery, setShowGallery}: {cellMedia: string, cellMediaType: MediaType, mediaText: string, cellSpan: string, hoverTextColor: string, showGallery: boolean, setShowGallery: (x: boolean) => void}) {
+    function FillCellMedia() {
+        return (
+            <CardHoverFX bufferZone={0} rotateAmount={120}>
+                <div className={` ${cellSpan} ${bentoRounding} group relative w-full h-fit min-w-[240px] min-h-[120px] min justify-self-center overflow-hidden self-center transition-all duration-200 z-auto`} 
+                    onClick={(e) => { setShowGallery(!showGallery); }}>
+                        {
+                            cellMediaType === MediaType.Video ?
+                                <LazyHoverVideo 
+                                    src={cellMedia}
+                                    autoplay={false}
+                                    controls={false}
+                                    muted={true}
+                                    loop={true}
+                                    /> 
+                            :
+                                <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
+                        }
+                    {/* <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[40px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}>
+                        <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
+                    </div> */}
+                </div>
+            </CardHoverFX>
+        )
+    }
+
+    function FillCellMediaMobile() {
+        return (
+            <div className={` ${cellSpan} ${bentoRounding} group relative w-full h-fit justify-self-center overflow-hidden self-center transition-all duration-200 z-auto`} 
+                onClick={(e) => { setShowGallery(!showGallery); }}>
+                <div>
+                    {
+                        cellMediaType === MediaType.Video ?
+                            <LazyNonHoverVideo 
+                                src={cellMedia}
+                                autoplay={true}
+                                controls={false}
+                                muted={true}
+                                loop={true}
+                                /> 
+                        :
+                            <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
+                    }
+                </div>
+
+                {/* <div className={`${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[32px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300`}
+                        style={NoSelect}>
+                    <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
+                </div> */}
+            </div>
+        )
+    }
+    
+    return (
+        <div>
+            {
+                CheckIfMobileBrowser() === false ?
+                <FillCellMedia />
+                :
+                <FillCellMediaMobile />
+            }
+        </div>
+    )
+}
+
 //POP UP GALLERY FOR CARDS
 
 export interface IPopupMedia
@@ -356,6 +421,25 @@ export function CellMediaOnClick({mediaLink, mediaType, mediaText, hoverTextColo
     return (
         <div className={`relative ${cellSpan} hover:cursor-pointer`}>
             <CellMedia cellMedia={mediaLink} cellMediaType={mediaType} mediaText={mediaText} cellSpan={cellSpan} showGallery={showGallery} setShowGallery={setShowGallery} hoverTextColor={hoverTextColor}/>
+            {
+                showGallery && (
+                    <div className={`fixed z-[500]`}>
+                        <PopUpMediaViewer mediaLink={mediaLink} mediaText={mediaText} mediaType={mediaType} setShowGallery={setShowGallery}/>
+                        <BackgroundBarrier setShowGallery={setShowGallery}/>
+                    </div>
+                )
+            }
+        </div>
+    )
+}
+
+
+export function CellMediaOnClickNoShadow({mediaLink, mediaType, mediaText, hoverTextColor, cellSpan,}: {mediaLink: string, mediaType: MediaType, mediaText: string, hoverTextColor: string, cellSpan: string,}) {
+    let [showGallery, setShowGallery] = useState(false);
+    
+    return (
+        <div className={`relative ${cellSpan} hover:cursor-pointer`}>
+            <CellMediaNoShadow cellMedia={mediaLink} cellMediaType={mediaType} mediaText={mediaText} cellSpan={cellSpan} showGallery={showGallery} setShowGallery={setShowGallery} hoverTextColor={hoverTextColor}/>
             {
                 showGallery && (
                     <div className={`fixed z-[500]`}>
