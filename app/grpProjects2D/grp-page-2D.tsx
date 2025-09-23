@@ -12,14 +12,18 @@ const vidDDRMelee = "_project-links/prjLink_ddr-melee_400px.mp4";
 const vidInstaLoops = "_project-links/prjLink_insta-loops_400px.mp4";
 const vidMedUI = "_project-links/prjLink_med-ui_400px.mp4";
 const vidConsumerMotion = "_project-links/prjLink_mogr-ui_400px.mp4";
-
+const vidWebsite = "_project-links/prjLink_codePortfolio_400px.mp4";
+const imgSlippiTV = "_project-links/prjLink_slippiTV_400px.mp4";
+const vidHairGenerator = "_project-links/prjLink_hairgen_400px.mp4";
 
 const linkMedUI = "../projMedUI";
 const linkDDRMelee = "../projDDRMelee";
 const linkInstaLoops = "../projLoopAnim";
 const linkConsumerMotion = "../projConsumerMotion";
 const linkConceptApps = "../projConceptApps";
-
+const linkHairGenerator = "../projHairGen2D";
+const linkWebsite = `../projPortfolioSite2D`;
+const linkSlippiTV = '../projSlippiTV2D'
 
 
 const groupCardData: IProjectLinkCard[] = [
@@ -57,6 +61,27 @@ const groupCardData: IProjectLinkCard[] = [
         mediaLink: vidBankApp,
         cardLink: linkConceptApps,
         errorText: "Figma + Illustrator",
+    },
+        {
+        projectTitle: "My Portfolio Website",
+        projectDates: "2025",
+        mediaLink: vidWebsite,
+        cardLink: linkWebsite,
+        errorText: "React + NextJS",
+    },
+    {
+        projectTitle: "SlippiTV App & Website",
+        projectDates: "2025",
+        mediaLink: imgSlippiTV,
+        cardLink: linkSlippiTV,
+        errorText: ".NET Maui + HTML",
+    },
+    {
+        projectTitle: "Stubble Hair Generator",
+        projectDates: "2024",
+        mediaLink: vidHairGenerator,
+        cardLink: linkHairGenerator,
+        errorText: "Substance Designer",
     },
 ]
 

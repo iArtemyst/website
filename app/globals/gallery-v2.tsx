@@ -168,7 +168,7 @@ export function GalleryV2({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
         }
 
         return (
-            <div className={`flex flex-col self-end mt-[1rem] md:mt-0 gap-[12px] place-self-center w-full md:w-[30%] min-w-[240px] h-fit md:h-full max-h-[720px]`}>
+            <div className={`flex flex-col self-end mt-[1rem] md:mt-0 gap-[12px] place-self-center w-full min-w-[240px] h-fit md:h-full max-h-[720px]`}>
                 <div className={`w-full h-auto flex order-2 md:order-1`}>
                     <p className={`${fonts.poppins.className} w-full h-auto text-center px-[.25rem] md:px-[2rem] text-[12px] md:text-[14px] text-textVariant text-balance`}>{selectedMediaText}</p>
                 </div>
@@ -181,7 +181,7 @@ export function GalleryV2({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
     }
 
     return (
-        <div className="flex flex-col md:flex-row px-[24px] justify-self-center relative w-[95%] max-w-[1440px] min-h-[360px] h-full justify-center gap-[0px] md:gap-[24px]">
+        <div className="flex flex-col px-[24px] justify-self-center relative w-[95%] max-w-[1440px] min-h-[360px] h-full justify-center gap-[0px] md:gap-[24px]">
             <MainMediaCentered />
             <GalleryV2DetailDiv selectedMediaText={mediaGallery[selectedIndex].assetText}/>
         </div>

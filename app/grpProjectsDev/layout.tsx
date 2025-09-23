@@ -4,8 +4,8 @@ import "@/app/globals/globals.css";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Code Projects",
-  description: "Eevee Youngblood Code Projects",
+  title: "Dev Projects",
+  description: "Eevee Youngblood Dev Projects",
 };
 
 export default function RootLayout({
