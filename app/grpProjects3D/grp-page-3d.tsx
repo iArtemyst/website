@@ -14,7 +14,7 @@ const vidProcMats = "_project-links/prjLink_procMat_400px.mp4";
 const vidProdAnim = "_project-links/prjLink_productanim_400px.mp4";
 const vidStylizedVFX = "_project-links/prjLink_stylizedvfx_400px.mp4";
 const vidInstaLoops = "_project-links/prjLink_insta-loops_400px.mp4";
-const vidSasukeModel = "_project-links/prjLink_SasukeSSBM_400px.mp4";
+const vidSasukeModel = "_project-links/foxsuke_model_sqLink-vid_400px.mp4";
 
 const linkHorrorHouse = "../projHorrorHouse";
 const linkStylizedVFX = "../projVFX3D";
