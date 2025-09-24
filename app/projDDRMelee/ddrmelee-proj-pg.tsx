@@ -9,6 +9,7 @@ import { CheckIfMobileBrowser } from "../globals/mobile-check";
 import StyledLink from "../globals/styled-link";
 import { NoSelect } from "../globals/styles";
 import { hoverShadow } from "@/tailwind.config";
+import { ViewAnotherProjectCard, ViewAnotherProjectDiv } from "../globals/view-another-project";
 
 const imgDDRMelee01 = "_motionui/_ddrmelee/ddr-melee_stills_10.png";
 const imgDDRMelee02 = "_motionui/_ddrmelee/ddr-melee_stills_11.png";
@@ -18,6 +19,9 @@ const imgDDRMelee04 = "_motionui/_ddrmelee/ddr-melee_stills_13.png";
 const vidDDRMelee01 = "_motionui/_ddrmelee/ddr-melee-intro_1440px.mp4";
 const vidDDRMelee02 = "_motionui/_ddrmelee/ddr_melee_liveAE_v1.mp4";
 
+const otherProjectLinkMedia = "_3d/_fxsk-comboVid/cv_comboVid_stills.png";
+const linkFoxsukeComboVideo = "../projFoxsukeVideo";
+
 const youtubeLink = "https://youtu.be/IljUm6WHTXE?si=hxR6P6yWpDYSHC0l";
 
 const titleTextSize= "text-[24px]";
@@ -26,7 +30,7 @@ const paraTextSize = "text-[12px]";
 function BentoBoxA() {
     let isMobile = CheckIfMobileBrowser();
     return (
-        <div className="relative z-10 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
+        <div className="relative z-10 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[24px]">
             
             <bentos.CellText cellSpan="col-span-1 w-full">
                 <bentos.HeaderText text="DDR Melee Motion Graphics" textSize={titleTextSize}/>
@@ -35,11 +39,11 @@ function BentoBoxA() {
             <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} h-fit gap-[12px] grid`}>
                 <bentos.CellMediaOnClick mediaLink={vidDDRMelee01} mediaType={MediaType.Video} mediaText="DDR Melee Intro Video" cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`} hoverTextColor="text-textVariant" />
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={paraTextSize} text="When my partner came to me with the idea for a Super Smash Bros Melee combo video, I was immediately on board. The idea they had developed was a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
+                    <bentos.ParagraphText textSize={paraTextSize} text="When I was approached with the oppurtunity for a Super Smash Bros Melee combo video in the style of DDR, I was immediately on board. The client developed a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
                 </bentos.CellText>
             </div>
 
-            <div className={`${isMobile ? "grid-cols-2" : "grid-cols-4"} grid h-fit gap-[12px] hover:z-20`}>
+            <div className={`grid-cols-2 grid h-fit gap-[24px] hover:z-20`}>
                 <bentos.CellMediaOnClick mediaText="AE Select Game Screen" mediaLink={imgDDRMelee01} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="AE Select Song Screen" mediaLink={imgDDRMelee02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaText="AE Stage Clear Screen" mediaLink={imgDDRMelee03} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
@@ -47,11 +51,10 @@ function BentoBoxA() {
             </div>
 
             <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} w-full justify-self-center grid  gap-[12px] hover:z-20`}>
-                <bentos.CellMediaOnClick mediaLink={vidDDRMelee02} mediaType={MediaType.Video} mediaText="DDR Melee Outro Video" cellSpan="col-span-2"  hoverTextColor="text-textVariant"/>
-
                 <bentos.CellText cellSpan="col-span-1">
-                    <bentos.ParagraphText textSize={paraTextSize} text="While he took the helm on programming the functionality of coordinating button presses from controller to on screen assets in time, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM. Each asset (except for the landing screen 3d text) was hand made in After Effects with vectors and shapes, and all scenes were animated and edited in Adobe After Effects" />
+                    <bentos.ParagraphText textSize={paraTextSize} text="After designing a suite of icons representing the possible controller button presses in the style of DDR, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM. Each asset (except for the landing screen 3d text) was hand made in After Effects with vectors and shapes, and all scenes were animated and edited in Adobe After Effects" />
                 </bentos.CellText>
+                <bentos.CellMediaOnClick mediaLink={vidDDRMelee02} mediaType={MediaType.Video} mediaText="DDR Melee Outro Video" cellSpan="col-span-2"  hoverTextColor="text-textVariant"/>
             </div>
         </div>
     )
@@ -89,6 +92,17 @@ export function DDRMeleePage() {
                 <BentoBoxA />
                 <BentoBoxB />
             </div>
+
+            <ViewAnotherProjectDiv text="Check out this related project!">
+                <ViewAnotherProjectCard
+                    projTitle="Foxsuke Combo Video" 
+                    projDesc={`3D Animation of the Naruto Shippuden Opening, recreated with characters from Super Smash Bros Melee, including a custom Fox "Sasuke" 3D model. With additional motion graphics, video, and audio editing for a full SSBM Combo Video.`}
+                    projMedia={otherProjectLinkMedia}
+                    projMediaAltText="alt text" 
+                    projLink={linkFoxsukeComboVideo}
+                    projLinkMediaType={MediaType.Image}
+                    cardColor={`bg-[#FFCCAA]`}/>
+            </ViewAnotherProjectDiv>
         </pages.GroupProjectPage>
     )
 }

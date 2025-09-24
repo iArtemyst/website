@@ -50,13 +50,13 @@ const groupCardData: IProjectLinkCard[] = [
         cardLink: linkSlippiTV,
         errorText: ".NET Maui + HTML",
     },
-    {
-        projectTitle: "Stubble Hair Generator",
-        projectDates: "2024",
-        mediaLink: vidHairGenerator,
-        cardLink: linkHairGenerator,
-        errorText: "Substance Designer",
-    },
+    // {
+    //     projectTitle: "Stubble Hair Generator",
+    //     projectDates: "2024",
+    //     mediaLink: vidHairGenerator,
+    //     cardLink: linkHairGenerator,
+    //     errorText: "Substance Designer",
+    // },
 ]
 
 

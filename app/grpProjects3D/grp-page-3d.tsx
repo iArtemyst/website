@@ -5,6 +5,7 @@ import * as pages from "@/app/globals/pages-main";
 import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
 import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
+import { FeaturedProjectsDiv } from "../globals/featured-projects";
 
 const vidDartPub = "_project-links/prjLink_dartspub_400px.mp4";
 const vidHorrorHouse = "_project-links/prjLink_horrorhouses_400px.mp4";
@@ -38,6 +39,23 @@ const linkUtopaea = "../projUtopaea";
 const linkProcToonCity = "../projProcIslandCity";
 const linkHairGenerator = "../projHairGenerator";
 
+const featuredProjectsData: IProjectLinkCard[] = [
+    {
+        projectTitle: "Foxsuke Shippuden Opening (SSBM)",
+        projectDates: "2025",
+        mediaLink: vidFoxsukeVideo,
+        cardLink: linkFoxsukeVideo,
+        errorText: "Blender 3D + After Effects",
+    },
+    {
+        projectTitle: "Darts and Pub Assets",
+        projectDates: "2024",
+        mediaLink: vidDartPub,
+        cardLink: linkDartPub,
+        errorText: "Blender 3D",
+    },
+]
+
 const groupCardData: IProjectLinkCard[] = [
     {
         projectTitle: "Horror Houses",
@@ -68,13 +86,6 @@ const groupCardData: IProjectLinkCard[] = [
         errorText: "Blender 3D + Unreal Engine",
     },
     {
-        projectTitle: "Darts and Pub Assets",
-        projectDates: "2024",
-        mediaLink: vidDartPub,
-        cardLink: linkDartPub,
-        errorText: "Blender 3D",
-    },
-    {
         projectTitle: "Medical Animation",
         projectDates: "2018-2025",
         mediaLink: vidMedAnim,
@@ -103,13 +114,6 @@ const groupCardData: IProjectLinkCard[] = [
         errorText: "Blender 3D + Mod Tooling",
     },
     {
-        projectTitle: "Foxsuke Shippuden Opening (SSBM)",
-        projectDates: "2025",
-        mediaLink: vidFoxsukeVideo,
-        cardLink: linkFoxsukeVideo,
-        errorText: "Blender 3D + After Effects",
-    },
-    {
         projectTitle: '"Utopaea" Game Level',
         projectDates: "2019 & 2024",
         mediaLink: vidUtopaea,
@@ -123,13 +127,30 @@ const groupCardData: IProjectLinkCard[] = [
         cardLink: linkProcToonCity,
         errorText: "Blender 3D",
     },
+    {
+        projectTitle: "Foxsuke Shippuden Opening (SSBM)",
+        projectDates: "2025",
+        mediaLink: vidFoxsukeVideo,
+        cardLink: linkFoxsukeVideo,
+        errorText: "Blender 3D + After Effects",
+    },
+    {
+        projectTitle: "Darts and Pub Assets",
+        projectDates: "2024",
+        mediaLink: vidDartPub,
+        cardLink: linkDartPub,
+        errorText: "Blender 3D",
+    },
 ]
 
 
 export default function GroupProjects3D() {
     const [shuffledCards, setArray] = useState<IProjectLinkCard[]>([])
+    const [shuffledFeatured, setFeatured] = useState<IProjectLinkCard[]>([])
+    
     useEffect(() => {
         setArray(shuffle_about_cards(groupCardData))
+        setFeatured(shuffle_about_cards(featuredProjectsData))
     }, []);
     
     function shuffle_about_cards(new_cards: IProjectLinkCard[]) 
@@ -143,8 +164,12 @@ export default function GroupProjects3D() {
 
         return shuffled_array;
     }
+
+
+
     return shuffledCards.length != 0 ?
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
+            {/* <FeaturedProjectsDiv dataArray={shuffledFeatured}/> */}
             <ProjectLinkCardsContainer dataArray={shuffledCards} />
         </pages.GroupProjectPage>
         :

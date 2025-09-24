@@ -6,6 +6,7 @@ import * as pages from "@/app/globals/pages-main";
 import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
 import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
+import { FeaturedProjectsDiv } from "../globals/featured-projects";
 
 const vidBankApp = "_project-links/prjLink_bankapp_400px.mp4";
 const vidDDRMelee = "_project-links/prjLink_ddr-melee_400px.mp4";
@@ -26,7 +27,7 @@ const linkWebsite = `../projPortfolioSite2D`;
 const linkSlippiTV = '../projSlippiTV2D'
 
 
-const groupCardData: IProjectLinkCard[] = [
+const featuredProjectsData: IProjectLinkCard[] = [
     {
         projectTitle: "DDR Melee Motion Graphics",
         projectDates: "2025",
@@ -34,6 +35,17 @@ const groupCardData: IProjectLinkCard[] = [
         cardLink: linkDDRMelee,
         errorText: "Adobe After Effects + Illustrator",
     },
+    {
+        projectTitle: "SlippiTV App & Website",
+        projectDates: "2025",
+        mediaLink: imgSlippiTV,
+        cardLink: linkSlippiTV,
+        errorText: ".NET Maui + HTML",
+    },
+]
+
+
+const groupCardData: IProjectLinkCard[] = [
     {
         projectTitle: "Looping Animations",
         projectDates: "2020-2024",
@@ -62,12 +74,19 @@ const groupCardData: IProjectLinkCard[] = [
         cardLink: linkConceptApps,
         errorText: "Figma + Illustrator",
     },
-        {
-        projectTitle: "My Portfolio Website",
+    {
+        projectTitle: "Stubble Hair Generator",
+        projectDates: "2024",
+        mediaLink: vidHairGenerator,
+        cardLink: linkHairGenerator,
+        errorText: "Substance Designer",
+    },
+    {
+        projectTitle: "DDR Melee Motion Graphics",
         projectDates: "2025",
-        mediaLink: vidWebsite,
-        cardLink: linkWebsite,
-        errorText: "React + NextJS",
+        mediaLink: vidDDRMelee,
+        cardLink: linkDDRMelee,
+        errorText: "Adobe After Effects + Illustrator",
     },
     {
         projectTitle: "SlippiTV App & Website",
@@ -76,18 +95,12 @@ const groupCardData: IProjectLinkCard[] = [
         cardLink: linkSlippiTV,
         errorText: ".NET Maui + HTML",
     },
-    {
-        projectTitle: "Stubble Hair Generator",
-        projectDates: "2024",
-        mediaLink: vidHairGenerator,
-        cardLink: linkHairGenerator,
-        errorText: "Substance Designer",
-    },
 ]
 
 
 export default function GroupProjectsMotion() {
     const [shuffledCards, setArray] = useState<IProjectLinkCard[]>([])
+    
     useEffect(() => {
         setArray(shuffle_about_cards(groupCardData))
     }, []);
@@ -105,6 +118,7 @@ export default function GroupProjectsMotion() {
     }
     return shuffledCards.length != 0 ?
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
+            {/* <FeaturedProjectsDiv dataArray={featuredProjectsData}/> */}
             <ProjectLinkCardsContainer dataArray={shuffledCards} />
         </pages.GroupProjectPage>
         :
