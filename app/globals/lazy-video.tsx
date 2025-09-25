@@ -18,7 +18,7 @@ export function LazyVideo({src, autoplay, controls, muted, loop, className} : {
                             onEnter={() => {}} onLeave={() => {}} onDown={() => {}} onUp={() => {}} onClick={() => {}}/>
 }
 
-export function LazyHoverVideo({src, autoplay, controls, muted, loop}: {src: string, autoplay: boolean, controls: boolean, muted: boolean, loop: boolean}) {
+export function LazyHoverVideo({src, autoplay, controls, muted, loop, style=""}: {src: string, autoplay: boolean, controls: boolean, muted: boolean, loop: boolean, style?:string}) {
     const handleMouseEnterVideo = (e: React.MouseEvent<HTMLVideoElement>) => {
         if (e.target instanceof HTMLVideoElement) {
             e.target.play();
@@ -78,7 +78,7 @@ export function LazyHoverVideo({src, autoplay, controls, muted, loop}: {src: str
         }
     }
     
-    return <LazyVideoCore src={src} autoplay={autoplay} controls={controls} muted={muted} loop={loop} className={""} 
+    return <LazyVideoCore src={src} autoplay={autoplay} controls={controls} muted={muted} loop={loop} className={style} 
                             onEnter={handleMouseEnterVideo} onLeave={handleMouseLeaveVideo} onDown={handleMouseDown} onUp={handleMouseUp} onClick={handleClick} />
 }
 

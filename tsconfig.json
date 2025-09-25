@@ -34,7 +34,8 @@
     ".next/types/**/*.ts",
     "next-env.d.ts",
     "videos.d.ts",
-    "docs/types/**/*.ts"
+    "docs/types/**/*.ts",
+    // "app/globals/*.css"
   ],
   "exclude": [
     "node_modules"

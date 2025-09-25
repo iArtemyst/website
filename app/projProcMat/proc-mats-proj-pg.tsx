@@ -121,7 +121,8 @@ export default function ProjectProcMatPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <bentos.ProjectDetailTextTop
-                TitleText="PROCEDUAL MATERIALS" 
+                TitleText="PROCEDUAL MATERIALS"
+                ExtraProjInfo="PERSONAL | SHADER & TEXTURE DESIGNER"
                 MoreText="Creating a library of reusable materials and shaders, with detailed parameters for adjusting the materials to future scenes. For a deeper look at the nodes behind these materials, please visit my Artstation Page."/>
             <BentoBoxA />
         </pages.GroupProjectPage>

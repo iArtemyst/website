@@ -113,10 +113,10 @@ function MobileLazyCardInternal({card}: {card: IProjectLinkCard}) {
 
     return (
         <div className={`relative grid w-fit h-auto p-[8px] transition-all duration-300 rounded-md place-items-center overflow-clip`}>
-            <div className="relative content-center w-[240px] h-[95%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090]">
+            <div className="relative content-center w-[128px] h-[95%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090]">
                 <MobileProjectVideo src={card.mediaLink} />
             </div>
-            <div className={`absolute left-0 bottom-0 p-[6px] w-full h-auto opacity-100`}>
+            <div className={`absolute left-0 bottom-0 pb-[.125em] px-[.5em] w-full h-auto opacity-100`}>
                 <MobileCardText />
             </div>
         </div>
@@ -132,7 +132,7 @@ function MobileGroupProjectCard({card}: {card: IProjectLinkCard}) {
                     {
                         typeof card.errorText === "string" ?
                             <div>
-                                <p className={`${fonts.dotoBlack.className} text-nowrap absolute w-full h-fit text-center top-[-14px] text-textVariant text-[8px]`}>{card.errorText}</p>
+                                <p className={`${fonts.dotoBlack.className} text-nowrap absolute w-full h-fit text-center top-[-14px] text-textVariant text-[6px]`}>{card.errorText}</p>
                             </div>
                         :
                             <></>
@@ -158,7 +158,7 @@ export function ProjectLinkCardsContainer({dataArray}: {dataArray: IProjectLinkC
                         }
                     </div>
                     :
-                    <div className={`grid grid-cols-1 w-full h-full relative left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] gap-y-[36px] place-content-center`}>
+                    <div className={`grid grid-cols-2 w-[90%] h-full relative left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] gap-y-[36px] place-content-center`}>
                         {
                             dataArray.map((card, i) => <MobileGroupProjectCard key={i} card={card}/> )
                         }

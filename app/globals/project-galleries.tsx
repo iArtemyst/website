@@ -48,21 +48,23 @@ export interface ICardWithGalleryArrays
 
 // MAIN PROJECT DESCTIPTION TEXT COMPONENTS
 
-export function ProjectDetailRelativeText({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
+export function ProjectDetailRelativeText({TitleText="", MoreText="", ExtraProjInfo=""}: {TitleText: string, MoreText: string, ExtraProjInfo:string}) {
     let isMobile = CheckIfMobileBrowser();
     return (
         <div className={`${isMobile ? "mb-[4px]" : "mb-[24px]"} ${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px]  flex-grow-0 bg-bgColor`}>
             <p className={`${isMobile ? "text-[12px]" : "text-[32px] lg:text-[48px] xl:text-[56px] 2xl:text-[72px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
+            <p className={`${isMobile ? "text-[6px]" : "text-[12px] lg:text-[14px] xl:text-[16px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{ExtraProjInfo}</p>
             <p className={`${isMobile ? "text-[6px]" : "text-[12px] lg:text-[14px] xl:text-[16px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
         </div>
     )
 }
 
-export function ProjectDetailRelativeTextNDA({TitleText="", MoreText="", NDAText=""}: {TitleText: string, MoreText: string, NDAText:string}) {
+export function ProjectDetailRelativeTextNDA({TitleText="", MoreText="", ExtraProjInfo="", NDAText=""}: {TitleText: string, MoreText: string, ExtraProjInfo:string, NDAText:string}) {
     let isMobile = CheckIfMobileBrowser();
     return (
         <div className={`${isMobile ? "mb-[4px]" : "mb-[24px]"} ${projectTextPadding} relative z-0 w-[80%] flex-row h-fit justify-self-center self-end border-white border-[1px] px-[8px] py-[8px]  flex-grow-0 bg-bgColor`}>
             <p className={`text-[12px] sm:text-[32px] lg:text-[48px] xl:text-[56px] 2xl:text-[72px] ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{TitleText}</p>
+            <p className={`${isMobile ? "text-[6px]" : "text-[12px] lg:text-[14px] xl:text-[16px]"} ${fonts.dotoBlack.className} ${projectTextPadding} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{ExtraProjInfo}</p>
             <p className={`text-[6px] sm:text-[12px] lg:text-[14px] xl:text-[16px] ${fonts.dotoBlack.className} ${projectTextPadding} text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>{MoreText}</p>
             <p className={`text-[4px] sm:text-[8px] lg:text-[10px] xl:text-[12px] ${fonts.dotoBlack.className} ${projectTextPadding} text-pretty relative flex-row right-0 bottom-0 w-full text-secColor text-center`}>{NDAText}</p>
         </div>
@@ -73,7 +75,7 @@ export function ProjectDetailRelativeTextNDA({TitleText="", MoreText="", NDAText
 
 function ProjDetailMediaCard({mediaSrc, mediaText, mediaType,}: {mediaSrc: string, mediaType: MediaType, mediaText: string,}) {
     return(
-        <div className="cursor-pointer overflow-clip rounded-[8px]">
+        <div className="cursor-pointer overflow-clip rounded-[8px] sm:w-[180px] md:w-[240px] lg:w-[320px] xl:w-[360px] 2xl:w-[480px] place-self-center">
                     {
                         mediaType === MediaType.Video ?
                             <LazyHoverVideo 

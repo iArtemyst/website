@@ -13,59 +13,55 @@ import Loading from "../globals/loading-text";
 import { CheckIfMobileBrowser } from "./mobile-check";
 import { hoverShadow } from "@/tailwind.config";
 
-function LazyCardInternals({dataArray}: {dataArray: IProjectLinkCard}) {
-    function ProjectVideo({src}:{src:string}) {
-        return (
-            <div className="z-20">
-            <LazyHoverVideo
-                src={src}
-                autoplay={false}
-                controls={false}
-                muted={true}
-                loop={true}
-                />
-            </div>
-        )
-    }
-    
-    function CardText() {
-        return (
-            <div className="relative flex justify-between w-full h-fit text-[0px] sm:group-hover:text-[6px] md:group-hover:text-[8px] lg:group-hover:text-[10px] xl:group-hover:text-[12px] 2xl:group-hover:text-[16px] items-end transition-all duration-300"
-                    style={NoSelect}>
-                <p className={`${fonts.dotoBlack.className} text-black text-left text-nowrap`}>{dataArray.projectTitle}</p>
-                <p className={`${fonts.dotoReg.className} text-black text-right text-nowrap`}>{dataArray.projectDates}</p>
-            </div>
-        )
-    }
 
-    return (
-        <div className={`group relative grid hover:gap-[8px] hover:lg:gap-[10px] w-fit h-auto p-[8px] lg:p-[12px] transition-all duration-300 rounded-md place-items-center overflow-clip`}>
-            <div className="relative content-center md:w-[220px] lg:w-[280px] xl:w-[320px] 2xl:w-[360px] h-[100%] group-hover:h-[90%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090] transition-all duration-300">
-                <ProjectVideo src={dataArray.mediaLink} />
-            </div>
-            <div className={`absolute left-0 bottom-0 p-[6px] md:p-[8px] w-full h-auto group-hover:opacity-100 opacity-0 transition-all duration-300`}>
-                <CardText />
-            </div>
-        </div>
-    )
+export interface IFeaturedProjectCard
+{
+    projectTitle: string,
+    projectDates: string,
+    mediaLink: string,
+    cardLink: string,
+    softwareUsed?: string,
+    cardColor?: string,
+    projectDesc?: string,
 }
 
-function GroupProjectCards({dataArray}: {dataArray: IProjectLinkCard}) {
+function FeaturedGroupProjectCards({dataArray}: {dataArray: IFeaturedProjectCard}) {
+    function ProjectVideo({src}:{src:string}) {
+            return (
+                <div className={`relative self-center aspect-[4/3] w-full h-fit overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090]`}>
+                    <LazyHoverVideo
+                        src={src}
+                        autoplay={false}
+                        controls={false}
+                        muted={true}
+                        loop={true}
+                        style="object-cover"
+                        />
+                </div>
+            )
+        }
+    
+    function CardText() {
+            return (
+                <div className="relative flex flex-col px-[8px] text-textVariant justify-between w-fit h-full p-[0em] md:p-[1em]">
+                    <p className={`${fonts.dotoBlack.className} w-full text-right text-balance text-[10px] sm:text-[10px] md:text-[12px] lg:text-[14px]`}>{dataArray.projectTitle}</p>
+                    <div className="flex flex-row gap-[1em] mb-0 md:mb-[.25em]">
+                        <p className={`${fonts.dotoReg.className} w-full text-right text-balance md:text-nowrap text-[8px] md:text-[10px] xl:text-[12px]`}>{dataArray.softwareUsed}</p>
+                    </div>
+                    <p className={`${fonts.poppins.className} w-full text-right text-pretty text-[8px] sm:text-[8px] md:text-[10px] lg:text-[12px]`}>{dataArray.projectDesc}</p>
+                </div>
+            )
+        }
+    
     return (
-        <div className={`w-fit h-full place-items-center place-content-center self-center`}>
+        <div className={`group w-fit h-fit place-items-center place-content-center hover:z-20 self-center`}>
             <CardHoverFX bufferZone={0} rotateAmount={7}>
-                <div className={`bg-cardBGInactiveColor hover:bg-cardBGColor group w-fit h-fit cursor-pointer rounded-[8px] opacity-80 hover:opacity-100 hover:scale-[108%] active:scale-[95%] transition-all duration-200`} >
+                <div className={`${dataArray.cardColor} border-[4px] rounded-[16px] w-fit h-fit cursor-pointer opacity-80 hover:opacity-100 hover:scale-[110%] active:scale-[95%] transition-all duration-200`} >
                     <StyledLink href={dataArray.cardLink}>
-                        <LazyCardInternals dataArray={dataArray}/>
-                        {
-                            typeof dataArray.errorText === "string" ?
-                                <div>
-                                    <p className={`${fonts.dotoBlack.className} text-nowrap absolute w-full h-fit text-center top-0 group-hover:top-[-.75rem] sm:group-hover:top-[-1rem] md:group-hover:top-[-1.25rem] lg:group-hover:top-[-1.5rem] xl:group-hover:top-[-1.75rem] opacity-0 group-hover:opacity-100 text-textVariant transition-all duration-200
-                                        text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px]`}>{dataArray.errorText}</p>
-                                </div>
-                            :
-                                <></>
-                        }
+                        <div className={`group relative flex flex-row sm:w-[320px] md:w-[400px] lg:w-[460px] xl:w-[580px] 2xl:w-[640px] h-auto p-[8px] transition-all duration-300 rounded-md place-items-center overflow-clip`}>
+                            <ProjectVideo src={dataArray.mediaLink} />
+                            <CardText />
+                        </div>
                     </StyledLink>
                 </div>
             </CardHoverFX>
@@ -74,101 +70,27 @@ function GroupProjectCards({dataArray}: {dataArray: IProjectLinkCard}) {
 }
 
 
-function MobileProjectVideo({src}:{src:string}) {
+export function FeatureProjectLinkCardsContainer({dataArray}: {dataArray: IFeaturedProjectCard[]}) {    
     return (
-        <div className="z-20">
-        <LazyHoverVideo
-            src={src}
-            autoplay={false}
-            controls={false}
-            muted={true}
-            loop={true}
-            />
-        </div>
-    )
-}
-
-function MobileLazyCardInternal({card}: {card: IProjectLinkCard}) {
-    function MobileCardText() {
-        return (
-            <div className="relative flex justify-between w-full h-fit text-[6px] items-end">
-                <p className={`${fonts.dotoBlack.className} text-black text-left text-nowrap`}>{card.projectTitle}</p>
-                <p className={`${fonts.dotoReg.className} text-black text-right text-nowrap`}>{card.projectDates}</p>
-            </div>
-        )
-    }
-
-    return (
-        <div className={`relative grid w-fit h-auto p-[8px] transition-all duration-300 rounded-md place-items-center overflow-clip`}>
-            <div className="relative content-center w-[240px] h-[95%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090]">
-                <MobileProjectVideo src={card.mediaLink} />
-            </div>
-            <div className={`absolute left-0 bottom-0 p-[6px] w-full h-auto opacity-100`}>
-                <MobileCardText />
-            </div>
-        </div>
-    )
-}
-
-function MobileGroupProjectCard({card}: {card: IProjectLinkCard}) {
-    return (
-        <div className={`relative w-fit h-fit place-self-center`}>
-            <div className={`bg-cardBGInactiveColor active:bg-cardBGColor w-fit h-fit rounded-[8px] opacity-80 active:opacity-100 active:scale-[110%] transition-all duration-200`} style={NoSelect} >
-                <StyledLink href={card.cardLink}>
-                    <MobileLazyCardInternal card={card}/>
-                    {
-                        typeof card.errorText === "string" ?
-                            <div>
-                                <p className={`${fonts.dotoBlack.className} text-nowrap absolute w-full h-fit text-center top-[-14px] text-textVariant text-[8px]`}>{card.errorText}</p>
-                            </div>
-                        :
-                            <></>
-                    }
-                </StyledLink>
+        <div className={`w-[90%] h-fit justify-self-center flex flex-col`}>
+            <div className={`flex flex-col md:flex-row place-self-center justify-self-center gap-x-[0px] gap-y-[16px] md:gap-y-[0px] md:gap-x-[36px] w-fit h-fit mb-[16px] md:mb-[0px]`}>
+                {
+                    dataArray.map((data, i) => <FeaturedGroupProjectCards key={i} dataArray={data}/> )
+                }
             </div>
         </div>
     )
 }
 
 
-export function FeatureProjectLinkCardsContainer({dataArray}: {dataArray: IProjectLinkCard[]}) {    
-    let isMobile = CheckIfMobileBrowser()
-    
-    return (
-        <div className={`w-fit sm:w-[90%] justify-self-center mt-[24px] rounded-2xl bg-bgColor shadow-[2px_2px_4px_#00000030,-2px_-2px_4px_#ffffff20]`}>
-            <div>
-                <p className={`text-textVariant ${fonts.dotoBlack.className} text-center w-full text-[32px] px-[1em] py-[.25em]`}>
-                    FEATURED PROJECTS
-                </p>
-            </div>
-
-            {
-                isMobile === false ?
-                    <div className={`flex flex-col sm:flex-row place-self-center justify-self-center gap-y-[54px] w-full h-full sm:place-content-around py-[24px] mt-[12px] mb-[24px]`}>
-                        {
-                            dataArray.map((data, i) => <GroupProjectCards key={i} dataArray={data}/> )
-                        }
-                    </div>
-                    :
-                    <div className={`flex flex-col w-full h-full relative gap-y-[36px] place-content-center place-self-center pb-[24px] mt-[12px] mb-[24px]`}>
-                        {
-                            dataArray.map((card, i) => <MobileGroupProjectCard key={i} card={card}/> )
-                        }
-                    </div>
-            }
-        </div>
-    )
-}
-
-
-export function FeaturedProjectsDiv({dataArray}:{dataArray: IProjectLinkCard[]}) {
-        const [shuffledCards, setArray] = useState<IProjectLinkCard[]>([])
+export function FeaturedProjectsDiv({dataArray}: {dataArray: IFeaturedProjectCard[]}) {
+        const [shuffledCards, setArray] = useState<IFeaturedProjectCard[]>([])
         
         useEffect(() => {
             setArray(shuffle_about_cards(dataArray))
         }, []);
         
-        function shuffle_about_cards(new_cards: IProjectLinkCard[]) 
+        function shuffle_about_cards(new_cards: IFeaturedProjectCard[]) 
         {
             let shuffled_array = structuredClone(new_cards);
     
@@ -182,7 +104,10 @@ export function FeaturedProjectsDiv({dataArray}:{dataArray: IProjectLinkCard[]})
     
     
     return (
-        <div className="w-full place-self-center relative">
+        <div className="w-full h-fit flex flex-col justify-center items-center justify-items-center relative">
+            <p className={`text-textVariant ${fonts.dotoBlack.className} text-center w-fit text-[24px] sm:text-[24px] xl:text-[32px] px-[1em] py-[.25em]`}>
+                FEATURED PROJECTS
+            </p>
             <FeatureProjectLinkCardsContainer dataArray={shuffledCards} />
         </div>
     )

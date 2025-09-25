@@ -82,24 +82,22 @@ function BentoBoxB() {
                 <bentos.CellMediaOnClickNoShadow mediaText="WIP Detail: Creating the environment" mediaLink={imgSlippiTV06} mediaType={MediaType.Image} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
             </div>
 
-            <div className="col-span-1 grid grid-cols-2 items-center gap-[12px]">
+            <div className="col-span-1 grid grid-cols-1 sm:grid-cols-2 items-center gap-[12px]">
                 <bentos.CellMediaOnClickNoShadow mediaText="UI/UX changes for the main interface screen included adding live information about the games being streamed, updated grid layout with the ability to re-order, and adding more user requested features." mediaLink={imgSlippiTV03} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClickNoShadow mediaText="UI/UX changes for the settings page introduced a consistant theme and style between screens, adding automatic connection support for users (reducing pain points), and adding theme options for the application." mediaLink={imgSlippiTV04} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             </div>
 
-            <bentos.CellMediaOnClickNoShadow mediaText="Designed entirely in HTML and CSS, with a flexible layout that shifts when viewed on a mobile browser." mediaLink={imgSlippiTV02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-
-            <div className="col-span-1 grid grid-cols-3">
-                <bentos.CellMediaOnClickNoShadow mediaText="Initial Release of SlippiTV featured 3 themes, Dark, Light, and GameCube Purple" mediaLink={imgSlippiTV05} mediaType={MediaType.Image} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
+            <div className="col-span-1 grid grid-cols-1 sm:grid-cols-3">
+                <bentos.CellMediaOnClickNoShadow mediaText="Initial Release of SlippiTV featured 3 themes, Dark, Light, and GameCube Purple" mediaLink={imgSlippiTV05} mediaType={MediaType.Image} cellSpan="col-span-2 order-1 sm:order-2" hoverTextColor="text-textVariant"/>
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={"text-24px"} 
+                    <bentos.ParagraphText textSize={"text-24px order-2 sm:order-1"} 
                         text="UI/UX changes for the settings page introduced a consistant theme and style between screens, adding automatic connection support for users (reducing pain points), and adding theme options for the application. Initial Release of SlippiTV featured a Dark Theme, a Light Theme, and a Retro Purple theme that references the GameCube console the community plays on." />
                 </bentos.CellText>
             </div>
 
-
+            <bentos.CellMediaOnClickNoShadow mediaText="Designed entirely in HTML and CSS, with a flexible layout that shifts when viewed on a mobile browser." mediaLink={imgSlippiTV02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             
-            <div className="col-span-1 grid grid-cols-3">
+            <div className="col-span-1 grid grid-cols-1 sm:grid-cols-3">
                 <bentos.CellText cellSpan={`col-span-1`}>
                     <bentos.ParagraphText textSize={"text-24px"} 
                         text="In developing the SlippiTV icon with the client, I was given complete freedom to develop and design. I knew that I wanted to work with the idea of a TV, since this project was about streaming games to your friends, so I started with an old CRT TV, the same ones played on when the game first released. Through testing in development the client and myself discovered that the simpler the icon, the better, as some locations this icon was used were limited to less than 32px. So while we loved the second variation, I simplified the concept down to the final version which captures the TV and the AVI cables coloration from the era. As a bonus, we were able to utilize the more complex second design during the launch process for the application." />
@@ -125,7 +123,6 @@ export function ProjectCodeSlippiTV() {
                     outLink2={linkSlippiTVGithub} 
                     buttonText2="Github Repo" 
                     projOtherDetails="FREELANCE | LEAD UI/UX DESIGNER & CO-DEVEOPER"/>
-                {/* <GalleryV2 mediaGallery={SlippiTVMedia}/> */}
                 <BentoBoxB/>
             </div>
         </pages.GroupProjectPage>

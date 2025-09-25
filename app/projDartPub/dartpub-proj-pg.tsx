@@ -9,6 +9,7 @@ import * as gallery from "@/app/globals/project-galleries";
 import { MediaType } from "@/app/globals/project-galleries";
 import { LazyVideo } from "@/app/globals/lazy-video";
 import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
+import { GalleryV2TopInfoDiv } from "../globals/gallery-v2";
 
 const imgPubDart01 = "_3d/_pubDart/pubDart_img_05.jpg";
 const imgPubDart04 = "_3d/_pubDart/pubDart_img_03.png";
@@ -30,29 +31,28 @@ const cell01Media: bentos.IPopupMedia = {
 
 function BentoBoxA() {
     return (
-        <div className={`${bentoGap} grid grid-cols-2 w-[80%] justify-self-center text-textVariant`}>
-                <bentos.CellMediaOnClick mediaLink={vidPubDart02} mediaType={MediaType.Video} mediaText="Showcase Animation" cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
-                
-                <bentos.CellText cellSpan="col-span-2">
-                    <bentos.HeaderText text="Game Ready Darts and Pub Assets" textSize={titleTextSize}/>
-                </bentos.CellText>
+        <div className={`${bentoGap} grid grid-cols-1 w-[80%] justify-self-center text-textVariant`}>
+            <bentos.CellMediaOnClick mediaLink={vidPubDart02} mediaType={MediaType.Video} mediaText="Showcase Animation" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
-                <div className="col-span-2 grid grid-cols-3 hover:z-20">
-                    <bentos.CellMediaOnClick mediaLink={imgPubDart04} mediaType={MediaType.Image} mediaText="Pub Scene Render" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                    <bentos.CellMediaOnClick mediaLink={imgPubDart05} mediaType={MediaType.Image} mediaText="Pub Scene Wireframe" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                    <bentos.CellMediaOnClick mediaLink={imgPubDart01} mediaType={MediaType.Image} mediaText="Photo from the Pub" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                </div>
-                
-                <bentos.CellText cellSpan="col-span-2">
-                    <bentos.ParagraphText textSize={paraTextSize} text="This project is inspired by a local pub that I visited to play darts with friends.
-                        I challenged myself to make these models completely game ready, from consistent low quality polys, to UV unwrapping and texture baking.
-                        All modeling, UVing, shader development, and texture baking was done in Blender 3D." />
-                </bentos.CellText>
+            <GalleryV2TopInfoDiv
+                projTitle="Darts + Pub 3D Assets" 
+                projSummary={`This project is inspired by a local pub that I visited to play darts with friends.
+                    I challenged myself to make these models completely game ready, from consistent low quality polys, to UV unwrapping and texture baking.
+                    All modeling, UVing, shader development, and texture baking was done in Blender 3D.`} 
+                projOtherDetails="PERSONAL | 3D ARTIST & ANIMATOR"/>
 
+            <div className="col-span-1 grid grid-cols-3 hover:z-20 w-full gap-[12px]">
+                <bentos.CellMediaOnClick mediaLink={imgPubDart04} mediaType={MediaType.Image} mediaText="Pub Scene Render" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClick mediaLink={imgPubDart05} mediaType={MediaType.Image} mediaText="Pub Scene Wireframe" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClick mediaLink={imgPubDart01} mediaType={MediaType.Image} mediaText="Photo from the Pub" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            </div>
+
+            <div className="col-span-1 grid-cols-2 grid gap-[12px]">
                 <bentos.CellMediaOnClick mediaLink={vidPubDart01} mediaType={MediaType.Video} mediaText="Environment Models and Maps" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaLink={vidPubDart03} mediaType={MediaType.Video} mediaText="Dartboard Housing Model and Maps" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaLink={vidPubDart04} mediaType={MediaType.Video} mediaText="Table and Chairs Model and Maps" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellMediaOnClick mediaLink={vidPubDart05} mediaType={MediaType.Video} mediaText="Dartboard and Darts Model and Maps" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            </div>
         </div>
     )
 }
@@ -60,9 +60,7 @@ function BentoBoxA() {
 export default function ProjectDartPubPage() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <div className="grid grid-cols-1 gap-[24px]">
-                <BentoBoxA />
-            </div>
+            <BentoBoxA />
         </pages.GroupProjectPage>
     )
 }

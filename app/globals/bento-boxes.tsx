@@ -40,11 +40,14 @@ export function ProjectDetailRelativeText({TitleText="", MoreText=""}: {TitleTex
     )
 }
 
-export function ProjectDetailTextTop({TitleText="", MoreText=""}: {TitleText: string, MoreText: string}) {
+export function ProjectDetailTextTop({TitleText="", MoreText="", ExtraProjInfo=""}: {TitleText: string, MoreText: string, ExtraProjInfo: string}) {
     return (
         <div className={`${CheckIfMobileBrowser() ? "px-[8px] py-[4px]" : "px-[16px] py-[8px]"} relative w-[80%] grid grid-rows-auto h-fit justify-self-center border-white border-[1px] gap-[8px]`}>
             <div className={`${CheckIfMobileBrowser() ? "text-[14px]" : "text-[32px] lg:text-[56px] 2xl:text-[72px]"} ${fonts.dotoBlack.className} text-priColor w-full text-left text-nowrap leading-none relative h-auto content-center`}>
                 <p>{TitleText}</p>
+            </div>
+            <div>
+                <p className={`text-[6px] md:text-[12px] lg:text-[14px] xl:text-[16px]"} ${fonts.dotoBlack.className} text-priColor w-full  text-left text-nowrap leading-none relative h-auto content-center`}>{ExtraProjInfo}</p>
             </div>
 
             <div className={`${CheckIfMobileBrowser() ? "text-[6px]" : "text-[16px] lg:text-[18px] 2xl:text-[24px]"} ${fonts.dotoBlack.className} relative flex-row right-0 bottom-0 w-full text-secColor text-left`}>

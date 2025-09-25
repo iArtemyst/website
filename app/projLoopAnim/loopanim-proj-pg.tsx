@@ -105,7 +105,8 @@ export default function ProjectLoopAnims() {
     return (
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
                 <bentos.ProjectDetailTextTop 
-                    TitleText="LOOPING DOODLES" 
+                    TitleText="LOOPING DOODLES"
+                    ExtraProjInfo="PERSONAL | ANIMATOR & PROCEDURAL DESIGNER"
                     MoreText="I consider these animations my doodles. While these started as simple loops, I quickly expanded into procedurally generated motion and modeling systems, simulations, and more, while still challenging myself to create an appealing loop. For more of my Looping Doodles, please visit my Artstation Page."/>
                 <BentoBoxA />
         </pages.GroupProjectPage>

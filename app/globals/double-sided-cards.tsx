@@ -113,8 +113,11 @@ function DoubleSidedAboutCard({card, index}: {card: IDoubleSideAboutCard, index:
 // MOBILE CARD COMPONENTS
 
 function MobileDoubleSidedCardWithLink({card, index}: {card:IDoubleSideLandingCard, index:number}) {
+    let card_position = ["place-self-start", "place-self-center", "place-self-end"]
+    let pick_position = card_position[index]
+    
     return (
-        <div>
+        <div className={`self-center ${pick_position}`}>
             <StyledLink href={card.cardLink}>
                 <MobileDoubleSidedCardBase src={card.cardVideoBack} index={index} />
             </StyledLink>
@@ -127,7 +130,7 @@ function MobileDoubleSidedCardBase({src, index}: {src:string, index:number}) {
     let pick_rotation = rotation_angle[index]
 
     return (
-        <div className={`rotate-[${pick_rotation * 10}deg] animate-wiggle-bounce h-fit w-fit duration-0 z-10 active:z-20 active:animate-none hover:scale-110 active:scale-110  `} style={NoSelect}>
+        <div className={`rotate-[${pick_rotation * 10}deg] animate-wiggle-bounce h-fit w-[128px] duration-0 z-10 active:z-20 active:animate-none hover:scale-110 active:scale-110  `} style={NoSelect}>
             <CardVideoBG src={src}/>
         </div>
     )
@@ -148,7 +151,7 @@ export function LandingCardContainer({dataArray}:{dataArray:IDoubleSideLandingCa
                 }
             </div>
             :
-            <div className={`grid-cols-3 gap-[12px] absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center grid place-items-center w-[80%] h-[70%] items-center`}>
+            <div className={`grid grid-rows-3 gap-[12px] absolute left-[50%] -translate-x-[50%] top-[44%] -translate-y-[50%] overflow-visible justify-self-center content-center w-[80%] h-[50%] place-items-end`}>
                 {
                     dataArray.map((data, i) => <MobileDoubleSidedCardWithLink key={i} card={data} index={i}/>)
                 }

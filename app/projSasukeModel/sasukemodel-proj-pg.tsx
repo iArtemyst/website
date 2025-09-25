@@ -47,26 +47,26 @@ function BentoBoxA() {
                 <bentos.HeaderText text={`"Foxsuke" SSBM Model`} textSize={titleTextSize}/>
             </bentos.CellText>
 
-            <bentos.CellMediaOnClick mediaText="Custom Sasuke 3D Model" mediaLink={mediaFoxsukeModel01} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant" />
+            {/* <bentos.CellMediaOnClick mediaText="Custom Sasuke 3D Model" mediaLink={mediaFoxsukeModel01} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant" /> */}
 
             {
                 isMobile === false ?
-                    <div className={`relative w-[70%] max-w-[1080px] h-[360px] grid grid-cols-1 justify-between justify-self-center place-items-center hover:cursor-default`}>
+                    <div className={`relative w-[90%] max-w-[1080px] h-[360px] grid grid-cols-1 justify-between justify-self-center place-items-center hover:cursor-default`}>
                         <LazyImageSizer imgAlt="ref" imgLink={mediaFoxsukeModel02} imgSize={sasukeRefImgSizeL} />
                         <div className="w-[70%] h-fit items-center col-span-1 self-center flex flex-col text-pretty z-10 drop-shadow-lg text-center">
-                            <p className={`${fonts.dotoBlack.className} ${titleTextSize}`}>MAKING SASUKE UCHIHA</p>
-                            <p className={`${fonts.dotoBlack.className} ${paraTextSize}`}>{projectDescriptionText}</p>
+                            <p className={`${fonts.dotoBlack.className} text-[32px]`}>MAKING SASUKE UCHIHA</p>
+                            <p className={`${fonts.dotoBlack.className} text-[14px]`}>{projectDescriptionText}</p>
                         </div>
                         <LazyImageSizer imgAlt="ref2" imgLink={mediaFoxsukeModel03} imgSize={sasukeRefImgSizeR} />
                     </div>
 
                     :
 
-                    <div className={`w-[90%] h-[320px] grid grid-cols-1 justify-between justify-self-center place-items-center hover:cursor-default`}>
+                    <div className={`w-[90%] h-[190px] grid grid-cols-1 justify-between justify-self-center place-items-center hover:cursor-default`}>
                         <LazyImageSizer imgAlt="ref" imgLink={mediaFoxsukeModel02} imgSize={sasukeRefImgSizeMobileL} />
-                        <div className="w-[70%] h-fit items-center self-center flex flex-col text-pretty z-10 drop-shadow-lg text-center">
-                            <p className={`${fonts.dotoBlack.className} ${titleTextSize}`}>MAKING SASUKE UCHIHA</p>
-                            <p className={`${fonts.dotoBlack.className} ${paraTextSize}`}>{projectDescriptionText}</p>
+                        <div className="w-[75%] h-fit items-center self-start flex flex-col text-pretty z-10 drop-shadow-lg text-center mt-[1em]">
+                            <p className={`${fonts.dotoBlack.className} text-[10px]`}>MAKING SASUKE UCHIHA</p>
+                            <p className={`${fonts.poppins.className} text-[6px]`}>{projectDescriptionText}</p>
                         </div>
                         <LazyImageSizer imgAlt="ref2" imgLink={mediaFoxsukeModel03} imgSize={sasukeRefImgSizeMobileR} />
                     </div>
@@ -76,7 +76,7 @@ function BentoBoxA() {
             <bentos.CellMediaOnClickNoShadow mediaText="Final Foxsuke 3D Model" mediaLink={mediaFoxsukeModel05} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             <bentos.CellMediaOnClickNoShadow mediaText="Final Foxsuke Model Details" mediaLink={mediaFoxsukeModel06} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
-            <div className="col-span-1 grid grid-cols-3">
+            <div className="col-span-1 grid grid-cols-1 sm:grid-cols-3">
                 <bentos.CellMediaOnClickNoShadow mediaText="Fox and Sasuke Low Poly Comparison" mediaLink={mediaFoxsukeModel07} mediaType={MediaType.Video} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
                 <bentos.CellText cellSpan={`col-span-1`}>
                     <bentos.ParagraphText textSize={paraTextSize} 
@@ -87,12 +87,12 @@ function BentoBoxA() {
 
             <bentos.CellMediaOnClickNoShadow mediaText="Sasuke Model in Game" mediaLink={mediaFoxsukeModel08} mediaType={MediaType.Image} cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
 
-            <div className="col-span-1 grid grid-cols-3">
-                <bentos.CellText cellSpan={`col-span-1`}>
+            <div className="col-span-1 grid grid-cols-1 sm:grid-cols-3">
+                <bentos.CellText cellSpan={`col-span-1 order-2 sm:order-1`}>
                     <bentos.ParagraphText textSize={paraTextSize} 
                         text={`In addition to the modded 3D model, I also designed a matching Stock Icon that displays above the character information during game. The game engine requires that this image be only 24x24px, so the challenge was to create a recognizable small pixel version of the Sasuke 3D model I had been creating.`} />
                 </bentos.CellText>
-                <bentos.CellMediaOnClickNoShadow mediaText="Custom Sasuke Stock Icon" mediaLink={mediaFoxsukeModel09} mediaType={MediaType.Image} cellSpan="col-span-2"  hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClickNoShadow mediaText="Custom Sasuke Stock Icon" mediaLink={mediaFoxsukeModel09} mediaType={MediaType.Image} cellSpan="col-span-2 order-1 sm:order-2"  hoverTextColor="text-textVariant"/>
             </div>
             
             <bentos.CellMediaOnClickNoShadow mediaText="WIP Details: Modeling Sasuke" mediaLink={mediaFoxsukeModel10} mediaType={MediaType.Image} cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
@@ -114,7 +114,7 @@ export function SasukeModelPage() {
                         projMediaAltText="alt text" 
                         projLink={linkFoxsukeComboVideo}
                         projLinkMediaType={MediaType.Image}
-                        cardColor={`bg-[#FFCCAA]`}/>
+                        cardColor={`bg-[#A24A06] border-[#F6720D] text-textVariant`}/>
                 </ViewAnotherProjectDiv>
         </pages.GroupProjectPage>
     )

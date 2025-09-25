@@ -52,7 +52,7 @@ function BentoBoxA() {
 
             <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} w-full justify-self-center grid  gap-[12px] hover:z-20`}>
                 <bentos.CellText cellSpan="col-span-1">
-                    <bentos.ParagraphText textSize={paraTextSize} text="After designing a suite of icons representing the possible controller button presses in the style of DDR, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM. Each asset (except for the landing screen 3d text) was hand made in After Effects with vectors and shapes, and all scenes were animated and edited in Adobe After Effects" />
+                    <bentos.ParagraphText textSize={paraTextSize} text="After designing a suite of icons representing the possible controller button presses in the style of DDR, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM. Each asset was hand made in After Effects with vectors and shapes (except for the landing screen 3d text which was made in Blender), and all scenes were animated and composited in Adobe After Effects." />
                 </bentos.CellText>
                 <bentos.CellMediaOnClick mediaLink={vidDDRMelee02} mediaType={MediaType.Video} mediaText="DDR Melee Outro Video" cellSpan="col-span-2"  hoverTextColor="text-textVariant"/>
             </div>
@@ -101,7 +101,7 @@ export function DDRMeleePage() {
                     projMediaAltText="alt text" 
                     projLink={linkFoxsukeComboVideo}
                     projLinkMediaType={MediaType.Image}
-                    cardColor={`bg-[#FFCCAA]`}/>
+                    cardColor={`bg-[#A24A06] border-[#F6720D] text-textVariant`}/>
             </ViewAnotherProjectDiv>
         </pages.GroupProjectPage>
     )

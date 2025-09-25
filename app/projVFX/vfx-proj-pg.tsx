@@ -12,6 +12,7 @@ export default function ProjectVFXPage() {
             <gallery.ProjectCardsWithGalleryContainer cardArray={vfxmedia.VFXProjectCardArrays} columnAmount="grid-cols-5"/>
             <gallery.ProjectDetailRelativeText
                 TitleText="STYLIZED VFX"
+                ExtraProjInfo="PERSONAL | ANIMATOR & DESIGNER"
                 MoreText="In an effort to practice my 2D shader development, I quickly rigged and animated a simple character model and set about recreating some stylized shaders applied to simple geometry.
                 The VFX assets are made of several layers of meshes, shaders, and timed animations. And with the fireball animation, I developed a procedural system to spawn and cast a fireball along a spline in scene." /> 
         </pages.GroupProjectPage>
