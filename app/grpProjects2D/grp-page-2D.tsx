@@ -10,7 +10,9 @@ import { FeaturedProjectsDiv, IFeaturedProjectCard } from "../globals/featured-p
 import { LazyHoverVideo, LazyNonHoverVideo, LazyVideo } from "../globals/lazy-video";
 import * as fonts from "@/app/globals/fonts";
 
-const vidBankApp = "_project-links/prjLink_bankapp_400px.mp4";
+const vidBankApp = "_2d/app-bank-concept/prjLink_bankApp_400px.mp4";
+const vidPodcastApp = "_2d/app-podcast-concept/prjLink_podcastApp_400px.mp4";
+const vidSteamApp = "_2d/app-steam-concept/prjLink_steamApp_400px.mp4";
 const vidDDRMelee = "_project-links/prjLink_ddr-melee_400px.mp4";
 const vidInstaLoops = "_project-links/prjLink_insta-loops_400px.mp4";
 const vidMedUI = "_project-links/prjLink_med-ui_400px.mp4";
@@ -24,7 +26,9 @@ const linkMedUI = "../projMedUI";
 const linkDDRMelee = "../projDDRMelee";
 const linkInstaLoops = "../projLoopAnim";
 const linkConsumerMotion = "../projConsumerMotion";
-const linkConceptApps = "../projConceptApps";
+const linkConceptBankApp = "../projConceptAppBank";
+const linkConceptPodcastApp = "../projConceptPodcastApp";
+const linkConceptSteamApp = "../projConceptSteamApp";
 const linkHairGenerator = "../projHairGen2D";
 const linkWebsite = `../projPortfolioSite2D`;
 const linkSlippiTV = '../projSlippiTV2D'
@@ -77,10 +81,24 @@ const groupCardData: IProjectLinkCard[] = [
         errorText: "After Effects + Figma + Illustrator",
     },
     {
-        projectTitle: "Concept App Designs",
-        projectDates: "2018-2020",
+        projectTitle: "Concept Apple Bank App",
+        projectDates: "2019",
         mediaLink: vidBankApp,
-        cardLink: linkConceptApps,
+        cardLink: linkConceptBankApp,
+        errorText: "Figma + Illustrator",
+    },
+    {
+        projectTitle: "Concept Podcast App",
+        projectDates: "2019",
+        mediaLink: vidPodcastApp,
+        cardLink: linkConceptPodcastApp,
+        errorText: "Figma + Illustrator",
+    },
+    {
+        projectTitle: "Concept Steam Redesign",
+        projectDates: "2019",
+        mediaLink: vidSteamApp,
+        cardLink: linkConceptSteamApp,
         errorText: "Figma + Illustrator",
     },
     {
