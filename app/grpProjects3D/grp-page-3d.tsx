@@ -175,8 +175,7 @@ export default function GroupProjects3D() {
 
     return shuffledCards.length != 0 ?
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
-            <p className={`${fonts.dotoBlack.className} justify-self-center text-textVariant text-[32px]`}>REEL</p>
-            <div className="w-[85%] md:w-[75%] place-self-center rounded-xl overflow-clip shadow-[2px_2px_6px_#00000030,-2px_-2px_6px_#ffffff30] hover:shadow-[2px_2px_3px_#00000010,-2px_-2px_3px_#ffffff10] hover:scale-[99%] active:scale-[98%]">
+            <div className="w-[85%] md:w-[75%] place-self-center h-fit justify-items-center flex rounded-xl overflow-clip shadow-[2px_2px_6px_#00000030,-2px_-2px_6px_#ffffff30] hover:shadow-[2px_2px_3px_#00000010,-2px_-2px_3px_#ffffff10] hover:scale-[99%] active:scale-[98%]">
                 <LazyNonHoverVideo 
                         src={reel3D}
                         autoplay={true}
