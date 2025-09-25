@@ -53,7 +53,7 @@ export function GalleryV2InfoDiv({projSummary="", projOtherDetails=""}:{projSumm
             <p className={`${fonts.dotoBlack.className} text-[10px] sm:text-[12px] md:text-[16px] text-balance`}>
                 {projOtherDetails}
             </p>
-            <p className={`${fonts.poppins.className} text-textVariant text-pretty text-[8px] sm:text-[12px] md:text-[14px]`}>
+            <p className={`${fonts.poppins.className} text-textVariant text-balance text-[8px] sm:text-[12px] md:text-[14px]`}>
                 {projSummary}
             </p>
         </div>

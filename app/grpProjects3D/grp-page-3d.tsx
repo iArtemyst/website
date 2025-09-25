@@ -34,6 +34,8 @@ const linkSasukeModel = "../projSasukeModel";
 const vidFoxsukeVideo = "_project-links/prjLink_FoxsukeCV_400px.mp4";
 const linkFoxsukeVideo = "../projFoxsukeVideo";
 
+const vidVRLabs = "_3d/_vr-labs/prjLink_vrLabs_400px.mp4";
+const linkVRLabs = "../projVRLabs";
 
 const vidProcToonCity = "_project-links/prjLink_islandGen_400px.mp4";
 const vidUtopaea = "_project-links/prjLink_utopaea_400px.mp4";
@@ -135,20 +137,13 @@ const groupCardData: IProjectLinkCard[] = [
         cardLink: linkProcToonCity,
         errorText: "Blender 3D",
     },
-    // {
-    //     projectTitle: "Foxsuke Shippuden Opening (SSBM)",
-    //     projectDates: "2025",
-    //     mediaLink: vidFoxsukeVideo,
-    //     cardLink: linkFoxsukeVideo,
-    //     errorText: "Blender 3D + After Effects",
-    // },
-    // {
-    //     projectTitle: "Darts and Pub Assets",
-    //     projectDates: "2024",
-    //     mediaLink: vidDartPub,
-    //     cardLink: linkDartPub,
-    //     errorText: "Blender 3D",
-    // },
+    {
+        projectTitle: "VR Lab Environments",
+        projectDates: "2022-2024",
+        mediaLink: vidVRLabs,
+        cardLink: linkVRLabs,
+        errorText: "3DS Max + Unity Engine",
+    },
 ]
 
 
