@@ -149,10 +149,10 @@ function MobileGroupProjectCard({card}: {card: IProjectLinkCard}) {
 export function ProjectLinkCardsContainer({dataArray}: {dataArray: IProjectLinkCard[]}) {    
     let isMobile = CheckIfMobileBrowser()
     return (
-        <div className="">
+        <div className="flex flex-col w-full h-auto">
             {
                 isMobile === false ?
-                    <div className={`grid grid-cols-3 w-[90%] justify-self-center gap-y-[54px] h-full justify-items-center content-center place-content-center mt-[24px]`}>
+                    <div className={`grid grid-cols-3 w-[90%] justify-self-center self-center gap-y-[54px] h-full justify-items-center content-center place-content-center mt-[24px]`}>
                         {
                             dataArray.map((data, i) => <GroupProjectCards key={i} dataArray={data}/> )
                         }

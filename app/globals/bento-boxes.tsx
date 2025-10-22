@@ -367,12 +367,12 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
     }
 
     return (
-        <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] h-auto z-[150] justify-items-center content-center w-full`}>
+        <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] h-auto z-[150] flex justify-items-center justify-center w-full`}>
             {
                 isMobile === false ?
                     <>
-                        <div className={`content-center mx-[24px] my-auto justify-items-center`}>
-                            <div className={`relative w-[80%] md:max-w-[960px] lg:max-w-[1080px] xl:max-w-[1260px] 2xl:max-w-[1440px] h-fit`}>
+                        <div className={`content-center mx-[24px] my-auto flex flex-col w-auto`}>
+                            <div className={`relative w-[80%] md:max-w-[960px] lg:max-w-[1080px] xl:max-w-[1260px] 2xl:max-w-[1440px] h-fit place-self-center flex`}>
                                 <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor md:rounded-[18px]`}/>
                                 <div className={`relative`}>
                                     <PopupMedia />
@@ -441,7 +441,7 @@ export function CellMediaOnClickNoShadow({mediaLink, mediaType, mediaText, hover
     let [showGallery, setShowGallery] = useState(false);
     
     return (
-        <div className={`relative ${cellSpan} hover:cursor-pointer`}>
+        <div className={`relative ${cellSpan} hover:cursor-pointer flex justify-center content-center`}>
             <CellMediaNoShadow cellMedia={mediaLink} cellMediaType={mediaType} mediaText={mediaText} cellSpan={cellSpan} showGallery={showGallery} setShowGallery={setShowGallery} hoverTextColor={hoverTextColor}/>
             {
                 showGallery && (

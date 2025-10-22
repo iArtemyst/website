@@ -12,12 +12,23 @@ import * as fonts from "@/app/globals/fonts";
 const vidDartPub = "_project-links/prjLink_dartspub_400px.mp4";
 const vidHorrorHouse = "_project-links/prjLink_horrorhouses_400px.mp4";
 const vidMedAnim = "_project-links/prjLink_medanim_400px.mp4";
+const vidMammotome = "_project-links/prjLink_Mammotome.mp4";
+const vidEESDevices = "_project-links/prjLink_eesDevices.mp4";
+const vidMedVisualization = "_project-links/prjLink_medVisualization.mp4";
 const vidMonsoonVermut = "_project-links/prjLink_monsoonvermut_400px.mp4";
 const vidProcMats = "_project-links/prjLink_procMat_400px.mp4";
 const vidProdAnim = "_project-links/prjLink_productanim_400px.mp4";
+const vidMakino = "_project-links/prjLink_Makino_400px.mp4";
+const vidFlowserve = "_project-links/prjLink_Flowserve_400px.mp4";
+const vidConsumerProd = "_project-links/prjLink_ConsumerProd_400px.mp4";
 const vidStylizedVFX = "_project-links/prjLink_stylizedvfx_400px.mp4";
 const vidInstaLoops = "_project-links/prjLink_insta-loops_400px.mp4";
 const vidSasukeModel = "_project-links/foxsuke_model_sqLink-vid_400px.mp4";
+const vidProcToonCity = "_project-links/prjLink_islandGen_400px.mp4";
+const vidUtopaea = "_project-links/prjLink_utopaea_400px.mp4";
+const vidHairGenerator = "_project-links/prjLink_hairgen_400px.mp4";
+const vidVRLabs = "_3d/_vr-labs/prjLink_vrLabs_400px.mp4";
+const vidFoxsukeVideo = "_project-links/prjLink_FoxsukeCV_400px.mp4";
 
 const reel3D = "_project-links/portfolioReel_3D_EY_compressed.mp4"
 
@@ -25,25 +36,23 @@ const linkHorrorHouse = "../projHorrorHouse";
 const linkStylizedVFX = "../projVFX3D";
 const linkDartPub = "../projDartPub";
 const linkMedAnim = "../projMedicalAnim";
+const linkMammotome = "../projMammotome";
+const linkEESDevices = "../projEthiconDevices";
+const linkMedVisualization = "../projMedVisualization";
 const linkMonsoonVermut = "../projMonsoon";
 const linkProdAnim = "../projProductAnim";
+const linkFlowserve = "../projFlowservePumps";
+const linkMakino = "../projMakinoMachinery";
+const linkConsumerProd = "../projConsumerProduct";
 const linkProcMats = "../projProcMat3D";
 const linkInstaLoops = "../projLoopAnim3D";
 const linkSasukeModel = "../projSasukeModel";
-
-const vidFoxsukeVideo = "_project-links/prjLink_FoxsukeCV_400px.mp4";
-const linkFoxsukeVideo = "../projFoxsukeVideo";
-
-const vidVRLabs = "_3d/_vr-labs/prjLink_vrLabs_400px.mp4";
-const linkVRLabs = "../projVRLabs";
-
-const vidProcToonCity = "_project-links/prjLink_islandGen_400px.mp4";
-const vidUtopaea = "_project-links/prjLink_utopaea_400px.mp4";
-const vidHairGenerator = "_project-links/prjLink_hairgen_400px.mp4";
-
 const linkUtopaea = "../projUtopaea";
 const linkProcToonCity = "../projProcIslandCity";
 const linkHairGenerator = "../projHairGenerator";
+const linkVRLabs = "../projVRLabs";
+const linkFoxsukeVideo = "../projFoxsukeVideo";
+
 
 const featuredProjectsData: IFeaturedProjectCard[] = [
     {
@@ -75,11 +84,25 @@ const groupCardData: IProjectLinkCard[] = [
         errorText: "Blender 3D",
     },
     {
-        projectTitle: "Product Animation",
+        projectTitle: "Makino Machinery Animation",
         projectDates: "2018-2025",
-        mediaLink: vidProdAnim,
-        cardLink: linkProdAnim,
-        errorText: "3DS Max + After Effects + Cinema4D",
+        mediaLink: vidMakino,
+        cardLink: linkMakino,
+        errorText: "3DS Max + After Effects + Cinema 4D",
+    },
+    {
+        projectTitle: "Flowserve Pumps Animation",
+        projectDates: "2018-2025",
+        mediaLink: vidFlowserve,
+        cardLink: linkFlowserve,
+        errorText: "3DS Max + After Effects + Keyshot",
+    },
+    {
+        projectTitle: "Consumer Product Animation",
+        projectDates: "2018-2025",
+        mediaLink: vidConsumerProd,
+        cardLink: linkConsumerProd,
+        errorText: "3DS Max + Vray + Keyshot",
     },
     {
         projectTitle: "Monsoon Vermut",
@@ -96,11 +119,25 @@ const groupCardData: IProjectLinkCard[] = [
         errorText: "Blender 3D + Unreal Engine",
     },
     {
-        projectTitle: "Medical Animation",
+        projectTitle: "Medical Visualization",
         projectDates: "2018-2025",
-        mediaLink: vidMedAnim,
-        cardLink: linkMedAnim,
-        errorText: "3DS Max + Cinema 4D + After Effects",
+        mediaLink: vidMedVisualization,
+        cardLink: linkMedVisualization,
+        errorText: "3DS Max + Blender + After Effects",
+    },
+    {
+        projectTitle: "Ethicon Device Visualization",
+        projectDates: "2018-2025",
+        mediaLink: vidEESDevices,
+        cardLink: linkEESDevices,
+        errorText: "3DS Max + Keyshot + After Effects",
+    },
+    {
+        projectTitle: "Mammotome Medical Device",
+        projectDates: "2023-2024",
+        mediaLink: vidMammotome,
+        cardLink: linkMammotome,
+        errorText: "3DS Max + Vray + After Effects",
     },
     {
         projectTitle: "Looping Animations",
