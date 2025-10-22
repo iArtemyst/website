@@ -133,7 +133,7 @@ const groupCardData: IProjectLinkCard[] = [
         errorText: "3DS Max + Keyshot + After Effects",
     },
     {
-        projectTitle: "Mammotome Medical Device",
+        projectTitle: "Mammotome AutoCore Device",
         projectDates: "2023-2024",
         mediaLink: vidMammotome,
         cardLink: linkMammotome,

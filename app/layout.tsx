@@ -3,8 +3,8 @@ import "./globals/globals.css";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Eevee Creative Designer",
-  description: "Designed and Coded by Eevee Y",
+  title: "Evelyn Youngblood Portfolio",
+  description: "Designed and Coded by Evelyn Youngblood",
 };
 
 export default function RootLayout({

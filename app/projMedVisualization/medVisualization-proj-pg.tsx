@@ -54,31 +54,31 @@ function BentoBox() {
     return (
         <div className={`grid-cols-2 ${bentoGap} relative z-0 grid grid-cols-2 w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white hover:cursor-pointer`}>
             <bentos.CellText cellSpan={`col-span-2`}>
-                <bentos.HeaderText text="MEDICAL VISUALIZATION" textSize={titleTextSize}/>
+                <bentos.HeaderSubtitleText htext="MEDICAL VISUALIZATION" stext="SCULPTING, TEXTURING, MODELING, RENDERING, COMPOSTING"/>
             </bentos.CellText>
             
-            <bentos.CellMediaOnClick mediaLink={imgMedViz05} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-2" hoverTextColor="text-textColor"/>
-            <bentos.CellMediaOnClick mediaLink={imgMedViz10} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor" />
-            <bentos.CellMediaOnClick mediaLink={imgMedViz09} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
+            <bentos.CellMediaOnClick mediaLink={imgMedViz05} mediaType={MediaType.Image} mediaText="Medical Device Warning with Sculpted Organ" cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
+
+            <bentos.CellMediaOnClick mediaLink={imgMedViz02} mediaType={MediaType.Image} mediaText="Realistic Medical Eye Surgery Still" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClick mediaLink={imgMedViz01} mediaType={MediaType.Image} mediaText="Hyper Realistic Macro Human Eye" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
             <bentos.CellText cellSpan={`col-span-2`}>
-                    <bentos.ParagraphText textSize={paraTextSize} text="With over 6 years of experience in medical animation, I have produced over 50+ videos from short warning videos on medical tower screens, to device release marketing, to IFU demonstrations, and more." />
+                    <bentos.ParagraphText textSize={paraTextSize} text="I started supporting my visualization team as an intern in college, and quickly developed the skills for modeling and rendering highly realistic medical scenes and organic body parts. Due to the variety of projects and clients, I have had the opportunity to design high quality assets and renders in several of the industry leading softwares for 3D Modeling, Lighting and Material Design, and Render Compositing." />
             </bentos.CellText>
 
-            <bentos.CellMediaOnClick mediaLink={imgMedViz04} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
-            <bentos.CellMediaOnClick mediaLink={imgMedViz03} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
-            <bentos.CellMediaOnClick mediaLink={imgMedViz02} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
-            <bentos.CellMediaOnClick mediaLink={imgMedViz01} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+            <bentos.CellMediaOnClick mediaLink={imgMedViz10} mediaType={MediaType.Image} mediaText="Realistic 3D Organ Rendering" cellSpan="col-span-1"  hoverTextColor="text-textColor" />
+            <bentos.CellMediaOnClick mediaLink={imgMedViz09} mediaType={MediaType.Image} mediaText="Realistic 3D Human Lung" cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClick mediaLink={imgMedViz04} mediaType={MediaType.Image} mediaText="Realistic 3D Human Heart" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+            <bentos.CellMediaOnClick mediaLink={imgMedViz03} mediaType={MediaType.Image} mediaText="Spliced Heart Visual with Graphics" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
 
             <bentos.CellText cellSpan={`col-span-2`}>
-                <bentos.ParagraphText textSize={paraTextSize} text="The technical precision required on these projects has helped me hone my craft and develop a strong eye for details. 
-                    And the scope of the projects has given me oppurtunities to expand my toolbox with skills such as sculpting, soft body manipulation, character animation, simulations, and more." />
+                <bentos.ParagraphText textSize={paraTextSize} text="I have been called on time and time again to recreate highly-releastic recreations of surgical techniques, medical device applications, and medical presentation support for clients. My technical support extends beyond 3D rendering and sculpting, I have also sketched and painted digital medical scenes to support informational documentation." />
             </bentos.CellText>
 
             <div className={`grid-cols-3 grid col-span-2 ${bentoGap} hover:z-20`}>
-                <bentos.CellMediaOnClick mediaLink={imgMedViz08} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
-                <bentos.CellMediaOnClick mediaLink={imgMedViz07} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
-                <bentos.CellMediaOnClick mediaLink={imgMedViz06} mediaType={MediaType.Image} mediaText="Medical animation still" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+                <bentos.CellMediaOnClick mediaLink={imgMedViz08} mediaType={MediaType.Image} mediaText="Digital Painting of Energy Cutting" cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClick mediaLink={imgMedViz07} mediaType={MediaType.Image} mediaText="Digital Painting of Energy Device" cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClick mediaLink={imgMedViz06} mediaType={MediaType.Image} mediaText="Digital Painting of Surgical Technique" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             </div>
 
         </div>
