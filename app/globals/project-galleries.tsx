@@ -118,10 +118,10 @@ function ProjectErrorHoverText({errorText}: {errorText:string}) {
 function ProjectDetailCard({card, showGallery, setShowGallery} : {card: ICardWithGalleryArrays, showGallery: boolean, setShowGallery: (x: boolean) => void}) 
 {              
     return (
-            <div className={`${card.cardData.cardContainerMargin} group relative w-fit h-full hover:animate-none hover:z-10 self-center animate-wiggle-bounce transition-all duration-300 flex-grow`} 
+            <div className={`${card.cardData.cardContainerMargin} group relative w-auto h-full hover:animate-none hover:z-10 scale-[80%] hover:scale-100 self-center animate-wiggle-bounce transition-all duration-300 flex-grow`} 
                     onClick={(e) => { setShowGallery(!showGallery); }}>
                 <CardHoverFX bufferZone={0} rotateAmount={7}>
-                    <div className={`${card.cardData.cardStyleWHM} relative h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`}>
+                    <div className={`${card.cardData.cardStyleWHM} relative w-auto h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`}>
                         <ProjDetailMediaCard mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText} mediaType={card.cardData.cardMediaType}/>
                         <ProjectDetailHoverText card={card}/> 
                     </div>
@@ -160,10 +160,10 @@ function ProjectCardWithGallery({card}: {card: ICardWithGalleryArrays}) {
             />
             {
                 showGallery && (
-                    <div>
+                    <>
                         <ClickIntoGallery galleryMedia={card.galleryData} setShowGallery={setShowGallery} galleryLength={card.galleryData.length}/>
                         <BackgroundBarrier setShowGallery={setShowGallery}/>
-                    </div>
+                    </>
                 )
             }
         </div>

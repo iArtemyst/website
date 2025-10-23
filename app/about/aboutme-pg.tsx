@@ -28,7 +28,7 @@ function DoubleSidedCardPageText() {
         <div className={`absolute left-0 bottom-0 w-full h-fit flex p-[24px] sm:p-[30px] md:p-[36px] lg:p-[42px] xl:p-[48px] place-items-end justify-self-center`} style={NoSelect}>
             <div className={`relative w-full h-fit flex-inline justify-self-start text-nowrap tracking-tighter`}>
                 <p className={`${titleSmlTextStyle}`}>Get to know me</p>
-                <p className={`${titleTextStyle}`}>EVELYN &quot;EEVEE&quot; YOUNGBLOOD</p>
+                <p className={`${titleTextStyle}`}>EVELYN YOUNGBLOOD</p>
             </div>
         </div>
     )
@@ -92,12 +92,12 @@ const cardMedia: IDoubleSideAboutCard[] = [
         cardStyle: cardStyle,
         rotatedAngle: `rotate-[0deg]`,
     },
-    {
-        cardVideoFront: vidFrontD,
-        cardVideoBack: vidBackD,
-        cardStyle: cardStyle,
-        rotatedAngle: `rotate-[0deg]`,
-    },
+    // {
+    //     cardVideoFront: vidFrontD,
+    //     cardVideoBack: vidBackD,
+    //     cardStyle: cardStyle,
+    //     rotatedAngle: `rotate-[0deg]`,
+    // },
 ]
 
 export function AboutMePage() {

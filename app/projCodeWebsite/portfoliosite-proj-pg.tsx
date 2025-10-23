@@ -25,7 +25,7 @@ function BentoBox() {
     return (
         <div className={`${isMobile ? "grid-cols-1" : "grid-cols-2"} relative z-auto grid w-[80%] h-fit justify-self-center rounded-3xl place-content-center gap-[12px] text-white hover:cursor-pointer`}>
             <bentos.CellText cellSpan={`${isMobile ? "col-span-1" : "col-span-2"} grid grid-cols-1`}>
-                <bentos.HeaderText text="MY PORTFOLIO WEBSITE" textSize="text-[16px]"/>
+                <bentos.HeaderSubtitleText htext="MY PORTFOLIO WEBSITE" stext="DESIGNER + DEVELOPER"/>
             </bentos.CellText>
             
             <bentos.CellMediaOnClick mediaText="Landing page" mediaLink={imgPortfolioSite01} mediaType={MediaType.Image} cellSpan={`${isMobile ? "col-span-1" : "col-span-2 row-span-2"}`} hoverTextColor="text-textVariant"/>

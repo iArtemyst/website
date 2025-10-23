@@ -95,7 +95,7 @@ const groupCardData: IProjectLinkCard[] = [
         errorText: "Figma + Illustrator",
     },
     {
-        projectTitle: "Concept Steam Redesign",
+        projectTitle: "Concept Steam App Redesign",
         projectDates: "2019",
         mediaLink: vidSteamApp,
         cardLink: linkConceptSteamApp,

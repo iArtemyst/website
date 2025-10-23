@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eevee About Me",
+  title: "About Me - Evelyn Youngblood",
   description: "About Me and My Skills",
 };
 

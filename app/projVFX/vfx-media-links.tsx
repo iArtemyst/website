@@ -37,7 +37,7 @@ const vfxStillE      = "_game/_vfx/vfx_stills_04.png";
 const vfxGalleryVidE = "_game/_vfx/vfx_galleryVids_04.mp4";
 const CardE          = "_game/_vfx/vfx_powerup_clip.mp4";
 
-const cardStyleWHM = "w-[120px] md:w-[240px] lg:w-[360px] group-hover:w-[180px] md:group-hover:w-[360px] lg:group-hover:w-[480px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
+const cardStyleWHM = "w-[120px] sm:w-[180px] md:w-[240px] lg:w-[320px] xl:w-[360px] 2xl:w-[480px]";
 const cardContainerMargin = "mx-64px";
 
 const VFXProjectCardAData: gallery.IProjectCardData = 

@@ -30,7 +30,7 @@ const CardDMedia06 = "_game/_utopaea/utopaea_card04_05.png";
 const CardDMedia07 = "_game/_utopaea/utopaea_card04_06.png";
 const CardD        = "_game/_utopaea/utopaea_card_04_00.png";
 
-const cardStyleWHM = "w-[120px] sm:w-[120px] md:w-[160px] lg:w-[240px] group-hover:w-[120px] sm:group-hover:w-[160px] md:group-hover:w-[240px] lg:group-hover:w-[360px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
+const cardStyleWHM = "w-[120px] sm:w-[120px] md:w-[240px] lg:w-[320px] xl:w-[360px] 2xl:w-[480px]";
 const cardContainerMargin = "mx-64px";
 
 const ProjectCardAData: gallery.IProjectCardData = 

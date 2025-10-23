@@ -41,7 +41,7 @@ function ProjectVideo({src}:{src:string}) {
 function LazyCardInternals({dataArray}: {dataArray: IProjectLinkCard}) {
     function CardText() {
         return (
-            <div className="relative flex justify-between w-full h-fit text-[0px] sm:group-hover:text-[6px] md:group-hover:text-[8px] lg:group-hover:text-[10px] xl:group-hover:text-[12px] 2xl:group-hover:text-[16px] items-end transition-all duration-300"
+            <div className="relative flex justify-between w-full h-fit text-[6px] md:text-[8px] lg:text-[10px] xl:text-[12px] 2xl:text-[16px] items-end transition-all duration-300"
                     style={NoSelect}>
                 <p className={`${fonts.dotoBlack.className} text-black text-left text-nowrap`}>{dataArray.projectTitle}</p>
                 <p className={`${fonts.dotoReg.className} text-black text-right text-nowrap`}>{dataArray.projectDates}</p>
@@ -51,10 +51,10 @@ function LazyCardInternals({dataArray}: {dataArray: IProjectLinkCard}) {
 
     return (
         <div className={`group relative grid hover:gap-[8px] hover:lg:gap-[10px] w-fit h-auto p-[8px] lg:p-[12px] transition-all duration-300 rounded-md place-items-center overflow-clip`}>
-            <div className="relative content-center md:w-[220px] lg:w-[280px] xl:w-[320px] 2xl:w-[360px] h-[100%] group-hover:h-[90%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090] transition-all duration-300">
+            <div className="relative content-center md:w-[220px] lg:w-[280px] xl:w-[320px] 2xl:w-[360px] h-[90%] self-start overflow-hidden rounded-md z-20 shadow-[0px_0px_12px_#00000090] transition-all duration-300">
                 <ProjectVideo src={dataArray.mediaLink} />
             </div>
-            <div className={`absolute left-0 bottom-0 p-[6px] md:p-[8px] w-full h-auto group-hover:opacity-100 opacity-0 transition-all duration-300`}>
+            <div className={`absolute left-0 bottom-0 p-[6px] md:p-[8px] w-full h-auto transition-all duration-300`}>
                 <CardText />
             </div>
         </div>

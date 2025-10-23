@@ -60,13 +60,34 @@ export function GalleryV2InfoDiv({projSummary="", projOtherDetails=""}:{projSumm
     )
 }
 
+function GalleryV3TitleDiv({projTitle=""}:{projTitle: string}) {
+    return (
+        <h1 className={`${fonts.dotoBlack.className} text-textVariant text-nowrap text-left w-full md:text-right text-[16px] sm:text-[24px] md:text-[32px]`}>
+            {projTitle}
+        </h1>
+    )
+}
+
+export function GalleryV3InfoDiv({projSummary="", projOtherDetails=""}:{projSummary: string, projOtherDetails: string}) {
+    return (
+        <div className={`text-[#FFFFFF60] text-left md:text-right`}>
+            <p className={`${fonts.dotoBlack.className} text-[10px] sm:text-[12px] md:text-[16px] text-balance`}>
+                {projOtherDetails}
+            </p>
+            <p className={`${fonts.poppins.className} text-textVariant text-balance text-[8px] sm:text-[12px] md:text-[14px]`}>
+                {projSummary}
+            </p>
+        </div>
+    )
+}
+
 export function GalleryV2InfoWithLinks({projTitle="", projSummary="", outLink1="", buttonText1="", outLink2="", buttonText2="", projOtherDetails=""}:{projTitle: string, projSummary: string, outLink1: string, buttonText1: string, outLink2: string, buttonText2: string, projOtherDetails: string}) {
     return (
         <div className={`flex flex-col md:flex-row w-[80%] h-fit max-w-[1280px] min-w-[240px] md:min-w-[540px] gap-[12px] md:gap-[36px] place-self-center place-items-center justify-between mb-[12px] md:mb-[24px]`}>
             <GalleryV2LinkButtonStack outLink1={outLink1} outLink2={outLink2} buttonText1={buttonText1} buttonText2={buttonText2} />
             <div className="flex flex-col md:flex-col w-full md:w-fit place-items-center md:place-items-end gap-[4px] md:gap-[0px] order-1 md:order-2">
-                <GalleryV2TitleDiv projTitle={projTitle} />
-                <GalleryV2InfoDiv projSummary={projSummary} projOtherDetails={projOtherDetails}/>
+                <GalleryV3TitleDiv projTitle={projTitle} />
+                <GalleryV3InfoDiv projSummary={projSummary} projOtherDetails={projOtherDetails}/>
             </div>
         </div>
     )

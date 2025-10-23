@@ -25,7 +25,7 @@ const CardCMedia01a = "_3d/_horrorHouses/hh_diffuse_02.mp4";
 const CardCMedia02a = "_3d/_horrorHouses/hh_wireframe_02.mp4";
 const CardC         = "_3d/_horrorHouses/HH_Midsommar_Card.mp4";
 
-const cardStyleWHM = "w-[120px] sm:w-[120px] md:w-[160px] lg:w-[240px] group-hover:w-[120px] sm:group-hover:w-[160px] md:group-hover:w-[240px] lg:group-hover:w-[360px] group-hover:m-[-30px] md:group-hover:m-[-60px]";
+const cardStyleWHM = "w-[120px] sm:w-[120px] md:w-[240px] lg:w-[320px] xl:w-[360px] 2xl:w-[480px]";
 const cardContainerMargin = "mx-64px";
 
 const ProjectCardAData: gallery.IProjectCardData = 

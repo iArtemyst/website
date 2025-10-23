@@ -33,7 +33,7 @@ function BentoBoxA() {
         <div className="relative z-10 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[24px]">
             
             <bentos.CellText cellSpan="col-span-1 w-full">
-                <bentos.HeaderText text="DDR Melee Motion Graphics" textSize={titleTextSize}/>
+                <bentos.HeaderSubtitleText htext="DDR Melee Motion Graphics" stext="FREELANCE | GRAPHICS + MOTION + ANIMATION"/>
             </bentos.CellText>
 
             <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} h-fit gap-[12px] grid`}>
