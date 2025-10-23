@@ -37,7 +37,8 @@ function BentoBox() {
 
             <bentos.CellMediaOnClick mediaLink={imgProd03} mediaType={MediaType.Image} mediaText="3D Render of Lipstick on Bathroom Counter" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
             <bentos.CellMediaOnClick mediaLink={imgJnJ05} mediaType={MediaType.Image} mediaText="Still Image from Consumer Product Animation" cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-            <bentos.CellMediaOnClick mediaLink={imgKAO3} mediaType={MediaType.Image} mediaText="3D Beauty Product with Graphic Mockup" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+
+            <bentos.CellMediaOnClick mediaLink={imgKAO3} mediaType={MediaType.Image} mediaText="3D Beauty Product with Graphic Mockup" cellSpan="col-span-2 sm:col-span-1" hoverTextColor="text-textColor"/>
 
             <bentos.CellText cellSpan="col-span-2 sm:col-span-1">
                 <bentos.ParagraphText textSize={paraTextSize} text="I have produced videos from makeup, to sponges, batteries, and even absorbing pads in the consumer products industry. Whether it is creating a better narrative for a product release, creating visuals to a research demo for focus groups, or exploded views for engineering break downs, I can do it all." />

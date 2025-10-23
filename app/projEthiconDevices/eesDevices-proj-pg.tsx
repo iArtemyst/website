@@ -68,8 +68,7 @@ function BentoBox() {
             <bentos.CellMediaOnClick mediaLink={vidEESA04} mediaType={MediaType.Video} mediaText="Medical Staple Support Device Video" cellSpan="col-span-2" hoverTextColor="text-textColor"/>
 
             <bentos.CellText cellSpan="col-span-1">
-                <bentos.ParagraphText textSize={paraTextSize} text="You can find some of my released work on the client Youtube, or their websites directly.
-                    Due to the nature of time and research for releasing medical products, I have a lot of unreleased work for the industry yet to come." />
+                <bentos.ParagraphText textSize={paraTextSize} text="In addition to the work shown here, more of my work is featured on the specific Ethicon Device Page, or on the Ethicon Youtube channel." />
             </bentos.CellText>
             <bentos.CellMediaOnClick mediaLink={imgEES21} mediaType={MediaType.Image} mediaText="Medical Device Cleaning Technique Image" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
 

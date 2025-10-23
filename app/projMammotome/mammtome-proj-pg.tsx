@@ -41,12 +41,12 @@ function BentoBox() {
 
             <bentos.CellMediaOnClick mediaLink={vidMamm03} mediaType={MediaType.Video} mediaText="Mammtome Device Collecting Tissue Sample" cellSpan="col-span-2" hoverTextColor="text-textColor"/>
 
-            <bentos.CellText cellSpan="col-span-1">
+            <bentos.CellText cellSpan="col-span-2 sm:col-span-1">
                 <bentos.ParagraphText textSize={paraTextSize} text="It was important to capture the fine details of the device and the surgical operations, and much consideration was given to the materials and presentation of the device and the other video elements to be as accurate as possible with their depiction." />
             </bentos.CellText>
 
 
-            <bentos.CellMediaOnClick mediaLink={imgMamm01} mediaType={MediaType.Image} mediaText="Mammotome Device Graphic" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
+            <bentos.CellMediaOnClick mediaLink={imgMamm01} mediaType={MediaType.Image} mediaText="Mammotome Device Graphic" cellSpan="col-span-2 sm:col-span-1" hoverTextColor="text-textColor"/>
             <bentos.CellMediaOnClick mediaLink={imgMamm04} mediaType={MediaType.Image} mediaText="Mammotome Surgical Technique Clip" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
             <bentos.CellMediaOnClick mediaLink={imgMamm07} mediaType={MediaType.Image} mediaText="Mammotome Device Collecting Samples" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
 
