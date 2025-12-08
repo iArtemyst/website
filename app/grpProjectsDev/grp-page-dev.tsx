@@ -8,25 +8,17 @@ import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
 
 const imgBingo = "_project-links/prjLink_bingo_400px.mp4";
-const vidResume = "_project-links/prjLink_codeResume_400px.mp4";
 const vidWebsite = "_project-links/prjLink_codePortfolio_400px.mp4";
 const imgSlippiTV = "_project-links/prjLink_slippiTV_400px.mp4";
+const vidMovieRatingSite = "_project-links/prjLink_WhatIsItRated_400px.mp4";
 
 const linkWebsite = "../projCodeWebsite/";
-const linkResume = '../projResume';
 const linkBingo = '../projBingoBoard';
 const linkSlippiTV = '../projSlippiTV';
+const linkMovieRatingSite = '../projMovieRatingSite';
 const linkResume2 = 'https://github.com/iArtemyst/resume';
 const linkBingo2 = 'https://github.com/iArtemyst/_bingo-board';
 
-
-const vidProcToonCity = "_project-links/prjLink_islandGen_400px.mp4";
-const vidUtopaea = "_project-links/prjLink_utopaea_400px.mp4";
-const vidHairGenerator = "_project-links/prjLink_hairgen_400px.mp4";
-
-const linkUtopaea = "../projUtopaea";
-const linkProcToonCity = "../projProcIslandCity";
-const linkHairGenerator = "../projHairGenerator";
 
 const groupCardData: IProjectLinkCard[] = [
     {
@@ -50,13 +42,13 @@ const groupCardData: IProjectLinkCard[] = [
         cardLink: linkSlippiTV,
         errorText: ".NET Maui + HTML",
     },
-    // {
-    //     projectTitle: "Stubble Hair Generator",
-    //     projectDates: "2024",
-    //     mediaLink: vidHairGenerator,
-    //     cardLink: linkHairGenerator,
-    //     errorText: "Substance Designer",
-    // },
+    {
+        projectTitle: "WhatIsItRated.com",
+        projectDates: "2025",
+        mediaLink: vidMovieRatingSite,
+        cardLink: linkMovieRatingSite,
+        errorText: "ReactJS + C# + .NET",
+    },
 ]
 
 

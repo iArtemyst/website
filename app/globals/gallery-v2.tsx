@@ -62,7 +62,7 @@ export function GalleryV2InfoDiv({projSummary="", projOtherDetails=""}:{projSumm
 
 function GalleryV3TitleDiv({projTitle=""}:{projTitle: string}) {
     return (
-        <h1 className={`${fonts.dotoBlack.className} text-textVariant text-nowrap text-left w-full md:text-right text-[16px] sm:text-[24px] md:text-[32px]`}>
+        <h1 className={`${fonts.dotoBlack.className} text-textVariant text-nowrap text-center w-full md:text-right text-[16px] sm:text-[24px] md:text-[32px]`}>
             {projTitle}
         </h1>
     )
@@ -70,7 +70,7 @@ function GalleryV3TitleDiv({projTitle=""}:{projTitle: string}) {
 
 export function GalleryV3InfoDiv({projSummary="", projOtherDetails=""}:{projSummary: string, projOtherDetails: string}) {
     return (
-        <div className={`text-[#FFFFFF60] text-left md:text-right`}>
+        <div className={`text-[#FFFFFF60] text-center md:text-right`}>
             <p className={`${fonts.dotoBlack.className} text-[10px] sm:text-[12px] md:text-[16px] text-balance`}>
                 {projOtherDetails}
             </p>
@@ -206,7 +206,7 @@ export function GalleryV2({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
                 </div> */}
                 <div className="flex flex-row place-self-center h-[20%] justify-around w-full order-1">
                     <GalleryButtonPrevious/>
-                    <p className={`${fonts.poppins.className} w-full h-auto text-center px-[.25rem] md:px-[2rem] text-[12px] md:text-[14px] self-center text-textVariant text-balance`}>{selectedMediaText}</p>
+                    <p className={`${fonts.poppins.className} w-full h-auto text-center px-[.25rem] md:px-[2rem] text-[10px] sm:text-[12px] md:text-[14px] self-center text-textVariant text-balance`}>{selectedMediaText}</p>
                     <GalleryButtonForward/>
                 </div>
             </div>
