@@ -8,6 +8,8 @@ import { CheckIfMobileBrowser } from "./globals/mobile-check";
 import { NoSelect } from "./globals/styles";
 import { useState, useEffect } from "react";
 import Loading from "./globals/loading-text";
+import { RecentProjectsShowcase, IRecentProject } from "./globals/recent-projects";
+import { MediaType } from "./globals/project-galleries";
 
 const vidBackA = "_landing/_grp_card_3d_back_new.mp4";
 const vidBackB = "_landing/_grp_card_dev_back_new.mp4";
@@ -23,24 +25,6 @@ const cardStyle = "w-[120px] md:w-[240px] lg:w-[275px] xl:w-[320px] 2xl:w-[360px
 const paraTextStyle = `${fonts.dotoBlack.className} text-balance text-[7px] sm:text-[10px] md:text-[12px] lg:text-[14px] 2xl:text-[16px]`;
 const titleSmlTextStyle= `${fonts.dotoBlack.className} h-fit w-fit text-[9px] sm:text-[12px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-secColor leading-none tracking-tighter self-end my-[4px] sm:my-[10px] md:my-[16px]`;
 const titleTextStyle = `${fonts.dotoBlack.className} text-priColor text-[28px] sm:text-[40px] md:text-[48px] lg:text-[64px] 2xl:text-[72px] text-left text-balance leading-none -my-[2px] sm:-my-[6px] md:-my-[12px]`;
-
-function LandingPageText() {
-    return (
-        <div className={`${CheckIfMobileBrowser() ? "flex-inline" : "flex"} absolute w-full h-fit bottom-0 left-[50%] -translate-x-[50%] z-10 p-[36px] sm:p-[48px] md:p-[64px] xl:p-[72px] place-items-center md:place-items-end justify-self-center`}
-                style={NoSelect}>
-            <div className={`relative w-fit h-fit flex-inline text-nowrap shrink justify-self-center md:justify-self-start place-items-center md:place-items-start`}>
-                <p className={`${titleSmlTextStyle}`}>Hi! I&apos;m Evelyn Youngblood, </p>
-                <p className={`${titleTextStyle} text-nowrap`}>CREATIVE DESIGNER</p>
-            </div>
-            
-            <div className={`${paraTextStyle} w-full text-left md:text-right mt-[4px] md:mt-[0px] text-pretty relative justify-self-center md:justify-self-end  text-secColor`}>
-                <p className={`text-balance`}>I have over 12 years of experience designing logos and print graphics, storyboarding and editing videos, modeling and animating 3D characters, using data to visualize and render digital products, developing augmented and virtual reality interactives, and utilizing consumer research to improve user experiences.</p>
-                <p className={`text-pretty`}>Let me be the creative for your next project.</p>
-            </div>
-        </div>
-    )
-}
-
 
 const card3dVideos : string[] = [
     "_landing/grp_card_3d_front_v1.mp4",
@@ -113,6 +97,55 @@ const cardMedia: IDoubleSideLandingCard[] = [
     },
 ]
 
+const RecentProjects: IRecentProject[] = [
+    {
+        projTitle:"WhatIsItRated.com", 
+        projDesc:"Creator, Designer, and Developer of a Daily Movie Rating Game website and server", 
+        projMedia:"_code/movieRatingSite/MovieRating_Still_B_00.png", 
+        projMediaAltText:"WhatIsItRated Project Link", 
+        projLinkMediaType:MediaType.Image, 
+        projLink:'../projMovieRatingSite',
+        softwareUsed:"ReactJS + C# + .NET",
+        cardColor:'bg-[#12a362] border-[#97cca3]',
+    },
+    {
+        projTitle:"Foxsuke Shippuden Opening (SSBM)", 
+        projDesc:"Recreation of Naruto Shippuden Opening with Super Smash Bros. Melee Characters, including a SSBM Combo Video", 
+        projMedia:"_3d/_fxsk-comboVid/cv_foxsuke_fullIntro_still.png", 
+        projMediaAltText:"WhatIsItRated Project Link", 
+        projLinkMediaType:MediaType.Image,
+        projLink:'../projFoxsukeVideo',
+        softwareUsed:"Blender 3D + After Effects",
+        cardColor:'bg-[#906C02] border-[#A89D7A]',
+    },
+    {
+        projTitle:"SlippiTV App & Website", 
+        projDesc:"Lead UI/UX Designer for the SlippiTV Windows app, and designing a custom Slippi.TV website", 
+        projMedia:"_code/slippiTV_stills_2.png", 
+        projMediaAltText:"WhatIsItRated Project Link", 
+        projLinkMediaType:MediaType.Image,
+        projLink:'../projSlippiTV',
+        softwareUsed:".NET Maui + HTML",
+        cardColor:'bg-[#361B74] border-[#6845BD]',
+    },
+]
+
+function LandingPageText() {
+    return (
+        <div className={`${CheckIfMobileBrowser() ? "flex-inline" : "flex"} absolute w-full h-fit bottom-0 left-[50%] -translate-x-[50%] z-10 p-[36px] sm:p-[48px] md:p-[64px] xl:p-[72px] place-items-center md:place-items-end justify-self-center`}
+                style={NoSelect}>
+            <div className={`relative w-fit h-fit flex-inline text-nowrap shrink justify-self-center md:justify-self-start place-items-center md:place-items-start`}>
+                <p className={`${titleSmlTextStyle}`}>Hi! I&apos;m Evelyn Youngblood, </p>
+                <p className={`${titleTextStyle} text-nowrap`}>CREATIVE DESIGNER</p>
+            </div>
+            
+            <div className={`${paraTextStyle} w-full text-left md:text-right mt-[4px] md:mt-[0px] text-pretty relative justify-self-center md:justify-self-end  text-secColor`}>
+                <p className={`text-balance`}>I have over 12 years of experience designing logos and print graphics, storyboarding and editing videos, modeling and animating 3D characters, using data to visualize and render digital products, developing augmented and virtual reality interactives, and utilizing consumer research to improve user experiences.</p>
+                <p className={`text-pretty`}>Let me be the creative for your next project.</p>
+            </div>
+        </div>
+    )
+}
 
 export default function LandingMain() {
     // let shuffled_cards = 
@@ -137,6 +170,7 @@ export default function LandingMain() {
         <pages.GroupProjectPage overflowStyle="overflow-hidden">
             <LandingPageText />
             <LandingCardContainer dataArray={shuffledCards} />
+            <RecentProjectsShowcase projectData={RecentProjects} />
         </pages.GroupProjectPage>
         :
         <Loading/>

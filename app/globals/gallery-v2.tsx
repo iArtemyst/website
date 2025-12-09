@@ -11,7 +11,7 @@ import { CardHoverFX } from "./card-hover-fx";
 import { LazyImage2 } from "./lazy-image";
 
 const bentoRounding = "rounded-[12px] sm:rounded-[16px] md:rounded-[24px]";
-const galleryButtonStyle = "min-w-[64px] h-[36px] md:min-w-[96px] md:h-[48px] flex justify-center place-content-center rounded-[8px] text-textVariant hover:cursor-pointer bg-[#343434] hover:bg-[#565656] hover:scale-[95%]";
+const galleryButtonStyle = "text-[10px] sm:text-[12px] md:text-[14px] w-fit h-fit px-[1em] py-[.5em] flex justify-center place-content-center rounded-[8px] text-textVariant hover:cursor-pointer bg-[#343434] hover:bg-[#565656] hover:scale-[95%]";
 
 
 //----------------------------------------------------------------------------------
@@ -192,7 +192,7 @@ export function GalleryV2({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
         function GalleryButtonPrevious() {
             return (
                 <div className={`${galleryButtonStyle} ${fonts.dotoBlack.className}`} onClick={() => selectedIndex > 0 ? setSelectedIndex(selectedIndex -= 1) : setSelectedIndex(mediaGallery.length - 1)}>
-                    <p className="align-middle self-center ">
+                    <p className="align-middle self-center h-fit w-fit">
                         prev
                     </p>
                 </div>
@@ -201,12 +201,9 @@ export function GalleryV2({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
 
         return (
             <div className={`flex flex-col self-end mt-[1rem] md:mt-0 gap-[12px] place-self-center w-full min-w-[240px] h-fit md:h-full max-h-[720px]`}>
-                {/* <div className={`w-full h-auto flex order-2 md:order-2`}>
-                    <p className={`${fonts.poppins.className} w-full h-auto text-center px-[.25rem] md:px-[2rem] text-[12px] md:text-[14px] text-textVariant text-balance`}>{selectedMediaText}</p>
-                </div> */}
-                <div className="flex flex-row place-self-center h-[20%] justify-around w-full order-1">
+                <div className="flex flex-row place-self-center h-fit justify-around w-full order-1">
                     <GalleryButtonPrevious/>
-                    <p className={`${fonts.poppins.className} w-full h-auto text-center px-[.25rem] md:px-[2rem] text-[10px] sm:text-[12px] md:text-[14px] self-center text-textVariant text-balance`}>{selectedMediaText}</p>
+                    <p className={`${fonts.poppins.className} w-full h-auto text-center px-[.25rem] md:px-[2rem] text-[7px] sm:text-[10px] md:text-[12px] lg:text-[14px] self-center text-textVariant text-balance`}>{selectedMediaText}</p>
                     <GalleryButtonForward/>
                 </div>
             </div>

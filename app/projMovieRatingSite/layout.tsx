@@ -3,7 +3,7 @@ import React from "react";
 import "@/app/globals/globals.css";
 
 export const metadata: Metadata = {
-  title: "WhatIsItRated.com",
+  title: "WhatIsItRated Website",
   description: "Daily Movie Rating Game",
 };
 

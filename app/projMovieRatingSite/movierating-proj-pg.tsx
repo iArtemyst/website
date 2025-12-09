@@ -23,7 +23,7 @@ const mediaMovieRatingSiteCode09 = "_code/movieRatingSite/MovieRatingSite_Code_S
 const linkMovieRatingSite = 'https://whatisitrated.com';
 const linkMovieRatingGithub = 'https://github.com/iArtemyst/movie-rating-site';
 
-const SlippiTVMedia: gallery.IGalleryMedia[] = [
+const WhatIsItRatedMediaGallery: gallery.IGalleryMedia[] = [
     {
         assetText: "Utilizing a quick JS script in my browser, I obtained thousands of IMDB movie ids to build up a database of information",
         assetMediaLink: mediaMovieRatingSiteCode09,
@@ -71,7 +71,7 @@ const SlippiTVMedia: gallery.IGalleryMedia[] = [
 
 function BentoBoxB() {
     return (
-        <div className="relative z-10 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
+        <div className="relative z-10 grid grid-cols-1 w-[90%] sm:w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
 
             <bentos.CellMediaOnClickNoShadow mediaText="WhatIsItRated.com, a movie trivia site design and developed by myself with ReactJs, .NET, and C#" mediaLink={mediaMovieRatingSite01} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant" />
 
@@ -85,8 +85,8 @@ function BentoBoxB() {
                 <bentos.CellMediaOnClickNoShadow mediaText="I utilized a small group of trusted friends and family to test and improve UI and functionality before v1.0 release" mediaLink={mediaMovieRatingSite02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             </div>
 
-            <div className="w-[95%] md:w-[80%] flex place-self-center mt-[1em] sm:mt-[2em]">
-                <GalleryV2 mediaGallery={SlippiTVMedia} />
+            <div className="w-[100%] md:w-[80%] flex place-self-center mt-[.5em] sm:mt-[2em]">
+                <GalleryV2 mediaGallery={WhatIsItRatedMediaGallery} />
             </div>
         </div>
     )
