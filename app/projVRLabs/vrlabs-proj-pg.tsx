@@ -5,6 +5,7 @@ import "@/app/globals/globals.css";
 import * as gallery from "@/app/globals/project-galleries";
 import * as pages from "@/app/globals/pages-main";
 import { GalleryV2, GalleryV2TopInfoDiv } from "@/app/globals/gallery-v2";
+import { LockedProjectPage } from "../globals/locked-project";
 
 const imgVRLab01 = "_3d/_vr-labs/vr-lab_still_001.png";
 const imgVRLab02 = "_3d/_vr-labs/vr-lab_still_002.png";
@@ -33,6 +34,8 @@ const ConceptAppMedia: gallery.IGalleryMedia[] = [
 
 export function ProjectVRLabs() {
     return (
+        <>
+        <LockedProjectPage />
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <div className={`place-self-center self-start place-items-center w-full flex flex-col h-fit md:h-auto gap-0 md:gap-[12px]`}>
                 <GalleryV2TopInfoDiv 
@@ -42,5 +45,6 @@ export function ProjectVRLabs() {
                 <GalleryV2 mediaGallery={ConceptAppMedia}/>
             </div>
         </pages.GroupProjectPage>
+        </>
     )
 }

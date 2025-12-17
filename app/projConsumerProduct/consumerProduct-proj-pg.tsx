@@ -5,6 +5,7 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
+import { LockedProjectPage } from "../globals/locked-project";
 
 const imgJnJ03 = "_3d/_prodAnim/JnJ_Stills_3.png";
 const imgJnJ05 = "_3d/_prodAnim/JnJ_Stills_5.png";
@@ -55,8 +56,11 @@ function BentoBox() {
 
 export default function ProjectPageConsumerProducts() {
     return (
+        <>
+        <LockedProjectPage />
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <BentoBox />
         </pages.GroupProjectPage>
+        </>
     )
 }

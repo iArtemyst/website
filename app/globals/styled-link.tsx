@@ -9,7 +9,6 @@ export default function StyledLink({href, style, className, children}: {href: st
 {
     let [isRelative, setIsRelative] = useState(false);
 
-    console.log(href);
     useEffect(() => {
         if (typeof href === "string")
         {

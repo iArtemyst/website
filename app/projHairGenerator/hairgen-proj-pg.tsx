@@ -3,11 +3,14 @@
 import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
 import * as gallery from "@/app/globals/project-galleries";
+import { LockedProjectPage } from "../globals/locked-project";
 
 import * as hairGenMedia from "./hairgen-media-links";
 
 export function StubbleGenPage() {
     return (
+        <>
+        <LockedProjectPage />
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <gallery.ProjectCardsNoGalleryContainer cardArray={hairGenMedia.HairGenProjectCardArrays} columnAmount="grid-cols-2 sm:grid-cols-4"/>
                 <gallery.ProjectDetailRelativeTextNDA 
@@ -19,5 +22,6 @@ export function StubbleGenPage() {
                     After getting the generator system designed and working, I carefully collapsed the system into a user friendly node with parameters and timeline rendering." 
                     NDAText="Due to NDA, I cannot showcase more information about this project than what is above"/>
         </pages.GroupProjectPage>
+        </>
     )
 }

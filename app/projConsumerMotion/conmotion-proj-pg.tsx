@@ -6,6 +6,7 @@ import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
 import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
+import { LockedProjectPage } from "../globals/locked-project";
 
 const imgConMotionA03 = "_motionui/_consumermotion/MidMark_Stills2.png";
 const imgConMotionA04 = "_motionui/_consumermotion/MidMark_Stills3.png";
@@ -85,10 +86,13 @@ function BentoBox() {
 
 export default function ProjectConsumerMotion() {
     return (
+        <>
+        <LockedProjectPage />
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <div className="grid grid-cols-1 w-full h-auto gap-[12px]">
                 <BentoBox />
             </div>
         </pages.GroupProjectPage>
+        </>
     )
 }

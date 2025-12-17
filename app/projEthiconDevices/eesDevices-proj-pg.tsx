@@ -4,6 +4,7 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
+import { LockedProjectPage } from "../globals/locked-project";
 
 const imgEES02 = "_3d/_medAnim/EESAnim_Stills_01.png";
 const imgEES03 = "_3d/_medAnim/EESAnim_Stills_02.png";
@@ -79,8 +80,11 @@ function BentoBox() {
 
 export default function EESDevicesProjectPage() {
     return (
+        <>
+        <LockedProjectPage />
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <BentoBox />
         </pages.GroupProjectPage>
+        </>
     )
 }

@@ -5,6 +5,7 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
+import { LockedProjectPage } from "../globals/locked-project";
 
 const imgMakino02 = "_3d/_prodAnim/Makino_Stills__01.png";
 const imgMakino03 = "_3d/_prodAnim/Makino_Stills__02.png";
@@ -63,8 +64,11 @@ function BentoBox() {
 
 export default function MakinoProjectPage() {
     return (
+        <>
+        <LockedProjectPage />
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <BentoBox />
         </pages.GroupProjectPage>
+        </>
     )
 }

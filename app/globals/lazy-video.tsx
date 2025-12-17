@@ -34,7 +34,7 @@ export function LazyHoverVideo({src, autoplay, controls, muted, loop, style=""}:
     let isMobile = CheckIfMobileBrowser();
     let handleMouseDown = (e: React.TouchEvent<HTMLVideoElement>) => { }
     let handleMouseUp = (e: React.TouchEvent<HTMLVideoElement>) => { }
-    let handleClick = (e: React.MouseEvent<HTMLVideoElement>) => { console.log("mobile click"); }
+    let handleClick = (e: React.MouseEvent<HTMLVideoElement>) => { }
 
     if (isMobile)
     {
@@ -115,7 +115,6 @@ function LazyVideoCore({src, autoplay, controls, muted, loop, className, onEnter
     }, [src]);
 
     let isMobile = CheckIfMobileBrowser();
-    console.log("isMobile: " + isMobile);
 
     return loadedSrc === '' ?
         <Loading/> :

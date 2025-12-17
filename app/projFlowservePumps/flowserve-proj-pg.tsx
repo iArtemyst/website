@@ -5,6 +5,7 @@ import "@/app/globals/globals.css";
 import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
+import { LockedProjectPage } from "../globals/locked-project";
 
 const imgFlowserve01 = "_3d/_prodAnim/Flowserve_Stills_00.png";
 const imgFlowserve02 = "_3d/_prodAnim/Flowserve_Stills_01.png";
@@ -66,8 +67,11 @@ function BentoBox() {
 
 export default function ProjectPageFlowserve() {
     return (
+        <>
+        <LockedProjectPage />
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <BentoBox />
         </pages.GroupProjectPage>
+        </>
     )
 }

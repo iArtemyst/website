@@ -6,6 +6,7 @@ import * as bentos from "@/app/globals/bento-boxes";
 import * as pages from "@/app/globals/pages-main";
 import { MediaType } from "@/app/globals/project-galleries";
 import { CheckIfMobileBrowser } from "../globals/mobile-check";
+import { LockedProjectPage } from "../globals/locked-project";
 
 const imgMedMotionA01 = "_motionui/_medmotion/BWI_Stills0.png";
 const imgMedMotionC03 = "_motionui/_medmotion/EES-UI_Stills02.png";
@@ -86,8 +87,11 @@ function BentoBox() {
 
 export default function ProjectMedMotion() {
     return (
+        <>
+        <LockedProjectPage />
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <BentoBox />
         </pages.GroupProjectPage>
+        </>
     )
 }

@@ -57,3 +57,4 @@ public/_next-video
 .vs/
 
 app/assets
+app/globals/constants.tsx
