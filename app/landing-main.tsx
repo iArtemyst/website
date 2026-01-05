@@ -156,15 +156,15 @@ export default function LandingMain() {
     const siteLinkRefDev = "http://localhost:3000/";
 
     useEffect(() => {
-        setIncomingLink(document.referrer);
+        setIncomingLink(window.document.referrer);
         if (incomingLink !== null) {
             if (incomingLink.includes(siteLinkRef) || incomingLink.includes(siteLinkRefDev)) {
                 console.log("Internal Link Detected")
                 console.log(incomingLink)
             }
             else {
-                console.log(incomingLink)
                 console.log("External Link Detected - Resetting Locked Projects")
+                console.log(incomingLink)
                 SaveDataLocally("projectLocked", "true");
             }
         }
