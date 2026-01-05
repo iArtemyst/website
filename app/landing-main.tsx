@@ -161,6 +161,7 @@ export default function LandingMain() {
                 console.log("Internal Link Detected")
             }
             else {
+                console.log(incomingLink)
                 console.log("External Link Detected - Resetting Locked Projects")
                 SaveDataLocally("projectLocked", "true");
             }
