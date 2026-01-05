@@ -4,7 +4,6 @@ import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import { ProjectCodeBingoBoard } from "./bingoboard-proj-pg";
 import { SiteFooter } from "@/app/globals/footer";
 
-
 const linkGrpCode = '../grpProjectsDev';
 
 export default function RenderProjCodeBingoBoard() {

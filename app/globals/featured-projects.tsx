@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
 import { CheckIfMobileBrowser } from "./mobile-check";
 import { hoverShadow } from "@/tailwind.config";
+import { ShuffleCardArray } from "@/app/globals/shuffle-project-cards";
 
 
 export interface IFeaturedProjectCard
@@ -84,24 +85,11 @@ export function FeatureProjectLinkCardsContainer({dataArray}: {dataArray: IFeatu
 
 
 export function FeaturedProjectsDiv({dataArray}: {dataArray: IFeaturedProjectCard[]}) {
-        const [shuffledCards, setArray] = useState<IFeaturedProjectCard[]>([])
-        
-        useEffect(() => {
-            setArray(shuffle_about_cards(dataArray))
-        }, []);
-        
-        function shuffle_about_cards(new_cards: IFeaturedProjectCard[]) 
-        {
-            let shuffled_array = structuredClone(new_cards);
+    const [shuffledCards, setArray] = useState<IFeaturedProjectCard[]>([])
     
-            for (let i = new_cards.length -1; i > 0; i--) {
-                let j = Math.floor(Math.random() * (i - 1));
-                [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
-            }
-            
-            return shuffled_array;
-        }
-    
+    useEffect(() => {
+        setArray(ShuffleCardArray(dataArray))
+    }, [dataArray]);
     
     return (
         <div className="w-full h-fit flex flex-col justify-center items-center justify-items-center relative">

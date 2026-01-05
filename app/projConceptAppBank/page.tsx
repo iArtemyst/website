@@ -4,7 +4,6 @@ import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import { ProjectConceptBankApp } from "./bankapp-proj-pg";
 import { SiteFooter } from "@/app/globals/footer";
 
-
 const linkGrp2D = '../grpProjects2D';
 
 export default function RenderProjConceptAppBank() {

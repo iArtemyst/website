@@ -151,16 +151,18 @@ function LandingPageText() {
 
 export default function LandingMain() {
     const [shuffledCards, setArray] = useState<IDoubleSideLandingCard[]>([])
-    const [incomingLink, setIncomingLink] = useState<string>(document.referrer);
+    const [incomingLink, setIncomingLink] = useState<string | null>(null);
 
     useEffect(() => {
         setIncomingLink(document.referrer);
-        if (incomingLink.includes("http://localhost:3000") || incomingLink.includes("https://eevee-feywild.com/)")) {
-            console.log("Internal Link Detected")
-        }
-        else {
-            console.log("External Link Detected - Resetting Locked Projects")
-            SaveDataLocally("projectLocked", "true");
+        if (incomingLink !== null) {
+            if (incomingLink.includes("http://localhost:3000") || incomingLink.includes("https://eevee-feywild.com/)")) {
+                console.log("Internal Link Detected")
+            }
+            else {
+                console.log("External Link Detected - Resetting Locked Projects")
+                SaveDataLocally("projectLocked", "true");
+            }
         }
         setArray(ShuffleCardArray(cardMedia))
     }, [incomingLink]);
