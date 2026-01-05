@@ -2,12 +2,13 @@
 
 import "@/app/globals/globals.css";
 import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
+import { IProjectLinkCard, IProjectLinkCardRestricted, ProjectLinkCardsContainer, ProjectLinkCardsRestrictedContainer } from "@/app/globals/project-link-cards";
 import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
 import { FeaturedProjectsDiv, IFeaturedProjectCard } from "../globals/featured-projects";
 import { LazyHoverVideo, LazyNonHoverVideo, LazyVideo } from "../globals/lazy-video";
 import * as fonts from "@/app/globals/fonts";
+import { ShuffleCardArray, ShuffleCards } from "@/app/globals/shuffle-project-cards";
 
 const vidDartPub = "_project-links/prjLink_dartspub_400px.mp4";
 const vidHorrorHouse = "_project-links/prjLink_horrorhouses_400px.mp4";
@@ -75,136 +76,136 @@ const featuredProjectsData: IFeaturedProjectCard[] = [
     },
 ]
 
-const groupCardData: IProjectLinkCard[] = [
+const groupCardDataRestricted: IProjectLinkCardRestricted[] = [
     {
         projectTitle: "Horror Houses",
         projectDates: "2024",
         mediaLink: vidHorrorHouse,
         cardLink: linkHorrorHouse,
-        errorText: "Blender 3D",
+        softwareUsed: "Blender 3D",
+        locked: false,
     },
     {
         projectTitle: "Makino Machinery Animation",
         projectDates: "2018-2025",
         mediaLink: vidMakino,
         cardLink: linkMakino,
-        errorText: "3DS Max + After Effects + Cinema 4D",
+        softwareUsed: "3DS Max + After Effects + Cinema 4D",
+        locked: true,
     },
     {
         projectTitle: "Flowserve Pumps Animation",
         projectDates: "2018-2025",
         mediaLink: vidFlowserve,
         cardLink: linkFlowserve,
-        errorText: "3DS Max + After Effects + Keyshot",
+        softwareUsed: "3DS Max + After Effects + Keyshot",
+        locked: true,
     },
     {
         projectTitle: "Consumer Product Animation",
         projectDates: "2018-2025",
         mediaLink: vidConsumerProd,
         cardLink: linkConsumerProd,
-        errorText: "3DS Max + Vray + Keyshot",
+        softwareUsed: "3DS Max + Vray + Keyshot",
+        locked: true,
     },
     {
         projectTitle: "Monsoon Vermut",
         projectDates: "2022",
         mediaLink: vidMonsoonVermut,
         cardLink: linkMonsoonVermut,
-        errorText: "3DS Max + Blender 3D",
+        softwareUsed: "3DS Max + Blender 3D",
+        locked: false,
     },
     {
         projectTitle: "Stylized VFX",
         projectDates: "2024",
         mediaLink: vidStylizedVFX,
         cardLink: linkStylizedVFX,
-        errorText: "Blender 3D + Unreal Engine",
+        softwareUsed: "Blender 3D + Unreal Engine",
+        locked: false,
     },
     {
         projectTitle: "Medical Visualization",
         projectDates: "2018-2025",
         mediaLink: vidMedVisualization,
         cardLink: linkMedVisualization,
-        errorText: "3DS Max + Blender + After Effects",
+        softwareUsed: "3DS Max + Blender + After Effects",
+        locked: true,
     },
     {
         projectTitle: "Ethicon Device Visualization",
         projectDates: "2018-2025",
         mediaLink: vidEESDevices,
         cardLink: linkEESDevices,
-        errorText: "3DS Max + Keyshot + After Effects",
+        softwareUsed: "3DS Max + Keyshot + After Effects",
+        locked: true,
     },
     {
         projectTitle: "Mammotome AutoCore Device",
         projectDates: "2023-2024",
         mediaLink: vidMammotome,
         cardLink: linkMammotome,
-        errorText: "3DS Max + Vray + After Effects",
+        softwareUsed: "3DS Max + Vray + After Effects",
+        locked: false,
     },
     {
         projectTitle: "Looping Animations",
         projectDates: "2020-2024",
         mediaLink: vidInstaLoops,
         cardLink: linkInstaLoops,
-        errorText: "Blender 3D + 3DS Max",
+        softwareUsed: "Blender 3D + 3DS Max",
+        locked: false,
     },
     {
         projectTitle: "Procedural Materials",
         projectDates: "2023",
         mediaLink: vidProcMats,
         cardLink: linkProcMats,
-        errorText: "Blender 3D + Substance Designer",
+        softwareUsed: "Blender 3D + Substance Designer",
+        locked: false,
     },
     {
         projectTitle: "Sasuke SSBM Model",
         projectDates: "2025",
         mediaLink: vidSasukeModel,
         cardLink: linkSasukeModel,
-        errorText: "Blender 3D + Mod Tooling",
+        softwareUsed: "Blender 3D + Mod Tooling",
+        locked: false,
     },
     {
         projectTitle: '"Utopaea" Game Level',
         projectDates: "2019 & 2024",
         mediaLink: vidUtopaea,
         cardLink: linkUtopaea,
-        errorText: "Blender 3D + 3DS Max, Unreal Engine",
+        softwareUsed: "Blender 3D + 3DS Max, Unreal Engine",
+        locked: false,
     },
     {
         projectTitle: "Island City Generator",
         projectDates: "2023",
         mediaLink: vidProcToonCity,
         cardLink: linkProcToonCity,
-        errorText: "Blender 3D",
+        softwareUsed: "Blender 3D",
+        locked: false,
     },
     {
         projectTitle: "VR Lab Environments",
         projectDates: "2022-2024",
         mediaLink: vidVRLabs,
         cardLink: linkVRLabs,
-        errorText: "3DS Max + Unity Engine",
+        softwareUsed: "3DS Max + Unity Engine",
+        locked: true,
     },
 ]
 
-
 export default function GroupProjects3D() {
-    const [shuffledCards, setArray] = useState<IProjectLinkCard[]>([])
+    const [shuffledCards, setArray] = useState<IProjectLinkCardRestricted[]>([])
     
     useEffect(() => {
-        setArray(shuffle_about_cards(groupCardData))
+        setArray(ShuffleCardArray(groupCardDataRestricted))
     }, []);
     
-    function shuffle_about_cards(new_cards: IProjectLinkCard[]) 
-    {
-        let shuffled_array = structuredClone(new_cards);
-
-        for (let i = new_cards.length -1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i - 1));
-            [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
-        }
-
-        return shuffled_array;
-    }
-
-
-
     return shuffledCards.length != 0 ?
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <div className="w-[85%] md:w-[75%] place-self-center h-fit justify-items-center flex rounded-xl overflow-clip shadow-[2px_2px_6px_#00000030,-2px_-2px_6px_#ffffff30] hover:shadow-[2px_2px_3px_#00000010,-2px_-2px_3px_#ffffff10] hover:scale-[99%] active:scale-[98%]">
@@ -217,7 +218,7 @@ export default function GroupProjects3D() {
                         />
             </div>
             <FeaturedProjectsDiv dataArray={featuredProjectsData}/>
-            <ProjectLinkCardsContainer dataArray={shuffledCards} />
+            <ProjectLinkCardsRestrictedContainer dataArray={shuffledCards} />
         </pages.GroupProjectPage>
         :
         <Loading />

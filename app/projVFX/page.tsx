@@ -2,6 +2,7 @@ import "@/app/globals/globals.css";
 
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import ProjectVFXPage from "./vfx-proj-pg";
+import { SiteFooter } from "@/app/globals/footer";
 
 const linkGrpGame = '../grpProjects3D';
 
@@ -11,6 +12,7 @@ export default function RenderProjVFX() {
         <NavUI />
         <ProjectVFXPage />
         <BackButtonRSticky backLink={linkGrpGame} buttonText="Back to 3D"/>
+        <SiteFooter />
     </>
   )
 }

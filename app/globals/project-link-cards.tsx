@@ -21,6 +21,16 @@ export interface IProjectLinkCard
     errorText?: string,
 }
 
+export interface IProjectLinkCardRestricted
+{
+    projectTitle: string,
+    projectDates: string,
+    mediaLink: string,
+    cardLink: string,
+    softwareUsed?: string,
+    locked: boolean,
+}
+
 //--------------------------------------
 // MAIN PROJECT LINK CARD COMPONENTS
 
@@ -84,6 +94,38 @@ function GroupProjectCards({dataArray}: {dataArray: IProjectLinkCard}) {
     )
 }
 
+function GroupProjectCardsRestricted({dataArray}: {dataArray: IProjectLinkCardRestricted}) {
+    return (
+        <div className={`w-fit h-full place-items-center place-content-center`}>
+            <CardHoverFX bufferZone={0} rotateAmount={7}>
+                <div className={`${dataArray.locked? " hover:bg-[#ffccdd]" : "hover:bg-[#ccadee]"} bg-cardBGInactiveColor group w-fit h-fit cursor-pointer rounded-[8px] opacity-80 hover:opacity-100 hover:scale-[108%] active:scale-[95%] transition-all duration-200`} >
+                    <StyledLink href={dataArray.cardLink}>
+                        <LazyCardInternals dataArray={dataArray}/>
+                        {
+                            typeof dataArray.softwareUsed === "string" ?
+                                <div>
+                                    <p className={`${fonts.dotoBlack.className} text-nowrap absolute w-full h-fit text-center top-0 group-hover:top-[-.75rem] sm:group-hover:top-[-1rem] md:group-hover:top-[-1.25rem] lg:group-hover:top-[-1.5rem] xl:group-hover:top-[-1.75rem] opacity-0 group-hover:opacity-100 text-textVariant transition-all duration-200
+                                        text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px]`}>{dataArray.softwareUsed}</p>
+                                </div>
+                            :
+                                <></>
+                        }
+                        {
+                        dataArray.locked?
+                            <div>
+                                <p className={`${fonts.dotoBlack.className} text-nowrap absolute w-full h-fit text-center bottom-[14px] group-hover:bottom-[-1.5em] opacity-0 group-hover:opacity-100 text-[#ffffff80] text-[12px] transition-all duration-200`}>Project Requires Password to View</p>
+                            </div>
+                        :
+                            <></>
+                        }
+                    </StyledLink>
+                </div>
+            </CardHoverFX>
+        </div>
+    )
+}
+
+
 //--------------------------------------
 // MOBILE PROJECT LINK CARD COMPONENTS
 
@@ -143,6 +185,34 @@ function MobileGroupProjectCard({card}: {card: IProjectLinkCard}) {
     )
 }
 
+function MobileGroupProjectCardRestricted({card}: {card: IProjectLinkCardRestricted}) {
+    return (
+        <div className={`relative w-fit h-fit place-self-center`}>
+            <div className={`${card.locked? "bg-[#ffccdd]" : "bg-cardBGInactiveColor hover:bg-cardBGColor"}  w-fit h-fit rounded-[8px] opacity-80 active:opacity-100 active:scale-[110%] transition-all duration-200`} style={NoSelect} >
+                <StyledLink href={card.cardLink}>
+                    <MobileLazyCardInternal card={card}/>
+                    {
+                        typeof card.softwareUsed === "string" ?
+                            <div>
+                                <p className={`${fonts.dotoBlack.className} text-nowrap absolute w-full h-fit text-center top-[-1.5em] text-textVariant text-[6px]`}>{card.softwareUsed}</p>
+                            </div>
+                        :
+                            <></>
+                    }
+                    {
+                        card.locked?
+                            <div>
+                                <p className={`${fonts.dotoBlack.className} text-nowrap absolute w-full h-fit text-center bottom-[-1.75em] text-[#ffffff80] text-[5px]`}>Project Requires Password to View</p>
+                            </div>
+                        :
+                            <></>
+                    }
+                </StyledLink>
+            </div>
+        </div>
+    )
+}
+
 //--------------------------------------
 // PROJECT LINK CARD CONTAINER
 
@@ -161,6 +231,28 @@ export function ProjectLinkCardsContainer({dataArray}: {dataArray: IProjectLinkC
                     <div className={`grid grid-cols-2 w-[90%] h-full relative left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] gap-y-[36px] place-content-center`}>
                         {
                             dataArray.map((card, i) => <MobileGroupProjectCard key={i} card={card}/> )
+                        }
+                    </div>
+            }
+        </div>
+    )
+}
+
+export function ProjectLinkCardsRestrictedContainer({dataArray}: {dataArray: IProjectLinkCardRestricted[]}) {    
+    let isMobile = CheckIfMobileBrowser()
+    return (
+        <div className="flex flex-col w-full h-auto">
+            {
+                isMobile === false ?
+                    <div className={`grid grid-cols-3 w-[90%] justify-self-center self-center gap-y-[54px] h-full justify-items-center content-center place-content-center mt-[24px]`}>
+                        {
+                            dataArray.map((data, i) => <GroupProjectCardsRestricted key={i} dataArray={data}/> )
+                        }
+                    </div>
+                    :
+                    <div className={`grid grid-cols-2 w-[90%] h-full relative left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] gap-y-[36px] place-content-center`}>
+                        {
+                            dataArray.map((card, i) => <MobileGroupProjectCardRestricted key={i} card={card}/> )
                         }
                     </div>
             }

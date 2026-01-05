@@ -95,6 +95,28 @@ function ProjDetailMediaCard({mediaSrc, mediaText, mediaType,}: {mediaSrc: strin
     )
 }
 
+function ProjDetailMediaCard2({mediaSrc, mediaText, mediaType, cardSize}: {mediaSrc: string, mediaType: MediaType, mediaText: string, cardSize: string}) {
+    return(
+        <div className={`cursor-pointer overflow-clip rounded-[1em] ${cardSize} place-self-center transition-all duration-200`}>
+                    {
+                        mediaType === MediaType.Video ?
+                            <LazyHoverVideo 
+                                src={mediaSrc}
+                                autoplay={false}
+                                controls={false}
+                                muted={true}
+                                loop={true}
+                                />
+                        :
+                            <LazyImage
+                                imgLink={mediaSrc}
+                                imgAlt={mediaText}
+                                />
+                    }
+        </div>
+    )
+}
+
 function ProjectDetailHoverText({card}: {card: ICardWithGalleryArrays}) {
     return (
         <div className={`group-hover:-translate-y-[1.5em] absolute left-0 top-0 w-full h-auto px-[16px] opacity-0 group-hover:opacity-100 -z-10 transition-all duration-300 `}>
@@ -134,12 +156,12 @@ function ProjectCardNoGallery({card} : {card: ICardWithGalleryArrays}) {
     const [effect, setEffect] = useState(false);
 
     return (
-            <div className={`place-items-center group`}>
+            <div className={`group place-items-center w-fit`}>
                 <div className={`${card.cardData.cardContainerMargin} relative w-fit h-full hover:animate-none hover:z-10 self-center animate-wiggle-bounce transition-all duration-300 flex-grow`} >
                     <CardHoverFX bufferZone={0} rotateAmount={7}>
-                        <div className={`${effect && "animate-error-wiggle"} ${card.cardData.cardStyleWHM} relative h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`} 
+                        <div className={`${effect && "animate-error-wiggle"} ${card.cardData.cardStyleWHM} relative w-full rounded-[1em] h-auto shadow-[0px_0px_12px_rgba(0,0,0,0.4)] transition-all duration-400`} 
                             onClick={() => { setEffect(true)}} onAnimationEnd={() => { setEffect(false)}}>
-                            <ProjDetailMediaCard mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText} mediaType={card.cardData.cardMediaType}/> 
+                            <ProjDetailMediaCard2 mediaSrc={card.cardData.cardMedia} mediaText={card.cardData.cardText} mediaType={card.cardData.cardMediaType} cardSize={""}/> 
                             <ProjectDetailHoverText card={card}/>
                         </div>
                     </CardHoverFX>
@@ -226,7 +248,7 @@ function ClickIntoGallery({galleryMedia, galleryLength, setShowGallery}: {galler
                         </div>
                     :
                         <div className={`w-auto h-auto relative m-[24px] justify-items-center content-center`} onClick={() => setFullscreenMedia(!fullscreenMedia)}>
-                                <div className={`rounded-[8px] overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
+                                <div className={`rounded-[1em] overflow-clip max-h-[calc(65dvh)] grid grid-cols-1 place-content-center` }>
                                     {
                                         mediaType === MediaType.Video ?
                                             <LazyNonHoverVideo 

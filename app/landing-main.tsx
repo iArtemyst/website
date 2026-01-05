@@ -10,6 +10,9 @@ import { useState, useEffect } from "react";
 import Loading from "./globals/loading-text";
 import { RecentProjectsShowcase, IRecentProject } from "./globals/recent-projects";
 import { MediaType } from "./globals/project-galleries";
+import { SaveDataLocally } from "@/app/globals/locked-project";
+import { ShuffleCardArray } from "@/app/globals/shuffle-project-cards";
+
 
 const vidBackA = "_landing/_grp_card_3d_back_new.mp4";
 const vidBackB = "_landing/_grp_card_dev_back_new.mp4";
@@ -140,32 +143,28 @@ function LandingPageText() {
             </div>
             
             <div className={`${paraTextStyle} w-full text-left md:text-right mt-[4px] md:mt-[0px] text-pretty relative justify-self-center md:justify-self-end  text-secColor`}>
-                <p className={`text-balance`}>I have over 12 years of experience designing logos and print graphics, storyboarding and editing videos, modeling and animating 3D characters, using data to visualize and render digital products, developing augmented and virtual reality interactives, and utilizing consumer research to improve user experiences.</p>
-                <p className={`text-pretty`}>Let me be the creative for your next project.</p>
+                <p className={`text-balance`}>With over 10 years of well-rounded creative experience, I can develop immersive digital prototypes, design captivating motion graphics, model game and animation ready 3D assets, produce engaging video content, and create just about anything else you can imagine.</p>
             </div>
         </div>
     )
 }
 
 export default function LandingMain() {
-    // let shuffled_cards = 
     const [shuffledCards, setArray] = useState<IDoubleSideLandingCard[]>([])
+    const [incomingLink, setIncomingLink] = useState<string>(document.referrer);
+
     useEffect(() => {
-        setArray(shuffle_landing_cards(cardMedia))
-    }, []);
-
-    function shuffle_landing_cards(new_cards: IDoubleSideLandingCard[]) 
-    {
-        let shuffled_array = structuredClone(new_cards);
-
-        for (let i = new_cards.length -1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i - 1));
-            [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
+        setIncomingLink(document.referrer);
+        if (incomingLink.includes("http://localhost:3000") || incomingLink.includes("https://eevee-feywild.com/)")) {
+            console.log("Internal Link Detected")
         }
+        else {
+            console.log("External Link Detected - Resetting Locked Projects")
+            SaveDataLocally("projectLocked", "true");
+        }
+        setArray(ShuffleCardArray(cardMedia))
+    }, [incomingLink]);
 
-        return shuffled_array;
-    }
-    
     return shuffledCards.length != 0 ? 
         <pages.GroupProjectPage overflowStyle="overflow-hidden">
             <LandingPageText />

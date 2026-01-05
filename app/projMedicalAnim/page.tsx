@@ -2,18 +2,17 @@ import "@/app/globals/globals.css";
 
 import { NavUI, BackButtonRSticky } from "@/app/globals/nav-ui";
 import ProjectMedAnims from "./medanim-proj-pg";
+import { SiteFooter } from "@/app/globals/footer";
 
 const linkGrp3D = '../grpProjects3D';
 
-
-function RenderProjMedAnim() {
+export default function RenderProjMedAnim() {
   return (
     <>
         <NavUI />
         <ProjectMedAnims />
         <BackButtonRSticky backLink={linkGrp3D} buttonText="Back to 3D"/>
+        <SiteFooter />
     </>
   )
-}
-
-export default RenderProjMedAnim;
+};

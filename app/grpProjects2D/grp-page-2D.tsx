@@ -3,12 +3,13 @@
 import "@/app/globals/globals.css";
 
 import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
+import { IProjectLinkCard, IProjectLinkCardRestricted, ProjectLinkCardsContainer, ProjectLinkCardsRestrictedContainer } from "@/app/globals/project-link-cards";
 import { useState, useEffect } from "react";
 import Loading from "../globals/loading-text";
 import { FeaturedProjectsDiv, IFeaturedProjectCard } from "../globals/featured-projects";
 import { LazyHoverVideo, LazyNonHoverVideo, LazyVideo } from "../globals/lazy-video";
 import * as fonts from "@/app/globals/fonts";
+import { ShuffleCardArray } from "@/app/globals/shuffle-project-cards";
 
 const vidBankApp = "_2d/app-bank-concept/prjLink_bankApp_400px.mp4";
 const vidPodcastApp = "_2d/app-podcast-concept/prjLink_podcastApp_400px.mp4";
@@ -131,25 +132,80 @@ const groupCardData: IProjectLinkCard[] = [
     // },
 ]
 
+const groupCardDataRestricted: IProjectLinkCardRestricted[] = [
+    {
+        projectTitle: "Looping Animations",
+        projectDates: "2020-2024",
+        mediaLink: vidInstaLoops,
+        cardLink: linkInstaLoops,
+        softwareUsed: "Blender 3D + 3DS Max",
+        locked: false,
+    },
+    {
+        projectTitle: "Consumer Motion Graphics",
+        projectDates: "2018-2025",
+        mediaLink: vidConsumerMotion,
+        cardLink: linkConsumerMotion,
+        softwareUsed: "3DS Max + After Effects + Figma",
+        locked: true,
+    },
+    {
+        projectTitle: "Medical Motion and UI",
+        projectDates: "2018-2025",
+        mediaLink: vidMedUI,
+        cardLink: linkMedUI,
+        softwareUsed: "After Effects + Figma + Illustrator",
+        locked: true,
+    },
+    {
+        projectTitle: "Concept Apple Bank App",
+        projectDates: "2019",
+        mediaLink: vidBankApp,
+        cardLink: linkConceptBankApp,
+        softwareUsed: "Figma + Illustrator",
+        locked: false,
+    },
+    {
+        projectTitle: "Concept Podcast App",
+        projectDates: "2019",
+        mediaLink: vidPodcastApp,
+        cardLink: linkConceptPodcastApp,
+        softwareUsed: "Figma + Illustrator",
+        locked: false,
+    },
+    {
+        projectTitle: "Concept Steam App Redesign",
+        projectDates: "2019",
+        mediaLink: vidSteamApp,
+        cardLink: linkConceptSteamApp,
+        softwareUsed: "Figma + Illustrator",
+        locked: false,
+    },
+    {
+        projectTitle: "Stubble Hair Generator",
+        projectDates: "2024",
+        mediaLink: vidHairGenerator,
+        cardLink: linkHairGenerator,
+        softwareUsed: "Substance Designer",
+        locked: true,
+    },
+    {
+        projectTitle: "HacKVerse Marketing",
+        projectDates: "2023",
+        mediaLink: vidHackverse,
+        cardLink: linkHackverse,
+        softwareUsed: "After Effects + Blender 3D",
+        locked: false,
+    },
+]
 
 export default function GroupProjectsMotion() {
-    const [shuffledCards, setArray] = useState<IProjectLinkCard[]>([])
+    const [shuffledCards, setArray] = useState<IProjectLinkCardRestricted[]>([])
 
     useEffect(() => {
-        setArray(shuffle_about_cards(groupCardData))
+        setArray(ShuffleCardArray(groupCardDataRestricted))
     }, []);
     
-    function shuffle_about_cards(new_cards: IProjectLinkCard[]) 
-    {
-        let shuffled_array = structuredClone(new_cards);
-
-        for (let i = new_cards.length -1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i - 1));
-            [shuffled_array[i], shuffled_array[j]] = [shuffled_array[j], shuffled_array[i]];
-        }
-
-        return shuffled_array;
-    }
     return shuffledCards.length != 0 ?
         <pages.GroupProjectPage overflowStyle="overflow-y-scroll">
             <div className="w-[85%] md:w-[75%] place-self-center h-fit justify-items-center flex rounded-xl overflow-clip shadow-[2px_2px_6px_#00000030,-2px_-2px_6px_#ffffff30] hover:shadow-[2px_2px_3px_#00000010,-2px_-2px_3px_#ffffff10] hover:scale-[99%] active:scale-[98%]">
@@ -162,7 +218,7 @@ export default function GroupProjectsMotion() {
                         />
             </div>
             <FeaturedProjectsDiv dataArray={featuredProjectsData}/>
-            <ProjectLinkCardsContainer dataArray={shuffledCards} />
+            <ProjectLinkCardsRestrictedContainer dataArray={shuffledCards} />
         </pages.GroupProjectPage>
         :
         <Loading />
