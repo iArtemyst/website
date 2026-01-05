@@ -152,11 +152,12 @@ function LandingPageText() {
 export default function LandingMain() {
     const [shuffledCards, setArray] = useState<IDoubleSideLandingCard[]>([])
     const [incomingLink, setIncomingLink] = useState<string | null>(null);
+    const siteLinkRef = "https://eevee-feywild.com/";
 
     useEffect(() => {
         setIncomingLink(document.referrer);
         if (incomingLink !== null) {
-            if (incomingLink.includes("http://localhost:3000") || incomingLink.includes("https://eevee-feywild.com/)")) {
+            if (incomingLink.includes(siteLinkRef)) {
                 console.log("Internal Link Detected")
             }
             else {
