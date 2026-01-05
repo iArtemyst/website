@@ -152,7 +152,7 @@ function LandingPageText() {
 export default function LandingMain() {
     const [shuffledCards, setArray] = useState<IDoubleSideLandingCard[]>([])
     const [incomingLink, setIncomingLink] = useState<string | null>(null);
-    const siteLinkRef = "https://eevee-feywild.com/";
+    const siteLinkRef = "eevee-feywild.com/";
     const siteLinkRefDev = "http://localhost:3000/";
 
     useEffect(() => {
