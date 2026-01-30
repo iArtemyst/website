@@ -9,13 +9,15 @@ import Loading from "../globals/loading-text";
 import { ShuffleCardArray } from "@/app/globals/shuffle-project-cards";
 
 const imgBingo = "_project-links/prjLink_bingo_400px.mp4";
-const vidWebsite = "_project-links/prjLink_codePortfolio_400px.mp4";
-const imgSlippiTV = "_project-links/prjLink_slippiTV_400px.mp4";
-const vidMovieRatingSite = "_project-links/prjLink_WhatIsItRated_400px.mp4";
+const vidWebsite = "_project-links/linkVid_Portfolio_400px.mp4";
+const imgSlippiTVApp = "_project-links/projLinkVideo_Sq_SlippiTV_400px.mp4";
+const imgSlippiTVWeb = "_project-links/projLinkVideo_Sq_SlippiTV-watch_400px.mp4";
+const vidMovieRatingSite = "_project-links/projLinkVideo_Sq_DailyMovieRating_400px.mp4";
 
-const linkWebsite = "../projCodeWebsite/";
+const linkWebsite = "../projPortfolioSite";
 const linkBingo = '../projBingoBoard';
-const linkSlippiTV = '../projSlippiTV';
+const linkSlippiTVApp = '../projSlippiTVApp';
+const linkSlippiTVWeb = '../projSlippiTVWeb';
 const linkMovieRatingSite = '../projMovieRatingSite';
 const linkResume2 = 'https://github.com/iArtemyst/resume';
 const linkBingo2 = 'https://github.com/iArtemyst/_bingo-board';
@@ -39,11 +41,19 @@ const groupCardData: IProjectLinkCardRestricted[] = [
         locked: false,
     },
     {
-        projectTitle: "SlippiTV App & Website",
+        projectTitle: "SlippiTV App",
         projectDates: "2025",
-        mediaLink: imgSlippiTV,
-        cardLink: linkSlippiTV,
-        softwareUsed: ".NET Maui + HTML",
+        mediaLink: imgSlippiTVApp,
+        cardLink: linkSlippiTVApp,
+        softwareUsed: "C# + .NET Maui",
+        locked: false,
+    },
+    {
+        projectTitle: "SlippiTV Website",
+        projectDates: "2025-2026",
+        mediaLink: imgSlippiTVWeb,
+        cardLink: linkSlippiTVWeb,
+        softwareUsed: "SolidJs + HTML + CSS",
         locked: false,
     },
     {

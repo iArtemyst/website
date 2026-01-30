@@ -98,7 +98,7 @@ function GroupProjectCardsRestricted({dataArray}: {dataArray: IProjectLinkCardRe
     return (
         <div className={`w-fit h-full place-items-center place-content-center`}>
             <CardHoverFX bufferZone={0} rotateAmount={7}>
-                <div className={`${dataArray.locked? " hover:bg-[#ffccdd]" : "hover:bg-[#ccadee]"} bg-cardBGInactiveColor group w-fit h-fit cursor-pointer rounded-[8px] opacity-80 hover:opacity-100 hover:scale-[108%] active:scale-[95%] transition-all duration-200`} >
+                <div className={`${dataArray.locked? " hover:bg-[#ffccdd]" : "hover:bg-[#ececec]"} bg-cardBGInactiveColor group w-fit h-fit cursor-pointer rounded-[8px] opacity-80 hover:opacity-100 hover:scale-[108%] active:scale-[95%] transition-all duration-200`} >
                     <StyledLink href={dataArray.cardLink}>
                         <LazyCardInternals dataArray={dataArray}/>
                         {

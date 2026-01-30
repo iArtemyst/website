@@ -104,7 +104,7 @@ const RecentProjects: IRecentProject[] = [
     {
         projTitle:"WhatIsItRated.com", 
         projDesc:"Creator, Designer, and Developer of a Daily Movie Rating Game website and server", 
-        projMedia:"_code/movieRatingSite/MovieRating_Still_B_00.png", 
+        projMedia:"_code/movieRatingSite/MovieRating_Still_A_260129.png", 
         projMediaAltText:"WhatIsItRated Project Link", 
         projLinkMediaType:MediaType.Image, 
         projLink:'../projMovieRatingSite',
@@ -127,8 +127,8 @@ const RecentProjects: IRecentProject[] = [
         projMedia:"_code/slippiTV_stills_2.png", 
         projMediaAltText:"WhatIsItRated Project Link", 
         projLinkMediaType:MediaType.Image,
-        projLink:'../projSlippiTV',
-        softwareUsed:".NET Maui + HTML",
+        projLink:'../projSlippiTVApp',
+        softwareUsed:"C# + .NET + SolidJs",
         cardColor:'bg-[#361B74] border-[#6845BD]',
     },
 ]

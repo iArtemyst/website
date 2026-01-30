@@ -175,9 +175,6 @@ export function CellMediaNoShadow({cellMedia, cellMediaType, mediaText, cellSpan
                             :
                                 <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
                         }
-                    {/* <div className={` ${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[40px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300 `}>
-                        <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
-                    </div> */}
                 </div>
             </CardHoverFX>
         )
@@ -201,11 +198,6 @@ export function CellMediaNoShadow({cellMedia, cellMediaType, mediaText, cellSpan
                             <LazyImage imgLink={cellMedia} imgAlt={mediaText}/>
                     }
                 </div>
-
-                {/* <div className={`${textHoverDist} absolute left-0 bottom-0 w-auto h-auto translate-y-[32px] opacity-100 group-hover:opacity-100 group-hover:translate-y-[0px] transition-all duration-300`}
-                        style={NoSelect}>
-                    <p className={`${fonts.dotoBlack.className} ${textAssetHoverSize} ${hoverTextColor} drop-shadow-[0px_0px_2px_#00000030]`}>{mediaText}</p>
-                </div> */}
             </div>
         )
     }
@@ -223,7 +215,6 @@ export function CellMediaNoShadow({cellMedia, cellMediaType, mediaText, cellSpan
 }
 
 //POP UP GALLERY FOR CARDS
-
 export interface IPopupMedia
 {
     assetMediaLink: string,
@@ -237,7 +228,7 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
     
     function GetBentoGalleryMedia({mediaLink, mediaText, mediaType}:{mediaLink: string, mediaText: string, mediaType: MediaType}) {
         return (
-            <div className={`rounded-[12px] overflow-clip shadow-[inset_0px_0px_24px_#00000090]`}>
+            <div className={`rounded-[12px] overflow-clip shadow-[inset_0px_0px_24px_#00000090] bg-[#33333350]`}>
                 {
                     mediaType === MediaType.Video ?
                         <LazyNonHoverVideo
@@ -327,7 +318,7 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
         
     function FsBgBarrier() {
         return (
-            <div className={`fixed left-0 right-0 top-0 bottom-0 z-0 bg-black opacity-[75%]`} onClick={() => setFullscreenMedia(false)} />
+            <div className={`fixed left-0 right-0 top-0 bottom-0 z-[100] bg-black opacity-[75%]`} onClick={() => setFullscreenMedia(false)} />
         )
     }
 
@@ -367,18 +358,16 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
     }
 
     return (
-        <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] h-auto z-[150] flex justify-items-center justify-center w-full`}>
+        <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] h-auto z-[150] flex justify-items-center justify-center w-auto`}>
             {
                 isMobile === false ?
                     <>
-                        <div className={`content-center mx-[24px] my-auto flex flex-col w-auto`}>
-                            <div className={`relative w-[80%] md:max-w-[960px] lg:max-w-[1080px] xl:max-w-[1260px] 2xl:max-w-[1440px] h-fit place-self-center flex`}>
-                                <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor md:rounded-[18px]`}/>
-                                <div className={`relative`}>
-                                    <PopupMedia />
-                                    <PopupText />
-                                    <CloseButton />
-                                </div>
+                        <div className={`relative w-[100%] md:max-w-[960px] lg:max-w-[1080px] xl:max-w-[1260px] 2xl:max-w-[1440px] h-fit place-self-center flex`}>
+                            <div className={`absolute left-0 right-0 top-0 bottom-0 z-0 bg-cardBGColor md:rounded-[18px]`}/>
+                            <div className={`relative`}>
+                                <PopupMedia />
+                                <PopupText />
+                                <CloseButton />
                             </div>
                         </div>
                         {
@@ -408,9 +397,7 @@ function PopUpMediaViewer({mediaLink, mediaText, mediaType, setShowGallery}: {me
 
 function BackgroundBarrier({setShowGallery,}: {setShowGallery: any,}) {
     return (
-        <div className={`fixed left-0 right-0 top-0 bottom-0 z-[100]`} onClick={() => setShowGallery(false)}>
-            <div className={`w-[100vw] h-[100vh] bg-black opacity-[75%] `}/>
-        </div>
+        <div className={`fixed left-0 right-0 top-0 bottom-0 z-[100] bg-black opacity-[75%]`} onClick={() => setShowGallery(false)}/>
     )
 }
 

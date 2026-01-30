@@ -9,9 +9,12 @@ import { GalleryV2, GalleryV2InfoWithLinks } from "@/app/globals/gallery-v2";
 import * as bentos from "@/app/globals/bento-boxes";
 import { MediaType } from "@/app/globals/project-galleries";
 
-const mediaMovieRatingSite01 = "_code/movieRatingSite/MovieRating_Clip_A.mp4";
-const mediaMovieRatingSite02 = "_code/movieRatingSite/MovieRating_Still_A_00.png";
-const mediaMovieRatingSite03 = "_code/movieRatingSite/MovieRating_Still_B_00.png";
+const mediaMovieRatingSite01 = "_code/movieRatingSite/WhatIsItRated_Clip_A.mp4";
+const mediaMovieRatingSite02 = "_code/movieRatingSite/MovieRating_Still_A_260129.png";
+const mediaMovieRatingSite03 = "_code/movieRatingSite/MovieRating_Still_B_260129.png";
+const mediaMovieRatingSite04 = "_code/movieRatingSite/MovieRating_Still_C_260129.png";
+const mediaMovieRatingCode01 = "_code/movieRatingSite/WhatIsItRated_Code_A.png";
+const mediaMovieRatingCode02 = "_code/movieRatingSite/WhatIsItRated_Code_B.png";
 const mediaMovieRatingSiteCode01 = "_code/movieRatingSite/MovieRatingSite_Code_Stills_00.png";
 const mediaMovieRatingSiteCode02 = "_code/movieRatingSite/MovieRatingSite_Code_Stills_01.png";
 const mediaMovieRatingSiteCode03 = "_code/movieRatingSite/MovieRatingSite_Code_Stills_02.png";
@@ -75,18 +78,26 @@ function BentoBoxB() {
 
             <bentos.CellMediaOnClickNoShadow mediaText="WhatIsItRated.com, a movie trivia site design and developed by myself with ReactJs, .NET, and C#" mediaLink={mediaMovieRatingSite01} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant" />
 
-            <bentos.CellText cellSpan={`col-span-1`}>
-                <bentos.ParagraphText textSize={"text-24px"} 
-                    text="While watching a movie for my monthly movie club, I had an idea: If I were given just a little bit of information about a movie, maybe a poster, the director, who's top billed, could I guess what the collective internet agrees that the movie is rated? That idea evolved into WhatIsItRated.com." />
-            </bentos.CellText>
+            <div className="col-span-1 grid grid-cols-3 gap-[12px]">
+                <bentos.CellMediaOnClickNoShadow mediaText="WhatIsItRated.com was entirely concepted, designed, and developed by myself. With additional help from friends for user testing and feedback." mediaLink={mediaMovieRatingSite02} mediaType={MediaType.Image} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
+                <bentos.CellText cellSpan={`col-span-1`}>
+                    <bentos.ParagraphText textSize={"text-24px"} 
+                        text="While watching a movie for my monthly movie club, I had an idea: If I were given just a little bit of information about a movie, maybe a poster, the director, who's top billed, could I guess what the collective internet agrees that the movie is rated? That idea evolved into WhatIsItRated.com." />
+                </bentos.CellText>
+            </div>
             
             <div className="col-span-1 grid grid-cols-2 gap-[12px]">
-                <bentos.CellMediaOnClickNoShadow mediaText="Multiple themes with persistence through local storage data" mediaLink={mediaMovieRatingSite03} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
-                <bentos.CellMediaOnClickNoShadow mediaText="I utilized a small group of trusted friends and family to test and improve UI and functionality before v1.0 release" mediaLink={mediaMovieRatingSite02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClickNoShadow mediaText="User Ratings are compared against a database of actual movie ratings and scored higher the closer they get to a perfect guess." mediaLink={mediaMovieRatingSite03} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClickNoShadow mediaText="Additional functionality like community averages, movie streaming providers, and easy score sharing make the game an easy daily play." mediaLink={mediaMovieRatingSite04} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             </div>
 
-            <div className="w-[100%] md:w-[80%] flex place-self-center mt-[.5em] sm:mt-[2em]">
-                <GalleryV2 mediaGallery={WhatIsItRatedMediaGallery} />
+            <div className="col-span-1 grid grid-cols-3 gap-[12px]">
+                <bentos.CellMediaOnClickNoShadow mediaText="VS Code screenshots of WIP ReactJs website code for WhatIsItRated.com." mediaLink={mediaMovieRatingCode01} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
+                <bentos.CellText cellSpan={`col-span-1`}>
+                    <bentos.ParagraphText textSize={"text-24px"} 
+                        text="The site was built with ReactJs, and the Server delivering the Daily movie information was written in .NET, and C#. Using C# to make API calls to TMDB and OMDB I built a movie Database of 2000+ movies with curated metadata." />
+                </bentos.CellText>
+                <bentos.CellMediaOnClickNoShadow mediaText="Visual Studio screenshots of WIP Server Code written in C#." mediaLink={mediaMovieRatingCode02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             </div>
         </div>
     )
