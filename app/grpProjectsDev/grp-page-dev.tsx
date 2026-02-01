@@ -34,7 +34,7 @@ const groupCardData: IProjectLinkCardRestricted[] = [
     },
     {
         projectTitle: "My Portfolio Website",
-        projectDates: "2025",
+        projectDates: "2025-2026",
         mediaLink: vidWebsite,
         cardLink: linkWebsite,
         softwareUsed: "React + NextJS",
@@ -42,14 +42,14 @@ const groupCardData: IProjectLinkCardRestricted[] = [
     },
     {
         projectTitle: "SlippiTV App",
-        projectDates: "2025",
+        projectDates: "2025-2026",
         mediaLink: imgSlippiTVApp,
         cardLink: linkSlippiTVApp,
         softwareUsed: "C# + .NET Maui",
         locked: false,
     },
     {
-        projectTitle: "SlippiTV Website",
+        projectTitle: "SlippiTV Web",
         projectDates: "2025-2026",
         mediaLink: imgSlippiTVWeb,
         cardLink: linkSlippiTVWeb,
@@ -58,7 +58,7 @@ const groupCardData: IProjectLinkCardRestricted[] = [
     },
     {
         projectTitle: "WhatIsItRated.com",
-        projectDates: "2025",
+        projectDates: "2025-2026",
         mediaLink: vidMovieRatingSite,
         cardLink: linkMovieRatingSite,
         softwareUsed: "ReactJS + C# + .NET",

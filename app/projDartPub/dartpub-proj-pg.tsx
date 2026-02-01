@@ -24,10 +24,6 @@ const bentoGap = "gap-[12px]";
 const titleTextSize= "text-[24px]";
 const paraTextSize = "text-[12px]";
 
-const cell01Media: bentos.IPopupMedia = {
-    assetMediaLink: imgPubDart05,
-    assetText: "test",
-}
 
 function BentoBoxA() {
     return (

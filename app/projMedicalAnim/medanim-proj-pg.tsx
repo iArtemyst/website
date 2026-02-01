@@ -43,7 +43,7 @@ function BentoBox() {
     return (
         <div className={`${isMobile ? "grid-cols-2" : "grid-cols-2"} ${bentoGap} relative z-0 grid grid-cols-2 w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white hover:cursor-pointer`}>
             <bentos.CellText cellSpan={`${isMobile ? "col-span-2" : "col-span-2"}`}>
-                <bentos.HeaderText text="MEDICAL VISUALIZATION" textSize={titleTextSize}/>
+                <bentos.HeaderText text="MEDICAL VISUALIZATION"/>
             </bentos.CellText>
             
             <bentos.CellMediaOnClick mediaLink={vidEESA04} mediaType={MediaType.Video} mediaText="Medical animation clip" cellSpan={`${isMobile ? "col-span-2" : "col-span-1"}`}  hoverTextColor="text-textColor"/>
@@ -51,7 +51,7 @@ function BentoBox() {
             <bentos.CellMediaOnClick mediaLink={vidEESB03} mediaType={MediaType.Video} mediaText="Medical animation clip" cellSpan={`${isMobile ? "col-span-2" : "col-span-1"}`} hoverTextColor="text-textColor"/>
 
             <bentos.CellText cellSpan={`col-span-2`}>
-                    <bentos.ParagraphText textSize={paraTextSize} text="With over 6 years of experience in medical animation, I have produced over 50+ videos from short warning videos on medical tower screens, to device release marketing, to IFU demonstrations, and more." />
+                    <bentos.ParagraphText text="With over 6 years of experience in medical animation, I have produced over 50+ videos from short warning videos on medical tower screens, to device release marketing, to IFU demonstrations, and more." />
             </bentos.CellText>
 
             <div className={`${isMobile ? "col-span-2 grid-cols-2" : "col-span-2 grid-cols-4"} grid  gap-2 hover:z-20`}>
@@ -76,7 +76,7 @@ function BentoBox() {
             </div>
 
             <bentos.CellText cellSpan={`${isMobile ? "col-span-2" : "col-span-1"}`}>
-                <bentos.ParagraphText textSize={paraTextSize} text="The technical precision required on these projects has helped me hone my craft and develop a strong eye for details. 
+                <bentos.ParagraphText text="The technical precision required on these projects has helped me hone my craft and develop a strong eye for details. 
                     And the scope of the projects has given me oppurtunities to expand my toolbox with skills such as sculpting, soft body manipulation, character animation, simulations, and more." />
             </bentos.CellText>
 
@@ -104,7 +104,7 @@ function BentoBox() {
             </div>
             
             <bentos.CellText cellSpan="col-span-1">
-                <bentos.ParagraphText textSize={paraTextSize} text="You can find some of my released work on the client Youtube, or their websites directly.
+                <bentos.ParagraphText text="You can find some of my released work on the client Youtube, or their websites directly.
                     Due to the nature of time and research for releasing medical products, I have a lot of unreleased work for the industry yet to come." />
             </bentos.CellText>
 

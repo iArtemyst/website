@@ -44,7 +44,7 @@ function BentoBox() {
 
 
             <bentos.CellText cellSpan={`col-span-2`}>
-                    <bentos.ParagraphText textSize={paraTextSize} text="With years of experience in Medical Animation, I have produced hundreds of short videos and graphics for released and developing medical devices. Supporting collateral like IFU documents, medical applications, surgical instruction videos, proper device usage videos, and more." />
+                    <bentos.ParagraphText text="With years of experience in Medical Animation, I have produced hundreds of short videos and graphics for released and developing medical devices. Supporting collateral like IFU documents, medical applications, surgical instruction videos, proper device usage videos, and more." />
             </bentos.CellText>
 
             <bentos.CellMediaOnClick mediaLink={vidEESB04} mediaType={MediaType.Video} mediaText="Medical Staples Forming during Device Firing" cellSpan={`col-span-2`} hoverTextColor="text-textColor"/>
@@ -57,7 +57,7 @@ function BentoBox() {
             <bentos.CellMediaOnClick mediaLink={vidEESC03} mediaType={MediaType.Video} mediaText="Removing Tissue from Device" cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
 
             <bentos.CellText cellSpan={`col-span-2`}>
-                <bentos.ParagraphText textSize={paraTextSize} text="The technical precision required on these projects has helped me hone my craft and develop a strong eye for details. 
+                <bentos.ParagraphText text="The technical precision required on these projects has helped me hone my craft and develop a strong eye for details. 
                     And the scope of the projects has given me oppurtunities to expand my toolbox with skills such as sculpting, soft body manipulation, character animation, simulations, and more." />
             </bentos.CellText>
 
@@ -69,7 +69,7 @@ function BentoBox() {
             <bentos.CellMediaOnClick mediaLink={vidEESA04} mediaType={MediaType.Video} mediaText="Medical Staple Support Device Video" cellSpan="col-span-2" hoverTextColor="text-textColor"/>
 
             <bentos.CellText cellSpan="col-span-1">
-                <bentos.ParagraphText textSize={paraTextSize} text="In addition to the work shown here, more of my work is featured on the specific Ethicon Device Page, or on the Ethicon Youtube channel." />
+                <bentos.ParagraphText text="In addition to the work shown here, more of my work is featured on the specific Ethicon Device Page, or on the Ethicon Youtube channel." />
             </bentos.CellText>
             <bentos.CellMediaOnClick mediaLink={imgEES21} mediaType={MediaType.Image} mediaText="Medical Device Cleaning Technique Image" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
 

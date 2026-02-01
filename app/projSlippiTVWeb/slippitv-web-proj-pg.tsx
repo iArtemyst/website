@@ -27,7 +27,7 @@ function BentoBoxB() {
             <bentos.CellMediaOnClickNoShadow mediaText="SlippiTV/Watch is the streaming platform for watching your friends play Super Smash Bros Melee games in real time." mediaLink={imgSlippiTVWatch01} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
             <bentos.CellText cellSpan={`col-span-1`}>
-                <bentos.ParagraphText textSize={"text-24px"} 
+                <bentos.ParagraphText
                     text="The SlippiTV/Watch platform was built with a focus on performance and usability, allowing users to watch their friends play Super Smash Bros Melee games in real time using the Slippi Lab API. My work on this project involved implementing the UI and backend logic for the streaming platform." />
             </bentos.CellText>
 
@@ -38,7 +38,7 @@ function BentoBoxB() {
 
             <div className="col-span-1 grid grid-cols-2 items-center gap-[12px]">
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={"text-24px"} 
+                    <bentos.ParagraphText 
                         text="The SlippiTV landing site still reflects it's original design intent, promoting the Windows Application, but now features another link to the SlippiTV/Watch streaming platform. Originally this was a simpler static site designed entirely in HTML, CSS, and basic JavaScript, but was later migrated to a more modern framework to support the new streaming platform." />
                 </bentos.CellText>
                 <bentos.CellMediaOnClickNoShadow mediaText="The SlippiTV landing site still reflects it's original design intent, promoting the Windows Application, but now features another link to the SlippiTV/Watch streaming platform." mediaLink={imgSlippiTVWeb01} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant" />

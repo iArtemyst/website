@@ -111,7 +111,7 @@ function BentoBoxB() {
 
             <div className="col-span-1 h-fit">
                 <bentos.CellText cellSpan="col-span-1">
-                    <bentos.HeaderText text="| some clips from the video |" textSize="text-[24px]"/>
+                    <bentos.HeaderText text="| some clips from the video |"/>
                 </bentos.CellText>
                 <GalleryV2b mediaGallery={FoxsukeComboVidMedia} />
             </div>
@@ -119,7 +119,7 @@ function BentoBoxB() {
             <bentos.CellMediaOnClickNoShadow mediaText="Still frames from the animation" mediaLink={mediaFxskVid02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
 
             <bentos.CellText cellSpan={`col-span-1`}>
-                <bentos.ParagraphText textSize={paraTextSize} 
+                <bentos.ParagraphText 
                     text="Every character needed at least one change, but the main characters needed a lot more. The game engine rigs were sturdy, but lacking some of the finesse I needed to capture with my animation. So in addition to creating new colors and updated textures for the chracters, I also built additional character rig support for facial and hair features." />
             </bentos.CellText>
 
@@ -130,7 +130,7 @@ function BentoBoxB() {
 
             <div className="col-span-1 grid grid-cols-1 sm:grid-cols-3">
                 <bentos.CellText cellSpan={`col-span-1 order-1 sm:order-2`}>
-                    <bentos.ParagraphText textSize={paraTextSize} 
+                    <bentos.ParagraphText 
                         text="After making the necessary character adjustments, I set to work modeling and texturing the environment for the animation. To improve my efficiency and realism, I used techniques like physics simulations, procedural texture mapping, and digital sculpting to craft the environment." />
                 </bentos.CellText>
                 <bentos.CellMediaOnClickNoShadow mediaText="Some of the final environment assets" mediaLink={mediaFxskVid09} mediaType={MediaType.Video} cellSpan="col-span-2 order-2 sm:order-1" hoverTextColor="text-textVariant"/>
@@ -139,7 +139,7 @@ function BentoBoxB() {
             <bentos.CellMediaOnClickNoShadow mediaText="Designing and testing the scene lighting" mediaLink={mediaFxskVid14} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             <bentos.CellMediaOnClickNoShadow mediaText="Animating all the characters and scene elements" mediaLink={mediaFxskVid15} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             <bentos.CellText cellSpan={`col-span-1`}>
-                <bentos.ParagraphText textSize={paraTextSize} 
+                <bentos.ParagraphText 
                     text="Final rendering, compositing, and editing were up to me as well. I utilized Adobe After Effects to cut and edit together my rendered frames, and spliced the original audio from the Anime together with an edited version of the backing music to match the new timings of my scene." />
             </bentos.CellText>
             <bentos.CellMediaOnClickNoShadow mediaText="Video and Audio editing for music, sfx, and final animation" mediaLink={mediaFxskVid16} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>

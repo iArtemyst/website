@@ -12,9 +12,6 @@ import { LazyNonHoverVideo } from "./lazy-video";
 import { CardHoverFX } from "./card-hover-fx";
 import { useState } from "react"
 
-const titleTextSize= "text-[13px] md:text-[18px] lg:text-[24px]";
-const paraTextSize = "text-[8px] md:text-[11px] lg:text-[13px]";
-
 export interface IRecentProject
 {
     projTitle:string, 

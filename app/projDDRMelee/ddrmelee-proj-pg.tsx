@@ -39,7 +39,7 @@ function BentoBoxA() {
             <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} h-fit gap-[12px] grid`}>
                 <bentos.CellMediaOnClick mediaLink={vidDDRMelee01} mediaType={MediaType.Video} mediaText="DDR Melee Intro Video" cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`} hoverTextColor="text-textVariant" />
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={paraTextSize} text="When I was approached with the oppurtunity for a Super Smash Bros Melee combo video in the style of DDR, I was immediately on board. The client developed a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
+                    <bentos.ParagraphText text="When I was approached with the oppurtunity for a Super Smash Bros Melee combo video in the style of DDR, I was immediately on board. The client developed a program that identified the moves that were being performed by the player, and would display graphics for each button hit, similar to Dance Dance Revolution." />
                 </bentos.CellText>
             </div>
 
@@ -52,7 +52,7 @@ function BentoBoxA() {
 
             <div className={`${isMobile ? "grid-cols-1" : "grid-cols-3"} w-full justify-self-center grid  gap-[12px] hover:z-20`}>
                 <bentos.CellText cellSpan="col-span-1">
-                    <bentos.ParagraphText textSize={paraTextSize} text="After designing a suite of icons representing the possible controller button presses in the style of DDR, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM. Each asset was hand made in After Effects with vectors and shapes (except for the landing screen 3d text which was made in Blender), and all scenes were animated and composited in Adobe After Effects." />
+                    <bentos.ParagraphText text="After designing a suite of icons representing the possible controller button presses in the style of DDR, I started tackling all asset design and video editing. I referenced old videos and photos of the DDR games, including those that I played growing up, and tried to accurately recreate the feel and experience of playing DDR, but with SSBM. Each asset was hand made in After Effects with vectors and shapes (except for the landing screen 3d text which was made in Blender), and all scenes were animated and composited in Adobe After Effects." />
                 </bentos.CellText>
                 <bentos.CellMediaOnClick mediaLink={vidDDRMelee02} mediaType={MediaType.Video} mediaText="Every element individually crafted and animated" cellSpan="col-span-2"  hoverTextColor="text-textVariant"/>
             </div>
@@ -70,13 +70,13 @@ function BentoBoxB() {
                         <div className={`${hoverShadow} w-fit h-fit rounded-xl`} style={NoSelect}>
                             <StyledLink href={youtubeLink}>
                                 <bentos.CellText cellSpan="col-span-1">
-                                    <bentos.ParagraphText text="View the full video on Youtube!" textSize="text-[10px]" />
+                                    <bentos.ParagraphText text="View the full video on Youtube!" />
                                 </bentos.CellText>
                             </StyledLink>
                         </div>
                         :
                         <div className={`justify-self-center rounded-xl overflow-clip w-full h-auto place-items-center`}>
-                            <bentos.ParagraphText text="View the full video on Youtube!" textSize="text-[10px]" />
+                            <bentos.ParagraphText text="View the full video on Youtube!" />
                             <iframe width="800" height="600" src={`https://www.youtube.com/embed/IljUm6WHTXE?si=4s3xr9SH-IXMZTYM&amp;start=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
                 }

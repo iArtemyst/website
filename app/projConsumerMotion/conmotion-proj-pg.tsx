@@ -37,7 +37,7 @@ function BentoBox() {
     return (
         <div className={`${isMobile ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid w-[80%] h-fit justify-self-center rounded-3xl place-content-center gap-[12px] text-textVariant hover:cursor-pointer`}>
             <bentos.CellText cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`}>
-                <bentos.HeaderText text="CONSUMER MOTION DESIGN" textSize={titleTextSize}/>
+                <bentos.HeaderText text="CONSUMER MOTION DESIGN"/>
             </bentos.CellText>
 
             <div className={`${isMobile ? "col-span-1 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid gap-[12px] hover:z-40`}>
@@ -52,7 +52,7 @@ function BentoBox() {
             <bentos.CellMediaOnClick mediaLink={vidConMotionB02} mediaType={MediaType.Video} mediaText="Mograph clip simplifying search" cellSpan={`${isMobile ? "col-span-1" : "col-span-1"}`}  hoverTextColor="text-textColor"/> 
 
             <bentos.CellText cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`}>
-                <bentos.ParagraphText text="In my years of professional design, I have had the great oppurtunity to work on numerous motion design videos for great companies. Storytelling through 2D assets and animations, creating emphasis and focus to engage or assist a user, and create a better experience through motion." textSize={paraTextSize}/>
+                <bentos.ParagraphText text="In my years of professional design, I have had the great oppurtunity to work on numerous motion design videos for great companies. Storytelling through 2D assets and animations, creating emphasis and focus to engage or assist a user, and create a better experience through motion."/>
             </bentos.CellText>
 
             <div className={`${isMobile ? "col-span-1 grid-cols-2" : "col-span-2 grid-cols-4"} ${bentoGap} grid gap-[12px] hover:z-20`}>
@@ -76,7 +76,7 @@ function BentoBox() {
             </div>
 
             <div className="w-full h-full hover:z-20 rounded-3xl content-center p-[32px] row-span-1 shadow-[2px_2px_4px_#00000010,-2px_-2px_4px_#ffffff20] hover:shadow-[inset_2px_2px_4px_#00000010,inset_-2px_-2px_4px_#ffffff20] active:shadow-[inset_3px_3px_6px_#00000020,inset_-3px_-3px_6px_#ffffff30] transition-all duration-200">
-                <bentos.ParagraphText text="With over 8 years of experience in After Effects, and over 15 years of experience with 3D Design and the Adobe Creative Suite, I excel at producing high quality motion graphics work for any scenario." textSize={paraTextSize}/>
+                <bentos.ParagraphText text="With over 8 years of experience in After Effects, and over 15 years of experience with 3D Design and the Adobe Creative Suite, I excel at producing high quality motion graphics work for any scenario."/>
             </div>
 
             <bentos.CellMediaOnClick mediaLink={vidConMotionC03} mediaType={MediaType.Video} mediaText="Mograph clip reduced costs and lead times" cellSpan="col-span-1"  hoverTextColor="text-textVariant"/>

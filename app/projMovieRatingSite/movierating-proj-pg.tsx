@@ -81,7 +81,7 @@ function BentoBoxB() {
             <div className="col-span-1 grid grid-cols-3 gap-[12px]">
                 <bentos.CellMediaOnClickNoShadow mediaText="WhatIsItRated.com was entirely concepted, designed, and developed by myself. With additional help from friends for user testing and feedback." mediaLink={mediaMovieRatingSite02} mediaType={MediaType.Image} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={"text-24px"} 
+                    <bentos.ParagraphText
                         text="While watching a movie for my monthly movie club, I had an idea: If I were given just a little bit of information about a movie, maybe a poster, the director, who's top billed, could I guess what the collective internet agrees that the movie is rated? That idea evolved into WhatIsItRated.com." />
                 </bentos.CellText>
             </div>
@@ -94,7 +94,7 @@ function BentoBoxB() {
             <div className="col-span-1 grid grid-cols-3 gap-[12px]">
                 <bentos.CellMediaOnClickNoShadow mediaText="VS Code screenshots of WIP ReactJs website code for WhatIsItRated.com." mediaLink={mediaMovieRatingCode01} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={"text-24px"} 
+                    <bentos.ParagraphText 
                         text="The site was built with ReactJs, and the Server delivering the Daily movie information was written in .NET, and C#. Using C# to make API calls to TMDB and OMDB I built a movie Database of 2000+ movies with curated metadata." />
                 </bentos.CellText>
                 <bentos.CellMediaOnClickNoShadow mediaText="Visual Studio screenshots of WIP Server Code written in C#." mediaLink={mediaMovieRatingCode02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>

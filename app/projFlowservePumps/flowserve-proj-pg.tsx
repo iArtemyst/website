@@ -39,7 +39,7 @@ function BentoBox() {
             <div className={`grid-cols-2 col-span-2 grid ${bentoGap} h-fit`}>
                 <bentos.CellMediaOnClick mediaLink={imgFlowserve06} mediaType={MediaType.Image} mediaText="Flowserve Pump Ghosting Effect Graphic" cellSpan="col-span-2 md:col-span-1" hoverTextColor="text-textColor"/>
                 <bentos.CellText cellSpan="col-span-2 md:col-span-1">
-                    <bentos.ParagraphText textSize={paraTextSize} text="For several years I had the opportunity to work with a client through my company to create supportive informational and sales videos for Flowserve Industrial Pumps. Regular tasks included splicing and converting the CAD data into the appropriate 3D rendering program. From there I designed realistic materials to match the production models of the pumps, and created animation groups that would allow me to highlight features of the pumps." />
+                    <bentos.ParagraphText text="For several years I had the opportunity to work with a client through my company to create supportive informational and sales videos for Flowserve Industrial Pumps. Regular tasks included splicing and converting the CAD data into the appropriate 3D rendering program. From there I designed realistic materials to match the production models of the pumps, and created animation groups that would allow me to highlight features of the pumps." />
                 </bentos.CellText>
             </div>
 
@@ -51,7 +51,7 @@ function BentoBox() {
 
             <div className={`grid-cols-2 col-span-2 grid ${bentoGap} h-fit`}>
                 <bentos.CellText cellSpan="col-span-2 md:col-span-1">
-                    <bentos.ParagraphText textSize={paraTextSize} text="Beyond creating still image renders that were used in device support documentation and website graphics, I also worked on several short-feature videos for some of their featured products, including the Z-Series pumps. When working on these projects I developed storyboards, and led the animation and 3D design production, eventually rendering and compositing a final video with the assistance of an Art Director." />
+                    <bentos.ParagraphText text="Beyond creating still image renders that were used in device support documentation and website graphics, I also worked on several short-feature videos for some of their featured products, including the Z-Series pumps. When working on these projects I developed storyboards, and led the animation and 3D design production, eventually rendering and compositing a final video with the assistance of an Art Director." />
                 </bentos.CellText>
                 <bentos.CellMediaOnClick mediaLink={imgFlowserve02} mediaType={MediaType.Image} mediaText="Z-Series Feature Construction Animation Still" cellSpan="col-span-2 md:col-span-1" hoverTextColor="text-textVariant"/>
             </div>

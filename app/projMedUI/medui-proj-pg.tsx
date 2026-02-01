@@ -36,7 +36,7 @@ function BentoBox() {
         <div className={`${bentoGap} grid-cols-1 relative z-auto grid w-[90%] h-auto justify-self-center rounded-3xl place-content-center text-textVariant`}>
             <div className={`${isMobile ? "col-span-1" : "col-span-2"} h-fit w-fit place-self-center relative`}>
                 <bentos.CellText cellSpan="col-span-1">
-                    <bentos.HeaderText text="MEDICAL INTERFACE AND MOTION DESIGN" textSize={titleTextSize}/>
+                    <bentos.HeaderText text="MEDICAL INTERFACE AND MOTION DESIGN"/>
                 </bentos.CellText>
             </div>
 
@@ -44,7 +44,7 @@ function BentoBox() {
                 <bentos.CellMediaOnClick mediaLink={vidMedMotionB04} mediaType={MediaType.Video} mediaText="Mograph clip medical device comparisons" cellSpan="col-span-1"  hoverTextColor="text-textColor"/>
 
                 <bentos.CellText cellSpan="col-span-1">
-                    <bentos.ParagraphText textSize={paraTextSize} text="My work in Medical Animation began over 6 years ago, after I graduated college. Since graduating I have produced dozens of videos, app designs, print collateral, and muchc more for several large medical companies. While much of my work is unreleased still, a notable amount of what is released can be found on Youtube under client channels, or directly on their websites." />
+                    <bentos.ParagraphText text="My work in Medical Animation began over 6 years ago, after I graduated college. Since graduating I have produced dozens of videos, app designs, print collateral, and muchc more for several large medical companies. While much of my work is unreleased still, a notable amount of what is released can be found on Youtube under client channels, or directly on their websites." />
                 </bentos.CellText>
             </div>
 
@@ -67,7 +67,7 @@ function BentoBox() {
             </div>
 
             <bentos.CellText cellSpan={`${isMobile ? "col-span-1" : "col-span-2"}`}>
-                <bentos.ParagraphText textSize={paraTextSize} text="My work in motion for the medical field has expanded from trade show presentations, to full marketing collateral suites accompanying device launches, and even editing for surgical overviews or training videos."/>
+                <bentos.ParagraphText text="My work in motion for the medical field has expanded from trade show presentations, to full marketing collateral suites accompanying device launches, and even editing for surgical overviews or training videos."/>
             </bentos.CellText>
 
             <div className={`${isMobile ? "col-span-1" : "col-span-2 grid-cols-2"} grid ${bentoGap} h-fit w-fit place-self-center relative`}>

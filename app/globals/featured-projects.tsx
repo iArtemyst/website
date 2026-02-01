@@ -4,16 +4,9 @@ import "@/app/globals/globals.css";
 import { CardHoverFX } from "./card-hover-fx";
 import StyledLink from "./styled-link";
 import { LazyHoverVideo } from "./lazy-video";
-import { NoSelect } from "./styles";
 import * as fonts from "@/app/globals/fonts"
-import * as pages from "@/app/globals/pages-main";
-import { IProjectLinkCard, ProjectLinkCardsContainer } from "@/app/globals/project-link-cards";
 import { useState, useEffect } from "react";
-import Loading from "../globals/loading-text";
-import { CheckIfMobileBrowser } from "./mobile-check";
-import { hoverShadow } from "@/tailwind.config";
 import { ShuffleCardArray } from "@/app/globals/shuffle-project-cards";
-
 
 export interface IFeaturedProjectCard
 {

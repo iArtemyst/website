@@ -33,7 +33,7 @@ function BentoBox() {
             <bentos.CellMediaOnClick mediaLink={vidMamm01} mediaType={MediaType.Video} mediaText="Mammotome Device Intro Clip" cellSpan={`col-span-2`} hoverTextColor="text-textColor"/>
 
             <bentos.CellText cellSpan={`col-span-2`}>
-                    <bentos.ParagraphText textSize={paraTextSize} text="I worked with this client over the course of two years as they continually refined and researched their upcoming medical product, the Mammotome Autcore. Through multiple rounds of storyboards, animatics, material and render quality tests, we arrived on a final direction and animation that would showcase the major new features of the device with a demonstration style video, also allowing the client to utilize the video as a teaching element for new adopters of the device." />
+                    <bentos.ParagraphText text="I worked with this client over the course of two years as they continually refined and researched their upcoming medical product, the Mammotome Autcore. Through multiple rounds of storyboards, animatics, material and render quality tests, we arrived on a final direction and animation that would showcase the major new features of the device with a demonstration style video, also allowing the client to utilize the video as a teaching element for new adopters of the device." />
             </bentos.CellText>
 
             <bentos.CellMediaOnClick mediaLink={imgMamm06} mediaType={MediaType.Image} mediaText="Mammotome Device Still from Animation" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
@@ -42,7 +42,7 @@ function BentoBox() {
             <bentos.CellMediaOnClick mediaLink={vidMamm03} mediaType={MediaType.Video} mediaText="Mammtome Device Collecting Tissue Sample" cellSpan="col-span-2" hoverTextColor="text-textColor"/>
 
             <bentos.CellText cellSpan="col-span-2 sm:col-span-1">
-                <bentos.ParagraphText textSize={paraTextSize} text="It was important to capture the fine details of the device and the surgical operations, and much consideration was given to the materials and presentation of the device and the other video elements to be as accurate as possible with their depiction." />
+                <bentos.ParagraphText text="It was important to capture the fine details of the device and the surgical operations, and much consideration was given to the materials and presentation of the device and the other video elements to be as accurate as possible with their depiction." />
             </bentos.CellText>
 
 

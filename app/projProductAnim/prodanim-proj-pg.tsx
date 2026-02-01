@@ -48,7 +48,7 @@ function BentoBoxA() {
     return (
         <div className={`${isMobile ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid  w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white border-white border-[1px] p-2 hover:cursor-pointer`}>
             <bentos.CellText cellSpan="col-span-full row-span-full">
-                <bentos.HeaderText text="FLOWSERVE INDUSTRIAL PUMPS" textSize={titleTextSize}/>
+                <bentos.HeaderText text="FLOWSERVE INDUSTRIAL PUMPS"/>
             </bentos.CellText>
 
             <div className={`${bentoGap} grid grid-cols-2 hover:z-20`}>
@@ -63,7 +63,7 @@ function BentoBoxA() {
             <bentos.CellMediaOnClick mediaLink={vidFlowserve02} mediaType={MediaType.Video} mediaText="Flowserve Z-Series Pump clip B" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
 
             <bentos.CellText cellSpan="col-span-1">
-                <bentos.ParagraphText textSize={paraTextSize} text="Taking a piece of engineering CAD, and bringing it to life through animation. I have animated many industrial products, performed modeling edits, and crafted storyboards to showcase new products.
+                <bentos.ParagraphText text="Taking a piece of engineering CAD, and bringing it to life through animation. I have animated many industrial products, performed modeling edits, and crafted storyboards to showcase new products.
                     These projects are a bit more unique due to the hard surface topology that comes from working with CAD models, and creates a fun challenge for animation." />
             </bentos.CellText>
 
@@ -84,7 +84,7 @@ function BentoBoxB() {
     return (
         <div className={`${isMobile ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid w-[80%] h-auto justify-self-center rounded-3xl place-content-center text-white border-white border-[1px] p-4 hover:cursor-pointer`} >
             <bentos.CellText cellSpan="col-span-full row-span-full">
-                <bentos.HeaderText text="INDUSTRIAL MACHINERY" textSize={titleTextSize}/>
+                <bentos.HeaderText text="INDUSTRIAL MACHINERY"/>
             </bentos.CellText>
 
             <div className={`${bentoGap} grid grid-cols-2 col-span-1 hover:z-20`}>
@@ -100,7 +100,7 @@ function BentoBoxB() {
             </div>
 
             <bentos.CellText cellSpan="col-span-1">
-                <bentos.ParagraphText textSize={paraTextSize} text="In support of an industrial machinery app, I produced a suite of videos highlighting the unique features of the machines.
+                <bentos.ParagraphText text="In support of an industrial machinery app, I produced a suite of videos highlighting the unique features of the machines.
                     Each scene would showcase the main device, and then zoom into the selected detail. I also assisted in the production of low poly models for Augmented Reality versions of the machines." />
             </bentos.CellText>
 
@@ -114,7 +114,7 @@ function BentoBoxC() {
     return (
         <div className={`${isMobile ? "grid-cols-1" : "grid-cols-2"} ${bentoGap} relative z-auto grid w-[80%] h-auto justify-self-center rounded-3xl place-content-center gap-[12px] my-[24px]  text-white border-white border-[1px] p-4 hover:cursor-pointer`}>
             <bentos.CellText cellSpan="col-span-full row-span-full">
-                <bentos.HeaderText text="CONSUMER PRODUCTS AND RESEARCH" textSize={titleTextSize}/>
+                <bentos.HeaderText text="CONSUMER PRODUCTS AND RESEARCH"/>
             </bentos.CellText>
 
             <bentos.CellMediaOnClick mediaLink={vidJnJ04} mediaType={MediaType.Video} mediaText="Consumer product animation clip" cellSpan="col-span-1" hoverTextColor="text-textColor"/>
@@ -127,7 +127,7 @@ function BentoBoxC() {
             </div>
 
             <bentos.CellText cellSpan="col-span-1">
-                <bentos.ParagraphText textSize={paraTextSize} text="I have produced videos from makeup, to sponges, batteries, and even absorbing pads in the consumer products industry. Whether it is creating a better narrative for a product release, creating visuals to a research demo for focus groups, or exploded views for engineering break downs, I can do it all." />
+                <bentos.ParagraphText text="I have produced videos from makeup, to sponges, batteries, and even absorbing pads in the consumer products industry. Whether it is creating a better narrative for a product release, creating visuals to a research demo for focus groups, or exploded views for engineering break downs, I can do it all." />
             </bentos.CellText> 
 
             <bentos.CellMediaOnClick mediaLink={vidJnJ01} mediaType={MediaType.Video} mediaText="Consumer product informational clip" cellSpan="col-span-1" hoverTextColor="text-textColor"/>

@@ -44,7 +44,7 @@ function BentoBoxA() {
         <div className="relative z-10 grid grid-cols-1 w-[80%] h-fit justify-self-center text-white hover:cursor-pointer gap-[12px]">
             
             <bentos.CellText cellSpan="col-span-1 w-full">
-                <bentos.HeaderText text={`"Foxsuke" SSBM Model`} textSize={titleTextSize}/>
+                <bentos.HeaderText text={`"Foxsuke" SSBM Model`}/>
             </bentos.CellText>
 
             {/* <bentos.CellMediaOnClick mediaText="Custom Sasuke 3D Model" mediaLink={mediaFoxsukeModel01} mediaType={MediaType.Video} cellSpan="col-span-1" hoverTextColor="text-textVariant" /> */}
@@ -79,7 +79,7 @@ function BentoBoxA() {
             <div className="col-span-1 grid grid-cols-1 sm:grid-cols-3">
                 <bentos.CellMediaOnClickNoShadow mediaText="Fox and Sasuke Low Poly Comparison" mediaLink={mediaFoxsukeModel07} mediaType={MediaType.Video} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={paraTextSize} 
+                    <bentos.ParagraphText 
                         text={`This game ready 3D model took many variations and tests to nail down. After finalizing the character rigging, I discovered a Low Poly model is required for calculating certain in game information like shadows, and used in the off screen visual bubble. And after fixing that, I had to figure out the backface culling for a toon style outline.`} />
                 </bentos.CellText>
             </div>
@@ -89,7 +89,7 @@ function BentoBoxA() {
 
             <div className="col-span-1 grid grid-cols-1 sm:grid-cols-3">
                 <bentos.CellText cellSpan={`col-span-1 order-2 sm:order-1`}>
-                    <bentos.ParagraphText textSize={paraTextSize} 
+                    <bentos.ParagraphText
                         text={`In addition to the modded 3D model, I also designed a matching Stock Icon that displays above the character information during game. The game engine requires that this image be only 24x24px, so the challenge was to create a recognizable small pixel version of the Sasuke 3D model I had been creating.`} />
                 </bentos.CellText>
                 <bentos.CellMediaOnClickNoShadow mediaText="Custom Sasuke Stock Icon" mediaLink={mediaFoxsukeModel09} mediaType={MediaType.Image} cellSpan="col-span-2 order-1 sm:order-2"  hoverTextColor="text-textVariant"/>

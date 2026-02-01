@@ -5,15 +5,15 @@ import { useState, useEffect } from "react";
 import LoadAsset from "./load-asset";
 import Loading from "./loading-text";
 
-export function LazyImage({imgLink, imgAlt="Default Image"}: {imgLink: string, imgAlt: string})
-{
+export function LazyImage({imgLink, imgAlt="Default Image"}: {imgLink: string, imgAlt: string}) {
     return <LazyImageCore imgLink={imgLink} imgAlt={imgAlt} fullscreen={false} />
 }
 
-export function LazyFSImage({imgLink, imgAlt="Default Image"}: {imgLink: string, imgAlt: string})
-{
+
+export function LazyFSImage({imgLink, imgAlt="Default Image"}: {imgLink: string, imgAlt: string}) {
     return <LazyImageCore imgLink={imgLink} imgAlt={imgAlt} fullscreen={true} />
 }
+
 
 function LazyImageCore({imgLink, imgAlt = "Default Image", fullscreen}: {imgLink: string, imgAlt: string, fullscreen: boolean}) {
     const [loadedSrc, setLoadedSrc] = useState('');
@@ -32,22 +32,16 @@ function LazyImageCore({imgLink, imgAlt = "Default Image", fullscreen}: {imgLink
         <Loading/> :
         <img src={loadedSrc}
             alt={imgAlt}
-            style={{objectFit: fullscreen ? "contain" : "cover"}}
-            className={`w-full h-full ${fullscreen ? "object-contain" : ""}`}
+            className={`w-full h-full ${fullscreen ? "object-contain" : "object-center"}`}
         />
     )
 }
 
 
-
-
-
-
-
-export function LazyImage2({imgLink, imgAlt="Default Image"}: {imgLink: string, imgAlt: string})
-{
+export function LazyImage2({imgLink, imgAlt="Default Image"}: {imgLink: string, imgAlt: string}) {
     return <LazyImageCore2 imgLink={imgLink} imgAlt={imgAlt} fullscreen={false} />
 }
+
 
 function LazyImageCore2({imgLink, imgAlt = "Default Image", fullscreen}: {imgLink: string, imgAlt: string, fullscreen: boolean}) {
     const [loadedSrc, setLoadedSrc] = useState('');
@@ -71,10 +65,11 @@ function LazyImageCore2({imgLink, imgAlt = "Default Image", fullscreen}: {imgLin
     )
 }
 
-export function LazyImageSizer({imgLink, imgAlt="Default Image", imgSize="w-fit max-h-[960px]"}: {imgLink: string, imgAlt: string, imgSize:string})
-{
+
+export function LazyImageSizer({imgLink, imgAlt="Default Image", imgSize="w-fit max-h-[960px]"}: {imgLink: string, imgAlt: string, imgSize:string}) {
     return <LazyImageCoreSizer imgLink={imgLink} imgAlt={imgAlt} fullscreen={false} imgSize={imgSize}/>
 }
+
 
 function LazyImageCoreSizer({imgLink, imgAlt = "Default Image", imgSize="w-fit max-h-[960px]", fullscreen}: {imgLink: string, imgAlt: string, imgSize:string, fullscreen: boolean}) {
     const [loadedSrc, setLoadedSrc] = useState('');

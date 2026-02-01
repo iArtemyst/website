@@ -1,23 +1,15 @@
 'use client'
 
 import "@/app/globals/globals.css";
-import Link from "next/link";
 import { CardHoverFX } from "./card-hover-fx";
 import * as fonts from "./fonts";
 import { LazyHoverVideo, LazyNonHoverVideo } from "./lazy-video";
 import { CheckIfMobileBrowser } from "@/app/globals/mobile-check";
 import StyledLink from "./styled-link";
 import { NoSelect } from "./styles";
-import { useState } from "react";
-
-
-
-
-
 
 //-----------------------------------
 // INTERFACES FOR DOUBLE SIDED CARDS
-
 export interface IDoubleSideLandingCard
 {
     cardLink: string,

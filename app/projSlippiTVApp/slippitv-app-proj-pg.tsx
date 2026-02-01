@@ -80,7 +80,7 @@ function BentoBoxB() {
             
             <div className="col-span-1 grid grid-cols-3">
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={"text-24px"} 
+                    <bentos.ParagraphText
                         text="In order to produce a product that worked well and addressed the right issues, we opened up the project to beta testing and collected feedback from users to work on." />
                 </bentos.CellText>
                 <bentos.CellMediaOnClickNoShadow mediaText="WIP Detail: Creating the environment" mediaLink={imgSlippiTV06} mediaType={MediaType.Image} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
@@ -91,22 +91,20 @@ function BentoBoxB() {
                 <bentos.CellMediaOnClickNoShadow mediaText="UI/UX changes for the settings page introduced a consistant theme and style between screens, adding automatic connection support for users (reducing pain points), and adding theme options for the application." mediaLink={imgSlippiTV04} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
             </div>
 
-            <div className="col-span-1 grid grid-cols-1 sm:grid-cols-3">
+            <div className="col-span-1 grid grid-cols-1 sm:grid-cols-2">
+                <bentos.CellMediaOnClickNoShadow mediaText="Initial Release of SlippiTV featured 3 themes, Dark, Light, and GameCube Purple" mediaLink={imgSlippiTV05} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/>
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={"text-24px order-2 sm:order-1"} 
+                    <bentos.ParagraphText
                         text="UI/UX changes for the settings page introduced a consistant theme and style between screens, adding automatic connection support for users (reducing pain points), and adding theme options for the application. Initial Release of SlippiTV featured a Dark Theme, a Light Theme, and a Retro Purple theme that references the GameCube console the community plays on." />
                 </bentos.CellText>
-                <bentos.CellMediaOnClickNoShadow mediaText="Initial Release of SlippiTV featured 3 themes, Dark, Light, and GameCube Purple" mediaLink={imgSlippiTV05} mediaType={MediaType.Image} cellSpan="col-span-2 order-1 sm:order-2" hoverTextColor="text-textVariant"/>
             </div>
-
-            {/* <bentos.CellMediaOnClickNoShadow mediaText="Designed entirely in HTML and CSS, with a flexible layout that shifts when viewed on a mobile browser." mediaLink={imgSlippiTV02} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant"/> */}
             
-            <div className="col-span-1 grid grid-cols-1 sm:grid-cols-3">
-                <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText textSize={"text-24px"} 
+            <div className="col-span-1 grid grid-cols-1 md:grid-cols-3">
+                <bentos.CellText cellSpan={`col-span-1 order-2 md:order-1`}>
+                    <bentos.ParagraphText 
                         text="When I started the design for the SlippiTV icon I knew that I wanted to incorporate the old CRT TV monitors that were common in the early 2000s when this game was released. There is also a modern community of SSBM players that seek out the CRT TVs because of their low latency and authentic experience. In researching more about the era, I discovered the community often recommended the Sony Trinitron series of TVs, and I took inspiration from their unique design to build my logo concepts. I created several variations of the logo, exploring different shapes and styles, and reworked the logo to work better at smaller sizes. Color choice was also important, I wanted to capture the retro nature of the AVI cables, and also give a nod towards the GameCube console, and Slippi themselves. All of this came together in the final version of the logo, a simple and recognizable design that captures the era and essence of this product. Additionally, the second variation of the logo was able to be utilized in launch screens and promotional material where larger designs were preferred." />
                 </bentos.CellText>
-                <bentos.CellMediaOnClickNoShadow mediaText="Developing the logo through several iterations with the client" mediaLink={imgSlippiTV07} mediaType={MediaType.Image} cellSpan="col-span-2" hoverTextColor="text-textVariant"/>
+                <bentos.CellMediaOnClickNoShadow mediaText="Developing the logo through several iterations with the client" mediaLink={imgSlippiTV07} mediaType={MediaType.Image} cellSpan="col-span-2 order-1 md:order-2" hoverTextColor="text-textVariant"/>
             </div>
 
         </div>

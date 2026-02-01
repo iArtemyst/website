@@ -49,7 +49,7 @@ function BentoBox() {
             <div className="col-span-1 grid grid-cols-3">
                 <bentos.CellMediaOnClick mediaText="Projects are displayed in various ways, depending on the project type and complexity." mediaLink={imgPortfolio10} mediaType={MediaType.Image} cellSpan={`col-span-2`} hoverTextColor="text-textVariant"/>
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText text="A couple years ago I decided to move away from the traditional quick mockup websites and take full advantage of my skills and interests. Using what I knew about web design and development, I began working on fully custom site with personal widgets and interactions." textSize="text-[12px]"/>
+                    <bentos.ParagraphText text="A couple years ago I decided to move away from the traditional quick mockup websites and take full advantage of my skills and interests. Using what I knew about web design and development, I began working on fully custom site with personal widgets and interactions." />
                 </bentos.CellText>
             </div>
 
@@ -57,7 +57,7 @@ function BentoBox() {
 
             <div className="col-span-1 grid grid-cols-3">
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText text="This site has developed and will continue to develop over time. Each time I return to update a project, or make improvements, the site is refined, and the experience improved. Elements like the featured projects, and related projects did not exist in the earlier versions of my site, but now offer a better user-flow, creating an easier time navigating the site." textSize="text-[12px]"/>
+                    <bentos.ParagraphText text="This site has developed and will continue to develop over time. Each time I return to update a project, or make improvements, the site is refined, and the experience improved. Elements like the featured projects, and related projects did not exist in the earlier versions of my site, but now offer a better user-flow, creating an easier time navigating the site."/>
                 </bentos.CellText>
                 <bentos.CellMediaOnClick mediaText="The main project pages showcase a featured projects and animated portfolio reel among the other projects." mediaLink={imgPortfolio08} mediaType={MediaType.Image} cellSpan={`col-span-2`} hoverTextColor="text-textVariant" />
             </div>
@@ -67,14 +67,14 @@ function BentoBox() {
             <div className="col-span-1 grid grid-cols-3">
                 <bentos.CellMediaOnClick mediaText="Click through galleries are one of the many components I have developed in my portfolio site." mediaLink={imgPortfolio11} mediaType={MediaType.Image} cellSpan={`col-span-2`} hoverTextColor="text-textVariant"/>
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText text="As I work to improve and refine this site, I continue to add and test new features, allowing me to explore creative possibilities and develop my eye for design further. I love the process of iterating and refining my work and code, and learning a new technique to test in a sandbox site such as this portfolio." textSize="text-[12px]"/>
+                    <bentos.ParagraphText text="As I work to improve and refine this site, I continue to add and test new features, allowing me to explore creative possibilities and develop my eye for design further. I love the process of iterating and refining my work and code, and learning a new technique to test in a sandbox site such as this portfolio."/>
                 </bentos.CellText>
             </div>
 
             <div className={`col-span-1 grid grid-cols-3 gap-[12px]`}>
                 <bentos.CellMediaOnClick mediaText="Creating assets in After Effects" mediaLink={imgPortfolioCode01} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant" />
                 <bentos.CellText cellSpan={`col-span-1`}>
-                    <bentos.ParagraphText text="In addition to the development work of the site, and the work that went into creating the original project assets, I have also edited and refined the visual assets and animation in After Effects and Photoshop to match the look and feel of my site better." textSize="text-[12px]"/>
+                    <bentos.ParagraphText text="In addition to the development work of the site, and the work that went into creating the original project assets, I have also edited and refined the visual assets and animation in After Effects and Photoshop to match the look and feel of my site better."/>
                 </bentos.CellText>
                 <bentos.CellMediaOnClick mediaText="Code for my landing page cards" mediaLink={imgPortfolioCode06} mediaType={MediaType.Image} cellSpan="col-span-1" hoverTextColor="text-textVariant" />
             </div>

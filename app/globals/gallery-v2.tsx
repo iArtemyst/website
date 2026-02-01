@@ -2,15 +2,14 @@
 
 import * as fonts from "@/app/globals/fonts";
 import "@/app/globals/globals.css";
-import { LazyFSImage } from "@/app/globals/lazy-image";
 import { LazyNonHoverVideo } from "@/app/globals/lazy-video";
 import { IGalleryMedia, MediaType } from "@/app/globals/project-galleries";
 import Link from "next/link";
 import { useState } from "react";
 import { CardHoverFX } from "./card-hover-fx";
 import { LazyImage2 } from "./lazy-image";
+import { FullScreenMediaViewer } from "./fullscreen-media";
 
-const bentoRounding = "rounded-[12px] sm:rounded-[16px] md:rounded-[24px]";
 const galleryButtonStyle = "text-[10px] sm:text-[12px] md:text-[14px] w-fit h-fit px-[1em] py-[.5em] flex justify-center place-content-center rounded-[8px] text-textVariant hover:cursor-pointer bg-[#343434] hover:bg-[#565656] hover:scale-[95%]";
 
 
@@ -112,48 +111,12 @@ export function GalleryV2({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
     let [selectedIndex, setSelectedIndex] = useState(0);
     let [fullscreenMedia, setFullscreenMedia] = useState(false);
 
-    function FullScreenMedia() {
-        function FsBgBarrier() {
-            return (
-                <div className={`fixed left-0 right-0 top-0 bottom-0 z-0 bg-black opacity-[75%]`} onClick={() => setFullscreenMedia(false)} />
-            )
-        }
-
-        function FsMediaAsset() {
-            return (
-                <div className={`fixed left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-[95dvw] h-[95dvh] z-10 content-center`} onClick={() => setFullscreenMedia(false)}>
-                    {
-                        mediaGallery[selectedIndex].assetMediaType === MediaType.Video ?
-                            <LazyNonHoverVideo 
-                                    src={mediaGallery[selectedIndex].assetMediaLink}
-                                    autoplay={true}
-                                    controls={true}
-                                    muted={true}
-                                    loop={true}
-                                    />
-                        :
-                            <LazyFSImage
-                                imgLink={mediaGallery[selectedIndex].assetMediaLink}
-                                imgAlt={mediaGallery[selectedIndex].assetText}
-                                />
-                    }
-                </div>
-            )
-        }
-
-        return (
-            <div className={`fixed z-[9999] left-0 right-0 top-0 bottom-0 content-center justify-items-center`}>
-                <FsBgBarrier/>
-                <FsMediaAsset/>
-            </div>
-        )
-    }
-
     function MainMediaCentered() {
         return (
+            <>
             <div className={`place-content-center place-self-center w-fit h-fit`}>
                 <CardHoverFX bufferZone={100} rotateAmount={120}>
-                    <div className={`${bentoRounding} group relative w-fit h-fit min-w-[240px] min-h-[120px] max-w-[1280px] min justify-self-center items-center overflow-hidden 
+                    <div className={`rounded-[1em] group relative w-fit h-fit min-w-[240px] min-h-[120px] max-w-[1280px] min justify-self-center items-center overflow-hidden 
                                         self-center transition-all duration-200 z-auto`} 
                                         onClick={(e) => { setFullscreenMedia(!fullscreenMedia); }}>
                     {
@@ -170,10 +133,11 @@ export function GalleryV2({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
                         }
                     </div>
                 </CardHoverFX>
-                {
-                    fullscreenMedia && ( <FullScreenMedia /> )     
-                }
             </div>
+            {
+                fullscreenMedia && ( <FullScreenMediaViewer mediaLink={mediaGallery[selectedIndex].assetMediaLink} mediaText={mediaGallery[selectedIndex].assetText} mediaType={mediaGallery[selectedIndex].assetMediaType} setShowFullscreen={setFullscreenMedia}/> )     
+            }
+            </>
         )
     }
 
@@ -226,7 +190,7 @@ export function GalleryV2b({mediaGallery,}: {mediaGallery: IGalleryMedia[]}) {
         return (
             <div className={`place-content-center place-self-center w-fit h-fit md:h-full`}>
                 <CardHoverFX bufferZone={100} rotateAmount={120}>
-                    <div className={`${bentoRounding} group relative w-fit h-fit min-w-[240px] min-h-[120px] max-w-[1280px] max-h-[840px] min justify-self-center overflow-hidden 
+                    <div className={`rounded-[1em] group relative w-fit h-fit min-w-[240px] min-h-[120px] max-w-[1280px] max-h-[840px] min justify-self-center overflow-hidden 
                                         self-center transition-all duration-200 z-auto shadow-[0px_0px_12px_#FFFFFF10] hover:shadow-[0px_0px_3px_#FFFFFF10]`} >
                     {
                         mediaGallery[selectedIndex].assetMediaType === MediaType.Video ?
